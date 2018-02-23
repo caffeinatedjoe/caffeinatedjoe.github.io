@@ -13,7 +13,7 @@ function showInfo(data, tabletop) {
 };
 
 function makeTableHTML(myArray) {
-	var result = "<table>";
+	var result = "<table><thead><tr><th>Title</th><th>Author</th></tr></thead>";
 	for(var i=0; i<myArray.length; i++) {
 		result += "<tr>";
 		result += "<td>"+myArray[i].title+"</td>";
