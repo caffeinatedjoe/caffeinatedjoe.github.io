@@ -10,7 +10,9 @@ function init() {
 function showInfo(data, tabletop) {
 	alert('Successfully processed!');
 	console.log(data);
-	console.log(makeTableHTML(data));
+	console.log(function() {
+		makeTableHTML(data));
+	});
 }
 
 function makeTableHTML(myArray) {
