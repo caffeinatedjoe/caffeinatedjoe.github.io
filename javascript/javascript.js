@@ -10,7 +10,6 @@ function init() {
 function showInfo(data, tabletop) {
 	alert('Successfully processed!')
 	console.log(data);
-	$(‘.post’).append(makeTableHTML(data));
 }
 
 function makeTableHTML(myArray) {
@@ -23,6 +22,7 @@ function makeTableHTML(myArray) {
 	}
 	
 	result += "</table>";
+	$(‘.post’).append(result);
 	return result;
 }
 
