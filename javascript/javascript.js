@@ -11,7 +11,7 @@ function showInfo(data, tabletop) {
 	alert('Successfully processed!');
 	console.log(data);
 	console.log(function() {
-		makeTableHTML(data));
+		makeTableHTML(data);
 	});
 }
 
