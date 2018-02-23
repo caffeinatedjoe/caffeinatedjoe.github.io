@@ -5,12 +5,12 @@ function init() {
 		callback: showInfo,
 		simpleSheet: true
 	} )
-}
+};
 
 function showInfo(data, tabletop) {
-	alert('Successfully processed!')
+	alert('Successfully processed!');
 	console.log(data);
-}
+};
 
 function makeTableHTML(myArray) {
 	var result = "<table border=1>";
@@ -19,13 +19,13 @@ function makeTableHTML(myArray) {
 		result += "<td>"+myArray[i].title+"</td>";
 		result += "<td>"+myArray[i].author+"</td>";		
 		result += "</tr>";
-	}
+	};
 	
 	result += "</table>";
 	$(‘.post’).append(result);
 	return result;
-}
+};
 
-window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', init);
       
 //$(‘.post’).append(makeTableHTML(data));
