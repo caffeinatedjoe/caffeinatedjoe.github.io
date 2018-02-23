@@ -12,20 +12,4 @@ function showInfo(data, tabletop) {
 	console.log(data);
 };
 
-function makeTableHTML(myArray) {
-	var result = "<table border=1>";
-	for(var i=0; i<myArray.length; i++) {
-		result += "<tr>";
-		result += "<td>"+myArray[i].title+"</td>";
-		result += "<td>"+myArray[i].author+"</td>";		
-		result += "</tr>";
-	};
-	
-	result += "</table>";
-	$(‘.post’).append(result);
-	return result;
-};
-
 window.addEventListener('DOMContentLoaded', init);
-      
-//$(‘.post’).append(makeTableHTML(data));
