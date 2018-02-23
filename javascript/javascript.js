@@ -8,8 +8,9 @@ function init() {
 }
 
 function showInfo(data, tabletop) {
-	alert('Successfully processed!')
+	alert('Successfully processed!');
 	console.log(data);
+	console.log(makeTableHTML(data));
 }
 
 function makeTableHTML(myArray) {
