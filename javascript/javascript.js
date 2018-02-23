@@ -9,11 +9,11 @@ function init() {
 
 function showInfo(data, tabletop) {
 	console.log(makeTableHTML(data));
-	$('.post').append(makeTableHTML(data));
+	$('.bookList').append(makeTableHTML(data));
 };
 
 function makeTableHTML(myArray) {
-	var result = "<table border=1>";
+	var result = "<table>";
 	for(var i=0; i<myArray.length; i++) {
 		result += "<tr>";
 		result += "<td>"+myArray[i].title+"</td>";
