@@ -31,4 +31,3 @@ function makeTableHTML(myArray) {
 window.addEventListener('DOMContentLoaded', init)
       
 //$(‘.post’).append(makeTableHTML(data));
-console.log(makeTableHTML(data));
