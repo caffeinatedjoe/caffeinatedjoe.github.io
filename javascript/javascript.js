@@ -8,8 +8,6 @@ function init() {
 };
 
 function showInfo(data, tabletop) {
-	alert('Successfully processed!')
-	console.log(data);
 	console.log(makeTableHTML(data));
 	$('.post').append(makeTableHTML(data));
 };
