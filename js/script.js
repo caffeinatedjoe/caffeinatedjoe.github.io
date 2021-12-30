@@ -1,5 +1,6 @@
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1hNxU4YCmZZ5uRfq8_eHUwLspzNWncJzmdclrzYAGlvM/pubhtml';
 /*
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1hNxU4YCmZZ5uRfq8_eHUwLspzNWncJzmdclrzYAGlvM/pubhtml';
+
 function init() {
 	Tabletop.init( {
 		key: publicSpreadsheetUrl,
@@ -14,6 +15,8 @@ function showInfo(data, tabletop) {
 };
 
 */
+
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1hNxU4YCmZZ5uRfq8_eHUwLspzNWncJzmdclrzYAGlvM/pub?output=csv';
 
 function init() {
 	Papa.parse(publicSpreadsheetUrl, {
