@@ -22,7 +22,7 @@ function init() {
 	Papa.parse(publicSpreadsheetUrl, {
 		download: true,
 		header: true,
-		complete: showInfo(results)
+		complete: showInfo
 	} )
 };
 
