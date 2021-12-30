@@ -1,4 +1,5 @@
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1hNxU4YCmZZ5uRfq8_eHUwLspzNWncJzmdclrzYAGlvM/pubhtml';
+/*
 function init() {
 	Tabletop.init( {
 		key: publicSpreadsheetUrl,
@@ -8,6 +9,22 @@ function init() {
 };
 
 function showInfo(data, tabletop) {
+	console.log(makeTableHTML(data));
+	$('.bookList').append(makeTableHTML(data));
+};
+
+*/
+
+function init() {
+	Papa.parse(publicSpreadsheetUrl, {
+		download: true,
+		header: true,
+		complete: showInfo(results)
+	} )
+};
+
+function showInfo(results) {
+	var data = results.data
 	console.log(makeTableHTML(data));
 	$('.bookList').append(makeTableHTML(data));
 };
