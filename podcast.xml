@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
-    <title>Cornerstone Hacked Podcast</title>
-    <itunes:owner>
-        <itunes:email>caffeinaedjoe@gmail.com</itunes:email>
-    </itunes:owner>
+    <title>The Unofficial Cornerstone Bible Church Podcast</title>
+    <link></link>
+    <language>english</language>
+    <copyright></copyright>
+    <itunes:subtitle></itunes:subtitle>
     <itunes:author>Joe Coffey</itunes:author>
-    <description>Cornerstone got rid of their podcast, so I hacked one together</description>
-    <itunes:image href="https://storage.snappages.site/H563TB/assets/favicon.png"/>
-    <language>en-us</language>
-    <link>joecoffey.me/podcast</link>
-    <item>
-      <title>The Ancients Who Banked on the Unseen God</title>
-      <description>The Ancients Who Banked on the Unseen God</description>
-      <pubDate>May 29, 2022</pubDate>
-      <enclosure url="https://www.example.com/podcasts/dafnas-zebras/audio/toptenmyths.mp3"
-                 type="audio/mpeg" length="34216300"/>
-      <itunes:duration>50:04</itunes:duration>
-      <guid isPermaLink="false">dzpodtop10</guid>
-    </item>
+    <itunes:summary>You wouldn&#x27;t make it, so I made it!</itunes:summary>  
+    <itunes:owner>
+      <itunes:name></itunes:name>
+      <itunes:email></itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://storage.snappages.site/H563TB/assets/favicon.png" />
+    <itunes:category text="Christianity"/>
+    
+      <item>
+        <title>The Ancients Who Banked on the Unseen God</title>
+        <itunes:author>Jake Liedkie</itunes:author>
+        <itunes:subtitle></itunes:subtitle>
+        <itunes:summary>The Ancients Who Banked on the Unseen God</itunes:summary>
+        <itunes:image href="" />
+        <enclosure url="https://www.dropbox.com/s/9u54jwvzwfog14z/the_ancients_who_banked_on_the_unseen_god.mp3?dl=0" length="50:04" type="audio/mpeg"/>
+        <guid></guid>
+        <pubDate>Thu Jun 02 2022 08:39:36 GMT-0700 (Pacific Daylight Time)</pubDate>
+        <itunes:duration></itunes:duration>
+      </item>
+    
   </channel>
-</rss>
+  </rss>
 
