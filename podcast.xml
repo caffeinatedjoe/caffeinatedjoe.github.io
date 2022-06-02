@@ -1,198 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:podcast="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
-    <channel>
-        <title>Podcasting 2.0 Namespace Example</title>
-        <description>This is a fake show that exists only as an example of the "podcast" namespace tag usage.</description>
-        <link>http://example.com/podcast</link>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-        <language>en-US</language>
-        <generator>Freedom Controller</generator>
-        <pubDate>Fri, 09 Oct 2020 04:30:38 GMT</pubDate>
-        <lastBuildDate>Fri, 09 Oct 2020 04:30:38 GMT</lastBuildDate>
-        <managingEditor>john@example.com (John Doe)</managingEditor>
-        <webMaster>support@example.com (Tech Support)</webMaster>
-        <image>
-            <url>https://example.com/images/pci_avatar-massive.jpg</url>
-            <title>Podcast Feed Template</title>
-            <link>https://example.com/show</link>
-        </image>
-
-        <podcast:guid>y0ur-gu1d-g035-h3r3</podcast:guid>
-
-        <podcast:license url="https://example.org/mypodcastlicense/full.pdf">my-podcast-license-v1</podcast:license>
-
-        <podcast:locked owner="podcastowner@example.com">yes</podcast:locked>
-        <podcast:funding url="https://example.com/donate">Support the show!</podcast:funding>
-
-        <podcast:location geo="geo:30.2672,97.7431" osm="R113314">Austin, TX</podcast:location>
-
-        <itunes:author>John Doe</itunes:author>
-        <itunes:explicit>no</itunes:explicit>
-        <itunes:type>episodic</itunes:type>
-        <itunes:category text="News"/>
-        <itunes:category text="Technology"/>
-
-        <itunes:owner>
-        <itunes:name>John Doe</itunes:name>
-        <itunes:email>johndoe@example.com</itunes:email>
-        </itunes:owner>
-
-        <itunes:image>https://example.com/images/pci_avatar-massive.jpg</itunes:image>
-
-        <podcast:value type="lightning" method="keysend" suggested="0.00000005000">
-            <podcast:valueRecipient name="podcaster" type="node" address="036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57" split="99" />
-            <podcast:valueRecipient name="hosting company" type="node" address="036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57" split="1" />
-        </podcast:value>
-
-        <podcast:trailer pubdate="Thu, 01 Apr 2021 08:00:00 EST" url="https://example.org/trailers/teaser" length="12345678" type="audio/mp3">Coming April 1st, 2021</podcast:trailer>
-
-        <item>
-            <title>Episode 3 - The Future</title>
-            <description>&lt;p&gt;A look into the future of podcasting and how we get to Podcasting 2.0!&lt;/p&gt;</description>
-            <link>https://example.com/podcast/ep0003</link>
-            <guid isPermaLink="true">https://example.com/ep0003</guid>
-            <pubDate>Fri, 09 Oct 2020 04:30:38 GMT</pubDate>
-            <author>John Doe (john@example.com)</author>
-            <itunes:image>https://example.com/ep0003/artMd.jpg</itunes:image>
-            <podcast:images srcset="https://example.com/images/ep3/pci_avatar-massive.jpg 1500w,
-                                        https://example.com/images/ep3/pci_avatar-middle.jpg 600w,
-                                        https://example.com/images/ep3/pci_avatar-small.jpg 300w,
-                                        https://example.com/images/ep3/pci_avatar-tiny.jpg 150w" />
-            <itunes:explicit>no</itunes:explicit>
-            <podcast:season name="Podcasting 2.0">1</podcast:season>
-            <podcast:episode>3</podcast:episode>
-            <podcast:chapters url="https://example.com/ep3_chapters.json" type="application/json"/>
-            <podcast:soundbite startTime="33.833" duration="60.0" />
-            <podcast:transcript url="https://example.com/ep3/transcript.txt" type="text/plain" />
-            <podcast:person href="https://www.podchaser.com/creators/adam-curry-107ZzmWE5f" img="https://example.com/images/adamcurry.jpg">Adam Curry</podcast:person>
-            <podcast:person role="guest" href="https://github.com/daveajones/" img="https://example.com/images/davejones.jpg">Dave Jones</podcast:person>
-            <podcast:person group="visuals" role="cover art designer" href="https://example.com/artist/beckysmith">Becky Smith</podcast:person>
-            
-            <enclosure url="https://example.com/file-03.mp3" length="43200000" type="audio/mpeg" />
-
-            <podcast:alternateEnclosure type="audio/mpeg" length="43200000" bitrate="128000" default="true" title="Standard">
-                <podcast:source uri="https://example.com/file-03.mp3" />
-                <podcast:source uri="ipfs://someRandomMpegFile03" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/opus" length="32400000" bitrate="96000" title="High quality">
-                <podcast:source uri="https://example.com/file-high-03.opus" />
-                <podcast:source uri="ipfs://someRandomHighBitrateOpusFile03" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/aac" length="54000000" bitrate="160000" title="High quality AAC">
-                <podcast:source uri="https://example.com/file-proprietary-03.aac" />
-                <podcast:source uri="ipfs://someRandomProprietaryAACFile03" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/opus" length="5400000" bitrate="16000" title="Low bandwidth">
-                <podcast:source uri="https://example.com/file-low-03.opus" />
-                <podcast:source uri="ipfs://someRandomLowBitrateOpusFile03" />
-            </podcast:alternateEnclosure>
-
-            <podcast:value type="lightning" method="keysend" suggested="0.00000005000">
-                <podcast:valueRecipient name="podcaster" type="node" address="036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57" split="49" />
-                <podcast:valueRecipient name="hosting company" type="node" address="036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57" split="1" />
-                <podcast:valueRecipient name="Gigi (Guest)" type="node" address="02e12fea95f576a680ec1938b7ed98ef0855eadeced493566877d404e404bfbf52" split="50" />
-            </podcast:value>
-
-
-        </item>
-
-        <item>
-            <title>Episode 2 - The Present</title>
-            <description>&lt;p&gt;Where are we at now in the podcasting era. What are the current challenges?&lt;/p&gt;</description>
-            <link>https://example.com/podcast/ep0002</link>
-            <guid isPermaLink="true">https://example.com/ep0002</guid>
-            <pubDate>Thu, 08 Oct 2020 04:30:38 GMT</pubDate>
-            <author>John Doe (john@example.com)</author>
-            <itunes:image>https://example.com/ep0002/artMd.jpg</itunes:image>
-            <podcast:images srcset="https://example.com/images/ep2/pci_avatar-massive.jpg 1500w,
-                                        https://example.com/images/ep2/pci_avatar-middle.jpg 600w,
-                                        https://example.com/images/ep2/pci_avatar-small.jpg 300w,
-                                        https://example.com/images/ep2/pci_avatar-tiny.jpg 150w" />
-            <itunes:explicit>no</itunes:explicit>
-            <podcast:season name="Podcasting 2.0">1</podcast:season>
-            <podcast:episode>2</podcast:episode>
-            <podcast:chapters url="https://example.com/ep2_chapters.json" type="application/json"/>
-            <podcast:soundbite startTime="45.4" duration="56.0" />
-            <podcast:transcript url="https://example.com/ep2/transcript.txt" type="text/plain" />
-            <podcast:person href="https://en.wikipedia.org/wiki/Adam_Curry" img="http://example.com/images/adamcurry.jpg">Adam Curry</podcast:person>
-            <podcast:person role="guest" href="https://example.com/blog/daveajones/" img="http://example.com/images/davejones.jpg">Dave Jones</podcast:person>
-            <podcast:person group="visuals" role="cover art designer" href="https://example.com/artist/marcusbrown">Marcus Brown</podcast:person>
-
-            <enclosure url="https://example.com/file-02.mp3" length="43113000" type="audio/mpeg" />
-
-            <podcast:alternateEnclosure type="audio/mpeg" length="43200000" bitrate="128000" default="true" title="Standard">
-                <podcast:source uri="https://example.com/file-02.mp3" />
-                <podcast:source uri="ipfs://someRandomMpegFile02" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/opus" length="32400000" bitrate="96000" title="High quality">
-                <podcast:source uri="https://example.com/file-high-02.opus" />
-                <podcast:source uri="ipfs://someRandomHighBitrateOpusFile02" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/aac" length="54000000" bitrate="160000" title="High quality AAC">
-                <podcast:source uri="https://example.com/file-proprietary-02.aac" />
-                <podcast:source uri="ipfs://someRandomProprietaryAACFile02" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/opus" length="5400000" bitrate="16000" title="Low bandwidth">
-                <podcast:source uri="https://example.com/file-low-02.opus" />
-                <podcast:source uri="ipfs://someRandomLowBitrateOpusFile02" />
-            </podcast:alternateEnclosure>
-
-            <podcast:value type="lightning" method="keysend" suggested="0.00000005000">
-                <podcast:valueRecipient name="podcaster" type="node" address="036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57" split="49" />
-                <podcast:valueRecipient name="hosting company" type="node" address="036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57" split="1" />
-                <podcast:valueRecipient name="Paul Itoi (Guest)" type="node" address="03a9a8d953fe747d0dd94dd3c567ddc58451101e987e2d2bf7a4d1e10a2c89ff38" split="50" />
-            </podcast:value>
-        </item>
-
-        <item>
-            <title>Episode 1 - The Past</title>
-            <description>&lt;p&gt;How did podcasting get started? What was it like in the beginning?&lt;/p&gt;</description>
-            <link>https://example.com/podcast/ep0001</link>
-            <guid isPermaLink="true">https://example.com/ep0001</guid>
-            <pubDate>Wed, 07 Oct 2020 04:30:38 GMT</pubDate>
-            <author>John Doe (john@example.com)</author>
-            <itunes:image>https://example.com/ep0001/artMd.jpg</itunes:image>
-            <podcast:images srcset="https://example.com/images/ep1/pci_avatar-massive.jpg 1500w,
-                                        https://example.com/images/ep1/pci_avatar-middle.jpg 600w,
-                                        https://example.com/images/ep1/pci_avatar-small.jpg 300w,
-                                        https://example.com/images/ep1/pci_avatar-tiny.jpg 150w" />
-            <itunes:explicit>no</itunes:explicit>
-            <podcast:season name="Podcasting 2.0">1</podcast:season>
-            <podcast:episode>1</podcast:episode>
-            <podcast:chapters url="https://example.com/ep1_chapters.json" type="application/json"/>
-            <podcast:soundbite startTime="29.32" duration="34.0" />
-            <podcast:transcript url="https://example.com/ep1/transcript.txt" type="text/plain" />
-            <podcast:person href="https://curry.com" img="http://example.com/images/adamcurry.jpg">Adam Curry</podcast:person>
-            <podcast:person role="guest" href="https://www.imdb.com/name/nm0427852888/" img="http://example.com/images/davejones.jpg">Dave Jones</podcast:person>
-            <podcast:person group="visuals" role="cover art designer" href="https://example.com/artist/jebickmorton">Jebick Morton</podcast:person>
-            
-            <enclosure url="https://example.com/file-01.mp3" length="43111403" type="audio/mpeg" />
-
-            <podcast:alternateEnclosure type="audio/mpeg" length="43203200" bitrate="128000" default="true" title="Standard">
-                <podcast:source uri="https://example.com/file-01.mp3" />
-                <podcast:source uri="ipfs://someRandomMpegFile01" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/opus" length="32406000" bitrate="96000" title="High quality">
-                <podcast:source uri="https://example.com/file-high-01.opus" />
-                <podcast:source uri="ipfs://someRandomHighBitrateOpusFile01" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/aac" length="5400300" bitrate="160000" title="High quality AAC">
-                <podcast:source uri="https://example.com/file-proprietary-01.aac" />
-                <podcast:source uri="ipfs://someRandomProprietaryAACFile01" />
-            </podcast:alternateEnclosure>
-
-            <podcast:alternateEnclosure type="audio/opus" length="5042000" bitrate="16000" title="Low bandwidth">
-                <podcast:source uri="https://example.com/file-low-01.opus" />
-                <podcast:source uri="ipfs://someRandomLowBitrateOpusFile01" />
-            </podcast:alternateEnclosure>
-        </item>
-    </channel>
-</rss>
+  <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>The Unofficial Cornerstone Bible Church Podcast</title>
+    <link></link>
+    <language>english</language>
+    <copyright></copyright>
+    <itunes:subtitle></itunes:subtitle>
+    <itunes:author>Joe Coffey</itunes:author>
+    <itunes:summary>You wouldn&#x27;t make it, so I made it!</itunes:summary>  
+    <itunes:owner>
+      <itunes:name></itunes:name>
+      <itunes:email></itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://storage.snappages.site/H563TB/assets/favicon.png" />
+    <itunes:category text="Christianity"/>
+    
+      <item>
+        <title>The Ancients Who Banked on the Unseen God</title>
+        <itunes:author>Jake Liedkie</itunes:author>
+        <itunes:subtitle></itunes:subtitle>
+        <itunes:summary>The Ancients Who Banked on the Unseen God</itunes:summary>
+        <itunes:image href="" />
+        <enclosure url="https://www.dropbox.com/s/9u54jwvzwfog14z/the_ancients_who_banked_on_the_unseen_god.mp3?dl=0" length="50:04" type="audio/mpeg"/>
+        <guid></guid>
+        <pubDate>Thu Jun 02 2022 08:39:36 GMT-0700 (Pacific Daylight Time)</pubDate>
+        <itunes:duration></itunes:duration>
+      </item>
+    
+  </channel>
+  </rss>
