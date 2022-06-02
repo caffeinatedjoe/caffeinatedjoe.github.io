@@ -27,5 +27,17 @@
         <itunes:duration></itunes:duration>
       </item>
     
+      <item>
+        <title>The Ancients Who Banked on the Unseen God v2</title>
+        <itunes:author>Jake Liedkie</itunes:author>
+        <itunes:subtitle></itunes:subtitle>
+        <itunes:summary>The Ancients Who Banked on the Unseen God with a different link</itunes:summary>
+        <itunes:image href="" />
+        <enclosure url="shorturl.at/eixC5" length="50:04" type="audio/mpeg"/>
+        <guid></guid>
+        <pubDate>Thu Jun 02 2022 08:39:36 GMT-0700 (Pacific Daylight Time)</pubDate>
+        <itunes:duration></itunes:duration>
+      </item>
+    
   </channel>
   </rss>
