@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Elo Book Ranker</title>
+  <style>
+    body { font-family: sans-serif; padding: 1em; max-width: 800px; margin: auto; }
+    input, button { padding: 0.5em; margin: 0.5em 0; width: 100%; max-width: 600px; }
+    table { border-collapse: collapse; margin-top: 1em; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
+
+    .compare-box {
+      margin-top: 2em;
+      padding: 1em;
+      border: 2px solid #333;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .compare-box button {
+      width: 40%;
+      font-size: 1.1em;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h2>📚 Elo Book Ranker</h2>
+
+  <ol>
+    <li>Set your Google Sheet to <strong>“Anyone with the link → Viewer”</strong></li>
+    <li>Ensure the first row includes <code>name</code> and optionally <code>score</code></li>
+    <li>Paste the Google Sheets URL below:</li>
+  </ol>
+
+  <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
+  <button onclick="loadSheet()">Load Sheet</button>
+  <button onclick="clearData()">Clear Stored Data</button>
+
+  <h3>Stored Items:</h3>
+  <div id="table-container">(none)</div>
+
+  <div id="compare-container"></div>
+
+  <script>
+    const STORAGE_KEY = 'storedSheetTable';
+    const DEFAULT_ELO = 1500;
+    const K = 32;
+
+    function parseSheetId(url) {
+      const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+      return match ? match[1] : null;
+    }
+
+    function updateDisplay(items) {
+      const container = document.getElementById('table-container');
+      if (!items || items.length === 0) {
+        container.innerHTML = "(none)";
+        return;
+      }
+
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
+
+      const headerRow = document.createElement('tr');
+      ['ID', 'Name', 'Score', 'Wins', 'Losses', 'Comparisons'].forEach(h => {
+        const th = document.createElement('th');
+        th.textContent = h;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+
+      items.forEach(item => {
+        const tr = document.createElement('tr');
+        [item.id, item.name, item.score, item.wins, item.losses, item.comparisons].forEach(val => {
+          const td = document.createElement('td');
+          td.textContent = val;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      container.innerHTML = '';
+      container.appendChild(table);
+    }
+
+    function saveToLocal(items) {
+      const data = { items, metadata: { comparisonCount: 0 } };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    function loadFromLocal() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      try {
+        return JSON.parse(raw).items || [];
+      } catch (e) {
+        console.warn("Invalid stored data", e);
+        return [];
+      }
+    }
+
+    function clearData() {
+      localStorage.removeItem(STORAGE_KEY);
+      updateDisplay([]);
+      document.getElementById('compare-container').innerHTML = '';
+    }
+
+    async function loadSheet() {
+      const url = document.getElementById('sheet_url').value.trim();
+      const sheetId = parseSheetId(url);
+      if (!sheetId) {
+        alert("Invalid Google Sheets URL.");
+        return;
+      }
+
+      const queryUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+
+      try {
+        const res = await fetch(queryUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status} - ${res.statusText}`);
+        const text = await res.text();
+        const json = JSON.parse(text.slice(47, -2));
+
+        const rawRows = json.table.rows || [];
+        let rawData = rawRows.map(r => (r.c || []).map(c => c?.v ?? ''));
+
+        rawData = rawData.filter(row => row.some(cell => cell !== ''));
+
+        if (rawData.length < 2) throw new Error("Not enough data");
+
+        const headers = rawData[0].map(h => h.toLowerCase());
+        const nameIdx = headers.indexOf("name");
+        const scoreIdx = headers.indexOf("score");
+
+        if (nameIdx === -1) throw new Error("Missing 'name' column in header row");
+
+        const items = rawData.slice(1).map((row, i) => {
+          const name = row[nameIdx] || `Item ${i}`;
+          const rawScore = scoreIdx !== -1 ? row[scoreIdx] : '';
+          const score = isFinite(parseFloat(rawScore)) ? parseFloat(rawScore) : DEFAULT_ELO;
+          return {
+            id: i,
+            name,
+            score,
+            wins: 0,
+            losses: 0,
+            comparisons: 0
+          };
+        });
+
+        saveToLocal(items);
+        updateDisplay(items);
+        pickNextComparison();
+      } catch (err) {
+        console.error(err);
+        alert("Failed to load sheet. Ensure it's public and properly formatted.");
+      }
+    }
+
+    function getRandomPair(items) {
+      if (items.length < 2) return null;
+      let a = Math.floor(Math.random() * items.length);
+      let b;
+      do {
+        b = Math.floor(Math.random() * items.length);
+      } while (b === a);
+      return [items[a], items[b]];
+    }
+
+    function renderComparison(a, b) {
+      const container = document.getElementById('compare-container');
+      container.innerHTML = `
+        <h3>Which do you prefer?</h3>
+        <div class="compare-box">
+          <button onclick="handleVote(${a.id}, ${b.id})">${a.name}</button>
+          <button onclick="handleVote(${b.id}, ${a.id})">${b.name}</button>
+        </div>
+      `;
+    }
+
+    function handleVote(winnerId, loserId) {
+      const items = loadFromLocal();
+      const winner = items.find(i => i.id === winnerId);
+      const loser = items.find(i => i.id === loserId);
+      if (!winner || !loser) return;
+
+      // Calculate expected scores
+      const EA = 1 / (1 + Math.pow(10, (loser.score - winner.score) / 400));
+      const EB = 1 - EA;
+
+      // Update scores
+      winner.score += K * (1 - EA);
+      loser.score += K * (0 - EB);
+
+      winner.wins += 1;
+      loser.losses += 1;
+      winner.comparisons += 1;
+      loser.comparisons += 1;
+
+      saveToLocal(items);
+      updateDisplay(items);
+      pickNextComparison();
+    }
+
+    function pickNextComparison() {
+      const items = loadFromLocal();
+      const pair = getRandomPair(items);
+      if (!pair) {
+        document.getElementById('compare-container').innerHTML = "<p>Need at least two items for comparison.</p>";
+        return;
+      }
+      renderComparison(pair[0], pair[1]);
+    }
+
+    window.addEventListener('load', () => {
+      const items = loadFromLocal();
+      updateDisplay(items);
+      if (items.length >= 2) pickNextComparison();
+    });
+  </script>
+</body>
+</html>
