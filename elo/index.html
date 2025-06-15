@@ -38,6 +38,13 @@
       border-radius: 12px;
       box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
+    /* Fix button focus/active states for mobile */
+    button:focus, button:active {
+      outline: none;
+    }
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -72,6 +79,12 @@
       background-color: #007aff;
       color: white;
     }
+    /* Remove focus styling for compare buttons */
+    .compare-box button:focus, .compare-box button:active {
+      outline: none;
+      background-color: #fff;
+      color: #007aff;
+    }
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -90,6 +103,10 @@
       padding: 0.5em;
       color: #007aff;
     }
+    /* Remove focus styling for nav buttons */
+    .bottom-nav button:focus, .bottom-nav button:active {
+      outline: none;
+    }
     .hidden { display: none; }
   </style>
 </head>
@@ -97,12 +114,12 @@
   <header>Elo Book Ranker</header>
   <div class="container" id="view-import">
     <ol>
-      <li>Set your Google Sheet to <strong>“Anyone with the link → Viewer”</strong></li>
+      <li>Set your Google Sheet to <strong>"Anyone with the link → Viewer"</strong></li>
       <li>Ensure the first row includes <code>name</code>, and optionally <code>score</code>, <code>wins</code>, <code>losses</code>, and <code>comparisons</code></li>
       <li>Paste the Google Sheets URL below:</li>
     </ol>
     <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
-    <button onclick="loadSheet()">Load Sheet</button>
+    <button onclick="loadSheet(); this.blur();">Load Sheet</button>
   </div>
 
   <div class="container hidden" id="view-compare">
@@ -114,10 +131,10 @@
   </div>
 
   <div class="bottom-nav hidden" id="nav">
-    <button onclick="switchView('compare')">Compare</button>
-    <button onclick="switchView('rankings')">Rankings</button>
-    <button onclick="copyToClipboard()">Copy</button>
-    <button onclick="clearData()">Clear</button>
+    <button onclick="switchView('compare'); this.blur();">Compare</button>
+    <button onclick="switchView('rankings'); this.blur();">Rankings</button>
+    <button onclick="copyToClipboard(); this.blur();">Copy</button>
+    <button onclick="clearData(); this.blur();">Clear</button>
   </div>
 
   <script>
@@ -258,7 +275,15 @@
     }
 
     function handleVote(winnerId, loserId, el) {
-      if (el && typeof el.blur === 'function') el.blur();  // remove focus/active style
+      // Remove focus from the clicked button
+      if (el && typeof el.blur === 'function') {
+        el.blur();
+      }
+      
+      // Also remove focus from any other focused element
+      if (document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
 
       const items = loadFromLocal();
       const winner = items.find(i => i.id === winnerId);
