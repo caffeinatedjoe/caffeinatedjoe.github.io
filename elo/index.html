@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Elo Book Ranker</title>
+  <title>Elo Ranker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; }
-    .container { padding: 1em; max-width: 800px; margin: auto; }
-    input, button { padding: 0.5em; margin: 0.5em 0; width: 100%; max-width: 600px; }
+    body { font-family: sans-serif; padding: 1em; margin: 0; }
+    input, button { padding: 0.5em; margin: 0.5em 0; width: 100%; max-width: 600px; box-sizing: border-box; }
     table { border-collapse: collapse; margin-top: 1em; width: 100%; }
     th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
     .compare-box {
@@ -15,42 +15,56 @@
       border: 2px solid #333;
       border-radius: 8px;
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      gap: 1em;
     }
     .compare-box button {
-      width: 40%;
+      width: 100%;
       font-size: 1.1em;
       padding: 1em;
     }
-    .hidden { display: none; }
-    .hamburger { position: absolute; top: 10px; right: 10px; font-size: 1.5em; cursor: pointer; }
-    .menu { display: none; position: absolute; top: 40px; right: 10px; background: white; border: 1px solid #ccc; padding: 1em; z-index: 10; }
-    .menu button { display: block; margin-bottom: 0.5em; }
+    .menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1em;
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      right: 1em;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 1em;
+      z-index: 100;
+    }
+    .menu-content button {
+      margin: 0.25em 0;
+    }
+    .visible { display: block !important; }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="menu" id="menu">
-    <button onclick="copyToClipboard()">📋 Copy to Clipboard</button>
-    <button onclick="showRankings()">📊 View Rankings</button>
-    <button onclick="clearData()">🗑️ Clear Data</button>
-  </div>
-
-  <div class="container">
-    <div id="load-section" class="hidden">
-      <h2>📚 Elo Book Ranker</h2>
-      <ol>
-        <li>Set your Google Sheet to <strong>“Anyone with the link → Viewer”</strong></li>
-        <li>Ensure the first row includes <code>name</code> and optionally <code>score, wins, losses, comparisons</code></li>
-        <li>Paste the Google Sheets URL below:</li>
-      </ol>
-      <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
-      <button onclick="loadSheet()">Load Sheet</button>
+  <div class="menu">
+    <button onclick="toggleMenu()">☰</button>
+    <div id="menu-content" class="menu-content">
+      <button onclick="copyToClipboard()">Copy to Clipboard</button>
+      <button onclick="showRankings()">View Rankings</button>
+      <button onclick="showComparison()">Return to Comparing</button>
+      <button onclick="clearData()">Clear Stored Data</button>
     </div>
-
-    <div id="compare-container" class="hidden"></div>
-    <div id="rankings-container" class="hidden"></div>
   </div>
+
+  <div id="load-section">
+    <h2>📚 Elo Ranker</h2>
+    <p>Paste Google Sheets URL (ensure it has a 'name' column):</p>
+    <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
+    <button onclick="loadSheet()">Load Sheet</button>
+  </div>
+
+  <div id="compare-container" class="hidden"></div>
+  <div id="rankings-container" class="hidden"></div>
 
   <script>
     const STORAGE_KEY = 'storedSheetTable';
@@ -58,8 +72,7 @@
     const K = 32;
 
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      document.getElementById('menu-content').classList.toggle('visible');
     }
 
     function parseSheetId(url) {
@@ -67,43 +80,8 @@
       return match ? match[1] : null;
     }
 
-    function updateDisplay(items) {
-      const container = document.getElementById('rankings-container');
-      container.innerHTML = '';
-      if (!items || items.length === 0) {
-        container.textContent = '(none)';
-        return;
-      }
-
-      const table = document.createElement('table');
-      const thead = document.createElement('thead');
-      const tbody = document.createElement('tbody');
-
-      const headerRow = document.createElement('tr');
-      ['ID', 'Name', 'Score', 'Wins', 'Losses', 'Comparisons'].forEach(h => {
-        const th = document.createElement('th');
-        th.textContent = h;
-        headerRow.appendChild(th);
-      });
-      thead.appendChild(headerRow);
-
-      items.forEach(item => {
-        const tr = document.createElement('tr');
-        [item.id, item.name, item.score, item.wins, item.losses, item.comparisons].forEach(val => {
-          const td = document.createElement('td');
-          td.textContent = val;
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      });
-
-      table.appendChild(thead);
-      table.appendChild(tbody);
-      container.appendChild(table);
-    }
-
     function saveToLocal(items) {
-      const data = { items, metadata: { comparisonCount: 0 } };
+      const data = { items };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     }
 
@@ -120,7 +98,9 @@
 
     function clearData() {
       localStorage.removeItem(STORAGE_KEY);
-      location.reload();
+      document.getElementById('load-section').classList.remove('hidden');
+      document.getElementById('compare-container').classList.add('hidden');
+      document.getElementById('rankings-container').classList.add('hidden');
     }
 
     async function loadSheet() {
@@ -140,7 +120,9 @@
 
         const rawRows = json.table.rows || [];
         let rawData = rawRows.map(r => (r.c || []).map(c => c?.v ?? ''));
+
         rawData = rawData.filter(row => row.some(cell => cell !== ''));
+        if (rawData.length < 2) throw new Error("Not enough data");
 
         const headers = rawData[0].map(h => h.toLowerCase());
         const nameIdx = headers.indexOf("name");
@@ -153,17 +135,15 @@
 
         const items = rawData.slice(1).map((row, i) => {
           const name = row[nameIdx] || `Item ${i}`;
-          const score = scoreIdx !== -1 && !isNaN(row[scoreIdx]) ? parseFloat(row[scoreIdx]) : DEFAULT_ELO;
-          const wins = winsIdx !== -1 && !isNaN(row[winsIdx]) ? parseInt(row[winsIdx]) : 0;
-          const losses = lossesIdx !== -1 && !isNaN(row[lossesIdx]) ? parseInt(row[lossesIdx]) : 0;
-          const comparisons = compIdx !== -1 && !isNaN(row[compIdx]) ? parseInt(row[compIdx]) : 0;
+          const score = scoreIdx !== -1 && isFinite(parseFloat(row[scoreIdx])) ? parseFloat(row[scoreIdx]) : DEFAULT_ELO;
+          const wins = winsIdx !== -1 ? parseInt(row[winsIdx] || 0) : 0;
+          const losses = lossesIdx !== -1 ? parseInt(row[lossesIdx] || 0) : 0;
+          const comparisons = compIdx !== -1 ? parseInt(row[compIdx] || 0) : wins + losses;
           return { id: i, name, score, wins, losses, comparisons };
         });
 
         saveToLocal(items);
-        document.getElementById('load-section').classList.add('hidden');
-        document.getElementById('compare-container').classList.remove('hidden');
-        pickNextComparison();
+        showComparison();
       } catch (err) {
         console.error(err);
         alert("Failed to load sheet. Ensure it's public and properly formatted.");
@@ -200,45 +180,73 @@
 
       winner.score += K * (1 - EA);
       loser.score += K * (0 - EB);
+
       winner.wins += 1;
       loser.losses += 1;
       winner.comparisons += 1;
       loser.comparisons += 1;
 
       saveToLocal(items);
-      pickNextComparison();
+      showComparison();
     }
 
-    function pickNextComparison() {
+    function showComparison() {
       const items = loadFromLocal();
       const pair = getRandomPair(items);
-      if (!pair) return;
+      document.getElementById('load-section').classList.add('hidden');
+      document.getElementById('rankings-container').classList.add('hidden');
+      document.getElementById('compare-container').classList.remove('hidden');
+      if (!pair) {
+        document.getElementById('compare-container').innerHTML = "<p>Need at least two items for comparison.</p>";
+        return;
+      }
       renderComparison(pair[0], pair[1]);
     }
 
     function showRankings() {
+      const container = document.getElementById('rankings-container');
+      const items = loadFromLocal().sort((a, b) => b.score - a.score);
+      document.getElementById('load-section').classList.add('hidden');
       document.getElementById('compare-container').classList.add('hidden');
       document.getElementById('rankings-container').classList.remove('hidden');
-      const items = loadFromLocal().sort((a, b) => b.score - a.score);
-      updateDisplay(items);
+
+      const table = document.createElement('table');
+      const headerRow = document.createElement('tr');
+      ['Name', 'Score', 'Wins', 'Losses', 'Comparisons'].forEach(h => {
+        const th = document.createElement('th');
+        th.textContent = h;
+        headerRow.appendChild(th);
+      });
+      table.appendChild(headerRow);
+
+      items.forEach(item => {
+        const tr = document.createElement('tr');
+        [item.name, item.score.toFixed(1), item.wins, item.losses, item.comparisons].forEach(val => {
+          const td = document.createElement('td');
+          td.textContent = val;
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+
+      container.innerHTML = '';
+      container.appendChild(table);
     }
 
     function copyToClipboard() {
-      const items = loadFromLocal();
-      const lines = ['name,score,wins,losses,comparisons'];
-      items.forEach(i => {
-        lines.push(`${i.name},${i.score},${i.wins},${i.losses},${i.comparisons}`);
-      });
-      navigator.clipboard.writeText(lines.join('\n')).then(() => {
-        alert("Copied to clipboard!");
-      });
+      const items = loadFromLocal().sort((a, b) => b.score - a.score);
+      const rows = [
+        ['name', 'score', 'wins', 'losses', 'comparisons'],
+        ...items.map(i => [i.name, i.score.toFixed(1), i.wins, i.losses, i.comparisons])
+      ];
+      const csv = rows.map(row => row.join('\t')).join('\n');
+      navigator.clipboard.writeText(csv).then(() => alert("Copied to clipboard!"));
     }
 
     window.addEventListener('load', () => {
       const items = loadFromLocal();
       if (items.length >= 2) {
-        document.getElementById('compare-container').classList.remove('hidden');
-        pickNextComparison();
+        showComparison();
       } else {
         document.getElementById('load-section').classList.remove('hidden');
       }
