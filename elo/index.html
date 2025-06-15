@@ -73,17 +73,35 @@
       color: #007aff;
       border-radius: 16px;
       font-weight: bold;
-      transition: background-color 0.3s, color 0.3s;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .compare-box button:hover {
+    
+    /* Button pressed state - only shows briefly */
+    .compare-box button.button-pressed {
       background-color: #007aff;
       color: white;
+      transform: scale(0.98);
     }
-    /* Remove focus styling for compare buttons */
-    .compare-box button:focus, .compare-box button:active {
+    
+    /* Remove all focus and active states */
+    .compare-box button:focus, 
+    .compare-box button:active,
+    .compare-box button:hover {
       outline: none;
       background-color: #fff;
       color: #007aff;
+    }
+    
+    /* Only show hover on non-touch devices */
+    @media (hover: hover) and (pointer: fine) {
+      .compare-box button:hover {
+        background-color: #007aff;
+        color: white;
+      }
     }
     .bottom-nav {
       position: fixed;
@@ -275,12 +293,20 @@
     }
 
     function handleVote(winnerId, loserId, el) {
-      // Remove focus from the clicked button
-      if (el && typeof el.blur === 'function') {
-        el.blur();
+      // Add pressed visual feedback
+      if (el) {
+        el.classList.add('button-pressed');
+        el.blur(); // Remove focus
+        
+        // Remove the pressed state quickly
+        setTimeout(() => {
+          if (el.classList) {
+            el.classList.remove('button-pressed');
+          }
+        }, 150);
       }
       
-      // Also remove focus from any other focused element
+      // Remove focus from any active element
       if (document.activeElement && document.activeElement.blur) {
         document.activeElement.blur();
       }
@@ -302,7 +328,11 @@
       loser.comparisons++;
 
       saveToLocal(items);
-      pickNextComparison();
+      
+      // Delay showing next comparison slightly to let animation finish
+      setTimeout(() => {
+        pickNextComparison();
+      }, 100);
     }
 
     function pickNextComparison() {
