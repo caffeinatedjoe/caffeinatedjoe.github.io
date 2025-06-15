@@ -248,15 +248,18 @@
     }
 
     function renderComparison(a, b) {
-      document.getElementById('compare-container').innerHTML = `
+      const container = document.getElementById('compare-container');
+      container.innerHTML = `
         <div class="compare-box">
-          <button onclick="handleVote(${a.id}, ${b.id})">${a.name}</button>
-          <button onclick="handleVote(${b.id}, ${a.id})">${b.name}</button>
+          <button data-id="${a.id}" onclick="handleVote(${a.id}, ${b.id}, this)">${a.name}</button>
+          <button data-id="${b.id}" onclick="handleVote(${b.id}, ${a.id}, this)">${b.name}</button>
         </div>
       `;
     }
 
-    function handleVote(winnerId, loserId) {
+    function handleVote(winnerId, loserId, el) {
+      if (el && typeof el.blur === 'function') el.blur();  // remove focus/active style
+
       const items = loadFromLocal();
       const winner = items.find(i => i.id === winnerId);
       const loser = items.find(i => i.id === loserId);
@@ -293,7 +296,7 @@
       const csv = rows.map(row => row.join('\t')).join('\n');
       navigator.clipboard.writeText(csv).then(() => alert("Copied to clipboard!"));
     }
-    
+
     window.addEventListener('load', () => {
       const stored = loadFromLocal();
       if (stored.length > 0) {
