@@ -284,31 +284,45 @@
 
     function renderComparison(a, b) {
       const container = document.getElementById('compare-container');
-      container.innerHTML = `
-        <div class="compare-box">
-          <button data-id="${a.id}" onclick="handleVote(${a.id}, ${b.id}, this)">${a.name}</button>
-          <button data-id="${b.id}" onclick="handleVote(${b.id}, ${a.id}, this)">${b.name}</button>
-        </div>
-      `;
+      
+      // Create elements programmatically instead of innerHTML
+      container.innerHTML = '';
+      const compareBox = document.createElement('div');
+      compareBox.className = 'compare-box';
+      
+      const button1 = document.createElement('button');
+      button1.textContent = a.name;
+      button1.dataset.id = a.id;
+      button1.addEventListener('click', function(e) {
+        handleVote(a.id, b.id, this);
+      });
+      
+      const button2 = document.createElement('button');
+      button2.textContent = b.name;
+      button2.dataset.id = b.id;
+      button2.addEventListener('click', function(e) {
+        handleVote(b.id, a.id, this);
+      });
+      
+      compareBox.appendChild(button1);
+      compareBox.appendChild(button2);
+      container.appendChild(compareBox);
     }
 
     function handleVote(winnerId, loserId, el) {
-      // Add pressed visual feedback
+      // Add immediate visual feedback
       if (el) {
+        console.log('Adding pressed class'); // Debug log
         el.classList.add('button-pressed');
-        el.blur(); // Remove focus
+        el.blur();
         
-        // Remove the pressed state quickly
+        // Remove the pressed state after animation
         setTimeout(() => {
-          if (el.classList) {
+          if (el && el.classList && el.classList.contains('button-pressed')) {
             el.classList.remove('button-pressed');
+            console.log('Removed pressed class'); // Debug log
           }
-        }, 150);
-      }
-      
-      // Remove focus from any active element
-      if (document.activeElement && document.activeElement.blur) {
-        document.activeElement.blur();
+        }, 200);
       }
 
       const items = loadFromLocal();
@@ -329,10 +343,10 @@
 
       saveToLocal(items);
       
-      // Delay showing next comparison slightly to let animation finish
+      // Delay showing next comparison to let user see the feedback
       setTimeout(() => {
         pickNextComparison();
-      }, 100);
+      }, 300);
     }
 
     function pickNextComparison() {
