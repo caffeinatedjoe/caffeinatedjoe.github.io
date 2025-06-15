@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Elo Book Ranker</title>
   <style>
-    body { font-family: sans-serif; padding: 1em; max-width: 800px; margin: auto; }
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    .container { padding: 1em; max-width: 800px; margin: auto; }
     input, button { padding: 0.5em; margin: 0.5em 0; width: 100%; max-width: 600px; }
     table { border-collapse: collapse; margin-top: 1em; width: 100%; }
     th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
-
     .compare-box {
       margin-top: 2em;
       padding: 1em;
@@ -22,30 +22,45 @@
       font-size: 1.1em;
       padding: 1em;
     }
+    .hidden { display: none; }
+    .hamburger { position: absolute; top: 10px; right: 10px; font-size: 1.5em; cursor: pointer; }
+    .menu { display: none; position: absolute; top: 40px; right: 10px; background: white; border: 1px solid #ccc; padding: 1em; z-index: 10; }
+    .menu button { display: block; margin-bottom: 0.5em; }
   </style>
 </head>
 <body>
-  <h2>📚 Elo Book Ranker</h2>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <button onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+    <button onclick="showRankings()">📊 View Rankings</button>
+    <button onclick="clearData()">🗑️ Clear Data</button>
+  </div>
 
-  <ol>
-    <li>Set your Google Sheet to <strong>“Anyone with the link → Viewer”</strong></li>
-    <li>Ensure the first row includes <code>name</code> and optionally <code>score</code></li>
-    <li>Paste the Google Sheets URL below:</li>
-  </ol>
+  <div class="container">
+    <div id="load-section" class="hidden">
+      <h2>📚 Elo Book Ranker</h2>
+      <ol>
+        <li>Set your Google Sheet to <strong>“Anyone with the link → Viewer”</strong></li>
+        <li>Ensure the first row includes <code>name</code> and optionally <code>score, wins, losses, comparisons</code></li>
+        <li>Paste the Google Sheets URL below:</li>
+      </ol>
+      <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
+      <button onclick="loadSheet()">Load Sheet</button>
+    </div>
 
-  <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
-  <button onclick="loadSheet()">Load Sheet</button>
-  <button onclick="clearData()">Clear Stored Data</button>
-
-  <h3>Stored Items:</h3>
-  <div id="table-container">(none)</div>
-
-  <div id="compare-container"></div>
+    <div id="compare-container" class="hidden"></div>
+    <div id="rankings-container" class="hidden"></div>
+  </div>
 
   <script>
     const STORAGE_KEY = 'storedSheetTable';
     const DEFAULT_ELO = 1500;
     const K = 32;
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
 
     function parseSheetId(url) {
       const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
@@ -53,9 +68,10 @@
     }
 
     function updateDisplay(items) {
-      const container = document.getElementById('table-container');
+      const container = document.getElementById('rankings-container');
+      container.innerHTML = '';
       if (!items || items.length === 0) {
-        container.innerHTML = "(none)";
+        container.textContent = '(none)';
         return;
       }
 
@@ -83,7 +99,6 @@
 
       table.appendChild(thead);
       table.appendChild(tbody);
-      container.innerHTML = '';
       container.appendChild(table);
     }
 
@@ -105,8 +120,7 @@
 
     function clearData() {
       localStorage.removeItem(STORAGE_KEY);
-      updateDisplay([]);
-      document.getElementById('compare-container').innerHTML = '';
+      location.reload();
     }
 
     async function loadSheet() {
@@ -121,39 +135,34 @@
 
       try {
         const res = await fetch(queryUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status} - ${res.statusText}`);
         const text = await res.text();
         const json = JSON.parse(text.slice(47, -2));
 
         const rawRows = json.table.rows || [];
         let rawData = rawRows.map(r => (r.c || []).map(c => c?.v ?? ''));
-
         rawData = rawData.filter(row => row.some(cell => cell !== ''));
-
-        if (rawData.length < 2) throw new Error("Not enough data");
 
         const headers = rawData[0].map(h => h.toLowerCase());
         const nameIdx = headers.indexOf("name");
         const scoreIdx = headers.indexOf("score");
+        const winsIdx = headers.indexOf("wins");
+        const lossesIdx = headers.indexOf("losses");
+        const compIdx = headers.indexOf("comparisons");
 
         if (nameIdx === -1) throw new Error("Missing 'name' column in header row");
 
         const items = rawData.slice(1).map((row, i) => {
           const name = row[nameIdx] || `Item ${i}`;
-          const rawScore = scoreIdx !== -1 ? row[scoreIdx] : '';
-          const score = isFinite(parseFloat(rawScore)) ? parseFloat(rawScore) : DEFAULT_ELO;
-          return {
-            id: i,
-            name,
-            score,
-            wins: 0,
-            losses: 0,
-            comparisons: 0
-          };
+          const score = scoreIdx !== -1 && !isNaN(row[scoreIdx]) ? parseFloat(row[scoreIdx]) : DEFAULT_ELO;
+          const wins = winsIdx !== -1 && !isNaN(row[winsIdx]) ? parseInt(row[winsIdx]) : 0;
+          const losses = lossesIdx !== -1 && !isNaN(row[lossesIdx]) ? parseInt(row[lossesIdx]) : 0;
+          const comparisons = compIdx !== -1 && !isNaN(row[compIdx]) ? parseInt(row[compIdx]) : 0;
+          return { id: i, name, score, wins, losses, comparisons };
         });
 
         saveToLocal(items);
-        updateDisplay(items);
+        document.getElementById('load-section').classList.add('hidden');
+        document.getElementById('compare-container').classList.remove('hidden');
         pickNextComparison();
       } catch (err) {
         console.error(err);
@@ -165,9 +174,7 @@
       if (items.length < 2) return null;
       let a = Math.floor(Math.random() * items.length);
       let b;
-      do {
-        b = Math.floor(Math.random() * items.length);
-      } while (b === a);
+      do { b = Math.floor(Math.random() * items.length); } while (b === a);
       return [items[a], items[b]];
     }
 
@@ -188,38 +195,53 @@
       const loser = items.find(i => i.id === loserId);
       if (!winner || !loser) return;
 
-      // Calculate expected scores
       const EA = 1 / (1 + Math.pow(10, (loser.score - winner.score) / 400));
       const EB = 1 - EA;
 
-      // Update scores
       winner.score += K * (1 - EA);
       loser.score += K * (0 - EB);
-
       winner.wins += 1;
       loser.losses += 1;
       winner.comparisons += 1;
       loser.comparisons += 1;
 
       saveToLocal(items);
-      updateDisplay(items);
       pickNextComparison();
     }
 
     function pickNextComparison() {
       const items = loadFromLocal();
       const pair = getRandomPair(items);
-      if (!pair) {
-        document.getElementById('compare-container').innerHTML = "<p>Need at least two items for comparison.</p>";
-        return;
-      }
+      if (!pair) return;
       renderComparison(pair[0], pair[1]);
+    }
+
+    function showRankings() {
+      document.getElementById('compare-container').classList.add('hidden');
+      document.getElementById('rankings-container').classList.remove('hidden');
+      const items = loadFromLocal().sort((a, b) => b.score - a.score);
+      updateDisplay(items);
+    }
+
+    function copyToClipboard() {
+      const items = loadFromLocal();
+      const lines = ['name,score,wins,losses,comparisons'];
+      items.forEach(i => {
+        lines.push(`${i.name},${i.score},${i.wins},${i.losses},${i.comparisons}`);
+      });
+      navigator.clipboard.writeText(lines.join('\n')).then(() => {
+        alert("Copied to clipboard!");
+      });
     }
 
     window.addEventListener('load', () => {
       const items = loadFromLocal();
-      updateDisplay(items);
-      if (items.length >= 2) pickNextComparison();
+      if (items.length >= 2) {
+        document.getElementById('compare-container').classList.remove('hidden');
+        pickNextComparison();
+      } else {
+        document.getElementById('load-section').classList.remove('hidden');
+      }
     });
   </script>
 </body>
