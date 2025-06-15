@@ -135,12 +135,22 @@
       document.getElementById('view-compare').classList.add('hidden');
       document.getElementById('view-rankings').classList.add('hidden');
       document.getElementById('view-' + view).classList.remove('hidden');
+      if (view === 'rankings') {
+        showRankings();
+      }
+    }
+
+    function showRankings() {
+      const items = loadFromLocal();
+      updateDisplay(items);
     }
 
     function updateDisplay(items) {
       const container = document.getElementById('table-container');
+      container.innerHTML = ''; // Always clear before repopulating
+
       if (!items || items.length === 0) {
-        container.innerHTML = "(none)";
+        container.textContent = "(none)";
         return;
       }
 
@@ -169,7 +179,6 @@
 
       table.appendChild(thead);
       table.appendChild(tbody);
-      container.innerHTML = '';
       container.appendChild(table);
     }
 
@@ -276,15 +285,15 @@
     }
 
     function copyToClipboard() {
-      const items = loadFromLocal();
-      const lines = ["name,score,wins,losses,comparisons"];
-      items.forEach(i => {
-        lines.push(`${i.name},${i.score.toFixed(0)},${i.wins},${i.losses},${i.comparisons}`);
-      });
-      const str = lines.join("\n");
-      navigator.clipboard.writeText(str).then(() => alert("Copied to clipboard!"));
+      const items = loadFromLocal().sort((a, b) => b.score - a.score);
+      const rows = [
+        ['name', 'score', 'wins', 'losses', 'comparisons'],
+        ...items.map(i => [i.name, i.score.toFixed(1), i.wins, i.losses, i.comparisons])
+      ];
+      const csv = rows.map(row => row.join('\t')).join('\n');
+      navigator.clipboard.writeText(csv).then(() => alert("Copied to clipboard!"));
     }
-
+    
     window.addEventListener('load', () => {
       const stored = loadFromLocal();
       if (stored.length > 0) {
