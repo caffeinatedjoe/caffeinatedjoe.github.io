@@ -2,380 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Elo Ranker">
+  <meta name="theme-color" content="#1976d2">
   <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
   <title>Elo Book Ranker</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      padding: 0;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      padding: 1em;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      border-bottom: 1px solid #ddd;
-    }
-    .container {
-      padding: 1em;
-      max-width: 600px;
-      margin: auto;
-    }
-    input, button {
-      padding: 0.75em;
-      margin: 0.5em 0;
-      width: 100%;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
-    /* Fix button focus/active states for mobile */
-    button:focus, button:active {
-      outline: none;
-    }
-    button {
-      -webkit-tap-highlight-color: transparent;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 0.75em;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-    }
-    .compare-box {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-      margin: 2em 0;
-    }
-    .compare-box button {
-      width: 100%;
-      font-size: 1.2em;
-      padding: 1em;
-      background-color: #fff;
-      border: 2px solid #007aff;
-      color: #007aff;
-      border-radius: 16px;
-      font-weight: bold;
-      transition: all 0.15s ease;
-      cursor: pointer;
-      user-select: none;
-      -webkit-user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    /* Button pressed state - only shows briefly */
-    .compare-box button.button-pressed {
-      background-color: #007aff;
-      color: white;
-      transform: scale(0.98);
-    }
-    
-    /* Remove all focus and active states */
-    .compare-box button:focus, 
-    .compare-box button:active,
-    .compare-box button:hover {
-      outline: none;
-      background-color: #fff;
-      color: #007aff;
-    }
-    
-    /* Only show hover on non-touch devices */
-    @media (hover: hover) and (pointer: fine) {
-      .compare-box button:hover {
-        background-color: #007aff;
-        color: white;
-      }
-    }
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      background: #fff;
-      border-top: 1px solid #ddd;
-      padding: 0.5em 0;
-    }
-    .bottom-nav button {
-      flex: 1;
-      background: none;
-      border: none;
-      font-size: 0.9em;
-      padding: 0.5em;
-      color: #007aff;
-    }
-    /* Remove focus styling for nav buttons */
-    .bottom-nav button:focus, .bottom-nav button:active {
-      outline: none;
-    }
-    .hidden { display: none; }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<script src="script.js"></script>
 <body>
-  <header>Elo Book Ranker</header>
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-icon">📚</div>
+      <h1>Elo Book Ranker</h1>
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-content">
+      <h1 class="header-title">
+        <span class="material-icons header-icon">auto_stories</span>
+        Elo Book Ranker
+      </h1>
+      <div id="progress-indicator" class="progress-indicator hidden">
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="progress-text">0 comparisons</span>
+      </div>
+    </div>
+  </header>
+  <!-- Import View -->
   <div class="container" id="view-import">
-    <ol>
-      <li>Set your Google Sheet to <strong>"Anyone with the link → Viewer"</strong></li>
-      <li>Ensure the first row includes <code>name</code>, and optionally <code>score</code>, <code>wins</code>, <code>losses</code>, and <code>comparisons</code></li>
-      <li>Paste the Google Sheets URL below:</li>
-    </ol>
-    <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
-    <button onclick="loadSheet(); this.blur();">Load Sheet</button>
-  </div>
-
-  <div class="container hidden" id="view-compare">
-    <div id="compare-container"></div>
-  </div>
-
-  <div class="container hidden" id="view-rankings">
-    <div id="table-container">(none)</div>
-  </div>
-
-  <div class="bottom-nav hidden" id="nav">
-    <button onclick="switchView('compare'); this.blur();">Compare</button>
-    <button onclick="switchView('rankings'); this.blur();">Rankings</button>
-    <button onclick="copyToClipboard(); this.blur();">Copy</button>
-    <button onclick="clearData(); this.blur();">Clear</button>
-  </div>
-
-  <script>
-    const STORAGE_KEY = 'storedSheetTable';
-    const DEFAULT_ELO = 1500;
-    const K = 32;
-
-    function parseSheetId(url) {
-      const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
-      return match ? match[1] : null;
-    }
-
-    function switchView(view) {
-      document.getElementById('view-import').classList.add('hidden');
-      document.getElementById('view-compare').classList.add('hidden');
-      document.getElementById('view-rankings').classList.add('hidden');
-      document.getElementById('view-' + view).classList.remove('hidden');
-      if (view === 'rankings') {
-        showRankings();
-      }
-    }
-
-    function showRankings() {
-      const items = loadFromLocal();
-      updateDisplay(items);
-    }
-
-    function updateDisplay(items) {
-      const container = document.getElementById('table-container');
-      container.innerHTML = ''; // Always clear before repopulating
-
-      if (!items || items.length === 0) {
-        container.textContent = "(none)";
-        return;
-      }
-
-      const sorted = [...items].sort((a, b) => b.score - a.score);
-      const table = document.createElement('table');
-      const thead = document.createElement('thead');
-      const tbody = document.createElement('tbody');
-
-      const headerRow = document.createElement('tr');
-      ['Name', 'Score', 'Wins', 'Losses', 'Comparisons'].forEach(h => {
-        const th = document.createElement('th');
-        th.textContent = h;
-        headerRow.appendChild(th);
-      });
-      thead.appendChild(headerRow);
-
-      sorted.forEach(item => {
-        const tr = document.createElement('tr');
-        [item.name, item.score.toFixed(0), item.wins, item.losses, item.comparisons].forEach(val => {
-          const td = document.createElement('td');
-          td.textContent = val;
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      });
-
-      table.appendChild(thead);
-      table.appendChild(tbody);
-      container.appendChild(table);
-    }
-
-    function saveToLocal(items) {
-      const data = { items };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    }
-
-    function loadFromLocal() {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return [];
-      try {
-        return JSON.parse(raw).items || [];
-      } catch (e) {
-        return [];
-      }
-    }
-
-    function clearData() {
-      localStorage.removeItem(STORAGE_KEY);
-      location.reload();
-    }
-
-    async function loadSheet() {
-      const url = document.getElementById('sheet_url').value.trim();
-      const sheetId = parseSheetId(url);
-      if (!sheetId) return alert("Invalid URL");
-
-      const queryUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
-      const res = await fetch(queryUrl);
-      const text = await res.text();
-      const json = JSON.parse(text.slice(47, -2));
-
-      const headers = json.table.cols.map(col => col.label.toLowerCase());
-      const nameIdx = headers.indexOf("name");
-      const scoreIdx = headers.indexOf("score");
-      const winsIdx = headers.indexOf("wins");
-      const lossesIdx = headers.indexOf("losses");
-      const compIdx = headers.indexOf("comparisons");
-
-      const items = json.table.rows.map((r, i) => {
-        const cells = r.c || [];
-        return {
-          id: i,
-          name: cells[nameIdx]?.v || `Item ${i}`,
-          score: parseFloat(cells[scoreIdx]?.v) || DEFAULT_ELO,
-          wins: parseInt(cells[winsIdx]?.v) || 0,
-          losses: parseInt(cells[lossesIdx]?.v) || 0,
-          comparisons: parseInt(cells[compIdx]?.v) || 0
-        };
-      });
-
-      saveToLocal(items);
-      document.getElementById('nav').classList.remove('hidden');
-      switchView('compare');
-      pickNextComparison();
-    }
-
-    function getRandomPair(items) {
-      if (items.length < 2) return null;
-      let a = Math.floor(Math.random() * items.length);
-      let b;
-      do {
-        b = Math.floor(Math.random() * items.length);
-      } while (b === a);
-      return [items[a], items[b]];
-    }
-
-    function renderComparison(a, b) {
-      const container = document.getElementById('compare-container');
-      
-      // Create elements programmatically instead of innerHTML
-      container.innerHTML = '';
-      const compareBox = document.createElement('div');
-      compareBox.className = 'compare-box';
-      
-      const button1 = document.createElement('button');
-      button1.textContent = a.name;
-      button1.dataset.id = a.id;
-      button1.addEventListener('click', function(e) {
-        handleVote(a.id, b.id, this);
-      });
-      
-      const button2 = document.createElement('button');
-      button2.textContent = b.name;
-      button2.dataset.id = b.id;
-      button2.addEventListener('click', function(e) {
-        handleVote(b.id, a.id, this);
-      });
-      
-      compareBox.appendChild(button1);
-      compareBox.appendChild(button2);
-      container.appendChild(compareBox);
-    }
-
-    function handleVote(winnerId, loserId, el) {
-      // Add immediate visual feedback
-      if (el) {
-        console.log('Adding pressed class'); // Debug log
-        el.classList.add('button-pressed');
-        el.blur();
+    <div class="card welcome-card">
+      <div class="card-header">
+        <span class="material-icons card-icon">cloud_download</span>
+        <h2>Import Your Data</h2>
+      </div>
+      <div class="card-content">
+        <div class="instruction-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>Share your Google Sheet</strong>
+              <p>Set to "Anyone with the link → Viewer"</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Format your data</strong>
+              <p>First row should include <code>name</code>, and optionally <code>score</code>, <code>wins</code>, <code>losses</code>, <code>comparisons</code></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Paste the URL below</strong>
+            </div>
+          </div>
+        </div>
         
-        // Remove the pressed state after animation
-        setTimeout(() => {
-          if (el && el.classList && el.classList.contains('button-pressed')) {
-            el.classList.remove('button-pressed');
-            console.log('Removed pressed class'); // Debug log
-          }
-        }, 200);
-      }
+        <div class="input-group">
+          <div class="input-container">
+            <input id="sheet_url" placeholder="Paste Google Sheets URL here" />
+            <span class="material-icons input-icon">link</span>
+          </div>
+          <button class="primary-button" onclick="loadSheet(); this.blur();">
+            <span class="material-icons">download</span>
+            Load Sheet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      const items = loadFromLocal();
-      const winner = items.find(i => i.id === winnerId);
-      const loser = items.find(i => i.id === loserId);
-      if (!winner || !loser) return;
+  <!-- Compare View -->
+  <div class="container hidden" id="view-compare">
+    <div class="card compare-card">
+      <div class="card-header">
+        <span class="material-icons card-icon">compare_arrows</span>
+        <h2>Which do you prefer?</h2>
+      </div>
+      <div class="card-content">
+        <div id="compare-container"></div>
+      </div>
+    </div>
+  </div>
 
-      const EA = 1 / (1 + Math.pow(10, (loser.score - winner.score) / 400));
-      const EB = 1 - EA;
+  <!-- Rankings View -->
+  <div class="container hidden" id="view-rankings">
+    <div class="card rankings-card">
+      <div class="card-header">
+        <span class="material-icons card-icon">leaderboard</span>
+        <h2>Current Rankings</h2>
+      </div>
+      <div class="card-content">
+        <div id="table-container">(none)</div>
+      </div>
+    </div>
+  </div>
 
-      winner.score += K * (1 - EA);
-      loser.score += K * (0 - EB);
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav hidden" id="nav">
+    <button class="nav-button" onclick="switchView('compare'); this.blur();" data-view="compare">
+      <span class="material-icons">compare_arrows</span>
+      <span class="nav-label">Compare</span>
+    </button>
+    <button class="nav-button" onclick="switchView('rankings'); this.blur();" data-view="rankings">
+      <span class="material-icons">leaderboard</span>
+      <span class="nav-label">Rankings</span>
+    </button>
+    <button class="nav-button" onclick="copyToClipboard(); this.blur();">
+      <span class="material-icons">content_copy</span>
+      <span class="nav-label">Copy</span>
+    </button>
+    <button class="nav-button" onclick="clearData(); this.blur();">
+      <span class="material-icons">refresh</span>
+      <span class="nav-label">Clear</span>
+    </button>
+  </div>
 
-      winner.wins++;
-      loser.losses++;
-      winner.comparisons++;
-      loser.comparisons++;
+  <!-- Floating Action Button -->
+  <div id="fab" class="fab hidden" onclick="pickNextComparison(); this.blur();">
+    <span class="material-icons">shuffle</span>
+  </div>
 
-      saveToLocal(items);
-      
-      // Delay showing next comparison to let user see the feedback
-      setTimeout(() => {
-        pickNextComparison();
-      }, 300);
-    }
+  <!-- Toast Notifications -->
+  <div id="toast-container" class="toast-container"></div>
 
-    function pickNextComparison() {
-      const items = loadFromLocal();
-      const pair = getRandomPair(items);
-      if (!pair) return;
-      renderComparison(pair[0], pair[1]);
-    }
-
-    function copyToClipboard() {
-      const items = loadFromLocal().sort((a, b) => b.score - a.score);
-      const rows = [
-        ['name', 'score', 'wins', 'losses', 'comparisons'],
-        ...items.map(i => [i.name, i.score.toFixed(1), i.wins, i.losses, i.comparisons])
-      ];
-      const csv = rows.map(row => row.join('\t')).join('\n');
-      navigator.clipboard.writeText(csv).then(() => alert("Copied to clipboard!"));
-    }
-
-    window.addEventListener('load', () => {
-      const stored = loadFromLocal();
-      if (stored.length > 0) {
-        document.getElementById('nav').classList.remove('hidden');
-        switchView('compare');
-        pickNextComparison();
-      } else {
-        switchView('import');
-      }
-    });
-  </script>
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loading-content">
+      <div class="loading-spinner large"></div>
+      <p>Loading your data...</p>
+    </div>
+  </div>
 </body>
 </html>
