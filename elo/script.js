@@ -113,27 +113,71 @@ function updateNavigation(activeView) {
     
     // Enhanced mobile state clearing
     clearButtonStates(button);
+    
+    // Add iPhone-specific touch event handlers if not already added
+    if (!button.hasAttribute('data-touch-handled')) {
+      addTouchEventHandlers(button);
+      button.setAttribute('data-touch-handled', 'true');
+    }
   });
 }
 
-// Clear all visual states from buttons (especially for mobile)
+// Add iPhone-specific touch event handlers
+function addTouchEventHandlers(button) {
+  // Handle touchstart to prevent sticky states
+  button.addEventListener('touchstart', function(e) {
+    // Clear any existing states first
+    clearButtonStates(this);
+  }, { passive: true });
+  
+  // Handle touchend to ensure cleanup
+  button.addEventListener('touchend', function(e) {
+    // Delay clearing to allow click event to fire first
+    setTimeout(() => {
+      clearButtonStates(this);
+    }, 50);
+  }, { passive: true });
+  
+  // Handle touchcancel for interrupted touches
+  button.addEventListener('touchcancel', function(e) {
+    clearButtonStates(this);
+  }, { passive: true });
+}
+
+// Clear all visual states from buttons (especially for mobile/iPhone)
 function clearButtonStates(button) {
   // Force blur to remove focus
   button.blur();
+  
+  // iPhone-specific: Remove active class and force state clearing
+  button.classList.remove('active', 'button-pressed');
   
   // Clear any lingering visual states
   setTimeout(() => {
     button.style.outline = 'none';
     button.style.webkitTapHighlightColor = 'transparent';
+    button.style.webkitUserSelect = 'none';
+    button.style.webkitTouchCallout = 'none';
     
     // Force a style recalculation to ensure states are cleared
     button.offsetHeight;
+    
+    // iPhone-specific: Force removal of :active pseudo-class
+    button.style.pointerEvents = 'none';
+    setTimeout(() => {
+      button.style.pointerEvents = '';
+    }, 1);
   }, 10);
   
-  // Additional mobile-specific clearing after a longer delay
+  // Additional iPhone-specific clearing after a longer delay
   setTimeout(() => {
     if (document.activeElement === button) {
       document.activeElement.blur();
+    }
+    
+    // Force focus to body element (iPhone-specific)
+    if (document.body) {
+      document.body.focus();
     }
   }, 100);
 }
@@ -370,6 +414,9 @@ function createCompareButton(item, clickHandler) {
   button.addEventListener('click', function(e) {
     createRipple(e, this);
   });
+  
+  // Add iPhone-specific touch event handlers
+  addTouchEventHandlers(button);
   
   return button;
 }

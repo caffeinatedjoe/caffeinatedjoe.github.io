@@ -711,6 +711,53 @@ code {
   }
 }
 
+/* iPhone-specific fixes for touch states */
+@supports (-webkit-touch-callout: none) {
+  .nav-button:active,
+  .nav-button:focus {
+    background: none !important;
+    color: rgba(0,0,0,0.6) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+  }
+  
+  .nav-button.active:active,
+  .nav-button.active:focus {
+    color: var(--primary-color) !important;
+  }
+  
+  .compare-box button:active,
+  .compare-box button:focus {
+    background: var(--surface) !important;
+    color: var(--primary-color) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+  }
+  
+  .primary-button:active,
+  .primary-button:focus {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+  }
+}
+
+/* Additional iPhone Safari specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .nav-button,
+  .compare-box button,
+  .primary-button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    -webkit-user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  
+  /* Force removal of iOS button styling */
+  .nav-button {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+}
+
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -746,6 +793,20 @@ code {
   
   tr:hover {
     background: rgba(255,255,255,0.04);
+  }
+  
+  /* iPhone-specific dark mode fixes */
+  @supports (-webkit-touch-callout: none) {
+    .nav-button:active,
+    .nav-button:focus {
+      background: none !important;
+      color: rgba(255,255,255,0.6) !important;
+    }
+    
+    .nav-button.active:active,
+    .nav-button.active:focus {
+      color: var(--primary-color) !important;
+    }
   }
 }
 
