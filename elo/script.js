@@ -53,9 +53,12 @@ function parseSheetId(url) {
   return match ? match[1] : null;
 }
 
-// Enhanced view switching with animations
+// Enhanced view switching with animations and mobile state clearing
 function switchView(view) {
   if (currentView === view) return;
+  
+  // Clear all button states before switching
+  clearAllButtonStates();
   
   // Hide all views
   const views = ['import', 'compare', 'rankings'];
@@ -83,9 +86,22 @@ function switchView(view) {
   } else if (view === 'compare') {
     updateProgressIndicator();
   }
+  
+  // Final state clearing after content loads
+  setTimeout(() => {
+    clearAllButtonStates();
+  }, 300);
 }
 
-// Update navigation button states
+// Clear states from all interactive buttons
+function clearAllButtonStates() {
+  const allButtons = document.querySelectorAll('button, .nav-button, .compare-box button');
+  allButtons.forEach(button => {
+    clearButtonStates(button);
+  });
+}
+
+// Update navigation button states with enhanced mobile state clearing
 function updateNavigation(activeView) {
   const navButtons = document.querySelectorAll('.nav-button[data-view]');
   navButtons.forEach(button => {
@@ -94,7 +110,32 @@ function updateNavigation(activeView) {
     } else {
       button.classList.remove('active');
     }
+    
+    // Enhanced mobile state clearing
+    clearButtonStates(button);
   });
+}
+
+// Clear all visual states from buttons (especially for mobile)
+function clearButtonStates(button) {
+  // Force blur to remove focus
+  button.blur();
+  
+  // Clear any lingering visual states
+  setTimeout(() => {
+    button.style.outline = 'none';
+    button.style.webkitTapHighlightColor = 'transparent';
+    
+    // Force a style recalculation to ensure states are cleared
+    button.offsetHeight;
+  }, 10);
+  
+  // Additional mobile-specific clearing after a longer delay
+  setTimeout(() => {
+    if (document.activeElement === button) {
+      document.activeElement.blur();
+    }
+  }, 100);
 }
 
 // Enhanced rankings display
@@ -333,14 +374,14 @@ function createCompareButton(item, clickHandler) {
   return button;
 }
 
-// Enhanced vote handling with better feedback
+// Enhanced vote handling with better feedback and state clearing
 function handleVote(winnerId, loserId, el) {
   if (isLoading) return;
   
   // Immediate visual feedback
   if (el) {
     el.classList.add('button-pressed');
-    el.blur();
+    clearButtonStates(el);
     
     // Haptic feedback on supported devices
     if (navigator.vibrate) {
@@ -350,6 +391,7 @@ function handleVote(winnerId, loserId, el) {
     setTimeout(() => {
       if (el && el.classList) {
         el.classList.remove('button-pressed');
+        clearButtonStates(el);
       }
     }, 200);
   }
@@ -376,6 +418,9 @@ function handleVote(winnerId, loserId, el) {
 
   saveToLocal(items);
   updateProgressIndicator();
+  
+  // Clear all button states before showing next comparison
+  clearAllButtonStates();
   
   // Show next comparison after delay
   setTimeout(() => {

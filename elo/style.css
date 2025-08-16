@@ -373,8 +373,20 @@ body {
   box-shadow: var(--elevation-1);
   position: relative;
   overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  outline: none !important;
+}
+
+.compare-box button:focus,
+.compare-box button:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .compare-box button:hover {
@@ -455,8 +467,20 @@ tr:hover {
   align-items: center;
   gap: var(--space-xs);
   min-height: 56px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  outline: none !important;
+}
+
+.nav-button:focus,
+.nav-button:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .nav-button:hover,
