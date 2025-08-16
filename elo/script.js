@@ -387,6 +387,13 @@ function getRandomPair(items) {
 // Enhanced comparison rendering
 function renderComparison(a, b) {
   const container = document.getElementById('compare-container');
+  
+  // Remove button-pressed class from existing buttons before clearing
+  const existingButtons = container.querySelectorAll('.compare-box button');
+  existingButtons.forEach(button => {
+    button.classList.remove('button-pressed');
+  });
+  
   container.innerHTML = '';
   
   const compareBox = document.createElement('div');
@@ -434,13 +441,6 @@ function handleVote(winnerId, loserId, el) {
     if (navigator.vibrate) {
       navigator.vibrate(50);
     }
-    
-    setTimeout(() => {
-      if (el && el.classList) {
-        el.classList.remove('button-pressed');
-        clearButtonStates(el);
-      }
-    }, 200);
   }
 
   const items = loadFromLocal();
