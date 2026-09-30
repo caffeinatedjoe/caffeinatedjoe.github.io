@@ -16,7 +16,6 @@ const CATEGORY_LABEL = {
   scripture: "Scripture",
   historical: "Historical",
   interpretation: "Interpretation",
-  today: "Today",
 };
 
 const KIND_LABEL = {
@@ -132,17 +131,10 @@ function formatYear(year) {
 }
 
 function formatWhen(event) {
-  const end = event.endYear;
-  const approx = event.dateBasis !== "historical";
-  const prefix = approx ? "c. " : "";
-  if (end == null || end === event.startYear) return prefix + formatYear(event.startYear);
-  if (event.startYear < 0 && end < 0) {
-    return `${prefix}${Math.abs(Math.round(event.startYear))}\u2013${Math.abs(Math.round(end))} BC`;
-  }
-  if (event.startYear > 0 && end > 0) {
-    return `${prefix}AD ${Math.round(event.startYear)}\u2013${Math.round(end)}`;
-  }
-  return `${formatYear(event.startYear)} \u2013 ${formatYear(end)}`;
+  if (event.yearLabel) return event.yearLabel;
+  if (event.eraOnly) return "Books for this period";
+  if (event.category === "scripture") return "No calendar year in the Bible";
+  return "No calendar year assigned";
 }
 
 function indexChapters(list) {
@@ -187,9 +179,32 @@ function eventSpan(event) {
   return [event.startYear, event.endYear ?? event.startYear];
 }
 
+let positionOf = new Map();
+
+function indexPositions() {
+  positionOf = new Map();
+  for (const chapter of chapters) {
+    const mates = events
+      .filter((event) => event.era === chapter.id)
+      .sort((a, b) => a.sortKey - b.sortKey || a.title.localeCompare(b.title));
+    const count = mates.length;
+    mates.forEach((event, index) => {
+      const pad = 0.14;
+      const u = count <= 1 ? 0.5 : pad + ((1 - 2 * pad) * index) / (count - 1);
+      positionOf.set(event.id, chapter.t0 + u * (chapter.t1 - chapter.t0));
+    });
+  }
+}
+
 function eventT(event) {
-  const [start, end] = eventSpan(event);
-  return (yearToT(start) + yearToT(end)) / 2;
+  return positionOf.get(event.id) ?? 0.5;
+}
+
+function fitChapter(id) {
+  const chapter = chapters.find((item) => item.id === id);
+  if (!chapter) return;
+  const span = Math.max(0.045, (chapter.t1 - chapter.t0) * 1.12);
+  animateTo({ t: (chapter.t0 + chapter.t1) / 2, zoom: Math.min(MAX_ZOOM, 1 / span) });
 }
 
 function isRibbon(event) {
@@ -239,7 +254,7 @@ function bookMatches(book) {
   if (filters.type && book.type !== filters.type) return false;
   if (filters.topic && !book.topics.includes(filters.topic)) return false;
   if (filters.era) {
-    const hit = book.eventIds.some((id) => eventsById.get(id)?.era === filters.era);
+    const hit = book.era === filters.era || book.eventIds.some((id) => eventsById.get(id)?.era === filters.era);
     if (!hit) return false;
   }
   return true;
@@ -260,14 +275,29 @@ function readingPath() {
   const groups = new Map();
   for (const book of books) {
     if (!bookMatches(book)) continue;
-    const id = book.primaryEventId;
+    const id = book.primaryEventId || `era:${book.era || "other"}`;
     if (!groups.has(id)) groups.set(id, []);
     groups.get(id).push(book);
   }
   return [...groups.entries()]
-    .map(([id, list]) => ({ event: eventsById.get(id), books: list.sort(compareBooks) }))
+    .map(([id, list]) => {
+      const event = eventsById.get(id);
+      if (event) return { event, books: list.sort(compareBooks), sortKey: event.sortKey ?? 0 };
+      const era = eras.find((item) => id === `era:${item.id}`);
+      return {
+        event: {
+          id: era?.id || id,
+          title: era?.title || "More books",
+          category: "historical",
+          eraOnly: true,
+          sortKey: (era?.sortKey || 99) * 1000,
+        },
+        books: list.sort(compareBooks),
+        sortKey: (era?.sortKey || 99) * 1000,
+      };
+    })
     .filter((group) => group.event)
-    .sort((a, b) => a.event.startYear - b.event.startYear || a.event.title.localeCompare(b.event.title));
+    .sort((a, b) => a.sortKey - b.sortKey || a.event.title.localeCompare(b.event.title));
 }
 
 function matchingEvent(event) {
@@ -399,7 +429,7 @@ function buildStatic() {
       world.append(button);
       spanEls.set(event.id, button);
     } else {
-      const up = event.category === "scripture" || event.category === "today";
+      const up = event.category === "scripture";
       const pin = el("div", {
         class: `pin ${event.category} ${up ? "up" : "down"}${event.alsoHistorical ? " also-historical" : ""}${event.alsoInScripture ? " also-scripture" : ""}`,
         "data-id": event.id,
@@ -445,7 +475,7 @@ function render() {
   const ribbonH = 22;
   const ribbonGap = 6;
   const visibleRibbons = events.filter((event) => isRibbon(event) && event.importance <= rank);
-  visibleRibbons.sort((a, b) => a.importance - b.importance || a.startYear - b.startYear);
+  visibleRibbons.sort((a, b) => a.importance - b.importance || a.sortKey - b.sortKey);
   const rowEnds = [];
   const maxRows = m.height < 520 ? 2 : m.height < 700 ? 3 : 4;
   for (const event of visibleRibbons) {
@@ -494,8 +524,8 @@ function render() {
   const dots = events
     .filter((event) => !isRibbon(event) && event.importance <= rank)
     .map((event) => {
-      const x = yearToT(dotYear(event)) * m.worldWidth;
-      const up = event.category === "scripture" || event.category === "today";
+      const x = eventT(event) * m.worldWidth;
+      const up = event.category === "scripture";
       return { event, x, up, width: labelWidth(labelFor(event)) };
     });
 
@@ -549,32 +579,8 @@ function placeLanes(items, direction, axisY, ribbonBottom, height) {
   }
 }
 
-function renderTicks(m, axisY) {
-  const ticks = [];
-  const t0 = Math.max(0, state.camera.t - 0.5 / state.camera.zoom);
-  const t1 = Math.min(1, state.camera.t + 0.5 / state.camera.zoom);
-  for (const chapter of chapters) {
-    if (chapter.t1 < t0 || chapter.t0 > t1) continue;
-    const years = chapter.endYear - chapter.startYear;
-    const px = (chapter.t1 - chapter.t0) * m.worldWidth;
-    const step = niceStep((90 / (px / years)) || 100);
-    const first = Math.ceil(chapter.startYear / step) * step;
-    for (let year = first; year < chapter.endYear; year += step) {
-      if (year === 0) continue;
-      const x = yearToT(year) * m.worldWidth;
-      if (x < m.origin - 40 || x > m.origin + m.width + 40) continue;
-      ticks.push({ year, x });
-    }
-  }
-  tickLayer.replaceChildren(
-    ...ticks.map((tick) => {
-      const node = el("div", { class: "tick" });
-      node.style.left = `${tick.x}px`;
-      node.style.top = `${axisY + 6}px`;
-      node.append(el("i"), el("span", { text: formatYear(tick.year) }));
-      return node;
-    }),
-  );
+function renderTicks() {
+  tickLayer.replaceChildren();
 }
 
 function renderMinimap() {
@@ -586,17 +592,11 @@ function renderMinimap() {
 }
 
 function renderScale() {
-  const half = 0.5 / state.camera.zoom;
-  const years = Math.max(1, Math.round(tToYear(state.camera.t + half) - tToYear(state.camera.t - half)));
-  const pretty = years >= 100 ? `${Math.round(years / 10) * 10}` : `${years}`;
-  scaleNote.textContent = `About ${pretty} years on this screen. Ancient centuries sit closer together so Creation and today both fit. Zoom in and the years spread out.`;
+  scaleNote.textContent = "Markers follow the story, not a made-up year for Scripture. A historical date appears only when a source gives one. Zoom in to see more.";
 }
 
 function highlightEra() {
-  const year = tToYear(state.camera.t);
-  const hits = eras.filter((era) => year >= era.startYear && year <= era.endYear);
-  hits.sort((a, b) => a.endYear - a.startYear - (b.endYear - b.startYear));
-  const current = hits[0]?.id;
+  const current = (chapters.find((chapter) => state.camera.t >= chapter.t0 && state.camera.t < chapter.t1) || chapters[chapters.length - 1])?.id;
   for (const button of eraBar.querySelectorAll(".era-chip")) {
     if (button.dataset.era === current) button.setAttribute("aria-current", "true");
     else button.removeAttribute("aria-current");
@@ -667,6 +667,7 @@ function renderPanel() {
   body.append(badges, el("p", { class: "when", text: formatWhen(event) }));
   body.append(el("p", { class: "lead", text: leadFor(event) }));
   if (event.yearNote) body.append(el("p", { class: "year-note", text: event.yearNote }));
+  if (event.kidNote) body.append(el("p", { class: "note", text: event.kidNote }));
   if (event.textbookNote) body.append(el("div", { class: "callout", text: event.textbookNote }));
   if (event.scripture?.length) {
     body.append(el("p", { class: "section-label", text: event.category === "scripture" ? "In the Bible" : "Read alongside" }));
@@ -763,7 +764,10 @@ function renderPath() {
   for (const group of groups) {
     const section = el("section", { class: "path-group" });
     const jump = el("button", { type: "button", class: "text-button", text: "Show on timeline" });
-    jump.addEventListener("click", () => focusEvent(group.event.id, true));
+    jump.addEventListener("click", () => {
+      if (group.event.eraOnly) fitChapter(group.event.id);
+      else focusEvent(group.event.id, true);
+    });
     section.append(
       el("h3", { text: group.event.title }),
       el("p", { class: "by", text: `${formatWhen(group.event)} · ${CATEGORY_LABEL[group.event.category]}` }),
@@ -812,7 +816,7 @@ function setupEras() {
       const button = el("button", { type: "button", class: "era-chip", text: era.title });
       button.dataset.era = era.id;
       button.title = era.blurb || era.title;
-      button.addEventListener("click", () => fitYears(era.startYear, era.endYear));
+      button.addEventListener("click", () => fitChapter(era.id));
       return button;
     }),
   );
@@ -974,11 +978,8 @@ function setupBanner() {
       /* private mode */
     }
   });
-  document.getElementById("jump-creation").addEventListener("click", () => fitYears(-4200, -3700));
-  document.getElementById("jump-egypt").addEventListener("click", () => {
-    const egypt = eras.find((era) => era.id === "egypt");
-    if (egypt) fitYears(egypt.startYear, egypt.endYear);
-  });
+  document.getElementById("jump-creation").addEventListener("click", () => fitChapter("primeval"));
+  document.getElementById("jump-egypt").addEventListener("click", () => fitChapter("egypt-near-east"));
 }
 
 function setupPointer() {
@@ -1174,6 +1175,7 @@ async function main() {
   chapters = indexChapters(eventFile.chapters);
   eras = eventFile.eras;
   events = eventFile.events;
+  indexPositions();
   books = bookFile.books;
   eventsById = new Map(events.map((event) => [event.id, event]));
   buildStatic();

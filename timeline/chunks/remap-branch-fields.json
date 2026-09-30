@@ -1,100 +1,6 @@
 {
-  "meta": {
-    "placement": "sortKey",
-    "note": "Scripture and interpretation markers use startYear null. Do not invent a BC year. Historical dates keep Athena's display text in yearLabel. Khufu has no integer year."
-  },
-  "chapters": [
-    {
-      "id": "primeval",
-      "title": "Creation to Babel",
-      "weight": 1.15
-    },
-    {
-      "id": "egypt-near-east",
-      "title": "Ancient Egypt and the Near East",
-      "weight": 1.45
-    },
-    {
-      "id": "israel",
-      "title": "Israel from Sinai to the return",
-      "weight": 1.25
-    },
-    {
-      "id": "greece",
-      "title": "Ancient Greece",
-      "weight": 1.2
-    },
-    {
-      "id": "rome-early-church",
-      "title": "Ancient Rome and the early Church",
-      "weight": 1.25
-    },
-    {
-      "id": "medieval",
-      "title": "Middle Ages, Renaissance, and Reformation",
-      "weight": 1.3
-    },
-    {
-      "id": "early-modern",
-      "title": "Early modern",
-      "weight": 1.35
-    },
-    {
-      "id": "modern",
-      "title": "Modern",
-      "weight": 1.45
-    }
-  ],
-  "eras": [
-    {
-      "id": "primeval",
-      "title": "Creation to Babel",
-      "sortKey": 1,
-      "blurb": "Creation to Babel"
-    },
-    {
-      "id": "egypt-near-east",
-      "title": "Ancient Egypt and the Near East",
-      "sortKey": 2,
-      "blurb": "Ancient Egypt and the Near East"
-    },
-    {
-      "id": "israel",
-      "title": "Israel from Sinai to the return",
-      "sortKey": 2.5,
-      "blurb": "Israel from Sinai to the return"
-    },
-    {
-      "id": "greece",
-      "title": "Ancient Greece",
-      "sortKey": 3,
-      "blurb": "Ancient Greece"
-    },
-    {
-      "id": "rome-early-church",
-      "title": "Ancient Rome and the early Church",
-      "sortKey": 4,
-      "blurb": "Ancient Rome and the early Church"
-    },
-    {
-      "id": "medieval",
-      "title": "Middle Ages, Renaissance, and Reformation",
-      "sortKey": 5,
-      "blurb": "Middle Ages, Renaissance, and Reformation"
-    },
-    {
-      "id": "early-modern",
-      "title": "Early modern",
-      "sortKey": 6,
-      "blurb": "Early modern"
-    },
-    {
-      "id": "modern",
-      "title": "Modern",
-      "sortKey": 7,
-      "blurb": "Modern"
-    }
-  ],
+  "schema": "coffey-timeline-branch-fields/1",
+  "source": "athena-merged-seed",
   "events": [
     {
       "id": "creation",
@@ -1165,6 +1071,1033 @@
         "Christians kept preaching and serving, and some suffered under dictators."
       ],
       "kidNote": "Preview persecution chapters."
+    }
+  ],
+  "books": [
+    {
+      "id": "ancient-egypt-and-her-neighbors",
+      "title": "Ancient Egypt and Her Neighbors",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "egypt-near-east"
+      ],
+      "era": "egypt-near-east",
+      "eventIds": [
+        "great-pyramid",
+        "joseph-in-egypt",
+        "exodus"
+      ],
+      "primaryEventId": "great-pyramid",
+      "blurb": "Creation-friendly family spine. Pair with Genesis–Deuteronomy."
+    },
+    {
+      "id": "the-golden-bull",
+      "title": "The Golden Bull",
+      "author": "Marjorie Cowley",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "egypt-near-east"
+      ],
+      "era": "egypt-near-east",
+      "eventIds": [
+        "ane-abraham-ur"
+      ],
+      "primaryEventId": "ane-abraham-ur",
+      "blurb": "Ur, not Bible history. Pagan temple setting. Already on the Egypt list.",
+      "parentNote": "Ur, not Bible history. Pagan temple setting. Already on the Egypt list."
+    },
+    {
+      "id": "the-story-of-the-greeks",
+      "title": "The Story of the Greeks",
+      "author": "H. A. Guerber",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "greece"
+      ],
+      "era": "greece",
+      "eventIds": [
+        "gr-thermopylae",
+        "gr-salamis",
+        "gr-alexander",
+        "gr-athens-sparta"
+      ],
+      "primaryEventId": "gr-thermopylae",
+      "blurb": "Family narrative spine for Greece."
+    },
+    {
+      "id": "fifty-famous-stories-retold",
+      "title": "Fifty Famous Stories Retold",
+      "author": "James Baldwin",
+      "type": "nonfiction",
+      "ageMin": 3,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "greece"
+      ],
+      "era": "greece",
+      "eventIds": [
+        "gr-thermopylae",
+        "gr-alexander",
+        "ro-horatius"
+      ],
+      "primaryEventId": "gr-thermopylae",
+      "blurb": "Short chapters: the Brave Three Hundred, Alexander, and the Roman virtue stories. The Roman ones are traditional tales."
+    },
+    {
+      "id": "the-children-s-homer",
+      "title": "The Children's Homer",
+      "author": "Padraic Colum",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "greece"
+      ],
+      "era": "greece",
+      "eventIds": [
+        "gr-myths"
+      ],
+      "primaryEventId": "gr-myths",
+      "blurb": "Iliad and Odyssey retold. Myth, not history. Preview the war.",
+      "parentNote": "Iliad and Odyssey retold. Myth, not history. Preview the war."
+    },
+    {
+      "id": "d-aulaires-book-of-greek-myths",
+      "title": "D'Aulaires' Book of Greek Myths",
+      "author": "Ingri and Edgar Parin d'Aulaire",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "greece"
+      ],
+      "era": "greece",
+      "eventIds": [
+        "gr-myths"
+      ],
+      "primaryEventId": "gr-myths",
+      "blurb": "Pagan myths. Preview for artistic nudity.",
+      "parentNote": "Pagan myths. Preview for artistic nudity."
+    },
+    {
+      "id": "archimedes-and-the-door-of-science",
+      "title": "Archimedes and the Door of Science",
+      "author": "Jeanne Bendick",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "greece"
+      ],
+      "era": "greece",
+      "eventIds": [
+        "gr-hellenistic"
+      ],
+      "primaryEventId": "gr-hellenistic",
+      "blurb": "Clean science biography."
+    },
+    {
+      "id": "the-story-of-the-romans",
+      "title": "The Story of the Romans",
+      "author": "H. A. Guerber",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "rome-early-church"
+      ],
+      "era": "rome-early-church",
+      "eventIds": [
+        "ro-augustus-world",
+        "ro-fall-west"
+      ],
+      "primaryEventId": "ro-augustus-world",
+      "blurb": "Narrative companion to the Greek volume."
+    },
+    {
+      "id": "augustus-caesar-s-world",
+      "title": "Augustus Caesar's World",
+      "author": "Genevieve Foster",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "rome-early-church"
+      ],
+      "era": "rome-early-church",
+      "eventIds": [
+        "ro-augustus-world",
+        "ro-jesus"
+      ],
+      "primaryEventId": "ro-augustus-world",
+      "blurb": "Bridges Rome and the Gospel era. Some sections on world religions are secular. Scripture stays the authority for Jesus."
+    },
+    {
+      "id": "the-bronze-bow",
+      "title": "The Bronze Bow",
+      "author": "Elizabeth George Speare",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "rome-early-church"
+      ],
+      "era": "rome-early-church",
+      "eventIds": [
+        "ro-jesus"
+      ],
+      "primaryEventId": "ro-jesus",
+      "blurb": "Roman Judea. Anger, occupation, violence.",
+      "parentNote": "Roman Judea. Anger, occupation, violence."
+    },
+    {
+      "id": "trial-and-triumph",
+      "title": "Trial and Triumph",
+      "author": "Richard Hannula",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "rome-early-church"
+      ],
+      "era": "rome-early-church",
+      "eventIds": [
+        "ro-persecution",
+        "ro-pentecost"
+      ],
+      "primaryEventId": "ro-persecution",
+      "blurb": "Protestant church-history stories. Preview early martyr chapters.",
+      "parentNote": "Protestant church-history stories. Preview early martyr chapters."
+    },
+    {
+      "id": "a-castle-with-many-rooms",
+      "title": "A Castle with Many Rooms",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-middle-ages",
+        "ma-printing",
+        "ma-luther",
+        "ma-reformation"
+      ],
+      "primaryEventId": "ma-middle-ages",
+      "blurb": "Family spine from the fall of Rome through the Reformation."
+    },
+    {
+      "id": "cathedral",
+      "title": "Cathedral",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 3,
+      "ageMax": 6,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-middle-ages"
+      ],
+      "primaryEventId": "ma-middle-ages",
+      "blurb": "How a medieval cathedral was built."
+    },
+    {
+      "id": "the-door-in-the-wall",
+      "title": "The Door in the Wall",
+      "author": "Marguerite de Angeli",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-middle-ages"
+      ],
+      "primaryEventId": "ma-middle-ages",
+      "blurb": "Medieval boy and disability. SCM grades 5–8."
+    },
+    {
+      "id": "adam-of-the-road",
+      "title": "Adam of the Road",
+      "author": "Elizabeth Janet Gray",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-middle-ages"
+      ],
+      "primaryEventId": "ma-middle-ages",
+      "blurb": "A minstrel boy in medieval England."
+    },
+    {
+      "id": "the-bible-smuggler",
+      "title": "The Bible Smuggler",
+      "author": "Louise A. Vernon",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-luther",
+        "ma-printing"
+      ],
+      "primaryEventId": "ma-luther",
+      "blurb": "Tyndale and getting the Bible into English. Persecution, told for children.",
+      "parentNote": "Tyndale and getting the Bible into English. Persecution, told for children."
+    },
+    {
+      "id": "morning-star-of-the-reformation",
+      "title": "Morning Star of the Reformation",
+      "author": "Andy Thompson",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-wycliffe"
+      ],
+      "primaryEventId": "ma-wycliffe",
+      "blurb": "Fictionalized Wycliffe. Black Death and persecution. Preview.",
+      "parentNote": "Fictionalized Wycliffe. Black Death and persecution. Preview."
+    },
+    {
+      "id": "in-freedom-s-cause",
+      "title": "In Freedom's Cause",
+      "author": "G. A. Henty",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "medieval"
+      ],
+      "era": "medieval",
+      "eventIds": [
+        "ma-middle-ages"
+      ],
+      "primaryEventId": "ma-middle-ages",
+      "blurb": "Wallace and Bruce. Victorian war fiction. Preview.",
+      "parentNote": "Wallace and Bruce. Victorian war fiction. Preview."
+    },
+    {
+      "id": "america-our-stories-volume-1",
+      "title": "America: Our Stories, Volume 1",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-columbus",
+        "em-pilgrims",
+        "em-revolution"
+      ],
+      "primaryEventId": "em-columbus",
+      "blurb": "Family American spine through 1812."
+    },
+    {
+      "id": "our-neighbors-their-stories-volume-1",
+      "title": "Our Neighbors: Their Stories, Volume 1",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-columbus",
+        "em-science",
+        "em-waterloo"
+      ],
+      "primaryEventId": "em-columbus",
+      "blurb": "Family world spine for the same era."
+    },
+    {
+      "id": "george-washington-s-world",
+      "title": "George Washington's World",
+      "author": "Genevieve Foster",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-revolution",
+        "em-waterloo"
+      ],
+      "primaryEventId": "em-revolution",
+      "blurb": "The world during Washington's life, including the Revolution."
+    },
+    {
+      "id": "the-landing-of-the-pilgrims",
+      "title": "The Landing of the Pilgrims",
+      "author": "James Daugherty",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-pilgrims"
+      ],
+      "primaryEventId": "em-pilgrims",
+      "blurb": "Landmark-style Bradford and Mayflower narrative."
+    },
+    {
+      "id": "the-ocean-of-truth",
+      "title": "The Ocean of Truth",
+      "author": "Joyce McPherson",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-science"
+      ],
+      "primaryEventId": "em-science",
+      "blurb": "Newton. Prefer this over biographies that add deep time."
+    },
+    {
+      "id": "poor-richard",
+      "title": "Poor Richard",
+      "author": "James Daugherty",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-revolution"
+      ],
+      "primaryEventId": "em-revolution",
+      "blurb": "Franklin. One chapter has dated wording about Native peoples. Preview.",
+      "parentNote": "Franklin. One chapter has dated wording about Native peoples. Preview."
+    },
+    {
+      "id": "the-sign-of-the-beaver",
+      "title": "The Sign of the Beaver",
+      "author": "Elizabeth George Speare",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "em-pilgrims"
+      ],
+      "primaryEventId": "em-pilgrims",
+      "blurb": "A boy and a Native friend on the Maine frontier. Not the 1620 landing itself."
+    },
+    {
+      "id": "america-our-stories-volume-2",
+      "title": "America: Our Stories, Volume 2",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-civil-war",
+        "mo-ww1",
+        "mo-ww2",
+        "mo-civil-rights",
+        "mo-apollo"
+      ],
+      "primaryEventId": "mo-civil-war",
+      "blurb": "Family American spine for modern times. Pace the wars for little ones.",
+      "parentNote": "Family American spine for modern times. Pace the wars for little ones."
+    },
+    {
+      "id": "our-neighbors-our-stories-volume-2",
+      "title": "Our Neighbors: Our Stories, Volume 2",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-ww1",
+        "mo-ww2",
+        "mo-church"
+      ],
+      "primaryEventId": "mo-ww1",
+      "blurb": "Family world spine. Same war caution. Confirm the subtitle on the SCM page: the store lists it with the Modern Times pack.",
+      "parentNote": "Family world spine. Same war caution. Confirm the subtitle on the SCM page: the store lists it with the Modern Times pack."
+    },
+    {
+      "id": "abraham-lincoln",
+      "title": "Abraham Lincoln",
+      "author": "Ingri and Edgar Parin d'Aulaire",
+      "type": "nonfiction",
+      "ageMin": 3,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-civil-war"
+      ],
+      "primaryEventId": "mo-civil-war",
+      "blurb": "Picture biography."
+    },
+    {
+      "id": "team-moon",
+      "title": "Team Moon",
+      "author": "Catherine Thimmesh",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-apollo"
+      ],
+      "primaryEventId": "mo-apollo",
+      "blurb": "How 400,000 people landed Apollo 11."
+    },
+    {
+      "id": "across-five-aprils",
+      "title": "Across Five Aprils",
+      "author": "Irene Hunt",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-civil-war"
+      ],
+      "primaryEventId": "mo-civil-war",
+      "blurb": "Civil War home front. Grief, not sensational.",
+      "parentNote": "Civil War home front. Grief, not sensational."
+    },
+    {
+      "id": "louis-pasteur-founder-of-modern-medicine",
+      "title": "Louis Pasteur: Founder of Modern Medicine",
+      "author": "John Hudson Tiner",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [],
+      "blurb": "Biography that keeps Pasteur's Christian faith in view."
+    },
+    {
+      "id": "rescue-and-redeem",
+      "title": "Rescue and Redeem",
+      "author": "Mindy and Brandon Withrow",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-church"
+      ],
+      "primaryEventId": "mo-church",
+      "blurb": "Church figures from 1864 to 2005. Preview persecution.",
+      "parentNote": "Church figures from 1864 to 2005. Preview persecution."
+    },
+    {
+      "id": "never-give-in",
+      "title": "Never Give In",
+      "author": "Stephen Mansfield",
+      "type": "nonfiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "mo-ww1",
+        "mo-ww2"
+      ],
+      "primaryEventId": "mo-ww1",
+      "blurb": "Churchill. War leadership, keep the talk age-fit.",
+      "parentNote": "Churchill. War leadership, keep the talk age-fit."
+    },
+    {
+      "id": "the-child-s-story-bible",
+      "title": "The Child's Story Bible",
+      "author": "Catherine Vos",
+      "type": "nonfiction",
+      "ageMin": 3,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "era": "israel",
+      "eventIds": [
+        "israel-sinai-law",
+        "israel-joshua-land",
+        "israel-judges",
+        "israel-united-kingdom",
+        "israel-divided-kingdom",
+        "israel-exile",
+        "israel-return"
+      ],
+      "primaryEventId": "israel-sinai-law",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "victory-on-the-walls",
+      "title": "Victory on the Walls",
+      "author": "Frieda Clark Hyman",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "era": "israel",
+      "eventIds": [
+        "israel-return"
+      ],
+      "primaryEventId": "israel-return",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "hittite-warrior",
+      "title": "Hittite Warrior",
+      "author": "Joanne Williamson",
+      "type": "nonfiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "era": "israel",
+      "eventIds": [
+        "israel-judges"
+      ],
+      "primaryEventId": "israel-judges",
+      "blurb": "Preview. Dark pagan setting.",
+      "parentNote": "Preview with a parent before you assign this. Preview. Dark pagan setting."
+    },
+    {
+      "id": "the-days-of-elijah",
+      "title": "The Days of Elijah",
+      "author": "John Noble",
+      "type": "nonfiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "era": "israel",
+      "eventIds": [
+        "israel-divided-kingdom"
+      ],
+      "primaryEventId": "israel-divided-kingdom",
+      "blurb": "Some violence.",
+      "parentNote": "Preview with a parent before you assign this. Some violence."
+    },
+    {
+      "id": "a-more-perfect-union",
+      "title": "A More Perfect Union",
+      "author": "Betsy and Giulio Maestro",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "us-constitution-1787"
+      ],
+      "primaryEventId": "us-constitution-1787",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "give-me-liberty",
+      "title": "Give Me Liberty",
+      "author": "Russell Freedman",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "us-constitution-1787"
+      ],
+      "primaryEventId": "us-constitution-1787",
+      "blurb": "Declaration, not the Convention itself."
+    },
+    {
+      "id": "amos-fortune-free-man",
+      "title": "Amos Fortune, Free Man",
+      "author": "Elizabeth Yates",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "us-slavery-abolition"
+      ],
+      "primaryEventId": "us-slavery-abolition",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "minty",
+      "title": "Minty",
+      "author": "Alan Schroeder",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "us-slavery-abolition"
+      ],
+      "primaryEventId": "us-slavery-abolition",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "freedom-train",
+      "title": "Freedom Train",
+      "author": "Dorothy Sterling",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 11,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "us-slavery-abolition"
+      ],
+      "primaryEventId": "us-slavery-abolition",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "how-we-crossed-the-west",
+      "title": "How We Crossed the West",
+      "author": "Rosalyn Schanzer",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "us-louisiana-lewis-clark-1803"
+      ],
+      "primaryEventId": "us-louisiana-lewis-clark-1803",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "of-courage-undaunted",
+      "title": "Of Courage Undaunted",
+      "author": "James Daugherty",
+      "type": "nonfiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "early-modern"
+      ],
+      "era": "early-modern",
+      "eventIds": [
+        "us-louisiana-lewis-clark-1803"
+      ],
+      "primaryEventId": "us-louisiana-lewis-clark-1803",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "bound-for-oregon",
+      "title": "Bound for Oregon",
+      "author": "Jean Van Leeuwen",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "us-oregon-trail"
+      ],
+      "primaryEventId": "us-oregon-trail",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "mill",
+      "title": "Mill",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "industry-mills"
+      ],
+      "primaryEventId": "industry-mills",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "the-brooklyn-bridge",
+      "title": "The Brooklyn Bridge",
+      "author": "Elizabeth Mann",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "industry-brooklyn-bridge"
+      ],
+      "primaryEventId": "industry-brooklyn-bridge",
+      "blurb": "A children's book for this part of the story."
+    },
+    {
+      "id": "kids-at-work",
+      "title": "Kids at Work",
+      "author": "Russell Freedman",
+      "type": "nonfiction",
+      "ageMin": 13,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [
+        "industry-child-labor"
+      ],
+      "primaryEventId": "industry-child-labor",
+      "blurb": "Preview the photos.",
+      "parentNote": "Preview with a parent before you assign this. Preview the photos."
+    },
+    {
+      "id": "coolies",
+      "title": "Coolies",
+      "author": "Yin",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "era": "modern",
+      "eventIds": [],
+      "blurb": "Chinese railroad workers. Not a mill book."
     }
   ]
 }

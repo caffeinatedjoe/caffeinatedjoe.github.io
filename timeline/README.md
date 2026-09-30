@@ -6,7 +6,7 @@ The page is static. GitHub Pages can serve it at `/timeline/` with no build step
 
 ## For people adding content
 
-Edit the JSON. Do not invent books, dates, or events. If a date is traditional, uncertain, or moved so it sits after the Flood on this map, say so in the fields below. The page turns those fields into badges.
+Edit the JSON. Do not invent books or years. Scripture does not need a year. The page places markers by `sortKey` inside each era, and it prints `yearLabel` when a source gives display text.
 
 Check the files before you commit:
 
@@ -20,10 +20,10 @@ Top-level keys:
 
 | Key | Purpose |
 | --- | --- |
-| `meta.minYear` / `meta.maxYear` | Edges of the map. Chapters must cover this range with no gaps. |
-| `chapters` | Background bands. Time is **not** an equal number of pixels per year. Each chapter gets a share of the width from its `weight`, and years are linear inside the chapter. Ancient centuries are packed closer so Creation and today fit together. Zoom spreads them out. |
-| `eras` | The period buttons and the parent filter. Ranges may overlap. `id` is what books and events point at. |
-| `events` | Every marker and ribbon. |
+| `meta.placement` | `sortKey`. Markers are ordered by story, not by an invented year. |
+| `chapters` | Background bands, one per era. Each chapter's `weight` is its share of the width. |
+| `eras` | The period buttons and the parent filter. `id` matches the chapter id. `sortKey` is the era order. |
+| `events` | Every marker. |
 
 Each event:
 
@@ -32,14 +32,14 @@ Each event:
 | `id` | yes | Stable slug. Books and `relatedIds` use it. |
 | `title` | yes | Full name in the panel. |
 | `shortTitle` | no | Map label. Defaults to `title`. |
-| `kind` | yes | `person`, `event`, `civilization`, `period`, or `culture`. Civilizations, periods, and cultures with an `endYear` draw as ribbons. People and events draw as dots. A person with a life span is still a dot, placed at the middle year. The panel shows the whole span. |
-| `category` | yes | `scripture` (the Bible tells this), `historical` (records tell this), `interpretation` (a proposed date or connection, not settled fact), or `today` (only the present-day pin). |
-| `alsoHistorical` | no | Adds a Historical badge on a Scripture marker, as with the fall of Samaria. |
-| `alsoInScripture` | no | Adds a Scripture badge on a historical marker, as with Sennacherib in 701 BC. |
+| `kind` | yes | `person`, `event`, `civilization`, `period`, or `culture`. The seed uses `event` dots. |
+| `category` | yes | Only three: `scripture`, `historical`, or `interpretation`. |
 | `era` | yes | One era id. This is what the parent period filter uses. |
-| `startYear` | yes | Integer. Negative means BC. There is no year 0; the scale simply steps from -1 to 1. |
-| `endYear` | no | Include it for a span. Ribbons need it. |
-| `dateBasis` | yes | `historical` (no extra chip), `traditional-chronology` (chip: Traditional date), `approximate` (chip: Date uncertain), `chronology-alignment` (chip: Placed after the Flood). |
+| `sortKey` | yes | Number. Global story order. The first Greece marker is `gr-athens-sparta` at `112`. Israel uses 105–111, so Greece starts after Israel. |
+| `startYear` | no | Integer, or `null`. **Scripture and interpretation must stay `null`.** Do not invent a BC year. A historical event may store an integer only when the source states that year or an explicit numeric range. |
+| `endYear` | no | Integer end of an explicit range, such as 1861–1865. Omit it when the label is a century or a phrase. |
+| `yearLabel` | no | The date words to show, copied from the source. Khufu's label is `early 25th century BCE` and his `startYear` is `null`. |
+| `dateBasis` | no | Optional. The seed uses `historical` when a historical marker has display text. Omit it for Scripture. |
 | `importance` | yes | `1` shows on the full map. `2` appears after a little zoom. `3` appears on an era jump such as Egypt. `4` appears only when zoomed in close. |
 | `summary` | yes | One sentence for the hover tip. |
 | `context` | yes | Array of short paragraphs for children. |
@@ -52,12 +52,13 @@ Each event:
 
 Interpretation markers must say, in the summary or context, that the claim is not settled fact. The validator checks for that.
 
-Chronology already in the seed:
+The remapped seed is `chunks/remap-branch-fields.json` (54 events, 49 books). `data/events.json` and `data/books.json` are what the page loads.
 
-- Creation **4004 BC** and the Flood **2348 BC** are James Ussher's dates. The Bible gives the story and the genealogies, not those BC numbers.
-- From Abraham through the Exodus, years follow a common conservative count with the Exodus in **1446 BC** (1 Kings 6:1). A separate interpretation marker shows the other common idea, an Exodus near **1250 BC**.
-- The pyramids and the start of the Egypt bar are kept **after** this map's Flood. Panels give the usual textbook dates and label the placement as interpretation.
-- From the kings of Israel onward, dates mostly match ordinary history books.
+- Scripture markers have `startYear: null`. The Bible's story is not given a BC number.
+- Khufu and the Great Pyramid are **historical**. The panel shows `early 25th century BCE`. There is no integer year on that marker.
+- Interpretation markers also keep `startYear` null. They must say they are not settled fact. The page does not pick an Exodus pharaoh or an Exodus year.
+- Do not add Gilgamesh the Hero; Mara, Daughter of the Nile; Story of the World volumes 1–4; Mummies in the Morning; Mummies and Pyramids; Viking Ships at Sunrise; Mummies Made in Egypt; or The Bobbin Girl.
+- Keep these Lambert titles distinct: *America: Our Stories, Volume 1*; *Our Neighbors: Their Stories, Volume 1*; *America: Our Stories, Volume 2*; *Our Neighbors: Our Stories, Volume 2*.
 
 Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or curse-heavy books.
 
