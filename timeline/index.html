@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Creation to Today</title>
+  <meta name="description" content="An interactive history timeline for children, from Creation to the present. Scripture, documented history, and interpretations are labeled differently, with a parent reading path of real children's books.">
+  <meta name="theme-color" content="#1b2a4a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/timeline.css">
+</head>
+<body>
+  <a class="skip" href="#viewport">Skip to timeline</a>
+
+  <header class="site-header">
+    <a class="home-link" href="../">Joe's site</a>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">★</span>
+      <div>
+        <h1>Creation to Today</h1>
+        <p>A timeline of the Bible and world history</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="search">
+        <label class="sr-only" for="search">Search people and events</label>
+        <input id="search" type="search" placeholder="Search people and events" autocomplete="off" enterkeyhint="search">
+        <ul id="search-results" class="search-results" role="listbox" hidden></ul>
+      </div>
+      <button type="button" id="parent-toggle" class="header-button" aria-pressed="false" aria-controls="parent-bar">Parent tools</button>
+      <button type="button" id="help-button" class="header-button">Help</button>
+    </div>
+  </header>
+
+  <section id="parent-bar" class="parent-bar" hidden aria-label="Parent filters">
+    <label>Age
+      <input id="filter-age" type="number" inputmode="numeric" min="4" max="18" placeholder="Any">
+    </label>
+    <label>Reading
+      <select id="filter-level">
+        <option value="">Any level</option>
+        <option value="read-aloud">Read-aloud</option>
+        <option value="early-reader">Early reader</option>
+        <option value="independent">Independent</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </label>
+    <label>Books
+      <select id="filter-type">
+        <option value="">Fiction and nonfiction</option>
+        <option value="nonfiction">Nonfiction</option>
+        <option value="fiction">Fiction</option>
+      </select>
+    </label>
+    <label>Period
+      <select id="filter-era">
+        <option value="">All periods</option>
+      </select>
+    </label>
+    <label>Topic
+      <select id="filter-topic">
+        <option value="">All topics</option>
+      </select>
+    </label>
+    <button type="button" id="path-button" class="path-button">Reading path</button>
+    <button type="button" id="clear-filters" class="text-button">Clear</button>
+  </section>
+
+  <nav id="era-bar" class="era-bar" aria-label="Jump to a period"></nav>
+  <p id="scale-note" class="scale-note">Years are packed closer in ancient times so the whole story fits. Zoom in and they spread out.</p>
+
+  <div class="stage">
+    <div id="viewport" class="viewport" tabindex="0" role="region" aria-label="History timeline. Drag to move through time. Zoom to reveal more. Activate a marker for the story and books.">
+      <div id="world" class="world"></div>
+      <div class="legend" aria-hidden="false">
+        <span class="legend-item scripture"><i></i> Scripture</span>
+        <span class="legend-item historical"><i></i> Historical</span>
+        <span class="legend-item interpretation"><i></i> Interpretation</span>
+      </div>
+      <div class="zoom-controls" aria-label="Zoom">
+        <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+        <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+        <button type="button" id="zoom-fit" aria-label="Show the whole timeline">All</button>
+      </div>
+      <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+    </div>
+
+    <div id="banner" class="banner">
+      <p>Drag to travel. Zoom in and more of the story appears. Gold stars are in the Bible, teal dots are history, purple diamonds are ideas — not settled facts.</p>
+      <div class="banner-actions">
+        <button type="button" id="jump-creation">Start at Creation</button>
+        <button type="button" id="jump-egypt">Explore Egypt</button>
+        <button type="button" id="dismiss-banner" class="text-button">OK</button>
+      </div>
+    </div>
+
+    <div id="minimap" class="minimap" aria-label="Overview of the whole timeline">
+      <div id="minimap-track" class="minimap-track"></div>
+      <div id="minimap-window" class="minimap-window"></div>
+    </div>
+  </div>
+
+  <aside id="panel" class="panel" aria-labelledby="panel-title" hidden></aside>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+
+  <div id="help-scrim" class="scrim" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <div class="modal-head">
+        <h2 id="help-title">How to use this timeline</h2>
+        <button type="button" id="help-close" class="icon-button" aria-label="Close help">×</button>
+      </div>
+      <div class="modal-body">
+        <h3>Explore</h3>
+        <p>Drag the timeline to travel. On a phone, one finger drags and two fingers pinch to zoom. The buttons on the map zoom in, zoom out, and show everything from Creation to today. Zooming in reveals more people, places, and events. You can also jump with the period buttons or search for a name.</p>
+        <h3>Three kinds of markers</h3>
+        <p><strong>Scripture</strong> — the Bible tells this. <strong>Historical</strong> — records from history tell this. <strong>Interpretation</strong> — a careful idea about a date or a connection. Purple diamonds are never presented as settled fact.</p>
+        <p>Some markers carry two badges. The fall of Samaria, for example, is in the Bible and in Assyrian records.</p>
+        <h3>How dates work</h3>
+        <p>The line is not an equal number of pixels per year. Ancient centuries sit closer together so Creation and today share one map. Zoom in and the years spread apart. The note under the period buttons tells you how many years are on screen.</p>
+        <p>Creation is placed at 4004 BC and the Flood at 2348 BC. Those are James Ussher’s traditional dates, read from the Genesis genealogies. The Bible gives the story and the generations. It does not print those BC numbers.</p>
+        <p>From Abraham to the Exodus, this map uses a common conservative chronology with the Exodus in 1446 BC, counting 480 years before Solomon’s temple from 1 Kings 6:1. A separate purple marker shows the other common idea: an Exodus near 1250 BC.</p>
+        <p>Where a textbook date would put Egypt’s pyramids before this map’s Flood, the pyramid marker stays after the Flood and the panel tells the textbook date. That placement is labeled Interpretation.</p>
+        <p>From the kings of Israel onward, most dates match ordinary history books, such as 722, 701, and 586 BC.</p>
+        <h3>Parent tools</h3>
+        <p>Filter books by a child’s age, reading level, fiction or nonfiction, period, and topic. Reading path lines those books up in timeline order. It is a path, not a dump of every title. Notes flag war, slavery, myths, and older attitudes. This library leaves out evolution taught as fact, and it leaves out vulgar or sexual material.</p>
+        <h3>Keyboard</h3>
+        <p>Arrow keys move. Plus and minus zoom. Home shows the whole timeline. Tab reaches markers. Enter opens one. Escape closes the panel or this help.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading" class="loading" role="status">Unrolling the timeline…</div>
+  <noscript><p class="noscript">This timeline needs JavaScript to explore. The reading list on the home page still works without it.</p></noscript>
+  <script type="module" src="js/timeline.js"></script>
+</body>
+</html>
