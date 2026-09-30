@@ -1,0 +1,566 @@
+{
+  "schema": "coffey-timeline-remap/1",
+  "chunk": "world-arcs-pass-1",
+  "note": "Dense WORLD historical nodes where the live seed was thin: medieval Europe specifics, a short China dynasty arc, Mongols, WWI/WWII specifics around the existing whole-war nodes, India 1947. Almost all historical. No church-history-as-subject titles. Castle with Many Rooms already shipping covers Charlemagne/Norman/Black Death/Constantinople as family spine—do not re-add it. Books only where a page opened this pass gave age and a clean-enough read for this house.",
+  "source": "Britannica event pages for years; Common Sense Media, Ignatius Press, Penguin Random House, Kirkus, History Unboxed, Squeaky Clean Reviews for books",
+  "events": [
+    {
+      "id": "cn-qin-unification",
+      "title": "Qin unifies China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "sortKey": 157,
+      "startYear": -221,
+      "dateBasis": "historical",
+      "year": "221 BCE",
+      "yearNote": "Britannica Qin dynasty: first great Chinese empire, lasting 221–207 BCE; Qin Shi Huang creator of the first unified Chinese empire, reigned 221–210 BCE.",
+      "importance": 2,
+      "summary": "The state of Qin conquers the last rival states and forms one Chinese empire under the First Emperor.",
+      "context": [
+        "History, not Scripture. Short, hard dynasty after a long age of warring states.",
+        "Later dynasties kept much of the Qin pattern of rule."
+      ],
+      "source": "https://www.britannica.com/topic/Qin-dynasty"
+    },
+    {
+      "id": "cn-tang-dynasty",
+      "title": "Tang dynasty in China",
+      "kind": "period",
+      "category": "historical",
+      "era": "china",
+      "sortKey": 233,
+      "startYear": 618,
+      "endYear": 907,
+      "dateBasis": "historical",
+      "year": "618–907 CE",
+      "yearNote": "Britannica Tang dynasty: 618–907 CE, a cultural and artistic flowering often called a golden age.",
+      "importance": 3,
+      "summary": "The Tang dynasty rules China in a long stretch known for strong government, trade, and the arts.",
+      "context": [
+        "One spine stop on a short China arc. Not a theology of China."
+      ],
+      "source": "https://www.britannica.com/topic/Tang-dynasty"
+    },
+    {
+      "id": "ma-charlemagne",
+      "title": "Charlemagne crowned emperor",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 234,
+      "startYear": 800,
+      "dateBasis": "historical",
+      "year": "25 December 800",
+      "yearNote": "Britannica: on Christmas Day of 800, Pope Leo III crowned Charlemagne emperor of the Romans. Charlemagne page lists him emperor 800–814.",
+      "importance": 2,
+      "summary": "Pope Leo III crowns Charlemagne emperor in Rome on Christmas Day.",
+      "context": [
+        "Western Europe gains an imperial title after the fall of Rome in the West.",
+        "A Castle with Many Rooms (already shipping) treats Charlemagne in its Middle Ages spine."
+      ],
+      "source": "https://www.britannica.com/biography/Charlemagne"
+    },
+    {
+      "id": "ma-norman-conquest",
+      "title": "Norman Conquest",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 236,
+      "startYear": 1066,
+      "dateBasis": "historical",
+      "year": "1066",
+      "yearNote": "Britannica Norman Conquest: decisive victory at Hastings on October 14, 1066; Quick Facts date 1066–1071.",
+      "importance": 2,
+      "summary": "William of Normandy defeats Harold at Hastings and takes the English crown.",
+      "context": [
+        "Battle and conquest. Keep the kid summary short; no graphic blow-by-blow."
+      ],
+      "source": "https://www.britannica.com/event/Norman-Conquest"
+    },
+    {
+      "id": "as-mongol-empire",
+      "title": "Mongol Empire",
+      "kind": "period",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 240,
+      "startYear": 1206,
+      "endYear": 1368,
+      "dateBasis": "historical",
+      "year": "1206–1368",
+      "yearNote": "Britannica Mongol empire: founded by Genghis Khan in 1206; Quick Facts date 1206–1368; largest contiguous land empire in history.",
+      "importance": 2,
+      "summary": "Genghis Khan and his heirs build a vast land empire from East Asia deep into the west.",
+      "context": [
+        "Conquest on a huge scale. Age-gate any book that dwells on cruelty."
+      ],
+      "source": "https://www.britannica.com/topic/Mongol-empire"
+    },
+    {
+      "id": "ma-black-death",
+      "title": "The Black Death",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 246,
+      "startYear": 1347,
+      "endYear": 1351,
+      "dateBasis": "historical",
+      "year": "1347–1351",
+      "yearNote": "Britannica Black Death: pandemic that ravaged Europe between 1347 and 1351; Quick Facts date 1347–1351.",
+      "importance": 2,
+      "summary": "A great plague sweeps Europe. Many die. Towns and farms are left thin.",
+      "context": [
+        "True and sad. No graphic disease detail in the kid-facing summary.",
+        "Magna Carta (1215) already on the map before this node."
+      ],
+      "source": "https://www.britannica.com/event/Black-Death"
+    },
+    {
+      "id": "ma-fall-constantinople",
+      "title": "Fall of Constantinople",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 258,
+      "startYear": 1453,
+      "dateBasis": "historical",
+      "year": "29 May 1453",
+      "yearNote": "Britannica Fall of Constantinople: May 29, 1453; Ottoman Sultan Mehmed II takes the city after a long siege; Byzantine Empire ends.",
+      "importance": 2,
+      "summary": "Ottoman forces take Constantinople. The Byzantine Empire ends.",
+      "context": [
+        "Siege and conquest. Keep the summary plain.",
+        "Gutenberg's press (already on the map) sits in the same decade."
+      ],
+      "source": "https://www.britannica.com/event/Fall-of-Constantinople-1453"
+    },
+    {
+      "id": "cn-1911-revolution",
+      "title": "Chinese Revolution of 1911",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "sortKey": 360,
+      "startYear": 1911,
+      "endYear": 1912,
+      "dateBasis": "historical",
+      "year": "1911–1912",
+      "yearNote": "Britannica Chinese Revolution: October 10, 1911–February 12, 1912; overthrew the Qing dynasty and created a republic.",
+      "importance": 2,
+      "summary": "Revolt ends Qing rule and China becomes a republic.",
+      "context": [
+        "Start of a hard modern century in China. Later nodes pick up 1949."
+      ],
+      "source": "https://www.britannica.com/event/Chinese-Revolution-1911-1912"
+    },
+    {
+      "id": "mo-ww1-begins",
+      "title": "World War I begins",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 361,
+      "startYear": 1914,
+      "dateBasis": "historical",
+      "year": "28 July 1914",
+      "yearNote": "Britannica World War I Quick Facts: Date July 28, 1914–November 11, 1918.",
+      "importance": 2,
+      "summary": "Austria-Hungary goes to war. The conflict spreads across Europe.",
+      "context": [
+        "Specific start node beside the whole-war card mo-ww1 (already on the map).",
+        "Only a Dog and Never Give In already ship for the war as a whole."
+      ],
+      "source": "https://www.britannica.com/event/World-War-I"
+    },
+    {
+      "id": "mo-ww1-us-entry",
+      "title": "United States enters World War I",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 363,
+      "startYear": 1917,
+      "dateBasis": "historical",
+      "year": "6 April 1917",
+      "yearNote": "Britannica WWI U.S. entry section: House approved the war resolution on April 6; presidential declaration of war followed immediately.",
+      "importance": 2,
+      "summary": "The United States declares war on Germany and joins the Allies.",
+      "context": [
+        "Slots after the whole-war node mo-ww1."
+      ],
+      "source": "https://www.britannica.com/event/World-War-I/The-U-S-entry-into-the-war"
+    },
+    {
+      "id": "mo-ww1-versailles",
+      "title": "Treaty of Versailles",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 364,
+      "startYear": 1919,
+      "dateBasis": "historical",
+      "year": "28 June 1919",
+      "yearNote": "Britannica Treaty of Versailles: signed June 28, 1919, in the Hall of Mirrors; took force January 10, 1920.",
+      "importance": 2,
+      "summary": "The Allies and Germany sign the peace treaty that ends World War I on paper.",
+      "context": [
+        "Hard terms on Germany. Later trouble grows from this settlement."
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Versailles-1919"
+    },
+    {
+      "id": "mo-ww2-poland",
+      "title": "Germany invades Poland",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 371,
+      "startYear": 1939,
+      "dateBasis": "historical",
+      "year": "1 September 1939",
+      "yearNote": "Britannica Invasion of Poland: Nazi Germany invaded from September 1 to October 5, 1939; marks the start of World War II.",
+      "importance": 2,
+      "summary": "Germany invades Poland. Britain and France go to war. World War II begins in Europe.",
+      "context": [
+        "Specific start node beside the whole-war card mo-ww2 (already on the map)."
+      ],
+      "source": "https://www.britannica.com/event/Invasion-of-Poland"
+    },
+    {
+      "id": "mo-ww2-pearl-harbor",
+      "title": "Attack on Pearl Harbor",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 373,
+      "startYear": 1941,
+      "dateBasis": "historical",
+      "year": "7 December 1941",
+      "yearNote": "Britannica Pearl Harbor attack: December 7, 1941; Japanese surprise attack on the U.S. naval base in Hawaii.",
+      "importance": 2,
+      "summary": "Japan attacks the U.S. fleet at Pearl Harbor. The United States enters World War II.",
+      "context": [
+        "Pacific war opens for America. Keep the summary short; no graphic casualty lists."
+      ],
+      "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+      "id": "mo-ww2-dday",
+      "title": "D-Day: Normandy Invasion",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 374,
+      "startYear": 1944,
+      "dateBasis": "historical",
+      "year": "6 June 1944",
+      "yearNote": "Britannica Normandy Invasion: launched on June 6, 1944 (D-Day); Allied landings on five Normandy beachheads.",
+      "importance": 2,
+      "summary": "Allied troops land in Normandy, France, and open a major front in western Europe.",
+      "context": [
+        "Battle day. Age-gate books; no graphic beach detail in the kid summary."
+      ],
+      "source": "https://www.britannica.com/event/Normandy-Invasion"
+    },
+    {
+      "id": "mo-holocaust",
+      "title": "The Holocaust",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 370,
+      "startYear": 1933,
+      "endYear": 1945,
+      "dateBasis": "historical",
+      "year": "1933–1945",
+      "yearNote": "Britannica Holocaust Quick Facts: Date 1933–1945. Systematic state-sponsored killing of six million Jewish people and millions of others by Nazi Germany and collaborators. Placed before the 1939 Poland node because Britannica dates the Holocaust from 1933.",
+      "importance": 2,
+      "summary": "Nazi Germany murders millions of Jewish men, women, and children, and many others. It is true. Tell it carefully by age.",
+      "context": [
+        "Atrocity node. Kid-facing summary stays plain. No graphic detail.",
+        "Books on this node must be age-gated or previewOnly."
+      ],
+      "source": "https://www.britannica.com/event/Holocaust"
+    },
+    {
+      "id": "mo-ww2-ends",
+      "title": "World War II ends",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 376,
+      "startYear": 1945,
+      "dateBasis": "historical",
+      "year": "2 September 1945",
+      "yearNote": "Britannica World War II Quick Facts: Date September 3, 1939–September 2, 1945. V-E Day page notes Germany’s surrender celebrated May 8, 1945; the war’s listed end date is September 2, 1945.",
+      "importance": 2,
+      "summary": "Fighting ends. Japan’s formal surrender closes the worldwide war.",
+      "context": [
+        "Europe’s victory day came in May; the listed end of the war is September 2."
+      ],
+      "source": "https://www.britannica.com/event/World-War-II"
+    },
+    {
+      "id": "mo-india-independence",
+      "title": "Independence and partition of India",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 377,
+      "startYear": 1947,
+      "dateBasis": "historical",
+      "year": "15 August 1947",
+      "yearNote": "Britannica Partition of India: Indian Independence Act July 18, 1947; took effect August 15, 1947; India and Pakistan become independent amid mass displacement and communal violence.",
+      "importance": 2,
+      "summary": "British rule ends. India and Pakistan become independent. Many families must flee.",
+      "context": [
+        "Joy and grief together. Age-gate books that show the violence of partition."
+      ],
+      "source": "https://www.britannica.com/event/Partition-of-India"
+    },
+    {
+      "id": "cn-prc-1949",
+      "title": "People’s Republic of China founded",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "sortKey": 378,
+      "startYear": 1949,
+      "dateBasis": "historical",
+      "year": "1 October 1949",
+      "yearNote": "Britannica Chinese Civil War: Mao proclaimed the People’s Republic of China on October 1, 1949, capital Beijing. Civil War span given as 1945–49.",
+      "importance": 2,
+      "summary": "After civil war, Mao Zedong proclaims the People’s Republic of China.",
+      "context": [
+        "Closes this short China arc that began with Qin unification.",
+        "Not a devotion book. History of a modern state."
+      ],
+      "source": "https://www.britannica.com/event/Chinese-Civil-War"
+    }
+  ],
+  "books": [
+    {
+      "id": "the-great-wall-mann",
+      "title": "The Great Wall",
+      "author": "Elizabeth Mann",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "eventIds": [
+        "cn-qin-unification",
+        "as-mongol-empire"
+      ],
+      "primaryEventId": "cn-qin-unification",
+      "blurb": "Picture-heavy Wonders of the World book on why and how China built the wall, and how it failed to keep the north out.",
+      "parentNote": "War and invasion are in the story. Kirkus notes a fold-out of an attack on the wall. Not a cozy picture book for the baby and toddler.",
+      "source": "https://www.kirkusreviews.com/book-reviews/elizabeth-mann/the-great-wall/"
+    },
+    {
+      "id": "g-is-for-genghis-khan",
+      "title": "G is for Genghis Khan",
+      "author": "History Unboxed",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "as-mongol-empire"
+      ],
+      "primaryEventId": "as-mongol-empire",
+      "blurb": "Alphabetical picture introduction to Genghis Khan and the Mongol Empire, with adult notes beside simpler kid text.",
+      "parentNote": "Publisher rates it Theme Level 3: moderate violence or conflict themes. Read-aloud so you can skip or explain. Not a graphic war book, but conquest is the subject.",
+      "source": "https://historyunboxed.com/product/g-is-for-genghis-khan-paperback/"
+    },
+    {
+      "id": "winged-watchman",
+      "title": "The Winged Watchman",
+      "author": "Hilda van Stockum",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "eventIds": [
+        "mo-ww2-poland",
+        "mo-ww2-ends"
+      ],
+      "primaryEventId": "mo-ww2-poland",
+      "blurb": "A Dutch family in an old windmill lives under Nazi occupation: hiding, courage, and ordinary family life under pressure.",
+      "parentNote": "Occupation, a hidden Jewish child, a downed RAF pilot, and underground danger. Ignatius lists ages 10 and up. Preview before a mixed-age read-aloud with kids under 10.",
+      "source": "https://ignatius.com/the-winged-watchman-wingp/"
+    },
+    {
+      "id": "snow-treasure",
+      "title": "Snow Treasure",
+      "author": "Marie McSwigan",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "eventIds": [
+        "mo-ww2-poland"
+      ],
+      "primaryEventId": "mo-ww2-poland",
+      "blurb": "Norwegian children sled gold past Nazi guards to keep their country’s treasure out of enemy hands.",
+      "parentNote": "Danger and arrest risk. Squeaky Clean Reviews: little on-page violence; one character arrested and at risk of execution; brief talk of Nazi brutality in Poland. Penguin age range 8–12.",
+      "source": "https://www.penguinrandomhouse.com/books/297448/snow-treasure-by-marie-mcswigan/"
+    },
+    {
+      "id": "number-the-stars",
+      "title": "Number the Stars",
+      "author": "Lois Lowry",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 12,
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-holocaust",
+        "mo-ww2-poland"
+      ],
+      "primaryEventId": "mo-holocaust",
+      "blurb": "A Danish girl helps her Jewish friend reach safety in Sweden during the Nazi occupation.",
+      "parentNote": "Common Sense Media age 9+: tense meetings with Nazi soldiers, a slap, deaths and disappearances mentioned, a baby given medicine to stay quiet. No sexual content and no profanity on the CSM guide. Not for the youngest listeners.",
+      "source": "https://www.commonsensemedia.org/book-reviews/number-the-stars"
+    },
+    {
+      "id": "twenty-and-ten",
+      "title": "Twenty and Ten",
+      "author": "Claire Huchet Bishop",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "eventIds": [
+        "mo-holocaust"
+      ],
+      "primaryEventId": "mo-holocaust",
+      "blurb": "Twenty French schoolchildren and a nun hide ten Jewish refugee children from the Nazis.",
+      "parentNote": "Penguin age range 10 and up. The danger is real: discovery would mean betrayal under Nazi threat. Shorter than Number the Stars; still not a cozy picture book.",
+      "source": "https://www.penguinrandomhouse.com/books/322767/twenty-and-ten-by-claire-huchet-bishop/"
+    },
+    {
+      "id": "sadako-thousand-paper-cranes",
+      "title": "Sadako and the Thousand Paper Cranes",
+      "author": "Eleanor Coerr",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "previewOnly": true,
+      "eventIds": [
+        "mo-ww2-ends"
+      ],
+      "primaryEventId": "mo-ww2-ends",
+      "blurb": "True story of Sadako Sasaki of Hiroshima, who folds paper cranes while dying of leukemia years after the atomic bomb.",
+      "parentNote": "Preview only. Common Sense Media age 9+: the girl dies; hospital pain and family grief are vivid; bomb history is named. Japan after the war, not a battle yarn. Not a mixed-age read-aloud.",
+      "source": "https://www.commonsensemedia.org/book-reviews/sadako-and-the-thousand-paper-cranes"
+    },
+    {
+      "id": "night-diary",
+      "title": "The Night Diary",
+      "author": "Veera Hiranandani",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "previewOnly": true,
+      "eventIds": [
+        "mo-india-independence"
+      ],
+      "primaryEventId": "mo-india-independence",
+      "blurb": "A twelve-year-old girl’s diary of flight during the 1947 partition of India and Pakistan.",
+      "parentNote": "Preview only. Common Sense Media age 10+: religious warfare, refugee flight, and a scene where a stranger holds a knife to a tween’s throat. No sexual content and no profanity on the CSM guide. Independent for the older kids after a parent preview.",
+      "source": "https://www.commonsensemedia.org/book-reviews/the-night-diary"
+    }
+  ],
+  "leftOff": [
+    {
+      "title": "Otto of the Silver Hand",
+      "author": "Howard Pyle",
+      "why": "IgniteLit: killing and bloodshed throughout; hand maimed; unfinished as a family read-aloud. Too violent for the default path. No cleaner medieval substitute verified this pass beyond books already shipping (Door in the Wall, Adam of the Road, Castle with Many Rooms)."
+    },
+    {
+      "title": "The House of Sixty Fathers",
+      "author": "Meindert DeJong",
+      "why": "Plugged In: Japanese invasion of China, burning villages, starvation, bleeding horses, people eating pets; boy prays to a river god. Age listed 8–12 there, but too raw for this house’s default path. No cleaner China-WWII living book cleared this pass."
+    },
+    {
+      "title": "Young Fu of the Upper Yangtze",
+      "author": "Elizabeth Foreman Lewis",
+      "why": "Reviews note opium, bandits, political violence, foot-binding references, and dated outsider language. Not cleared as family-clean without a line-by-line parents’ guide. Omitted."
+    },
+    {
+      "title": "A Proud Taste for Scarlet and Miniver",
+      "author": "E. L. Konigsburg",
+      "why": "Publisher and review bands lean 10–14 / older middle school; heaven–purgatory framing and mature court politics. Oldest independent reader here is 13; not cleared as a mixed-age default."
+    },
+    {
+      "title": "Kubla Khan: The Emperor of Everything",
+      "author": "Kathleen Krull",
+      "why": "Penguin ages 8–12 verified, but reviews note concubines, many wives, and conquest savagery. Left off the default path; G is for Genghis Khan is the simpler Mongol intro used instead."
+    },
+    {
+      "title": "Genghis Khan and the Mongol Horde",
+      "author": "Harold Lamb",
+      "why": "Landmark title. IgniteLit warns of Chinese torture description, killings, and a death-cart scene. Too much for default; not used."
+    },
+    {
+      "title": "When Hitler Stole Pink Rabbit",
+      "author": "Judith Kerr",
+      "why": "CSM age 9+: suicide by sleeping pills; concentration-camp account of a professor forced to live like a dog; antisemitic slurs. Stronger content than Number the Stars / Twenty and Ten for this house. Left off."
+    },
+    {
+      "title": "The Apple and the Arrow",
+      "author": "Mary and Conrad Buff",
+      "why": "HarperCollins vendor page ages 8+; Keenly Kept notes murder, blinding, and wine. No William Tell / Swiss Confederation event added this pass (out of the named gap list), so the book was not slotted."
+    },
+    {
+      "title": "Ms. Frizzle's Adventures: Imperial China",
+      "author": "Joanna Cole",
+      "why": "Could not open a page this pass that both confirmed a clean age band for this specific title and cleared deep-time / science-series assumptions. Magic School Bus CSM is science-framed. Omitted rather than guess."
+    },
+    {
+      "title": "Han dynasty / Song dynasty / Qing dynasty / Meiji Japan / Cold War start as its own node",
+      "author": "",
+      "why": "China arc kept to Qin, Tang, 1911, and 1949 so the chunk stays one coherent pass. Meiji and a separate Cold War start were skipped; Berlin Wall already covers a Cold War hinge. Ming was verified (Britannica 1368–1644) but left out to stay near the event cap—can be a later pass."
+    }
+  ]
+}

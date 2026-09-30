@@ -53,7 +53,7 @@ Each event:
 
 Interpretation markers must say, in the summary or context, that the claim is not settled fact. The validator checks for that.
 
-The remapped seed is `chunks/remap-branch-fields.json`, plus `chunks/modern-scm-pass-1.json` (57 events, 56 books). `data/events.json` and `data/books.json` are what the page loads.
+The remapped seed is `chunks/remap-branch-fields.json`, plus `chunks/modern-scm-pass-1.json` and `chunks/world-arcs-pass-1.json` (75 events, 64 books). `data/events.json` and `data/books.json` are what the page loads.
 
 - Scripture markers have `startYear: null`, `dateBasis: null`, and `year: null`. The Bible's story is not given a BC number, and the page does not draw a date chip.
 - Khufu and the Great Pyramid are **historical**. `year` is `early 25th century BCE`, `dateBasis` is `approximate`, and `startYear` is `null`.
@@ -61,7 +61,8 @@ The remapped seed is `chunks/remap-branch-fields.json`, plus `chunks/modern-scm-
 - Century-only history, such as "5th century BCE", keeps `startYear` null. The words in `year` are what the panel shows.
 - Do not add Gilgamesh the Hero; Mara, Daughter of the Nile; Story of the World volumes 1–4; Mummies in the Morning; Mummies and Pyramids; Viking Ships at Sunrise; Mummies Made in Egypt; or The Bobbin Girl.
 - Keep these Lambert titles distinct: *America: Our Stories, Volume 1*; *Our Neighbors: Their Stories, Volume 1*; *America: Our Stories, Volume 2*; *Our Neighbors: Our Stories, Volume 2*.
-- *Hittite Warrior*, *The Days of Elijah*, *Kids at Work*, *A Long Walk to Water*, and *Resolve: The Church That Endures Onward* are `previewOnly`. They need a `parentNote`. They stay off the reading path and off marker book lists until a parent opens Parent tools.
+- *Hittite Warrior*, *The Days of Elijah*, *Kids at Work*, *A Long Walk to Water*, *Resolve: The Church That Endures Onward*, *Sadako and the Thousand Paper Cranes*, and *The Night Diary* are `previewOnly`. They need a `parentNote`. They stay off the reading path and off marker book lists until a parent opens Parent tools.
+- Do not add a second copy of *A Castle with Many Rooms*. The one already in the library covers that Middle Ages spine.
 
 Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or curse-heavy books.
 

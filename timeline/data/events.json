@@ -613,6 +613,26 @@
       "source": "https://www.worldhistory.org/Alexander_the_Great/"
     },
     {
+      "id": "cn-qin-unification",
+      "title": "Qin unifies China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "rome-early-church",
+      "sortKey": 157,
+      "startYear": -221,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The state of Qin conquers the last rival states and forms one Chinese empire under the First Emperor.",
+      "context": [
+        "History, not Scripture. Short, hard dynasty after a long age of warring states.",
+        "Later dynasties kept much of the Qin pattern of rule."
+      ],
+      "year": "221 BCE",
+      "yearNote": "Britannica Qin dynasty: first great Chinese empire, lasting 221–207 BCE; Qin Shi Huang creator of the first unified Chinese empire, reigned 221–210 BCE.",
+      "source": "https://www.britannica.com/topic/Qin-dynasty"
+    },
+    {
       "id": "gr-myths",
       "title": "Greek myths",
       "kind": "event",
@@ -780,6 +800,85 @@
       "yearNote": "Hinge at the fall of the West."
     },
     {
+      "id": "cn-tang-dynasty",
+      "title": "Tang dynasty in China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "medieval",
+      "sortKey": 233,
+      "startYear": 618,
+      "endYear": 907,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "The Tang dynasty rules China in a long stretch known for strong government, trade, and the arts.",
+      "context": [
+        "One spine stop on a short China arc. Not a theology of China."
+      ],
+      "year": "618–907 CE",
+      "yearNote": "Britannica Tang dynasty: 618–907 CE, a cultural and artistic flowering often called a golden age.",
+      "source": "https://www.britannica.com/topic/Tang-dynasty"
+    },
+    {
+      "id": "ma-charlemagne",
+      "title": "Charlemagne crowned emperor",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 234,
+      "startYear": 800,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Pope Leo III crowns Charlemagne emperor in Rome on Christmas Day.",
+      "context": [
+        "Western Europe gains an imperial title after the fall of Rome in the West.",
+        "A Castle with Many Rooms (already shipping) treats Charlemagne in its Middle Ages spine."
+      ],
+      "year": "25 December 800",
+      "yearNote": "Britannica: on Christmas Day of 800, Pope Leo III crowned Charlemagne emperor of the Romans. Charlemagne page lists him emperor 800–814.",
+      "source": "https://www.britannica.com/biography/Charlemagne"
+    },
+    {
+      "id": "ma-norman-conquest",
+      "title": "Norman Conquest",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 236,
+      "startYear": 1066,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "William of Normandy defeats Harold at Hastings and takes the English crown.",
+      "context": [
+        "Battle and conquest. Keep the kid summary short; no graphic blow-by-blow."
+      ],
+      "year": "1066",
+      "yearNote": "Britannica Norman Conquest: decisive victory at Hastings on October 14, 1066; Quick Facts date 1066–1071.",
+      "source": "https://www.britannica.com/event/Norman-Conquest"
+    },
+    {
+      "id": "as-mongol-empire",
+      "title": "Mongol Empire",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 240,
+      "startYear": 1206,
+      "endYear": 1368,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Genghis Khan and his heirs build a vast land empire from East Asia deep into the west.",
+      "context": [
+        "Conquest on a huge scale. Age-gate any book that dwells on cruelty."
+      ],
+      "year": "1206–1368",
+      "yearNote": "Britannica Mongol empire: founded by Genghis Khan in 1206; Quick Facts date 1206–1368; largest contiguous land empire in history.",
+      "source": "https://www.britannica.com/topic/Mongol-empire"
+    },
+    {
       "id": "ma-magna-carta",
       "title": "Magna Carta",
       "kind": "event",
@@ -798,6 +897,27 @@
       "year": "1215",
       "yearNote": "Usual date. World History Encyclopedia has a Magna Carta page; that page was not fully re-read this pass, so treat 1215 as the standard year, not a fresh line-check.",
       "source": "https://www.worldhistory.org/Magna_Carta/"
+    },
+    {
+      "id": "ma-black-death",
+      "title": "The Black Death",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 246,
+      "startYear": 1347,
+      "endYear": 1351,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A great plague sweeps Europe. Many die. Towns and farms are left thin.",
+      "context": [
+        "True and sad. No graphic disease detail in the kid-facing summary.",
+        "Magna Carta (1215) already on the map before this node."
+      ],
+      "year": "1347–1351",
+      "yearNote": "Britannica Black Death: pandemic that ravaged Europe between 1347 and 1351; Quick Facts date 1347–1351.",
+      "source": "https://www.britannica.com/event/Black-Death"
     },
     {
       "id": "ma-wycliffe",
@@ -820,6 +940,26 @@
       "yearNote": "World History Encyclopedia Reformation article: Wycliffe lived about 1330–1384.",
       "kidNote": "The novel about him is fiction. The event is not.",
       "source": "https://www.worldhistory.org/Protestant_Reformation/"
+    },
+    {
+      "id": "ma-fall-constantinople",
+      "title": "Fall of Constantinople",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "eraId": "medieval",
+      "sortKey": 258,
+      "startYear": 1453,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Ottoman forces take Constantinople. The Byzantine Empire ends.",
+      "context": [
+        "Siege and conquest. Keep the summary plain.",
+        "Gutenberg's press (already on the map) sits in the same decade."
+      ],
+      "year": "29 May 1453",
+      "yearNote": "Britannica Fall of Constantinople: May 29, 1453; Ottoman Sultan Mehmed II takes the city after a long siege; Byzantine Empire ends.",
+      "source": "https://www.britannica.com/event/Fall-of-Constantinople-1453"
     },
     {
       "id": "ma-printing",
@@ -1193,6 +1333,46 @@
       "kidNote": "No gore. Say that many died and families were divided."
     },
     {
+      "id": "cn-1911-revolution",
+      "title": "Chinese Revolution of 1911",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "modern",
+      "sortKey": 360,
+      "startYear": 1911,
+      "endYear": 1912,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Revolt ends Qing rule and China becomes a republic.",
+      "context": [
+        "Start of a hard modern century in China. Later nodes pick up 1949."
+      ],
+      "year": "1911–1912",
+      "yearNote": "Britannica Chinese Revolution: October 10, 1911–February 12, 1912; overthrew the Qing dynasty and created a republic.",
+      "source": "https://www.britannica.com/event/Chinese-Revolution-1911-1912"
+    },
+    {
+      "id": "mo-ww1-begins",
+      "title": "World War I begins",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 361,
+      "startYear": 1914,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Austria-Hungary goes to war. The conflict spreads across Europe.",
+      "context": [
+        "Specific start node beside the whole-war card mo-ww1 (already on the map).",
+        "Only a Dog and Never Give In already ship for the war as a whole."
+      ],
+      "year": "28 July 1914",
+      "yearNote": "Britannica World War I Quick Facts: Date July 28, 1914–November 11, 1918.",
+      "source": "https://www.britannica.com/event/World-War-I"
+    },
+    {
       "id": "mo-ww1",
       "title": "World War I",
       "kind": "event",
@@ -1216,6 +1396,84 @@
       "source": "https://www.worldhistory.org/article/2723/the-causes-of-wwi/"
     },
     {
+      "id": "mo-ww1-us-entry",
+      "title": "United States enters World War I",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 363,
+      "startYear": 1917,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The United States declares war on Germany and joins the Allies.",
+      "context": [
+        "Slots after the whole-war node mo-ww1."
+      ],
+      "year": "6 April 1917",
+      "yearNote": "Britannica WWI U.S. entry section: House approved the war resolution on April 6; presidential declaration of war followed immediately.",
+      "source": "https://www.britannica.com/event/World-War-I/The-U-S-entry-into-the-war"
+    },
+    {
+      "id": "mo-ww1-versailles",
+      "title": "Treaty of Versailles",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 364,
+      "startYear": 1919,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The Allies and Germany sign the peace treaty that ends World War I on paper.",
+      "context": [
+        "Hard terms on Germany. Later trouble grows from this settlement."
+      ],
+      "year": "28 June 1919",
+      "yearNote": "Britannica Treaty of Versailles: signed June 28, 1919, in the Hall of Mirrors; took force January 10, 1920.",
+      "source": "https://www.britannica.com/event/Treaty-of-Versailles-1919"
+    },
+    {
+      "id": "mo-holocaust",
+      "title": "The Holocaust",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 370,
+      "startYear": 1933,
+      "endYear": 1945,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Nazi Germany murders millions of Jewish men, women, and children, and many others. It is true. Tell it carefully by age.",
+      "context": [
+        "Atrocity node. Kid-facing summary stays plain. No graphic detail.",
+        "Books on this node must be age-gated or previewOnly."
+      ],
+      "year": "1933–1945",
+      "yearNote": "Britannica Holocaust Quick Facts: Date 1933–1945. Systematic state-sponsored killing of six million Jewish people and millions of others by Nazi Germany and collaborators. Placed before the 1939 Poland node because Britannica dates the Holocaust from 1933.",
+      "source": "https://www.britannica.com/event/Holocaust"
+    },
+    {
+      "id": "mo-ww2-poland",
+      "title": "Germany invades Poland",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 371,
+      "startYear": 1939,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Germany invades Poland. Britain and France go to war. World War II begins in Europe.",
+      "context": [
+        "Specific start node beside the whole-war card mo-ww2 (already on the map)."
+      ],
+      "year": "1 September 1939",
+      "yearNote": "Britannica Invasion of Poland: Nazi Germany invaded from September 1 to October 5, 1939; marks the start of World War II.",
+      "source": "https://www.britannica.com/event/Invasion-of-Poland"
+    },
+    {
       "id": "mo-ww2",
       "title": "World War II",
       "kind": "event",
@@ -1236,6 +1494,102 @@
       "endYear": 1945,
       "yearNote": "Standard dating of the war.",
       "kidNote": "The Holocaust and other atrocities are true. Age-gate them. No graphic detail."
+    },
+    {
+      "id": "mo-ww2-pearl-harbor",
+      "title": "Attack on Pearl Harbor",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 373,
+      "startYear": 1941,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Japan attacks the U.S. fleet at Pearl Harbor. The United States enters World War II.",
+      "context": [
+        "Pacific war opens for America. Keep the summary short; no graphic casualty lists."
+      ],
+      "year": "7 December 1941",
+      "yearNote": "Britannica Pearl Harbor attack: December 7, 1941; Japanese surprise attack on the U.S. naval base in Hawaii.",
+      "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+      "id": "mo-ww2-dday",
+      "title": "D-Day: Normandy Invasion",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 374,
+      "startYear": 1944,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Allied troops land in Normandy, France, and open a major front in western Europe.",
+      "context": [
+        "Battle day. Age-gate books; no graphic beach detail in the kid summary."
+      ],
+      "year": "6 June 1944",
+      "yearNote": "Britannica Normandy Invasion: launched on June 6, 1944 (D-Day); Allied landings on five Normandy beachheads.",
+      "source": "https://www.britannica.com/event/Normandy-Invasion"
+    },
+    {
+      "id": "mo-ww2-ends",
+      "title": "World War II ends",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 376,
+      "startYear": 1945,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Fighting ends. Japan’s formal surrender closes the worldwide war.",
+      "context": [
+        "Europe’s victory day came in May; the listed end of the war is September 2."
+      ],
+      "year": "2 September 1945",
+      "yearNote": "Britannica World War II Quick Facts: Date September 3, 1939–September 2, 1945. V-E Day page notes Germany’s surrender celebrated May 8, 1945; the war’s listed end date is September 2, 1945.",
+      "source": "https://www.britannica.com/event/World-War-II"
+    },
+    {
+      "id": "mo-india-independence",
+      "title": "Independence and partition of India",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 377,
+      "startYear": 1947,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "British rule ends. India and Pakistan become independent. Many families must flee.",
+      "context": [
+        "Joy and grief together. Age-gate books that show the violence of partition."
+      ],
+      "year": "15 August 1947",
+      "yearNote": "Britannica Partition of India: Indian Independence Act July 18, 1947; took effect August 15, 1947; India and Pakistan become independent amid mass displacement and communal violence.",
+      "source": "https://www.britannica.com/event/Partition-of-India"
+    },
+    {
+      "id": "cn-prc-1949",
+      "title": "People’s Republic of China founded",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "modern",
+      "sortKey": 378,
+      "startYear": 1949,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "After civil war, Mao Zedong proclaims the People’s Republic of China.",
+      "context": [
+        "Closes this short China arc that began with Qin unification.",
+        "Not a devotion book. History of a modern state."
+      ],
+      "year": "1 October 1949",
+      "yearNote": "Britannica Chinese Civil War: Mao proclaimed the People’s Republic of China on October 1, 1949, capital Beijing. Civil War span given as 1945–49.",
+      "source": "https://www.britannica.com/event/Chinese-Civil-War"
     },
     {
       "id": "mo-civil-rights",

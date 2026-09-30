@@ -1284,6 +1284,206 @@
       ],
       "mode": "independent",
       "ages": "11–13"
+    },
+    {
+      "id": "the-great-wall-mann",
+      "title": "The Great Wall",
+      "author": "Elizabeth Mann",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 12,
+      "ages": "9–12",
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "mode": "read-aloud",
+      "eraId": "rome-early-church",
+      "eventIds": [
+        "cn-qin-unification",
+        "as-mongol-empire"
+      ],
+      "primaryEventId": "cn-qin-unification",
+      "blurb": "Picture-heavy Wonders of the World book on why and how China built the wall, and how it failed to keep the north out.",
+      "parentNote": "War and invasion are in the story. Kirkus notes a fold-out of an attack on the wall. Not a cozy picture book for the baby and toddler.",
+      "source": "https://www.kirkusreviews.com/book-reviews/elizabeth-mann/the-great-wall/",
+      "topics": []
+    },
+    {
+      "id": "g-is-for-genghis-khan",
+      "title": "G is for Genghis Khan",
+      "author": "History Unboxed",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 11,
+      "ages": "8–11",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "medieval",
+      "eventIds": [
+        "as-mongol-empire"
+      ],
+      "primaryEventId": "as-mongol-empire",
+      "blurb": "Alphabetical picture introduction to Genghis Khan and the Mongol Empire, with adult notes beside simpler kid text.",
+      "parentNote": "Publisher rates it Theme Level 3: moderate violence or conflict themes. Read-aloud so you can skip or explain. Not a graphic war book, but conquest is the subject.",
+      "source": "https://historyunboxed.com/product/g-is-for-genghis-khan-paperback/",
+      "topics": [
+        "middle-ages"
+      ]
+    },
+    {
+      "id": "winged-watchman",
+      "title": "The Winged Watchman",
+      "author": "Hilda van Stockum",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "ages": "10–13",
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-ww2-poland",
+        "mo-ww2-ends"
+      ],
+      "primaryEventId": "mo-ww2-poland",
+      "blurb": "A Dutch family in an old windmill lives under Nazi occupation: hiding, courage, and ordinary family life under pressure.",
+      "parentNote": "Occupation, a hidden Jewish child, a downed RAF pilot, and underground danger. Ignatius lists ages 10 and up. Preview before a mixed-age read-aloud with kids under 10.",
+      "source": "https://ignatius.com/the-winged-watchman-wingp/",
+      "topics": [
+        "modern"
+      ]
+    },
+    {
+      "id": "snow-treasure",
+      "title": "Snow Treasure",
+      "author": "Marie McSwigan",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "ages": "8–12",
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-ww2-poland"
+      ],
+      "primaryEventId": "mo-ww2-poland",
+      "blurb": "Norwegian children sled gold past Nazi guards to keep their country’s treasure out of enemy hands.",
+      "parentNote": "Danger and arrest risk. Squeaky Clean Reviews: little on-page violence; one character arrested and at risk of execution; brief talk of Nazi brutality in Poland. Penguin age range 8–12.",
+      "source": "https://www.penguinrandomhouse.com/books/297448/snow-treasure-by-marie-mcswigan/",
+      "topics": [
+        "modern"
+      ]
+    },
+    {
+      "id": "number-the-stars",
+      "title": "Number the Stars",
+      "author": "Lois Lowry",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 12,
+      "ages": "9–12",
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "mode": "independent",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-holocaust",
+        "mo-ww2-poland"
+      ],
+      "primaryEventId": "mo-holocaust",
+      "blurb": "A Danish girl helps her Jewish friend reach safety in Sweden during the Nazi occupation.",
+      "parentNote": "Common Sense Media age 9+: tense meetings with Nazi soldiers, a slap, deaths and disappearances mentioned, a baby given medicine to stay quiet. No sexual content and no profanity on the CSM guide. Not for the youngest listeners.",
+      "source": "https://www.commonsensemedia.org/book-reviews/number-the-stars",
+      "topics": [
+        "modern"
+      ]
+    },
+    {
+      "id": "twenty-and-ten",
+      "title": "Twenty and Ten",
+      "author": "Claire Huchet Bishop",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "ages": "10–13",
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-holocaust"
+      ],
+      "primaryEventId": "mo-holocaust",
+      "blurb": "Twenty French schoolchildren and a nun hide ten Jewish refugee children from the Nazis.",
+      "parentNote": "Penguin age range 10 and up. The danger is real: discovery would mean betrayal under Nazi threat. Shorter than Number the Stars; still not a cozy picture book.",
+      "source": "https://www.penguinrandomhouse.com/books/322767/twenty-and-ten-by-claire-huchet-bishop/",
+      "topics": [
+        "modern"
+      ]
+    },
+    {
+      "id": "sadako-thousand-paper-cranes",
+      "title": "Sadako and the Thousand Paper Cranes",
+      "author": "Eleanor Coerr",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "ages": "9–13",
+      "levels": [
+        "independent"
+      ],
+      "mode": "independent",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-ww2-ends"
+      ],
+      "primaryEventId": "mo-ww2-ends",
+      "blurb": "True story of Sadako Sasaki of Hiroshima, who folds paper cranes while dying of leukemia years after the atomic bomb.",
+      "parentNote": "Preview only. Common Sense Media age 9+: the girl dies; hospital pain and family grief are vivid; bomb history is named. Japan after the war, not a battle yarn. Not a mixed-age read-aloud.",
+      "previewOnly": true,
+      "source": "https://www.commonsensemedia.org/book-reviews/sadako-and-the-thousand-paper-cranes",
+      "topics": [
+        "modern"
+      ]
+    },
+    {
+      "id": "night-diary",
+      "title": "The Night Diary",
+      "author": "Veera Hiranandani",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "ages": "10–13",
+      "levels": [
+        "independent"
+      ],
+      "mode": "independent",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-india-independence"
+      ],
+      "primaryEventId": "mo-india-independence",
+      "blurb": "A twelve-year-old girl’s diary of flight during the 1947 partition of India and Pakistan.",
+      "parentNote": "Preview only. Common Sense Media age 10+: religious warfare, refugee flight, and a scene where a stranger holds a knife to a tween’s throat. No sexual content and no profanity on the CSM guide. Independent for the older kids after a parent preview.",
+      "previewOnly": true,
+      "source": "https://www.commonsensemedia.org/book-reviews/the-night-diary",
+      "topics": [
+        "modern"
+      ]
     }
   ]
 }
