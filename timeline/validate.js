@@ -189,7 +189,11 @@ for (const book of books) {
   }
 }
 
-if (books.length !== 66) fail(`expected 66 books, found ${books.length}`);
+if (books.length !== 70) fail(`expected 70 books, found ${books.length}`);
+
+for (const id of ["c-is-for-charlemagne", "son-of-charlemagne", "the-magna-charta-daugherty", "casey-over-there"]) {
+  if (!bookIds.has(id)) fail(`missing living book ${id}`);
+}
 
 const nightCopies = books.filter((book) => book.title === "A Night Divided");
 if (nightCopies.length !== 1) fail("A Night Divided must stay the one copy already shipping");

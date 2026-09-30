@@ -1,0 +1,184 @@
+{
+  "schema": "coffey-timeline-remap/1",
+  "chunk": "living-books-pass-1",
+  "note": "Living-book batch only. Who HQ, Ready-to-Read, and the Capstone wall graphic were verified but held off this batch because they are surveys, not stories. Events array empty.",
+  "source": "Bethlehem Books; History Unboxed; Simply Charlotte Mason / Beautiful Feet / Cathy Duffy; Simon Spotlight; Penguin Random House What Was? + Common Sense Media What Was? series; Publishers Weekly + Plumfield Moms; Capstone / Bulk Bookstore ages",
+  "events": [],
+  "books": [
+    {
+      "id": "c-is-for-charlemagne",
+      "title": "C is for Charlemagne",
+      "author": "History Unboxed",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "ma-charlemagne"
+      ],
+      "primaryEventId": "ma-charlemagne",
+      "blurb": "Alphabet tour of Charlemagne—schools, crown, and court—with kid text and deeper adult notes, gentle enough for a first Middle Ages stop.",
+      "source": "https://historyunboxed.com/product/c-is-for-charlemagne-paperback/"
+    },
+    {
+      "id": "son-of-charlemagne",
+      "title": "Son of Charlemagne",
+      "author": "Barbara Willard",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "eventIds": [
+        "ma-charlemagne"
+      ],
+      "primaryEventId": "ma-charlemagne",
+      "blurb": "Young Carl rides to Rome with King Charles and watches his father crowned emperor—learning, family hard choices, and a vision for a united Christian West.",
+      "source": "https://www.bethlehembooks.com/products/son-of-charlemagne"
+    },
+    {
+      "id": "the-magna-charta-daugherty",
+      "title": "The Magna Charta",
+      "author": "James Daugherty",
+      "type": "nonfiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "eventIds": [
+        "ma-magna-carta"
+      ],
+      "primaryEventId": "ma-magna-carta",
+      "blurb": "Barons force King John to seal the Great Charter—a lively freedom story SCM and Beautiful Feet use in Middle Ages history.",
+      "parentNote": "Cathy Duffy: stop around page 130 before the 1950s UN / modern-charters ending, or read those chapters with parent commentary. Used in SCM Pageant of History Middle Ages grades 5–8.",
+      "source": "https://simplycharlottemason.com/store/the-magna-charta/"
+    },
+    {
+      "id": "casey-over-there",
+      "title": "Casey Over There",
+      "author": "Staton Rabin",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 8,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-ww1-us-entry",
+        "mo-ww1"
+      ],
+      "primaryEventId": "mo-ww1-us-entry",
+      "blurb": "Brooklyn boy Aubrey waits for his brother Casey, who is fighting in France, and even writes Uncle Sam—a gentle home-front door into America’s Great War.",
+      "parentNote": "Publishers Weekly ages 4–8; Plumfield Moms notes no on-page blood or soldier deaths, but war pictures and a scare when mother fears a telegram. Read-aloud for the 6 and 8; not a cozy bedtime default for the youngest.",
+      "source": "https://www.publishersweekly.com/9780152531867"
+    }
+  ],
+  "leftOff": [
+    {
+      "title": "Living book for Han dynasty (cn-han-dynasty)",
+      "author": "",
+      "why": "No separate Han title cleared with both a clean parents’/publisher age page and household rules. The Silk Route (Major) is Tang-set per Kirkus, not Han. Foundations of Chinese Civilization (Jing Liu) already left off for deep-time framing."
+    },
+    {
+      "title": "Living book for Song dynasty (cn-song-dynasty)",
+      "author": "",
+      "why": "Still no Song living book with a verified age/content page that clears household rules. Omitted rather than invent."
+    },
+    {
+      "title": "Living book for Qing dynasty (cn-qing-dynasty)",
+      "author": "",
+      "why": "No Qing-specific clean juvenile living book opened this pass. Dynasty card stays bookless."
+    },
+    {
+      "title": "Living book for Chinese Revolution of 1911 / PRC 1949",
+      "author": "",
+      "why": "Same gap as world-arcs-pass-2: no family-clean juvenile title with a parents’ or publisher age page. Mao-era propaganda and class-struggle readers are not suitable."
+    },
+    {
+      "title": "Meiji Restoration living book (jp-meiji-restoration)",
+      "author": "",
+      "why": "Avakian, Blumberg Commodore Perry, and Heart of a Samurai already left off prior passes. When I Was a Boy in Japan (Shioya) is on AmblesideOnline but no separate modern parents’ content guide was opened; Buddhist hell/ancestral-visit chapters and bath scenes need line review before default use. Node stays bookless this pass."
+    },
+    {
+      "title": "Anglo-Saxon Boy",
+      "author": "Tony Bradman",
+      "why": "Scholastic ages 9–11 verified; reviews call it gory with battle bloodshed and death toward Hastings. Too raw for this house’s default Norman Conquest path."
+    },
+    {
+      "title": "History Detective: The Normans and the Battle of Hastings",
+      "author": "Philip Parker",
+      "why": "Hachette page opened but no clear age band or content guide on that page. Omitted rather than guess."
+    },
+    {
+      "title": "British Museum Bayeux Tapestry picture history (Walden)",
+      "author": "Libby Walden",
+      "why": "Nosy Crow lists 2026–2027 pub dates—not yet a shelf title for this house. Skip unpublished."
+    },
+    {
+      "title": "Fall of Constantinople juvenile titles",
+      "author": "",
+      "why": "Feldman Twenty-First Century Books targets grades 9–12 (past oldest independent reader). No cleaner middle-grades living book with a verified age/content page cleared this pass."
+    },
+    {
+      "title": "Treaties, Trenches, Mud and Blood (Nathan Hale)",
+      "author": "Nathan Hale",
+      "why": "Kirkus graphic nonfiction 11–13 covers WWI through geopolitical end; series hazard levels and mild language keep it off the default Versailles path for this house."
+    },
+    {
+      "title": "Come On In, America",
+      "author": "Linda Barrett Osborne",
+      "why": "Kirkus ages 10–14 / Abrams 10+; SLJ points high-school shelves and home-front prejudice, censorship, and violence themes. Too heavy as a default for the 13 without a CSM page for this exact title. Casey Over There used for the gentler US-entry attach instead."
+    },
+    {
+      "title": "On the Horizon",
+      "author": "Lois Lowry",
+      "why": "CSM age 10+: free-verse Pearl Harbor/Hiroshima memoir with vivid burned-sailor images. Type risks poetry framing; content too strong for default. Krensky / What Was Pearl Harbor used instead."
+    },
+    {
+      "title": "Wall (Tom Clohosy Cole)",
+      "author": "Tom Clohosy Cole",
+      "why": "Kirkus picture book 5–9 timed to the wall’s fall anniversary, but the story is family tunnel escape while the wall stands—closer to the 1961 node already covered by A Night Divided. Capstone fall graphic used for mo-berlin-wall-falls instead."
+    },
+    {
+      "title": "The Silk Route: 7,000 Miles of History",
+      "author": "John S. Major",
+      "why": "Kirkus ages 8–10 verified and clean in tone, but Kirkus sets the caravan in the Tang dynasty—cn-tang-dynasty already has Maples in the Mist. Does not fill Han/Song/Qing zeros; not doubled onto Tang this pass."
+    },
+    {
+      "title": "Living book for mo-ww1-begins / mo-ww1-versailles",
+      "author": "",
+      "why": "No separate clean title cleared for the July 1914 start hinge or the 1919 treaty beyond titles already left off or too heavy. WWI whole-war node already has multiple books; Casey covers the US-entry thin node."
+    },
+    {
+      "title": "Pearl Harbor",
+      "author": "Stephen Krensky",
+      "why": "Ready-to-Read survey, not a story a child lives in. Held for a real Pearl Harbor living book. Source was https://www.simonandschuster.net/books/Pearl-Harbor/Stephen-Krensky/Ready-to-Read/9780689842146"
+    },
+    {
+      "title": "What Was Pearl Harbor?",
+      "author": "Patricia Brennan Demuth",
+      "why": "Who HQ fact book. Useful later, but not the living-book batch Joe asked for. Source was https://www.penguinrandomhouse.com/books/312891/what-was-pearl-harbor-by-patricia-brennan-demuth-illustrated-by-john-mantha/"
+    },
+    {
+      "title": "What Was D-Day?",
+      "author": "Patricia Brennan Demuth",
+      "why": "Who HQ fact book. D-Day stays bookless until a narrative title clears. Source was https://www.penguinrandomhouse.com/books/316931/what-was-d-day-by-patricia-brennan-demuth-illustrated-by-david-grayson-kenyon/"
+    },
+    {
+      "title": "The Berlin Wall Comes Crashing Down",
+      "author": "Agnieszka Biskup",
+      "why": "Short Capstone graphic overview of the 1989 fall. Not a living book. Node stays bookless. Source was https://bulkbookstore.com/the-berlin-wall-comes-crashing-down-9781669068747"
+    },
+    {
+      "title": "What Was the Plague?",
+      "author": "Roberta Edwards",
+      "why": "Who HQ disease overview. Publisher copy is grim. Not a default and not this batch. Source was https://www.penguinrandomhouse.com/books/670379/what-was-the-plague-by-roberta-edwards-illustrated-by-dede-putra/"
+    }
+  ]
+}
