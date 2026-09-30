@@ -134,7 +134,15 @@ else {
   }
 }
 
-if (events.length !== 57) fail(`expected 57 events, found ${events.length}`);
+const qin = events.find((event) => event.id === "cn-qin-unification");
+if (!qin) fail("missing cn-qin-unification");
+else {
+  if (qin.category !== "historical") fail("Qin unification must be historical");
+  if (qin.startYear !== -221) fail("Qin startYear must stay -221");
+  if (qin.year !== "221 BCE") fail("Qin year must stay the display text 221 BCE");
+}
+
+if (events.length !== 75) fail(`expected 75 events, found ${events.length}`);
 
 for (const event of events) {
   for (const related of event.relatedIds || []) {
@@ -165,13 +173,24 @@ for (const book of books) {
   }
 }
 
-if (books.length !== 56) fail(`expected 56 books, found ${books.length}`);
+if (books.length !== 64) fail(`expected 64 books, found ${books.length}`);
+
+const castleCopies = books.filter((book) => book.title === "A Castle with Many Rooms");
+if (castleCopies.length !== 1) fail("A Castle with Many Rooms must stay the one copy already shipping");
 
 for (const title of lambertTitles) {
   if (!bookTitles.has(title)) fail(`missing Lambert title: ${title}`);
 }
 
-for (const title of ["Hittite Warrior", "The Days of Elijah", "Kids at Work", "A Long Walk to Water", "Resolve: The Church That Endures Onward"]) {
+for (const title of [
+  "Hittite Warrior",
+  "The Days of Elijah",
+  "Kids at Work",
+  "A Long Walk to Water",
+  "Resolve: The Church That Endures Onward",
+  "Sadako and the Thousand Paper Cranes",
+  "The Night Diary",
+]) {
   const book = books.find((item) => item.title === title);
   if (!book) fail(`missing preview book ${title}`);
   else if (!book.previewOnly || !book.parentNote) fail(`${title} must be previewOnly with a parentNote`);
