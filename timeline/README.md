@@ -6,7 +6,7 @@ The page is static. GitHub Pages can serve it at `/timeline/` with no build step
 
 ## For people adding content
 
-Edit the JSON. Do not invent books or years. Scripture does not need a year. The page places markers by `sortKey` inside each era, and it prints `yearLabel` when a source gives display text.
+Edit the JSON. Do not invent books or years. Scripture does not need a year. The page places markers by `sortKey` inside each chapter, and it prints `year` when a source gives display text. A null `startYear` is valid. Do not fill one in to satisfy a checker.
 
 Check the files before you commit:
 
@@ -34,12 +34,13 @@ Each event:
 | `shortTitle` | no | Map label. Defaults to `title`. |
 | `kind` | yes | `person`, `event`, `civilization`, `period`, or `culture`. The seed uses `event` dots. |
 | `category` | yes | Only three: `scripture`, `historical`, or `interpretation`. |
-| `era` | yes | One era id. This is what the parent period filter uses. |
-| `sortKey` | yes | Number. Global story order. The first Greece marker is `gr-athens-sparta` at `112`. Israel uses 105–111, so Greece starts after Israel. |
-| `startYear` | no | Integer, or `null`. **Scripture and interpretation must stay `null`.** Do not invent a BC year. A historical event may store an integer only when the source states that year or an explicit numeric range. |
-| `endYear` | no | Integer end of an explicit range, such as 1861–1865. Omit it when the label is a century or a phrase. |
-| `yearLabel` | no | The date words to show, copied from the source. Khufu's label is `early 25th century BCE` and his `startYear` is `null`. |
-| `dateBasis` | no | Optional. The seed uses `historical` when a historical marker has display text. Omit it for Scripture. |
+| `era` | yes | Fine label from the seed, such as `creation` or `egypt`. It is not the chapter id. |
+| `eraId` | yes | Chapter id. Markers in one chapter are spaced by `sortKey`. The parent period filter uses this id. |
+| `sortKey` | yes | Number. Global story order. Israel uses 105–111. The first Greece marker is `gr-athens-sparta` at `112`. |
+| `startYear` | no | Integer, or `null`. **Null is allowed.** Scripture, interpretation, and century-only history stay `null`. Do not invent a BC year. Store an integer only when the source states that year or an explicit numeric range. |
+| `endYear` | no | Integer end of a verified range, such as 1861–1865. Leave it null when the label is a century or a phrase. |
+| `year` | no | The date words to show, copied from the source, or `null`. Khufu's text is `early 25th century BCE`. This is panel text, not a plot number. |
+| `dateBasis` | no | `historical` when `startYear` is a verified year. `approximate` when the display year is a century or range and `startYear` is null. `null` for Scripture, interpretation, and undated history. `null` draws no date chip. |
 | `importance` | yes | `1` shows on the full map. `2` appears after a little zoom. `3` appears on an era jump such as Egypt. `4` appears only when zoomed in close. |
 | `summary` | yes | One sentence for the hover tip. |
 | `context` | yes | Array of short paragraphs for children. |
@@ -54,11 +55,13 @@ Interpretation markers must say, in the summary or context, that the claim is no
 
 The remapped seed is `chunks/remap-branch-fields.json` (54 events, 49 books). `data/events.json` and `data/books.json` are what the page loads.
 
-- Scripture markers have `startYear: null`. The Bible's story is not given a BC number.
-- Khufu and the Great Pyramid are **historical**. The panel shows `early 25th century BCE`. There is no integer year on that marker.
-- Interpretation markers also keep `startYear` null. They must say they are not settled fact. The page does not pick an Exodus pharaoh or an Exodus year.
+- Scripture markers have `startYear: null`, `dateBasis: null`, and `year: null`. The Bible's story is not given a BC number, and the page does not draw a date chip.
+- Khufu and the Great Pyramid are **historical**. `year` is `early 25th century BCE`, `dateBasis` is `approximate`, and `startYear` is `null`.
+- Interpretation markers also keep `startYear`, `dateBasis`, and `year` null. They must say they are not settled fact. The page does not pick an Exodus pharaoh or an Exodus year.
+- Century-only history, such as "5th century BCE", keeps `startYear` null. The words in `year` are what the panel shows.
 - Do not add Gilgamesh the Hero; Mara, Daughter of the Nile; Story of the World volumes 1–4; Mummies in the Morning; Mummies and Pyramids; Viking Ships at Sunrise; Mummies Made in Egypt; or The Bobbin Girl.
 - Keep these Lambert titles distinct: *America: Our Stories, Volume 1*; *Our Neighbors: Their Stories, Volume 1*; *America: Our Stories, Volume 2*; *Our Neighbors: Our Stories, Volume 2*.
+- *Hittite Warrior*, *The Days of Elijah*, and *Kids at Work* are `previewOnly`. They need a `parentNote`. They stay off the reading path and off marker book lists until a parent opens Parent tools.
 
 Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or curse-heavy books.
 
@@ -74,8 +77,9 @@ Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or
   "ageMax": 14,
   "levels": ["read-aloud", "independent"],
   "topics": ["egypt"],
-  "eventIds": ["pyramids", "ancient-egypt"],
-  "primaryEventId": "pyramids",
+  "eventIds": ["great-pyramid"],
+  "primaryEventId": "great-pyramid",
+  "eraId": "egypt-near-east",
   "blurb": "One sentence on why this book belongs here.",
   "parentNote": "Optional. Use for war, slavery, myths, older attitudes, or fiction that could be mistaken for a source."
 }
@@ -88,7 +92,8 @@ Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or
 | `eventIds` | Every marker where the book should appear. |
 | `primaryEventId` | Must be one of `eventIds`. The reading path lists each book once, under this event, in timeline order. |
 | `topics` | Parent topic filter. Reuse the topics already in the file when you can. |
-| `parentNote` | Omit the field if you have nothing to flag. |
+| `parentNote` | Omit the field if you have nothing to flag. Required when `previewOnly` is true. |
+| `previewOnly` | If true, the book is hidden until Parent tools are on. |
 
 Only add books that really exist, with the real author. A title you are unsure of does not go in.
 

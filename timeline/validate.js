@@ -15,7 +15,7 @@ const fail = (message) => errors.push(message);
 
 const categories = new Set(["scripture", "historical", "interpretation"]);
 const kinds = new Set(["person", "event", "civilization", "period", "culture"]);
-const bases = new Set(["historical", "traditional-chronology", "approximate", "chronology-alignment"]);
+const bases = new Set(["historical", "approximate"]);
 const levels = new Set(["read-aloud", "early-reader", "independent", "advanced"]);
 const types = new Set(["fiction", "nonfiction"]);
 const bannedTitles = [
@@ -64,7 +64,8 @@ for (const event of events) {
   if (!categories.has(event.category)) fail(`event ${event.id} has bad category ${event.category}`);
   if (event.category === "today") fail(`event ${event.id} uses the removed today category`);
   if (event.dateBasis != null && !bases.has(event.dateBasis)) fail(`event ${event.id} has bad dateBasis`);
-  if (!eraIds.has(event.era)) fail(`event ${event.id} has unknown era ${event.era}`);
+  if (!event.era || typeof event.era !== "string") fail(`event ${event.id} needs an era label`);
+  if (!eraIds.has(event.eraId)) fail(`event ${event.id} has unknown eraId ${event.eraId}`);
   if (typeof event.sortKey !== "number") fail(`event ${event.id} needs a numeric sortKey`);
   if (sortKeys.has(event.sortKey)) fail(`duplicate sortKey ${event.sortKey}`);
   sortKeys.add(event.sortKey);
@@ -72,8 +73,22 @@ for (const event of events) {
     fail(`event ${event.id} startYear must be an integer or null`);
   }
   if (event.endYear != null && !Number.isInteger(event.endYear)) fail(`event ${event.id} endYear must be an integer`);
-  if ((event.category === "scripture" || event.category === "interpretation") && event.startYear != null) {
-    fail(`${event.category} event ${event.id} must keep startYear null`);
+  if (event.year != null && typeof event.year !== "string") fail(`event ${event.id} year must be a display string or null`);
+  if (event.category === "scripture" || event.category === "interpretation") {
+    if (event.startYear != null || event.endYear != null) {
+      fail(`${event.category} event ${event.id} must keep startYear null`);
+    }
+    if (event.dateBasis != null || event.year != null) {
+      fail(`${event.category} event ${event.id} must keep dateBasis and year null`);
+    }
+  }
+  if (event.category === "historical" && event.dateBasis === "historical" && !Number.isInteger(event.startYear)) {
+    fail(`event ${event.id} dateBasis historical needs an integer startYear`);
+  }
+  if (event.category === "historical" && event.dateBasis !== "historical") {
+    if (event.startYear != null || event.endYear != null) {
+      fail(`event ${event.id} is century-only or undated and must keep startYear null`);
+    }
   }
   if (![1, 2, 3, 4].includes(event.importance)) fail(`event ${event.id} importance must be 1-4`);
   if (event.category === "interpretation") {
@@ -84,9 +99,18 @@ for (const event of events) {
   }
 }
 
-const greece = events.filter((event) => event.era === "greece").sort((a, b) => a.sortKey - b.sortKey);
+const greece = events.filter((event) => event.eraId === "greece").sort((a, b) => a.sortKey - b.sortKey);
 if (!greece.length || greece[0].sortKey !== 112 || greece[0].id !== "gr-athens-sparta") {
   fail("the first Greece marker must be gr-athens-sparta at sortKey 112");
+}
+
+const israelKeys = events
+  .filter((event) => event.eraId === "israel")
+  .map((event) => event.sortKey)
+  .sort((a, b) => a - b);
+const expectedIsrael = [105, 106, 107, 108, 109, 110, 111];
+if (israelKeys.join(",") !== expectedIsrael.join(",")) {
+  fail(`Israel sortKeys must be 105–111, got ${israelKeys.join(", ")}`);
 }
 
 const pyramid = events.find((event) => event.id === "great-pyramid");
@@ -94,10 +118,13 @@ if (!pyramid) fail("missing great-pyramid");
 else {
   if (pyramid.category !== "historical") fail("Khufu / Great Pyramid must be historical");
   if (pyramid.startYear != null || pyramid.endYear != null) fail("Khufu must not have an integer year");
-  if (!/early 25th century BCE/.test(pyramid.yearLabel || "")) {
-    fail("Khufu yearLabel must stay the display text: early 25th century BCE");
+  if (pyramid.dateBasis !== "approximate") fail("Khufu dateBasis must be approximate");
+  if (!/early 25th century BCE/.test(pyramid.year || pyramid.yearLabel || "")) {
+    fail("Khufu year must stay the display text: early 25th century BCE");
   }
 }
+
+if (events.length !== 54) fail(`expected 54 events, found ${events.length}`);
 
 for (const event of events) {
   for (const related of event.relatedIds || []) {
@@ -122,14 +149,22 @@ for (const book of books) {
   if (book.primaryEventId && !book.eventIds.includes(book.primaryEventId)) {
     fail(`${book.id} primary event is not in eventIds`);
   }
-  if (!book.eventIds.length && !book.era) fail(`${book.id} needs an event or an era`);
+  if (!book.eventIds.length && !(book.era || book.eraId)) fail(`${book.id} needs an event or an era`);
   for (const eventId of book.eventIds) {
     if (!ids.has(eventId)) fail(`${book.id} points at missing event ${eventId}`);
   }
 }
 
+if (books.length !== 49) fail(`expected 49 books, found ${books.length}`);
+
 for (const title of lambertTitles) {
   if (!bookTitles.has(title)) fail(`missing Lambert title: ${title}`);
+}
+
+for (const title of ["Hittite Warrior", "The Days of Elijah", "Kids at Work"]) {
+  const book = books.find((item) => item.title === title);
+  if (!book) fail(`missing preview book ${title}`);
+  else if (!book.previewOnly || !book.parentNote) fail(`${title} must be previewOnly with a parentNote`);
 }
 
 if (errors.length) {

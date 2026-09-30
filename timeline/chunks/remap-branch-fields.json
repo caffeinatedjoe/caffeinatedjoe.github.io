@@ -1,1075 +1,1194 @@
 {
-  "schema": "coffey-timeline-branch-fields/1",
-  "source": "athena-merged-seed",
+  "schema": "coffey-timeline-remap/1",
+  "contract": {
+    "category": "scripture|historical|interpretation. No today.",
+    "startYear": "integer only when the display year is a verified single year or a verified range. Null for Scripture, Interpretation, and century-only history. Never a Ussher year.",
+    "dateBasis": "historical when startYear is a verified year. approximate when the display year is a century or range with no single integer. null for Scripture and Interpretation so the page shows no date chip.",
+    "year": "display string or null. Panel text. Not a plot number.",
+    "sortKey": "global order. Israel 105-111. Greece starts at 112.",
+    "pyramids": "great-pyramid is historical. year is early 25th century BCE. startYear is null on purpose.",
+    "validator": "Current validate.js still requires an integer startYear and a dateBasis enum. That check has to change before this file will pass."
+  },
   "events": [
     {
       "id": "creation",
       "title": "Creation",
-      "shortTitle": "Creation",
       "kind": "event",
       "category": "scripture",
-      "era": "primeval",
+      "era": "creation",
+      "eraId": "primeval",
       "sortKey": 10,
       "startYear": null,
+      "dateBasis": null,
       "importance": 1,
       "summary": "God makes the world and the first people, and calls it good.",
+      "context": [
+        "God makes the world and the first people, and calls it good.",
+        "Read-aloud for every age. Stay with the chapter.",
+        "No calendar year in the text."
+      ],
+      "year": null,
       "yearNote": "No calendar year in the text.",
       "scripture": [
         "Genesis 1–2"
-      ],
-      "context": [
-        "God makes the world and the first people, and calls it good."
       ],
       "kidNote": "Read-aloud for every age. Stay with the chapter."
     },
     {
       "id": "the-fall",
       "title": "The Fall",
-      "shortTitle": "The Fall",
       "kind": "event",
       "category": "scripture",
-      "era": "primeval",
+      "era": "creation",
+      "eraId": "primeval",
       "sortKey": 20,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
       "summary": "Adam and Eve disobey, and death and exile enter the story.",
+      "context": [
+        "Adam and Eve disobey, and death and exile enter the story.",
+        "Short and plain.",
+        "No year in the text."
+      ],
+      "year": null,
       "yearNote": "No year in the text.",
       "scripture": [
         "Genesis 3"
-      ],
-      "context": [
-        "Adam and Eve disobey, and death and exile enter the story."
       ],
       "kidNote": "Short and plain."
     },
     {
       "id": "the-flood",
       "title": "The Flood",
-      "shortTitle": "The Flood",
       "kind": "event",
       "category": "scripture",
-      "era": "primeval",
+      "era": "flood",
+      "eraId": "primeval",
       "sortKey": 30,
       "startYear": null,
+      "dateBasis": null,
       "importance": 1,
       "summary": "God judges a violent world, saves Noah's family in the ark, and promises not to flood the earth again.",
+      "context": [
+        "God judges a violent world, saves Noah's family in the ark, and promises not to flood the earth again.",
+        "Keep the telling at Genesis's level.",
+        "No year in the text."
+      ],
+      "year": null,
       "yearNote": "No year in the text.",
       "scripture": [
         "Genesis 6–9"
-      ],
-      "context": [
-        "God judges a violent world, saves Noah's family in the ark, and promises not to flood the earth again."
       ],
       "kidNote": "Keep the telling at Genesis's level."
     },
     {
       "id": "babel",
       "title": "The Tower of Babel",
-      "shortTitle": "Babel",
       "kind": "event",
       "category": "scripture",
-      "era": "primeval",
+      "era": "babel",
+      "eraId": "primeval",
       "sortKey": 40,
       "startYear": null,
+      "dateBasis": null,
       "importance": 1,
       "summary": "People try to make a name for themselves in one city. God confuses their language and scatters them.",
+      "context": [
+        "People try to make a name for themselves in one city. God confuses their language and scatters them.",
+        "Scripture, not an archaeology unit.",
+        "Do not equate the tower with a named ziggurat."
+      ],
+      "year": null,
       "yearNote": "Do not equate the tower with a named ziggurat.",
       "scripture": [
         "Genesis 11:1–9"
-      ],
-      "context": [
-        "People try to make a name for themselves in one city. God confuses their language and scatters them."
       ],
       "kidNote": "Scripture, not an archaeology unit."
     },
     {
       "id": "ane-abraham-ur",
       "title": "God calls Abram from Ur",
-      "shortTitle": "Abram",
       "kind": "event",
       "category": "scripture",
-      "era": "egypt-near-east",
+      "era": "patriarchs",
+      "eraId": "egypt-near-east",
       "sortKey": 50,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
       "summary": "God calls Abram to leave his country, promising blessing to all nations through him.",
+      "context": [
+        "God calls Abram to leave his country, promising blessing to all nations through him.",
+        "No year. Leave secular chronologies unnamed."
+      ],
+      "year": null,
       "yearNote": "No year. Leave secular chronologies unnamed.",
       "scripture": [
         "Genesis 11:27–12:9"
-      ],
-      "context": [
-        "God calls Abram to leave his country, promising blessing to all nations through him."
       ]
     },
     {
       "id": "great-pyramid",
       "title": "Khufu and the Great Pyramid",
-      "shortTitle": "Khufu",
       "kind": "event",
       "category": "historical",
-      "era": "egypt-near-east",
+      "era": "egypt",
+      "eraId": "egypt-near-east",
       "sortKey": 60,
       "startYear": null,
-      "yearLabel": "early 25th century BCE",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 1,
       "summary": "Pharaoh Khufu builds the Great Pyramid at Giza as his tomb.",
-      "yearNote": "Conventional Egyptology. Britannica: Khufu, 4th dynasty (c. 2543–c. 2436 BCE), Great Pyramid completed in the early 25th century BCE. Not a biblical date.",
-      "scripture": [],
       "context": [
-        "Pharaoh Khufu builds the Great Pyramid at Giza as his tomb."
+        "Pharaoh Khufu builds the Great Pyramid at Giza as his tomb.",
+        "Burial, not horror. Do not connect Khufu to Joseph or Moses.",
+        "Conventional Egyptology. Britannica: Khufu, 4th dynasty (c. 2543–c. 2436 BCE), Great Pyramid completed in the early 25th century BCE. Not a biblical date."
       ],
+      "year": "early 25th century BCE",
+      "yearNote": "Conventional Egyptology. Britannica: Khufu, 4th dynasty (c. 2543–c. 2436 BCE), Great Pyramid completed in the early 25th century BCE. Not a biblical date.",
       "kidNote": "Burial, not horror. Do not connect Khufu to Joseph or Moses.",
       "source": "https://www.britannica.com/biography/Khufu"
     },
     {
       "id": "joseph-in-egypt",
       "title": "Joseph in Egypt",
-      "shortTitle": "Joseph",
       "kind": "event",
       "category": "scripture",
-      "era": "egypt-near-east",
+      "era": "egypt",
+      "eraId": "egypt-near-east",
       "sortKey": 70,
       "startYear": null,
-      "importance": 1,
+      "dateBasis": null,
+      "importance": 2,
       "summary": "Joseph is sold into Egypt, rises to serve Pharaoh, and brings his family there through the famine.",
+      "context": [
+        "Joseph is sold into Egypt, rises to serve Pharaoh, and brings his family there through the famine.",
+        "Slavery and prison are in the text. Keep it there.",
+        "Genesis names no pharaoh."
+      ],
+      "year": null,
       "yearNote": "Genesis names no pharaoh.",
       "scripture": [
         "Genesis 37–50"
-      ],
-      "context": [
-        "Joseph is sold into Egypt, rises to serve Pharaoh, and brings his family there through the famine."
       ],
       "kidNote": "Slavery and prison are in the text. Keep it there."
     },
     {
       "id": "israel-in-egypt",
       "title": "Israel enslaved in Egypt",
-      "shortTitle": "Slavery in Egypt",
       "kind": "event",
       "category": "scripture",
-      "era": "egypt-near-east",
+      "era": "egypt",
+      "eraId": "egypt-near-east",
       "sortKey": 80,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
       "summary": "A later pharaoh fears Israel's growth and forces them into hard labor.",
+      "context": [
+        "A later pharaoh fears Israel's growth and forces them into hard labor.",
+        "Serious, not graphic.",
+        "No pharaoh is named."
+      ],
+      "year": null,
       "yearNote": "No pharaoh is named.",
       "scripture": [
         "Exodus 1"
-      ],
-      "context": [
-        "A later pharaoh fears Israel's growth and forces them into hard labor."
       ],
       "kidNote": "Serious, not graphic."
     },
     {
       "id": "exodus",
       "title": "Moses and the Exodus",
-      "shortTitle": "The Exodus",
       "kind": "event",
       "category": "scripture",
-      "era": "egypt-near-east",
+      "era": "egypt",
+      "eraId": "egypt-near-east",
       "sortKey": 90,
       "startYear": null,
+      "dateBasis": null,
       "importance": 1,
       "summary": "God calls Moses, sends the plagues, and brings Israel out of Egypt through the sea.",
+      "context": [
+        "God calls Moses, sends the plagues, and brings Israel out of Egypt through the sea.",
+        "Tell the plagues straight, without extra gore.",
+        "No pharaoh and no modern year. Early-date and late-date theories are not picked."
+      ],
+      "year": null,
       "yearNote": "No pharaoh and no modern year. Early-date and late-date theories are not picked.",
       "scripture": [
         "Exodus 2–15"
-      ],
-      "context": [
-        "God calls Moses, sends the plagues, and brings Israel out of Egypt through the sea."
       ],
       "kidNote": "Tell the plagues straight, without extra gore."
     },
     {
       "id": "which-pharaoh",
       "title": "Which pharaoh was it?",
-      "shortTitle": "Which pharaoh?",
       "kind": "event",
       "category": "interpretation",
-      "era": "egypt-near-east",
+      "era": "egypt",
+      "eraId": "egypt-near-east",
       "sortKey": 100,
       "startYear": null,
-      "importance": 3,
-      "summary": "This timeline does not decide which pharaohs match Joseph or the Exodus.",
-      "yearNote": "Left open.",
-      "scripture": [],
+      "dateBasis": null,
+      "importance": 2,
+      "summary": "This timeline does not decide which pharaohs match Joseph or the Exodus. This is an interpretation, not settled fact.",
       "context": [
-        "This timeline does not decide which pharaohs match Joseph or the Exodus.",
-        "This is an interpretation, not a settled fact."
+        "This timeline does not decide which pharaohs match Joseph or the Exodus. This is an interpretation, not settled fact.",
+        "For 11 and 13, with a parent.",
+        "Left open."
       ],
+      "year": null,
+      "yearNote": "Left open.",
       "kidNote": "For 11 and 13, with a parent."
     },
     {
       "id": "israel-sinai-law",
       "title": "Sinai and the law",
-      "shortTitle": "Sinai",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 105,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
-      "summary": "At Sinai, God gives Israel the law, including the Ten Commandments.",
-      "scripture": [
-        "Exodus 19–24",
-        "Deuteronomy 5"
-      ],
+      "summary": "Israel camps at Mount Sinai. God gives the Ten Commandments and covenant law; Moses receives instructions for worship; the people break the covenant with the golden calf and are restored through repentance and God's mercy.",
       "context": [
-        "At Sinai, God gives Israel the law, including the Ten Commandments."
-      ]
+        "Israel camps at Mount Sinai. God gives the Ten Commandments and covenant law; Moses receives instructions for worship; the people break the covenant with the golden calf and are restored through repentance and God's mercy.",
+        "God teaches His people how to live with Him—holy, loving, and set apart. Read the commandments as God's good gift, not a burden.",
+        "Scripture node: no absolute year assigned. Sequence after the Exodus, at Mount Sinai."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. Sequence after the Exodus, at Mount Sinai.",
+      "scripture": [
+        "Exodus 19–24; Deuteronomy 5"
+      ],
+      "kidNote": "God teaches His people how to live with Him—holy, loving, and set apart. Read the commandments as God's good gift, not a burden.",
+      "source": "https://www.amblesideonline.org/groups-bible-oldsch"
     },
     {
       "id": "israel-joshua-land",
       "title": "Joshua and the land",
-      "shortTitle": "Joshua",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 106,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
-      "summary": "Joshua leads Israel into the land.",
+      "summary": "Joshua leads Israel across the Jordan. Jericho falls; the people take possession of the land by tribes and renew the covenant to serve the Lord.",
+      "context": [
+        "Joshua leads Israel across the Jordan. Jericho falls; the people take possession of the land by tribes and renew the covenant to serve the Lord.",
+        "God keeps His promise of a homeland. Courage means trusting God when the task looks too big.",
+        "Scripture node: no absolute year assigned. Conquest and allotment after Moses."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. Conquest and allotment after Moses.",
       "scripture": [
         "Joshua"
       ],
-      "context": [
-        "Joshua leads Israel into the land."
-      ]
+      "kidNote": "God keeps His promise of a homeland. Courage means trusting God when the task looks too big.",
+      "source": "https://amblesideonline.org/paterson-smyth3"
     },
     {
       "id": "israel-judges",
       "title": "The judges",
-      "shortTitle": "The judges",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 107,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
-      "summary": "Before the kings, judges lead Israel, and Ruth's story sits in those days.",
-      "scripture": [
-        "Judges",
-        "Ruth"
-      ],
+      "summary": "After Joshua, Israel repeatedly turns from God, is oppressed by neighbors, cries out, and is delivered by judges such as Deborah, Gideon, and Samson. Ruth shows faithful love in the same era.",
       "context": [
-        "Before the kings, judges lead Israel, and Ruth's story sits in those days."
-      ]
+        "After Joshua, Israel repeatedly turns from God, is oppressed by neighbors, cries out, and is delivered by judges such as Deborah, Gideon, and Samson. Ruth shows faithful love in the same era.",
+        "When people forget God, trouble follows; when they turn back, He hears. Ruth shows kindness that God uses in His plan.",
+        "Scripture node: no absolute year assigned. Cycle of sin, oppression, cry, and deliverance."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. Cycle of sin, oppression, cry, and deliverance.",
+      "scripture": [
+        "Judges; Ruth"
+      ],
+      "kidNote": "When people forget God, trouble follows; when they turn back, He hears. Ruth shows kindness that God uses in His plan.",
+      "source": "https://amblesideonline.org/paterson-smyth3"
     },
     {
       "id": "israel-united-kingdom",
       "title": "Saul, David, and Solomon",
-      "shortTitle": "David",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 108,
       "startYear": null,
-      "importance": 1,
-      "summary": "Saul, David, and Solomon rule Israel.",
+      "dateBasis": null,
+      "importance": 2,
+      "summary": "Israel asks for a king. Saul rises and falls; David is anointed, reigns, and is remembered as a man after God's heart even after grave sin and repentance; Solomon asks for wisdom and builds the temple, then drifts into idolatry.",
+      "context": [
+        "Israel asks for a king. Saul rises and falls; David is anointed, reigns, and is remembered as a man after God's heart even after grave sin and repentance; Solomon asks for wisdom and builds the temple, then drifts into idolatry.",
+        "Kings are not heroes above God. Praise courage and repentance; skip romance-style treatments of David's sin—use a careful Bible story Bible for younger listeners.",
+        "Scripture node: no absolute year assigned. United monarchy under Israel's first kings."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. United monarchy under Israel's first kings.",
       "scripture": [
         "1 Samuel–1 Kings 11"
       ],
-      "context": [
-        "Saul, David, and Solomon rule Israel."
-      ]
+      "kidNote": "Kings are not heroes above God. Praise courage and repentance; skip romance-style treatments of David's sin—use a careful Bible story Bible for younger listeners.",
+      "source": "https://www.amblesideonline.org/paterson-smyth4"
     },
     {
       "id": "israel-divided-kingdom",
       "title": "The divided kingdom",
-      "shortTitle": "Divided kingdom",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 109,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
-      "summary": "After Solomon, the kingdom splits into Israel and Judah.",
+      "summary": "The kingdom splits under Rehoboam and Jeroboam. Prophets including Elijah and Elisha call the people back to the Lord amid idolatry and political turmoil; the northern kingdom eventually falls.",
+      "context": [
+        "The kingdom splits under Rehoboam and Jeroboam. Prophets including Elijah and Elisha call the people back to the Lord amid idolatry and political turmoil; the northern kingdom eventually falls.",
+        "God sends messengers even when leaders and crowds will not listen. Elijah's story shows God's power over false gods.",
+        "Scripture node: no absolute year assigned. Israel (north) and Judah (south) after Solomon."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. Israel (north) and Judah (south) after Solomon.",
       "scripture": [
         "1 Kings 12–2 Kings 17"
       ],
-      "context": [
-        "After Solomon, the kingdom splits into Israel and Judah."
-      ]
+      "kidNote": "God sends messengers even when leaders and crowds will not listen. Elijah's story shows God's power over false gods.",
+      "source": "https://www.amblesideonline.org/paterson-smyth4"
     },
     {
       "id": "gr-athens-sparta",
       "title": "Athens and Sparta",
-      "shortTitle": "Athens & Sparta",
       "kind": "event",
       "category": "historical",
-      "era": "greece",
+      "era": "greece-rome",
+      "eraId": "greece",
       "sortKey": 112,
       "startYear": null,
-      "yearLabel": "5th century BCE",
-      "dateBasis": "historical",
-      "importance": 1,
+      "dateBasis": "approximate",
+      "importance": 2,
       "summary": "Athens and Sparta led different ways of life through the great conflicts of classical Greece.",
-      "yearNote": "Century, not a single year.",
-      "scripture": [],
       "context": [
-        "Athens and Sparta led different ways of life through the great conflicts of classical Greece."
+        "Athens and Sparta led different ways of life through the great conflicts of classical Greece.",
+        "Century, not a single year."
       ],
+      "year": "5th century BCE",
+      "yearNote": "Century, not a single year.",
       "source": "https://www.worldhistory.org/thermopylae/"
     },
     {
       "id": "israel-exile",
       "title": "Exile in Babylon",
-      "shortTitle": "Exile",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 110,
       "startYear": null,
-      "importance": 1,
-      "summary": "Babylon takes many people of Judah away from Jerusalem.",
-      "scripture": [
-        "2 Kings 24–25",
-        "Daniel 1–6"
-      ],
+      "dateBasis": null,
+      "importance": 2,
+      "summary": "Judah ignores warnings, Jerusalem falls, and many are carried to Babylon. Daniel and friends remain faithful in a foreign court; God preserves a remnant.",
       "context": [
-        "Babylon takes many people of Judah away from Jerusalem."
-      ]
+        "Judah ignores warnings, Jerusalem falls, and many are carried to Babylon. Daniel and friends remain faithful in a foreign court; God preserves a remnant.",
+        "Even far from home, God's people can obey Him. Exile is sad—and it is not the end of the story.",
+        "Scripture node: no absolute year assigned. Judah taken captive; temple destroyed."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. Judah taken captive; temple destroyed.",
+      "scripture": [
+        "2 Kings 24–25; Daniel 1–6"
+      ],
+      "kidNote": "Even far from home, God's people can obey Him. Exile is sad—and it is not the end of the story.",
+      "source": "https://www.amblesideonline.org/paterson-smyth4"
     },
     {
       "id": "israel-return",
       "title": "Return and the walls",
-      "shortTitle": "The return",
       "kind": "event",
       "category": "scripture",
       "era": "israel",
+      "eraId": "israel",
       "sortKey": 111,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
-      "summary": "Exiles return, and Nehemiah rebuilds Jerusalem's walls.",
-      "scripture": [
-        "Ezra",
-        "Nehemiah"
-      ],
+      "summary": "Exiles return, rebuild the temple, and later rebuild Jerusalem's walls under Nehemiah amid opposition. The people hear the Law again and renew covenant faithfulness.",
       "context": [
-        "Exiles return, and Nehemiah rebuilds Jerusalem's walls."
-      ]
+        "Exiles return, rebuild the temple, and later rebuild Jerusalem's walls under Nehemiah amid opposition. The people hear the Law again and renew covenant faithfulness.",
+        "God brings His people home and helps them rebuild—stone by stone, prayer by prayer.",
+        "Scripture node: no absolute year assigned. Return under Persian rule; temple and Jerusalem's walls rebuilt. Traditional dating for Nehemiah's wall work appears on publisher pages (e.g. 445 BC) but is not used here as a hard Scripture year."
+      ],
+      "year": null,
+      "yearNote": "Scripture node: no absolute year assigned. Return under Persian rule; temple and Jerusalem's walls rebuilt. Traditional dating for Nehemiah's wall work appears on publisher pages (e.g. 445 BC) but is not used here as a hard Scripture year.",
+      "scripture": [
+        "Ezra; Nehemiah"
+      ],
+      "kidNote": "God brings His people home and helps them rebuild—stone by stone, prayer by prayer.",
+      "source": "https://www.rainbowresource.com/011349.html"
     },
     {
       "id": "gr-thermopylae",
       "title": "Battle of Thermopylae",
-      "shortTitle": "Thermopylae",
       "kind": "event",
       "category": "historical",
-      "era": "greece",
+      "era": "greece-rome",
+      "eraId": "greece",
       "sortKey": 122,
       "startYear": -480,
-      "yearLabel": "480 BCE",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "A small Greek force led by Leonidas held the pass against Xerxes for three days.",
-      "yearNote": "August 480 BCE, World History Encyclopedia.",
-      "scripture": [],
       "context": [
-        "A small Greek force led by Leonidas held the pass against Xerxes for three days."
+        "A small Greek force led by Leonidas held the pass against Xerxes for three days.",
+        "Deaths in battle. Keep it high-level.",
+        "August 480 BCE, World History Encyclopedia."
       ],
+      "year": "480 BCE",
+      "yearNote": "August 480 BCE, World History Encyclopedia.",
       "kidNote": "Deaths in battle. Keep it high-level.",
       "source": "https://www.worldhistory.org/thermopylae/"
     },
     {
       "id": "gr-salamis",
       "title": "Battle of Salamis",
-      "shortTitle": "Salamis",
       "kind": "event",
       "category": "historical",
-      "era": "greece",
+      "era": "greece-rome",
+      "eraId": "greece",
       "sortKey": 132,
       "startYear": -480,
-      "yearLabel": "480 BCE",
       "dateBasis": "historical",
-      "importance": 3,
+      "importance": 2,
       "summary": "Greek ships defeated the larger Persian fleet near Salamis.",
-      "yearNote": "Same year, from the World History Encyclopedia Thermopylae article's account of the Persian Wars.",
-      "scripture": [],
       "context": [
-        "Greek ships defeated the larger Persian fleet near Salamis."
+        "Greek ships defeated the larger Persian fleet near Salamis.",
+        "Same year, from the World History Encyclopedia Thermopylae article's account of the Persian Wars."
       ],
+      "year": "480 BCE",
+      "yearNote": "Same year, from the World History Encyclopedia Thermopylae article's account of the Persian Wars.",
       "source": "https://www.worldhistory.org/thermopylae/"
     },
     {
       "id": "gr-alexander",
       "title": "Alexander's campaigns",
-      "shortTitle": "Alexander",
       "kind": "event",
       "category": "historical",
-      "era": "greece",
+      "era": "greece-rome",
+      "eraId": "greece",
       "sortKey": 142,
       "startYear": -336,
-      "yearLabel": "336–323 BCE",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "Alexander of Macedon conquered from Greece through Egypt and Persia toward India.",
-      "yearNote": "Reign; died June 323 BCE.",
-      "scripture": [],
       "context": [
-        "Alexander of Macedon conquered from Greece through Egypt and Persia toward India."
+        "Alexander of Macedon conquered from Greece through Egypt and Persia toward India.",
+        "Conquest. Century-level for younger listeners.",
+        "Reign; died June 323 BCE."
       ],
+      "year": "336–323 BCE",
       "endYear": -323,
+      "yearNote": "Reign; died June 323 BCE.",
       "kidNote": "Conquest. Century-level for younger listeners.",
       "source": "https://www.worldhistory.org/Alexander_the_Great/"
     },
     {
       "id": "gr-hellenistic",
       "title": "Hellenistic age",
-      "shortTitle": "Hellenistic age",
       "kind": "event",
       "category": "historical",
-      "era": "greece",
+      "era": "greece-rome",
+      "eraId": "greece",
       "sortKey": 152,
       "startYear": -323,
-      "yearLabel": "323–31 BCE",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "Alexander's generals ruled successor kingdoms, and Greek language spread across the Near East.",
-      "yearNote": "After Alexander until 31 BCE, World History Encyclopedia.",
-      "scripture": [],
       "context": [
-        "Alexander's generals ruled successor kingdoms, and Greek language spread across the Near East."
+        "Alexander's generals ruled successor kingdoms, and Greek language spread across the Near East.",
+        "After Alexander until 31 BCE, World History Encyclopedia."
       ],
+      "year": "323–31 BCE",
       "endYear": -31,
+      "yearNote": "After Alexander until 31 BCE, World History Encyclopedia.",
       "source": "https://www.worldhistory.org/Alexander_the_Great/"
     },
     {
       "id": "gr-myths",
       "title": "Greek myths",
-      "shortTitle": "Greek myths",
       "kind": "event",
       "category": "interpretation",
-      "era": "greece",
+      "era": "greece-rome",
+      "eraId": "greece",
       "sortKey": 162,
       "startYear": null,
-      "importance": 3,
-      "summary": "Stories of the gods, heroes, and Troy. Cultural literacy, not Scripture.",
-      "yearNote": "Literature, not history.",
-      "scripture": [],
+      "dateBasis": null,
+      "importance": 2,
+      "summary": "Stories of the gods, heroes, and Troy. Cultural literacy, not Scripture. This is an interpretation, not settled fact.",
       "context": [
-        "Stories of the gods, heroes, and Troy. Cultural literacy, not Scripture.",
-        "This is an interpretation, not a settled fact."
+        "Stories of the gods, heroes, and Troy. Cultural literacy, not Scripture. This is an interpretation, not settled fact.",
+        "Age-gate. Pagan religion, some violence.",
+        "Literature, not history."
       ],
+      "year": null,
+      "yearNote": "Literature, not history.",
       "kidNote": "Age-gate. Pagan religion, some violence."
     },
     {
       "id": "ro-augustus-world",
       "title": "Augustus and the early Roman Empire",
-      "shortTitle": "Augustus",
       "kind": "event",
       "category": "historical",
-      "era": "rome-early-church",
+      "era": "greece-rome",
+      "eraId": "rome-early-church",
       "sortKey": 172,
       "startYear": null,
-      "yearLabel": "1st century BCE–1st century CE",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 2,
       "summary": "Rome under Augustus ruled a vast Mediterranean world.",
-      "yearNote": "Century framing for the world the Gospel entered.",
-      "scripture": [],
       "context": [
-        "Rome under Augustus ruled a vast Mediterranean world."
-      ]
+        "Rome under Augustus ruled a vast Mediterranean world.",
+        "Century framing for the world the Gospel entered."
+      ],
+      "year": "1st century BCE–1st century CE",
+      "yearNote": "Century framing for the world the Gospel entered."
     },
     {
       "id": "ro-jesus",
       "title": "Jesus: birth, ministry, death, and resurrection",
-      "shortTitle": "Jesus",
       "kind": "event",
       "category": "scripture",
-      "era": "rome-early-church",
+      "era": "greece-rome",
+      "eraId": "rome-early-church",
       "sortKey": 182,
       "startYear": null,
+      "dateBasis": null,
       "importance": 1,
       "summary": "Jesus is born, teaches, dies on the cross, and rises.",
+      "context": [
+        "Jesus is born, teaches, dies on the cross, and rises.",
+        "Tell the crucifixion truthfully, without graphic detail for little ones.",
+        "No civil year assigned."
+      ],
+      "year": null,
       "yearNote": "No civil year assigned.",
       "scripture": [
-        "Luke 1–2",
-        "the Gospels",
-        "Matthew 26–28"
-      ],
-      "context": [
-        "Jesus is born, teaches, dies on the cross, and rises."
+        "Luke 1–2; the Gospels; Matthew 26–28"
       ],
       "kidNote": "Tell the crucifixion truthfully, without graphic detail for little ones."
     },
     {
       "id": "ro-pentecost",
       "title": "Pentecost and the apostles",
-      "shortTitle": "Pentecost",
       "kind": "event",
       "category": "scripture",
-      "era": "rome-early-church",
+      "era": "greece-rome",
+      "eraId": "rome-early-church",
       "sortKey": 192,
       "startYear": null,
+      "dateBasis": null,
       "importance": 2,
       "summary": "The Spirit is given, and the apostles preach Christ from Jerusalem outward.",
+      "context": [
+        "The Spirit is given, and the apostles preach Christ from Jerusalem outward.",
+        "No invented years."
+      ],
+      "year": null,
       "yearNote": "No invented years.",
       "scripture": [
-        "Acts 1–2",
-        "Acts 9",
-        "Acts 13–28"
-      ],
-      "context": [
-        "The Spirit is given, and the apostles preach Christ from Jerusalem outward."
+        "Acts 1–2; Acts 9; Acts 13–28"
       ]
     },
     {
       "id": "ro-persecution",
       "title": "Persecution under Rome",
-      "shortTitle": "Persecution",
       "kind": "event",
       "category": "historical",
-      "era": "rome-early-church",
+      "era": "greece-rome",
+      "eraId": "rome-early-church",
       "sortKey": 202,
       "startYear": null,
-      "yearLabel": "1st–4th centuries CE",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 2,
       "summary": "Some Christians suffered for refusing to worship the emperor or the Roman gods.",
-      "yearNote": "A century band. Martyr stories vary.",
-      "scripture": [],
       "context": [
-        "Some Christians suffered for refusing to worship the emperor or the Roman gods."
+        "Some Christians suffered for refusing to worship the emperor or the Roman gods.",
+        "Preview martyr chapters before reading them aloud.",
+        "A century band. Martyr stories vary."
       ],
+      "year": "1st–4th centuries CE",
+      "yearNote": "A century band. Martyr stories vary.",
       "kidNote": "Preview martyr chapters before reading them aloud."
     },
     {
       "id": "ro-horatius",
       "title": "Roman virtue stories",
-      "shortTitle": "Roman stories",
       "kind": "event",
       "category": "interpretation",
-      "era": "rome-early-church",
+      "era": "greece-rome",
+      "eraId": "rome-early-church",
       "sortKey": 212,
       "startYear": null,
-      "importance": 3,
-      "summary": "Stories such as Horatius, Cincinnatus, and Regulus, as later ages remembered Roman courage.",
-      "yearNote": "Later retellings, not a chronicle.",
-      "scripture": [],
+      "dateBasis": null,
+      "importance": 2,
+      "summary": "Stories such as Horatius, Cincinnatus, and Regulus, as later ages remembered Roman courage. This is an interpretation, not settled fact.",
       "context": [
-        "Stories such as Horatius, Cincinnatus, and Regulus, as later ages remembered Roman courage.",
-        "This is an interpretation, not a settled fact."
-      ]
+        "Stories such as Horatius, Cincinnatus, and Regulus, as later ages remembered Roman courage. This is an interpretation, not settled fact.",
+        "Later retellings, not a chronicle."
+      ],
+      "year": null,
+      "yearNote": "Later retellings, not a chronicle."
     },
     {
       "id": "ro-fall-west",
       "title": "Fall of the Western Roman Empire",
-      "shortTitle": "Rome falls",
       "kind": "event",
       "category": "historical",
-      "era": "rome-early-church",
+      "era": "greece-rome",
+      "eraId": "rome-early-church",
       "sortKey": 222,
       "startYear": 476,
-      "yearLabel": "476 CE",
       "dateBasis": "historical",
-      "importance": 1,
+      "importance": 2,
       "summary": "Romulus Augustulus was deposed, and the Western Empire's political power ended.",
-      "yearNote": "Conventional date for the fall of the West. The Eastern Empire continued.",
-      "scripture": [],
       "context": [
-        "Romulus Augustulus was deposed, and the Western Empire's political power ended."
+        "Romulus Augustulus was deposed, and the Western Empire's political power ended.",
+        "One sentence for young kids.",
+        "Conventional date for the fall of the West. The Eastern Empire continued."
       ],
+      "year": "476 CE",
+      "yearNote": "Conventional date for the fall of the West. The Eastern Empire continued.",
       "kidNote": "One sentence for young kids.",
       "source": "https://www.worldhistory.org/article/835/fall-of-the-western-roman-empire/"
     },
     {
       "id": "ma-middle-ages",
       "title": "The Middle Ages in the West",
-      "shortTitle": "Middle Ages",
       "kind": "event",
       "category": "historical",
-      "era": "medieval",
+      "era": "middle-ages",
+      "eraId": "medieval",
       "sortKey": 232,
       "startYear": null,
-      "yearLabel": "after 476 CE",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 2,
       "summary": "New kingdoms rose in Europe, and the Christian faith kept shaping the culture.",
-      "yearNote": "Hinge at the fall of the West.",
-      "scripture": [],
       "context": [
-        "New kingdoms rose in Europe, and the Christian faith kept shaping the culture."
-      ]
+        "New kingdoms rose in Europe, and the Christian faith kept shaping the culture.",
+        "Hinge at the fall of the West."
+      ],
+      "year": "after 476 CE",
+      "yearNote": "Hinge at the fall of the West."
     },
     {
       "id": "ma-magna-carta",
       "title": "Magna Carta",
-      "shortTitle": "Magna Carta",
       "kind": "event",
       "category": "historical",
-      "era": "medieval",
+      "era": "middle-ages",
+      "eraId": "medieval",
       "sortKey": 242,
       "startYear": 1215,
-      "yearLabel": "1215",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "English barons forced King John to accept a charter limiting royal power.",
-      "yearNote": "Usual date. World History Encyclopedia has a Magna Carta page; that page was not fully re-read this pass, so treat 1215 as the standard year, not a fresh line-check.",
-      "scripture": [],
       "context": [
-        "English barons forced King John to accept a charter limiting royal power."
+        "English barons forced King John to accept a charter limiting royal power.",
+        "Usual date. World History Encyclopedia has a Magna Carta page; that page was not fully re-read this pass, so treat 1215 as the standard year, not a fresh line-check."
       ],
+      "year": "1215",
+      "yearNote": "Usual date. World History Encyclopedia has a Magna Carta page; that page was not fully re-read this pass, so treat 1215 as the standard year, not a fresh line-check.",
       "source": "https://www.worldhistory.org/Magna_Carta/"
     },
     {
       "id": "ma-wycliffe",
       "title": "Wycliffe and the English Bible",
-      "shortTitle": "Wycliffe",
       "kind": "event",
       "category": "historical",
-      "era": "medieval",
+      "era": "middle-ages",
+      "eraId": "medieval",
       "sortKey": 252,
-      "startYear": null,
-      "yearLabel": "14th century (d. 1384)",
+      "startYear": 1384,
       "dateBasis": "historical",
       "importance": 2,
       "summary": "John Wycliffe argued that ordinary people should have the Bible in their own language.",
-      "yearNote": "World History Encyclopedia Reformation article: Wycliffe lived about 1330–1384.",
-      "scripture": [],
       "context": [
-        "John Wycliffe argued that ordinary people should have the Bible in their own language."
+        "John Wycliffe argued that ordinary people should have the Bible in their own language.",
+        "The novel about him is fiction. The event is not.",
+        "World History Encyclopedia Reformation article: Wycliffe lived about 1330–1384."
       ],
+      "year": "14th century (d. 1384)",
+      "yearNote": "World History Encyclopedia Reformation article: Wycliffe lived about 1330–1384.",
       "kidNote": "The novel about him is fiction. The event is not.",
       "source": "https://www.worldhistory.org/Protestant_Reformation/"
     },
     {
       "id": "ma-printing",
       "title": "Gutenberg's press",
-      "shortTitle": "Gutenberg",
       "kind": "event",
       "category": "historical",
-      "era": "medieval",
+      "era": "middle-ages",
+      "eraId": "medieval",
       "sortKey": 262,
-      "startYear": null,
-      "yearLabel": "1450s (Bible 1456)",
+      "startYear": 1456,
       "dateBasis": "historical",
       "importance": 2,
       "summary": "Gutenberg's press made books, including Bibles, far more available.",
-      "yearNote": "Movable metal type in Europe in the 1450s; Gutenberg Bible 1456.",
-      "scripture": [],
       "context": [
-        "Gutenberg's press made books, including Bibles, far more available."
+        "Gutenberg's press made books, including Bibles, far more available.",
+        "Movable metal type in Europe in the 1450s; Gutenberg Bible 1456."
       ],
+      "year": "1450s (Bible 1456)",
+      "yearNote": "Movable metal type in Europe in the 1450s; Gutenberg Bible 1456.",
       "source": "https://www.worldhistory.org/article/1632/the-printing-revolution-in-renaissance-europe/"
     },
     {
       "id": "ma-luther",
       "title": "Luther's Ninety-Five Theses",
-      "shortTitle": "Luther",
       "kind": "event",
       "category": "historical",
-      "era": "medieval",
+      "era": "reformation",
+      "eraId": "medieval",
       "sortKey": 272,
       "startYear": 1517,
-      "yearLabel": "31 Oct 1517",
       "dateBasis": "historical",
       "importance": 1,
       "summary": "Luther challenged the sale of indulgences, and the Reformation followed.",
-      "yearNote": "Usual start of the Protestant Reformation on the World History Encyclopedia timeline.",
-      "scripture": [],
       "context": [
-        "Luther challenged the sale of indulgences, and the Reformation followed."
+        "Luther challenged the sale of indulgences, and the Reformation followed.",
+        "Doctrine stays parent-led.",
+        "Usual start of the Protestant Reformation on the World History Encyclopedia timeline."
       ],
+      "year": "31 Oct 1517",
+      "yearNote": "Usual start of the Protestant Reformation on the World History Encyclopedia timeline.",
       "kidNote": "Doctrine stays parent-led.",
       "source": "https://www.worldhistory.org/Protestant_Reformation/"
     },
     {
       "id": "ma-reformation",
       "title": "The Reformation era",
-      "shortTitle": "Reformation",
       "kind": "event",
       "category": "historical",
-      "era": "medieval",
+      "era": "reformation",
+      "eraId": "medieval",
       "sortKey": 282,
       "startYear": 1517,
-      "yearLabel": "1517–1648",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "Reform movements reshaped churches and nations, with long religious and political conflict.",
-      "yearNote": "World History Encyclopedia's usual span, through the Peace of Westphalia.",
-      "scripture": [],
       "context": [
-        "Reform movements reshaped churches and nations, with long religious and political conflict."
+        "Reform movements reshaped churches and nations, with long religious and political conflict.",
+        "Wars and martyrdom. Honest, not graphic.",
+        "World History Encyclopedia's usual span, through the Peace of Westphalia."
       ],
+      "year": "1517–1648",
       "endYear": 1648,
+      "yearNote": "World History Encyclopedia's usual span, through the Peace of Westphalia.",
       "kidNote": "Wars and martyrdom. Honest, not graphic.",
       "source": "https://www.worldhistory.org/Protestant_Reformation/"
     },
     {
       "id": "ma-arthur",
       "title": "King Arthur legends",
-      "shortTitle": "King Arthur",
       "kind": "event",
       "category": "interpretation",
-      "era": "medieval",
+      "era": "middle-ages",
+      "eraId": "medieval",
       "sortKey": 292,
       "startYear": null,
-      "importance": 3,
+      "dateBasis": null,
+      "importance": 2,
       "summary": "Arthur stories are literature of chivalry, not verified history.",
-      "yearNote": "Romance, not a chronicle.",
-      "scripture": [],
       "context": [
         "Arthur stories are literature of chivalry, not verified history.",
-        "This is an interpretation, not a settled fact."
+        "Children's versions only.",
+        "Romance, not a chronicle."
       ],
+      "year": null,
+      "yearNote": "Romance, not a chronicle.",
       "kidNote": "Children's versions only."
     },
     {
       "id": "em-columbus",
       "title": "Columbus reaches the Caribbean",
-      "shortTitle": "Columbus",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "exploration",
+      "eraId": "early-modern",
       "sortKey": 302,
       "startYear": 1492,
-      "yearLabel": "1492",
       "dateBasis": "historical",
       "importance": 1,
       "summary": "Columbus, sailing for Spain, reached islands in the Bahamas.",
-      "yearNote": "Landfall 12 October 1492.",
-      "scripture": [],
       "context": [
-        "Columbus, sailing for Spain, reached islands in the Bahamas."
+        "Columbus, sailing for Spain, reached islands in the Bahamas.",
+        "Later voyages brought colonization and harm. Say so, without gore.",
+        "Landfall 12 October 1492."
       ],
+      "year": "1492",
+      "yearNote": "Landfall 12 October 1492.",
       "kidNote": "Later voyages brought colonization and harm. Say so, without gore.",
       "source": "https://www.worldhistory.org/Christopher_Columbus/"
     },
     {
       "id": "em-pilgrims",
       "title": "The Pilgrims in New England",
-      "shortTitle": "Pilgrims",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "exploration",
+      "eraId": "early-modern",
       "sortKey": 312,
       "startYear": 1620,
-      "yearLabel": "1620",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "English Separatists sailed to plant a colony where they could worship freely.",
-      "yearNote": "Mayflower colony, from the Landing of the Pilgrims recommendations. Not a day-by-day trivia list.",
-      "scripture": [],
       "context": [
-        "English Separatists sailed to plant a colony where they could worship freely."
-      ]
+        "English Separatists sailed to plant a colony where they could worship freely.",
+        "Mayflower colony, from the Landing of the Pilgrims recommendations. Not a day-by-day trivia list."
+      ],
+      "year": "1620",
+      "yearNote": "Mayflower colony, from the Landing of the Pilgrims recommendations. Not a day-by-day trivia list."
     },
     {
       "id": "em-science",
       "title": "Galileo and Newton",
-      "shortTitle": "Galileo & Newton",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "exploration",
+      "eraId": "early-modern",
       "sortKey": 322,
       "startYear": null,
-      "yearLabel": "16th–17th centuries",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 2,
       "summary": "Galileo and Newton changed how Europe studied the heavens and natural laws.",
-      "yearNote": "Century band.",
-      "scripture": [],
       "context": [
-        "Galileo and Newton changed how Europe studied the heavens and natural laws."
+        "Galileo and Newton changed how Europe studied the heavens and natural laws.",
+        "Skip deep-time asides in some biographies.",
+        "Century band."
       ],
+      "year": "16th–17th centuries",
+      "yearNote": "Century band.",
       "kidNote": "Skip deep-time asides in some biographies."
     },
     {
       "id": "em-revolution",
       "title": "The American Revolution",
-      "shortTitle": "1776",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "america",
+      "eraId": "early-modern",
       "sortKey": 332,
       "startYear": 1775,
-      "yearLabel": "1775–1783",
       "dateBasis": "historical",
       "importance": 1,
       "summary": "Thirteen British colonies fought for independence and formed the United States.",
-      "yearNote": "The war years, century-level is fine for young kids.",
-      "scripture": [],
       "context": [
-        "Thirteen British colonies fought for independence and formed the United States."
+        "Thirteen British colonies fought for independence and formed the United States.",
+        "War. High-level for the young ones.",
+        "The war years, century-level is fine for young kids."
       ],
+      "year": "1775–1783",
       "endYear": 1783,
+      "yearNote": "The war years, century-level is fine for young kids.",
       "kidNote": "War. High-level for the young ones."
     },
     {
       "id": "us-constitution-1787",
       "title": "The Constitution",
-      "shortTitle": "Constitution",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "america",
+      "eraId": "early-modern",
       "sortKey": 337,
       "startYear": 1787,
-      "yearLabel": "1787",
       "dateBasis": "historical",
       "importance": 2,
-      "summary": "Delegates write the Constitution of the United States.",
-      "scripture": [],
+      "summary": "Delegates meet in Philadelphia to form a stronger national government. The Constitution establishes a republic with separated powers; ratification debates follow.",
       "context": [
-        "Delegates write the Constitution of the United States."
-      ]
+        "Delegates meet in Philadelphia to form a stronger national government. The Constitution establishes a republic with separated powers; ratification debates follow.",
+        "Americans argued hard about how to govern fairly. The Constitution is a written rulebook meant to limit power and protect liberty under law.",
+        "Year from AmblesideOnline Year 9 scheduled document: Constitution of the United States (1787)."
+      ],
+      "year": "1787",
+      "yearNote": "Year from AmblesideOnline Year 9 scheduled document: Constitution of the United States (1787).",
+      "kidNote": "Americans argued hard about how to govern fairly. The Constitution is a written rulebook meant to limit power and protect liberty under law.",
+      "source": "https://www.amblesideonline.org/ao-y9-bks"
     },
     {
       "id": "us-louisiana-lewis-clark-1803",
       "title": "Louisiana Purchase and Lewis and Clark",
-      "shortTitle": "Lewis & Clark",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "america",
+      "eraId": "early-modern",
       "sortKey": 338,
       "startYear": 1803,
-      "yearLabel": "1803",
       "dateBasis": "historical",
       "importance": 2,
-      "summary": "The United States buys the Louisiana territory, and Lewis and Clark travel west.",
-      "yearNote": "1803 is the purchase. Journey years were not separately re-checked.",
-      "scripture": [],
+      "summary": "The United States purchases a vast western territory from France. Lewis and Clark lead a Corps of Discovery to explore rivers, peoples, and routes to the Pacific.",
       "context": [
-        "The United States buys the Louisiana territory, and Lewis and Clark travel west."
-      ]
+        "The United States purchases a vast western territory from France. Lewis and Clark lead a Corps of Discovery to explore rivers, peoples, and routes to the Pacific.",
+        "Exploration mixed courage, science, diplomacy, and hardship. Map the journey; notice how many nations already lived in the land.",
+        "1803 is the purchase. Journey years were not separately re-checked."
+      ],
+      "year": "1803",
+      "yearNote": "1803 is the purchase. Journey years were not separately re-checked.",
+      "kidNote": "Exploration mixed courage, science, diplomacy, and hardship. Map the journey; notice how many nations already lived in the land.",
+      "source": "https://www.amblesideonline.org/ao-y9-bks"
     },
     {
       "id": "em-waterloo",
       "title": "Battle of Waterloo",
-      "shortTitle": "Waterloo",
       "kind": "event",
       "category": "historical",
-      "era": "early-modern",
+      "era": "america",
+      "eraId": "early-modern",
       "sortKey": 342,
       "startYear": 1815,
-      "yearLabel": "18 June 1815",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "Allied armies defeated Napoleon, ending the Napoleonic Wars.",
-      "yearNote": "World History Encyclopedia.",
-      "scripture": [],
       "context": [
-        "Allied armies defeated Napoleon, ending the Napoleonic Wars."
+        "Allied armies defeated Napoleon, ending the Napoleonic Wars.",
+        "Summary only.",
+        "World History Encyclopedia."
       ],
+      "year": "18 June 1815",
+      "yearNote": "World History Encyclopedia.",
       "kidNote": "Summary only.",
       "source": "https://www.worldhistory.org/article/2303/battle-of-waterloo/"
     },
     {
       "id": "us-slavery-abolition",
       "title": "Slavery and abolition",
-      "shortTitle": "Abolition",
       "kind": "event",
       "category": "historical",
-      "era": "modern",
+      "era": "america",
+      "eraId": "modern",
       "sortKey": 347,
       "startYear": 1863,
-      "yearLabel": "1863",
       "dateBasis": "historical",
       "importance": 2,
-      "summary": "People are held in slavery in America, and others work to end it.",
-      "yearNote": "Emancipation Proclamation as the anchor. The struggle is longer.",
-      "scripture": [],
+      "summary": "Slavery and abolition",
       "context": [
-        "People are held in slavery in America, and others work to end it."
-      ]
+        "Slavery and abolition",
+        "Emancipation Proclamation as the anchor. The struggle is longer."
+      ],
+      "year": "1863",
+      "yearNote": "Emancipation Proclamation as the anchor. The struggle is longer."
     },
     {
       "id": "us-oregon-trail",
       "title": "Overland trails west",
-      "shortTitle": "Oregon Trail",
       "kind": "event",
       "category": "historical",
-      "era": "modern",
+      "era": "america",
+      "eraId": "modern",
       "sortKey": 348,
       "startYear": 1852,
-      "yearLabel": "1852",
       "dateBasis": "historical",
-      "importance": 3,
-      "summary": "Families travel west by wagon.",
-      "yearNote": "Setting year of Bound for Oregon.",
-      "scripture": [],
+      "importance": 2,
+      "summary": "Overland trails west",
       "context": [
-        "Families travel west by wagon."
-      ]
+        "Overland trails west",
+        "Setting year of Bound for Oregon."
+      ],
+      "year": "1852",
+      "yearNote": "Setting year of Bound for Oregon."
     },
     {
       "id": "industry-mills",
       "title": "Textile mills",
-      "shortTitle": "Mills",
       "kind": "event",
       "category": "historical",
-      "era": "modern",
+      "era": "industry",
+      "eraId": "modern",
       "sortKey": 349,
       "startYear": 1810,
-      "yearLabel": "1810–1872",
       "dateBasis": "historical",
       "importance": 2,
-      "summary": "Textile mills change how cloth is made and how people work.",
-      "yearNote": "Century band from SCM's Mill.",
-      "scripture": [],
+      "summary": "Textile mills",
       "context": [
-        "Textile mills change how cloth is made and how people work."
+        "Textile mills",
+        "Century band from SCM's Mill."
       ],
-      "endYear": 1872
+      "year": "1810–1872",
+      "endYear": 1872,
+      "yearNote": "Century band from SCM's Mill."
     },
     {
       "id": "industry-brooklyn-bridge",
       "title": "Brooklyn Bridge",
-      "shortTitle": "Brooklyn Bridge",
       "kind": "event",
       "category": "historical",
-      "era": "modern",
+      "era": "industry",
+      "eraId": "modern",
       "sortKey": 350,
       "startYear": 1883,
-      "yearLabel": "1883",
       "dateBasis": "historical",
-      "importance": 3,
-      "summary": "New York builds the Brooklyn Bridge.",
-      "scripture": [],
+      "importance": 2,
+      "summary": "Brooklyn Bridge",
       "context": [
-        "New York builds the Brooklyn Bridge."
-      ]
+        "Brooklyn Bridge"
+      ],
+      "year": "1883"
     },
     {
       "id": "industry-child-labor",
       "title": "Child labor and Lewis Hine",
-      "shortTitle": "Child labor",
       "kind": "event",
       "category": "historical",
-      "era": "modern",
+      "era": "industry",
+      "eraId": "modern",
       "sortKey": 351,
       "startYear": null,
-      "importance": 3,
-      "summary": "Children work in factories. Lewis Hine photographs them.",
-      "yearNote": "Late 19th and early 20th century. No single year.",
-      "scripture": [],
+      "dateBasis": null,
+      "importance": 2,
+      "summary": "Child labor and Lewis Hine",
       "context": [
-        "Children work in factories. Lewis Hine photographs them."
-      ]
+        "Child labor and Lewis Hine",
+        "Late 19th and early 20th century. No single year."
+      ],
+      "year": null,
+      "yearNote": "Late 19th and early 20th century. No single year."
     },
     {
       "id": "mo-civil-war",
       "title": "The American Civil War",
-      "shortTitle": "Civil War",
       "kind": "event",
       "category": "historical",
-      "era": "modern",
+      "era": "america",
+      "eraId": "modern",
       "sortKey": 352,
       "startYear": 1861,
-      "yearLabel": "1861–1865",
       "dateBasis": "historical",
       "importance": 1,
       "summary": "The United States fought a civil war, at terrible human cost.",
-      "yearNote": "The war that ended slavery and preserved the Union.",
-      "scripture": [],
       "context": [
-        "The United States fought a civil war, at terrible human cost."
+        "The United States fought a civil war, at terrible human cost.",
+        "No gore. Say that many died and families were divided.",
+        "The war that ended slavery and preserved the Union."
       ],
+      "year": "1861–1865",
       "endYear": 1865,
+      "yearNote": "The war that ended slavery and preserved the Union.",
       "kidNote": "No gore. Say that many died and families were divided."
     },
     {
       "id": "mo-ww1",
       "title": "World War I",
-      "shortTitle": "World War I",
       "kind": "event",
       "category": "historical",
       "era": "modern",
+      "eraId": "modern",
       "sortKey": 362,
       "startYear": 1914,
-      "yearLabel": "1914–1918",
       "dateBasis": "historical",
       "importance": 2,
       "summary": "A great war engulfed Europe and beyond.",
-      "yearNote": "World History Encyclopedia, causes article.",
-      "scripture": [],
       "context": [
-        "A great war engulfed Europe and beyond."
+        "A great war engulfed Europe and beyond.",
+        "Age-fit books only.",
+        "World History Encyclopedia, causes article."
       ],
+      "year": "1914–1918",
       "endYear": 1918,
+      "yearNote": "World History Encyclopedia, causes article.",
       "kidNote": "Age-fit books only.",
       "source": "https://www.worldhistory.org/article/2723/the-causes-of-wwi/"
     },
     {
       "id": "mo-ww2",
       "title": "World War II",
-      "shortTitle": "World War II",
       "kind": "event",
       "category": "historical",
       "era": "modern",
+      "eraId": "modern",
       "sortKey": 372,
       "startYear": 1939,
-      "yearLabel": "1939–1945",
       "dateBasis": "historical",
       "importance": 1,
       "summary": "A worldwide war ended with Allied victory.",
-      "yearNote": "Standard dating of the war.",
-      "scripture": [],
       "context": [
-        "A worldwide war ended with Allied victory."
+        "A worldwide war ended with Allied victory.",
+        "The Holocaust and other atrocities are true. Age-gate them. No graphic detail.",
+        "Standard dating of the war."
       ],
+      "year": "1939–1945",
       "endYear": 1945,
+      "yearNote": "Standard dating of the war.",
       "kidNote": "The Holocaust and other atrocities are true. Age-gate them. No graphic detail."
     },
     {
       "id": "mo-civil-rights",
       "title": "The American civil rights struggle",
-      "shortTitle": "Civil rights",
       "kind": "event",
       "category": "historical",
       "era": "modern",
+      "eraId": "modern",
       "sortKey": 382,
       "startYear": null,
-      "yearLabel": "20th century",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 2,
       "summary": "Americans confronted racial injustice. The stories worth telling are about dignity and courage.",
-      "yearNote": "Century, not a partisan timeline.",
-      "scripture": [],
       "context": [
-        "Americans confronted racial injustice. The stories worth telling are about dignity and courage."
+        "Americans confronted racial injustice. The stories worth telling are about dignity and courage.",
+        "Parent guidance.",
+        "Century, not a partisan timeline."
       ],
+      "year": "20th century",
+      "yearNote": "Century, not a partisan timeline.",
       "kidNote": "Parent guidance."
     },
     {
       "id": "mo-apollo",
       "title": "Apollo 11",
-      "shortTitle": "Apollo 11",
       "kind": "event",
       "category": "historical",
       "era": "modern",
+      "eraId": "modern",
       "sortKey": 392,
       "startYear": 1969,
-      "yearLabel": "1969",
       "dateBasis": "historical",
       "importance": 1,
       "summary": "A huge team landed astronauts on the moon and brought them home.",
-      "yearNote": "Moon landing.",
-      "scripture": [],
       "context": [
-        "A huge team landed astronauts on the moon and brought them home."
-      ]
+        "A huge team landed astronauts on the moon and brought them home.",
+        "Moon landing."
+      ],
+      "year": "1969",
+      "yearNote": "Moon landing."
     },
     {
       "id": "mo-church",
       "title": "Modern church witness",
-      "shortTitle": "The church",
       "kind": "event",
       "category": "historical",
       "era": "modern",
+      "eraId": "modern",
       "sortKey": 402,
       "startYear": null,
-      "yearLabel": "19th–21st centuries",
-      "dateBasis": "historical",
+      "dateBasis": "approximate",
       "importance": 2,
       "summary": "Christians kept preaching and serving, and some suffered under dictators.",
-      "yearNote": "Missions and courage under tyranny, not one dated incident.",
-      "scripture": [],
       "context": [
-        "Christians kept preaching and serving, and some suffered under dictators."
+        "Christians kept preaching and serving, and some suffered under dictators.",
+        "Preview persecution chapters.",
+        "Missions and courage under tyranny, not one dated incident."
       ],
+      "year": "19th–21st centuries",
+      "yearNote": "Missions and courage under tyranny, not one dated incident.",
       "kidNote": "Preview persecution chapters."
     }
   ],
@@ -1081,20 +1200,22 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 13,
+      "ages": "6–13, younger can listen",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "egypt-near-east"
-      ],
-      "era": "egypt-near-east",
+      "mode": "read-aloud",
+      "eraId": "egypt-near-east",
       "eventIds": [
         "great-pyramid",
         "joseph-in-egypt",
         "exodus"
       ],
       "primaryEventId": "great-pyramid",
-      "blurb": "Creation-friendly family spine. Pair with Genesis–Deuteronomy."
+      "blurb": "Creation-friendly family spine. Pair with Genesis–Deuteronomy.",
+      "topics": [
+        "egypt"
+      ]
     },
     {
       "id": "the-golden-bull",
@@ -1103,19 +1224,20 @@
       "type": "fiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "egypt-near-east"
-      ],
-      "era": "egypt-near-east",
+      "mode": "independent",
+      "eraId": "egypt-near-east",
       "eventIds": [
         "ane-abraham-ur"
       ],
       "primaryEventId": "ane-abraham-ur",
       "blurb": "Ur, not Bible history. Pagan temple setting. Already on the Egypt list.",
-      "parentNote": "Ur, not Bible history. Pagan temple setting. Already on the Egypt list."
+      "topics": [
+        "patriarchs"
+      ]
     },
     {
       "id": "the-story-of-the-greeks",
@@ -1124,13 +1246,12 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 13,
+      "ages": "6–13 listen; best from about 8",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "greece"
-      ],
-      "era": "greece",
+      "mode": "read-aloud",
+      "eraId": "greece",
       "eventIds": [
         "gr-thermopylae",
         "gr-salamis",
@@ -1138,29 +1259,34 @@
         "gr-athens-sparta"
       ],
       "primaryEventId": "gr-thermopylae",
-      "blurb": "Family narrative spine for Greece."
+      "blurb": "Family narrative spine for Greece.",
+      "topics": [
+        "greece-rome"
+      ]
     },
     {
       "id": "fifty-famous-stories-retold",
       "title": "Fifty Famous Stories Retold",
       "author": "James Baldwin",
-      "type": "nonfiction",
-      "ageMin": 3,
-      "ageMax": 13,
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 14,
+      "ages": "3 listen, 6 and up",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "greece"
-      ],
-      "era": "greece",
+      "mode": "read-aloud",
+      "eraId": "greece",
       "eventIds": [
         "gr-thermopylae",
         "gr-alexander",
         "ro-horatius"
       ],
       "primaryEventId": "gr-thermopylae",
-      "blurb": "Short chapters: the Brave Three Hundred, Alexander, and the Roman virtue stories. The Roman ones are traditional tales."
+      "blurb": "Short chapters: the Brave Three Hundred, Alexander, and the Roman virtue stories. The Roman ones are traditional tales.",
+      "topics": [
+        "greece-rome"
+      ]
     },
     {
       "id": "the-children-s-homer",
@@ -1169,18 +1295,20 @@
       "type": "fiction",
       "ageMin": 8,
       "ageMax": 13,
+      "ages": "about 8–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "greece"
-      ],
-      "era": "greece",
+      "mode": "read-aloud",
+      "eraId": "greece",
       "eventIds": [
         "gr-myths"
       ],
       "primaryEventId": "gr-myths",
       "blurb": "Iliad and Odyssey retold. Myth, not history. Preview the war.",
+      "topics": [
+        "greece-rome"
+      ],
       "parentNote": "Iliad and Odyssey retold. Myth, not history. Preview the war."
     },
     {
@@ -1188,20 +1316,22 @@
       "title": "D'Aulaires' Book of Greek Myths",
       "author": "Ingri and Edgar Parin d'Aulaire",
       "type": "fiction",
-      "ageMin": 6,
-      "ageMax": 13,
+      "ageMin": 8,
+      "ageMax": 14,
+      "ages": "pictures from about 6; read with 8 and up",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "greece"
-      ],
-      "era": "greece",
+      "mode": "read-aloud",
+      "eraId": "greece",
       "eventIds": [
         "gr-myths"
       ],
       "primaryEventId": "gr-myths",
       "blurb": "Pagan myths. Preview for artistic nudity.",
+      "topics": [
+        "greece-rome"
+      ],
       "parentNote": "Pagan myths. Preview for artistic nudity."
     },
     {
@@ -1211,18 +1341,20 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "greece"
-      ],
-      "era": "greece",
+      "mode": "independent",
+      "eraId": "greece",
       "eventIds": [
         "gr-hellenistic"
       ],
       "primaryEventId": "gr-hellenistic",
-      "blurb": "Clean science biography."
+      "blurb": "Clean science biography.",
+      "topics": [
+        "greece-rome"
+      ]
     },
     {
       "id": "the-story-of-the-romans",
@@ -1231,19 +1363,21 @@
       "type": "nonfiction",
       "ageMin": 8,
       "ageMax": 13,
+      "ages": "about 8–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "rome-early-church"
-      ],
-      "era": "rome-early-church",
+      "mode": "read-aloud",
+      "eraId": "rome-early-church",
       "eventIds": [
         "ro-augustus-world",
         "ro-fall-west"
       ],
       "primaryEventId": "ro-augustus-world",
-      "blurb": "Narrative companion to the Greek volume."
+      "blurb": "Narrative companion to the Greek volume.",
+      "topics": [
+        "greece-rome"
+      ]
     },
     {
       "id": "augustus-caesar-s-world",
@@ -1252,62 +1386,66 @@
       "type": "nonfiction",
       "ageMin": 8,
       "ageMax": 13,
+      "ages": "about 8–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "rome-early-church"
-      ],
-      "era": "rome-early-church",
+      "mode": "read-aloud",
+      "eraId": "rome-early-church",
       "eventIds": [
         "ro-augustus-world",
         "ro-jesus"
       ],
       "primaryEventId": "ro-augustus-world",
-      "blurb": "Bridges Rome and the Gospel era. Some sections on world religions are secular. Scripture stays the authority for Jesus."
+      "blurb": "Bridges Rome and the Gospel era. Some sections on world religions are secular. Scripture stays the authority for Jesus.",
+      "topics": [
+        "greece-rome"
+      ]
     },
     {
       "id": "the-bronze-bow",
       "title": "The Bronze Bow",
       "author": "Elizabeth George Speare",
       "type": "fiction",
-      "ageMin": 9,
+      "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13, or shared at 9",
       "levels": [
-        "read-aloud",
         "independent"
       ],
-      "topics": [
-        "rome-early-church"
-      ],
-      "era": "rome-early-church",
+      "mode": "independent",
+      "eraId": "rome-early-church",
       "eventIds": [
         "ro-jesus"
       ],
       "primaryEventId": "ro-jesus",
       "blurb": "Roman Judea. Anger, occupation, violence.",
-      "parentNote": "Roman Judea. Anger, occupation, violence."
+      "topics": [
+        "greece-rome"
+      ]
     },
     {
       "id": "trial-and-triumph",
       "title": "Trial and Triumph",
       "author": "Richard Hannula",
       "type": "nonfiction",
-      "ageMin": 9,
+      "ageMin": 11,
       "ageMax": 13,
+      "ages": "select chapters from about 9; 11–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "rome-early-church"
-      ],
-      "era": "rome-early-church",
+      "mode": "read-aloud",
+      "eraId": "rome-early-church",
       "eventIds": [
         "ro-persecution",
         "ro-pentecost"
       ],
       "primaryEventId": "ro-persecution",
       "blurb": "Protestant church-history stories. Preview early martyr chapters.",
+      "topics": [
+        "greece-rome"
+      ],
       "parentNote": "Protestant church-history stories. Preview early martyr chapters."
     },
     {
@@ -1317,13 +1455,12 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 13,
+      "ages": "6–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "read-aloud",
+      "eraId": "medieval",
       "eventIds": [
         "ma-middle-ages",
         "ma-printing",
@@ -1331,27 +1468,32 @@
         "ma-reformation"
       ],
       "primaryEventId": "ma-middle-ages",
-      "blurb": "Family spine from the fall of Rome through the Reformation."
+      "blurb": "Family spine from the fall of Rome through the Reformation.",
+      "topics": [
+        "middle-ages"
+      ]
     },
     {
       "id": "cathedral",
       "title": "Cathedral",
       "author": "David Macaulay",
       "type": "nonfiction",
-      "ageMin": 3,
-      "ageMax": 6,
+      "ageMin": 6,
+      "ageMax": 13,
+      "ages": "look from 3; read from 6",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "read-aloud",
+      "eraId": "medieval",
       "eventIds": [
         "ma-middle-ages"
       ],
       "primaryEventId": "ma-middle-ages",
-      "blurb": "How a medieval cathedral was built."
+      "blurb": "How a medieval cathedral was built.",
+      "topics": [
+        "middle-ages"
+      ]
     },
     {
       "id": "the-door-in-the-wall",
@@ -1360,18 +1502,20 @@
       "type": "fiction",
       "ageMin": 8,
       "ageMax": 13,
+      "ages": "about 8–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "independent",
+      "eraId": "medieval",
       "eventIds": [
         "ma-middle-ages"
       ],
       "primaryEventId": "ma-middle-ages",
-      "blurb": "Medieval boy and disability. SCM grades 5–8."
+      "blurb": "Medieval boy and disability. SCM grades 5–8.",
+      "topics": [
+        "middle-ages"
+      ]
     },
     {
       "id": "adam-of-the-road",
@@ -1380,40 +1524,43 @@
       "type": "fiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "independent",
+      "eraId": "medieval",
       "eventIds": [
         "ma-middle-ages"
       ],
       "primaryEventId": "ma-middle-ages",
-      "blurb": "A minstrel boy in medieval England."
+      "blurb": "A minstrel boy in medieval England.",
+      "topics": [
+        "middle-ages"
+      ]
     },
     {
       "id": "the-bible-smuggler",
       "title": "The Bible Smuggler",
       "author": "Louise A. Vernon",
-      "type": "fiction",
+      "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 13,
+      "ages": "about 6–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "read-aloud",
+      "eraId": "medieval",
       "eventIds": [
         "ma-luther",
         "ma-printing"
       ],
       "primaryEventId": "ma-luther",
       "blurb": "Tyndale and getting the Bible into English. Persecution, told for children.",
-      "parentNote": "Tyndale and getting the Bible into English. Persecution, told for children."
+      "topics": [
+        "reformation"
+      ]
     },
     {
       "id": "morning-star-of-the-reformation",
@@ -1422,18 +1569,20 @@
       "type": "fiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "independent",
+      "eraId": "medieval",
       "eventIds": [
         "ma-wycliffe"
       ],
       "primaryEventId": "ma-wycliffe",
       "blurb": "Fictionalized Wycliffe. Black Death and persecution. Preview.",
+      "topics": [
+        "middle-ages"
+      ],
       "parentNote": "Fictionalized Wycliffe. Black Death and persecution. Preview."
     },
     {
@@ -1443,63 +1592,21 @@
       "type": "fiction",
       "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "medieval"
-      ],
-      "era": "medieval",
+      "mode": "independent",
+      "eraId": "medieval",
       "eventIds": [
         "ma-middle-ages"
       ],
       "primaryEventId": "ma-middle-ages",
       "blurb": "Wallace and Bruce. Victorian war fiction. Preview.",
+      "topics": [
+        "middle-ages"
+      ],
       "parentNote": "Wallace and Bruce. Victorian war fiction. Preview."
-    },
-    {
-      "id": "america-our-stories-volume-1",
-      "title": "America: Our Stories, Volume 1",
-      "author": "Lorene Lambert",
-      "type": "nonfiction",
-      "ageMin": 6,
-      "ageMax": 13,
-      "levels": [
-        "read-aloud"
-      ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
-      "eventIds": [
-        "em-columbus",
-        "em-pilgrims",
-        "em-revolution"
-      ],
-      "primaryEventId": "em-columbus",
-      "blurb": "Family American spine through 1812."
-    },
-    {
-      "id": "our-neighbors-their-stories-volume-1",
-      "title": "Our Neighbors: Their Stories, Volume 1",
-      "author": "Lorene Lambert",
-      "type": "nonfiction",
-      "ageMin": 6,
-      "ageMax": 13,
-      "levels": [
-        "read-aloud"
-      ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
-      "eventIds": [
-        "em-columbus",
-        "em-science",
-        "em-waterloo"
-      ],
-      "primaryEventId": "em-columbus",
-      "blurb": "Family world spine for the same era."
     },
     {
       "id": "george-washington-s-world",
@@ -1508,19 +1615,21 @@
       "type": "nonfiction",
       "ageMin": 8,
       "ageMax": 13,
+      "ages": "about 8–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "read-aloud",
+      "eraId": "early-modern",
       "eventIds": [
         "em-revolution",
         "em-waterloo"
       ],
       "primaryEventId": "em-revolution",
-      "blurb": "The world during Washington's life, including the Revolution."
+      "blurb": "The world during Washington's life, including the Revolution.",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "the-landing-of-the-pilgrims",
@@ -1529,18 +1638,20 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "independent",
+      "eraId": "early-modern",
       "eventIds": [
         "em-pilgrims"
       ],
       "primaryEventId": "em-pilgrims",
-      "blurb": "Landmark-style Bradford and Mayflower narrative."
+      "blurb": "Landmark-style Bradford and Mayflower narrative.",
+      "topics": [
+        "exploration"
+      ]
     },
     {
       "id": "the-ocean-of-truth",
@@ -1549,18 +1660,20 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "independent",
+      "eraId": "early-modern",
       "eventIds": [
         "em-science"
       ],
       "primaryEventId": "em-science",
-      "blurb": "Newton. Prefer this over biographies that add deep time."
+      "blurb": "Newton. Prefer this over biographies that add deep time.",
+      "topics": [
+        "exploration"
+      ]
     },
     {
       "id": "poor-richard",
@@ -1569,18 +1682,20 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "independent",
+      "eraId": "early-modern",
       "eventIds": [
         "em-revolution"
       ],
       "primaryEventId": "em-revolution",
       "blurb": "Franklin. One chapter has dated wording about Native peoples. Preview.",
+      "topics": [
+        "america"
+      ],
       "parentNote": "Franklin. One chapter has dated wording about Native peoples. Preview."
     },
     {
@@ -1590,66 +1705,20 @@
       "type": "fiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "independent",
+      "eraId": "early-modern",
       "eventIds": [
         "em-pilgrims"
       ],
       "primaryEventId": "em-pilgrims",
-      "blurb": "A boy and a Native friend on the Maine frontier. Not the 1620 landing itself."
-    },
-    {
-      "id": "america-our-stories-volume-2",
-      "title": "America: Our Stories, Volume 2",
-      "author": "Lorene Lambert",
-      "type": "nonfiction",
-      "ageMin": 6,
-      "ageMax": 13,
-      "levels": [
-        "read-aloud"
-      ],
+      "blurb": "A boy and a Native friend on the Maine frontier. Not the 1620 landing itself.",
       "topics": [
-        "modern"
-      ],
-      "era": "modern",
-      "eventIds": [
-        "mo-civil-war",
-        "mo-ww1",
-        "mo-ww2",
-        "mo-civil-rights",
-        "mo-apollo"
-      ],
-      "primaryEventId": "mo-civil-war",
-      "blurb": "Family American spine for modern times. Pace the wars for little ones.",
-      "parentNote": "Family American spine for modern times. Pace the wars for little ones."
-    },
-    {
-      "id": "our-neighbors-our-stories-volume-2",
-      "title": "Our Neighbors: Our Stories, Volume 2",
-      "author": "Lorene Lambert",
-      "type": "nonfiction",
-      "ageMin": 6,
-      "ageMax": 13,
-      "levels": [
-        "read-aloud"
-      ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
-      "eventIds": [
-        "mo-ww1",
-        "mo-ww2",
-        "mo-church"
-      ],
-      "primaryEventId": "mo-ww1",
-      "blurb": "Family world spine. Same war caution. Confirm the subtitle on the SCM page: the store lists it with the Modern Times pack.",
-      "parentNote": "Family world spine. Same war caution. Confirm the subtitle on the SCM page: the store lists it with the Modern Times pack."
+        "exploration"
+      ]
     },
     {
       "id": "abraham-lincoln",
@@ -1657,19 +1726,21 @@
       "author": "Ingri and Edgar Parin d'Aulaire",
       "type": "nonfiction",
       "ageMin": 3,
-      "ageMax": 13,
+      "ageMax": 8,
+      "ages": "3–8, easy for older",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "mo-civil-war"
       ],
       "primaryEventId": "mo-civil-war",
-      "blurb": "Picture biography."
+      "blurb": "Picture biography.",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "team-moon",
@@ -1677,41 +1748,43 @@
       "author": "Catherine Thimmesh",
       "type": "nonfiction",
       "ageMin": 6,
-      "ageMax": 13,
+      "ageMax": 14,
+      "ages": "6 and up, pictures younger",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "mo-apollo"
       ],
       "primaryEventId": "mo-apollo",
-      "blurb": "How 400,000 people landed Apollo 11."
+      "blurb": "How 400,000 people landed Apollo 11.",
+      "topics": [
+        "modern"
+      ]
     },
     {
       "id": "across-five-aprils",
       "title": "Across Five Aprils",
       "author": "Irene Hunt",
       "type": "fiction",
-      "ageMin": 9,
+      "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13, shared at 9",
       "levels": [
-        "read-aloud",
         "independent"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "independent",
+      "eraId": "modern",
       "eventIds": [
         "mo-civil-war"
       ],
       "primaryEventId": "mo-civil-war",
       "blurb": "Civil War home front. Grief, not sensational.",
-      "parentNote": "Civil War home front. Grief, not sensational."
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "louis-pasteur-founder-of-modern-medicine",
@@ -1720,15 +1793,16 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "independent",
+      "eraId": "modern",
       "eventIds": [],
-      "blurb": "Biography that keeps Pasteur's Christian faith in view."
+      "primaryEventId": null,
+      "blurb": "Biography that keeps Pasteur's Christian faith in view.",
+      "topics": []
     },
     {
       "id": "rescue-and-redeem",
@@ -1737,18 +1811,20 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "about 9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "independent",
+      "eraId": "modern",
       "eventIds": [
         "mo-church"
       ],
       "primaryEventId": "mo-church",
       "blurb": "Church figures from 1864 to 2005. Preview persecution.",
+      "topics": [
+        "modern"
+      ],
       "parentNote": "Church figures from 1864 to 2005. Preview persecution."
     },
     {
@@ -1758,20 +1834,21 @@
       "type": "nonfiction",
       "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "independent",
+      "eraId": "modern",
       "eventIds": [
         "mo-ww1",
         "mo-ww2"
       ],
       "primaryEventId": "mo-ww1",
       "blurb": "Churchill. War leadership, keep the talk age-fit.",
-      "parentNote": "Churchill. War leadership, keep the talk age-fit."
+      "topics": [
+        "modern"
+      ]
     },
     {
       "id": "the-child-s-story-bible",
@@ -1780,13 +1857,12 @@
       "type": "nonfiction",
       "ageMin": 3,
       "ageMax": 9,
+      "ages": "3–9",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "israel"
-      ],
-      "era": "israel",
+      "mode": "read-aloud",
+      "eraId": "israel",
       "eventIds": [
         "israel-sinai-law",
         "israel-joshua-land",
@@ -1797,69 +1873,80 @@
         "israel-return"
       ],
       "primaryEventId": "israel-sinai-law",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "SCM-listed family OT/NT narrative covering Sinai through Nehemiah without assigning modern absolute years. Prefer this over adult romance treatments of David.",
+      "topics": [
+        "israel"
+      ]
     },
     {
       "id": "victory-on-the-walls",
       "title": "Victory on the Walls",
       "author": "Frieda Clark Hyman",
-      "type": "nonfiction",
+      "type": "fiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "9–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "israel"
-      ],
-      "era": "israel",
+      "mode": "read-aloud",
+      "eraId": "israel",
       "eventIds": [
         "israel-return"
       ],
       "primaryEventId": "israel-return",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "Victory on the Walls",
+      "topics": [
+        "israel"
+      ]
     },
     {
       "id": "hittite-warrior",
       "title": "Hittite Warrior",
       "author": "Joanne Williamson",
-      "type": "nonfiction",
+      "type": "fiction",
       "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "israel"
-      ],
-      "era": "israel",
+      "mode": "independent",
+      "eraId": "israel",
       "eventIds": [
         "israel-judges"
       ],
       "primaryEventId": "israel-judges",
       "blurb": "Preview. Dark pagan setting.",
-      "parentNote": "Preview with a parent before you assign this. Preview. Dark pagan setting."
+      "topics": [
+        "israel"
+      ],
+      "parentNote": "Preview. Dark pagan setting.",
+      "previewOnly": true
     },
     {
       "id": "the-days-of-elijah",
       "title": "The Days of Elijah",
       "author": "John Noble",
-      "type": "nonfiction",
+      "type": "fiction",
       "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "israel"
-      ],
-      "era": "israel",
+      "mode": "independent",
+      "eraId": "israel",
       "eventIds": [
         "israel-divided-kingdom"
       ],
       "primaryEventId": "israel-divided-kingdom",
       "blurb": "Some violence.",
-      "parentNote": "Preview with a parent before you assign this. Some violence."
+      "topics": [
+        "israel"
+      ],
+      "parentNote": "Some violence.",
+      "previewOnly": true
     },
     {
       "id": "a-more-perfect-union",
@@ -1868,18 +1955,20 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 9,
+      "ages": "6–9",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "read-aloud",
+      "eraId": "early-modern",
       "eventIds": [
         "us-constitution-1787"
       ],
       "primaryEventId": "us-constitution-1787",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "A More Perfect Union",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "give-me-liberty",
@@ -1888,18 +1977,20 @@
       "type": "nonfiction",
       "ageMin": 9,
       "ageMax": 13,
+      "ages": "9–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "independent",
+      "eraId": "early-modern",
       "eventIds": [
         "us-constitution-1787"
       ],
       "primaryEventId": "us-constitution-1787",
-      "blurb": "Declaration, not the Convention itself."
+      "blurb": "Declaration, not the Convention itself.",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "amos-fortune-free-man",
@@ -1908,18 +1999,20 @@
       "type": "nonfiction",
       "ageMin": 8,
       "ageMax": 11,
+      "ages": "8–11",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "us-slavery-abolition"
       ],
       "primaryEventId": "us-slavery-abolition",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "Amos Fortune, Free Man",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "minty",
@@ -1928,18 +2021,20 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 9,
+      "ages": "6–9",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "us-slavery-abolition"
       ],
       "primaryEventId": "us-slavery-abolition",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "Minty",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "freedom-train",
@@ -1948,18 +2043,20 @@
       "type": "nonfiction",
       "ageMin": 8,
       "ageMax": 11,
+      "ages": "8–11",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "independent",
+      "eraId": "modern",
       "eventIds": [
         "us-slavery-abolition"
       ],
       "primaryEventId": "us-slavery-abolition",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "Freedom Train",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "how-we-crossed-the-west",
@@ -1968,18 +2065,20 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 9,
+      "ages": "6–9",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "read-aloud",
+      "eraId": "early-modern",
       "eventIds": [
         "us-louisiana-lewis-clark-1803"
       ],
       "primaryEventId": "us-louisiana-lewis-clark-1803",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "How We Crossed the West",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "of-courage-undaunted",
@@ -1988,38 +2087,42 @@
       "type": "nonfiction",
       "ageMin": 11,
       "ageMax": 13,
+      "ages": "11–13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "early-modern"
-      ],
-      "era": "early-modern",
+      "mode": "independent",
+      "eraId": "early-modern",
       "eventIds": [
         "us-louisiana-lewis-clark-1803"
       ],
       "primaryEventId": "us-louisiana-lewis-clark-1803",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "Rainbow Resource / Beautiful Feet description; Cathy Duffy Early American 7–9 required list. Ages ~11–17 on Rainbow.",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "bound-for-oregon",
       "title": "Bound for Oregon",
       "author": "Jean Van Leeuwen",
-      "type": "nonfiction",
+      "type": "fiction",
       "ageMin": 8,
       "ageMax": 11,
+      "ages": "8–11",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "us-oregon-trail"
       ],
       "primaryEventId": "us-oregon-trail",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "SCM Modern bonus; Oregon Trail 1852 family journey based on Mary Ellen Todd accounts.",
+      "topics": [
+        "america"
+      ]
     },
     {
       "id": "mill",
@@ -2028,18 +2131,20 @@
       "type": "nonfiction",
       "ageMin": 8,
       "ageMax": 13,
+      "ages": "8–13",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "industry-mills"
       ],
       "primaryEventId": "industry-mills",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "SCM: water-driven textile mills of the 1800s—design, construction, operation (setting 1810–1872).",
+      "topics": [
+        "industry"
+      ]
     },
     {
       "id": "the-brooklyn-bridge",
@@ -2048,56 +2153,160 @@
       "type": "nonfiction",
       "ageMin": 6,
       "ageMax": 11,
+      "ages": "6–11",
       "levels": [
         "read-aloud"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "read-aloud",
+      "eraId": "modern",
       "eventIds": [
         "industry-brooklyn-bridge"
       ],
       "primaryEventId": "industry-brooklyn-bridge",
-      "blurb": "A children's book for this part of the story."
+      "blurb": "SCM Family/Modern bonus; Roebling family and 1852–1883 bridge story.",
+      "topics": [
+        "industry"
+      ]
     },
     {
       "id": "kids-at-work",
       "title": "Kids at Work",
       "author": "Russell Freedman",
       "type": "nonfiction",
-      "ageMin": 13,
+      "ageMin": 9,
       "ageMax": 13,
+      "ages": "13",
       "levels": [
         "independent"
       ],
-      "topics": [
-        "modern"
-      ],
-      "era": "modern",
+      "mode": "independent",
+      "eraId": "modern",
       "eventIds": [
         "industry-child-labor"
       ],
       "primaryEventId": "industry-child-labor",
       "blurb": "Preview the photos.",
-      "parentNote": "Preview with a parent before you assign this. Preview the photos."
+      "topics": [
+        "industry"
+      ],
+      "parentNote": "Preview the photos.",
+      "previewOnly": true
     },
     {
       "id": "coolies",
       "title": "Coolies",
       "author": "Yin",
-      "type": "nonfiction",
+      "type": "fiction",
       "ageMin": 6,
       "ageMax": 9,
+      "ages": "6–9",
       "levels": [
         "read-aloud"
       ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [],
+      "primaryEventId": null,
+      "blurb": "Chinese railroad workers. Not a mill book.",
+      "topics": []
+    },
+    {
+      "id": "america-our-stories-volume-1",
+      "title": "America: Our Stories, Volume 1",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "ages": "6–13",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "early-modern",
+      "eventIds": [
+        "em-columbus",
+        "em-pilgrims",
+        "em-revolution"
+      ],
+      "primaryEventId": "em-columbus",
+      "blurb": "Family American spine through 1812.",
+      "topics": [
+        "exploration"
+      ]
+    },
+    {
+      "id": "our-neighbors-their-stories-volume-1",
+      "title": "Our Neighbors: Their Stories, Volume 1",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "ages": "6–13",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "early-modern",
+      "eventIds": [
+        "em-columbus",
+        "em-science",
+        "em-waterloo"
+      ],
+      "primaryEventId": "em-columbus",
+      "blurb": "Family world spine for the same era.",
+      "topics": [
+        "exploration"
+      ]
+    },
+    {
+      "id": "america-our-stories-volume-2",
+      "title": "America: Our Stories, Volume 2",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "ages": "6–13",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-civil-war",
+        "mo-ww1",
+        "mo-ww2",
+        "mo-civil-rights",
+        "mo-apollo"
+      ],
+      "primaryEventId": "mo-civil-war",
+      "blurb": "Family American spine for modern times. Pace the wars for little ones.",
+      "topics": [
+        "america"
+      ]
+    },
+    {
+      "id": "our-neighbors-our-stories-volume-2",
+      "title": "Our Neighbors: Our Stories, Volume 2",
+      "author": "Lorene Lambert",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "ages": "6–13",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-ww1",
+        "mo-ww2",
+        "mo-church"
+      ],
+      "primaryEventId": "mo-ww1",
+      "blurb": "Family world spine. Same war caution. Confirm the subtitle on the SCM page: the store lists it with the Modern Times pack.",
       "topics": [
         "modern"
-      ],
-      "era": "modern",
-      "eventIds": [],
-      "blurb": "Chinese railroad workers. Not a mill book."
+      ]
     }
   ]
 }

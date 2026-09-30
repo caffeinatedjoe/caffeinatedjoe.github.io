@@ -32,6 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  overscroll-behavior: none;
   color: var(--ink);
   background:
     radial-gradient(1200px 400px at 10% -10%, rgba(232, 197, 106, 0.35), transparent 50%),
@@ -842,13 +843,39 @@ button { cursor: pointer; }
 }
 
 @media (max-width: 800px) {
+  .header-actions, .search { width: 100%; }
+  .search input { width: 100%; min-height: 2.75rem; }
+  .header-button { min-height: 2.75rem; }
+
+  .parent-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .parent-bar input,
+  .parent-bar select,
+  .parent-bar .path-button,
+  .parent-bar .text-button {
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .era-chip { min-height: 2.75rem; }
+
   .panel {
     top: auto;
     height: auto;
-    max-height: min(72dvh, calc(100dvh - var(--chrome-top, 8.5rem) - 0.4rem));
+    max-height: min(78dvh, calc(100dvh - var(--chrome-top, 8.5rem) - 0.25rem));
     width: 100%;
     border-radius: 18px 18px 0 0;
   }
+  .panel-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--panel);
+  }
+  .icon-button { width: 2.75rem; height: 2.75rem; }
 
   .legend { max-width: calc(100% - 8.5rem); }
   .brand p { display: none; }
