@@ -1,0 +1,4185 @@
+{
+  "meta": {
+    "minYear": -4300,
+    "maxYear": 2080,
+    "chronology": "Creation 4004 BC and the Flood 2348 BC follow James Ussher. From Abraham to the Exodus, years follow a common conservative chronology anchored to an Exodus in 1446 BC. Those years are traditional, not printed in the Bible. From the Israelite kings onward, dates mostly match ordinary history books. The map packs ancient centuries closer together so the whole story fits; zoom is not an equal scale."
+  },
+  "chapters": [
+    {
+      "id": "beginnings",
+      "title": "Beginnings",
+      "startYear": -4300,
+      "endYear": -2250,
+      "weight": 1.15
+    },
+    {
+      "id": "nations",
+      "title": "Nations",
+      "startYear": -2250,
+      "endYear": -1450,
+      "weight": 1.55
+    },
+    {
+      "id": "exodus",
+      "title": "Exodus",
+      "startYear": -1450,
+      "endYear": -1050,
+      "weight": 1.15
+    },
+    {
+      "id": "kingdoms",
+      "title": "Kingdoms",
+      "startYear": -1050,
+      "endYear": -400,
+      "weight": 1.2
+    },
+    {
+      "id": "greece-rome",
+      "title": "Greece & Rome",
+      "startYear": -400,
+      "endYear": 500,
+      "weight": 1.3
+    },
+    {
+      "id": "middle-ages",
+      "title": "Middle Ages",
+      "startYear": 500,
+      "endYear": 1400,
+      "weight": 1.05
+    },
+    {
+      "id": "renewal",
+      "title": "Reformation & Sail",
+      "startYear": 1400,
+      "endYear": 1700,
+      "weight": 1.15
+    },
+    {
+      "id": "america",
+      "title": "America",
+      "startYear": 1700,
+      "endYear": 1914,
+      "weight": 1.2
+    },
+    {
+      "id": "modern",
+      "title": "Modern",
+      "startYear": 1914,
+      "endYear": 2080,
+      "weight": 1.1
+    }
+  ],
+  "eras": [
+    {
+      "id": "creation",
+      "title": "Creation",
+      "startYear": -4200,
+      "endYear": -3600,
+      "blurb": "The beginning of the Bible's story"
+    },
+    {
+      "id": "flood",
+      "title": "Flood",
+      "startYear": -2600,
+      "endYear": -2200,
+      "blurb": "Noah, the ark, and the world after the Flood"
+    },
+    {
+      "id": "babel",
+      "title": "Babel",
+      "startYear": -2300,
+      "endYear": -2000,
+      "blurb": "The tower and the scattering of nations"
+    },
+    {
+      "id": "patriarchs",
+      "title": "Patriarchs",
+      "startYear": -2200,
+      "endYear": -1750,
+      "blurb": "Abraham, Isaac, and Jacob"
+    },
+    {
+      "id": "egypt",
+      "title": "Egypt",
+      "startYear": -2150,
+      "endYear": -1100,
+      "blurb": "Pyramids, Joseph, Moses, and the pharaohs"
+    },
+    {
+      "id": "israel",
+      "title": "Israel",
+      "startYear": -1400,
+      "endYear": -400,
+      "blurb": "From Joshua through the exile and return"
+    },
+    {
+      "id": "greece-rome",
+      "title": "Greece & Rome",
+      "startYear": -800,
+      "endYear": 500,
+      "blurb": "Greece, Rome, and the days of Jesus"
+    },
+    {
+      "id": "middle-ages",
+      "title": "Middle Ages",
+      "startYear": 500,
+      "endYear": 1450,
+      "blurb": "After Rome, through castles and cathedrals"
+    },
+    {
+      "id": "reformation",
+      "title": "Reformation",
+      "startYear": 1380,
+      "endYear": 1620,
+      "blurb": "Printing, Luther, and the Bible in English"
+    },
+    {
+      "id": "exploration",
+      "title": "Exploration",
+      "startYear": 1490,
+      "endYear": 1700,
+      "blurb": "Ocean voyages and early colonies"
+    },
+    {
+      "id": "america",
+      "title": "America",
+      "startYear": 1600,
+      "endYear": 1870,
+      "blurb": "Colonies, revolution, and the Civil War"
+    },
+    {
+      "id": "industry",
+      "title": "Industry",
+      "startYear": 1760,
+      "endYear": 1910,
+      "blurb": "Machines, mills, and railroads"
+    },
+    {
+      "id": "modern",
+      "title": "Modern",
+      "startYear": 1914,
+      "endYear": 2026,
+      "blurb": "The world wars to the present"
+    }
+  ],
+  "events": [
+    {
+      "id": "creation",
+      "title": "Creation",
+      "shortTitle": "Creation",
+      "kind": "event",
+      "category": "scripture",
+      "era": "creation",
+      "startYear": -4004,
+      "dateBasis": "traditional-chronology",
+      "importance": 1,
+      "summary": "The Bible begins with God making the world and the first people.",
+      "yearNote": "4004 BC is James Ussher's traditional date. The Bible tells the story. It does not print that BC number.",
+      "scripture": [
+        "Genesis 1-2"
+      ],
+      "topics": [
+        "creation",
+        "bible"
+      ],
+      "keywords": [
+        "beginning",
+        "adam",
+        "eve",
+        "garden"
+      ],
+      "relatedIds": [
+        "the-fall",
+        "flood"
+      ],
+      "context": [
+        "The Bible begins with God making the world: light, sky, sea, land, plants, sun and moon, animals, and people. People are made in God's image, so every person matters. God calls the work good and rests on the seventh day.",
+        "This timeline starts at Creation. It does not start with a story that the world made itself. The year on the map is a traditional Christian chronology, labeled so you can see it is not a verse in Genesis."
+      ]
+    },
+    {
+      "id": "the-fall",
+      "title": "The Fall",
+      "shortTitle": "The Fall",
+      "kind": "event",
+      "category": "scripture",
+      "era": "creation",
+      "startYear": -4004,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "The first people disobey God, and the world is no longer whole.",
+      "yearNote": "Genesis places this at the beginning. It does not give a separate calendar year.",
+      "scripture": [
+        "Genesis 3"
+      ],
+      "topics": [
+        "fall",
+        "bible"
+      ],
+      "keywords": [
+        "adam",
+        "eve",
+        "serpent",
+        "eden"
+      ],
+      "relatedIds": [
+        "creation",
+        "cain-abel"
+      ],
+      "context": [
+        "Genesis says the first people disobeyed God. Shame, blame, and death entered the story. They had to leave the garden.",
+        "Christians read the rest of the Bible as God's plan to put this right, leading to Jesus. The Fall is Scripture. The calendar year beside it is only a reading position near Creation."
+      ]
+    },
+    {
+      "id": "cain-abel",
+      "title": "Cain and Abel",
+      "shortTitle": "Cain and Abel",
+      "kind": "event",
+      "category": "scripture",
+      "era": "creation",
+      "startYear": -3950,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "Cain kills his brother Abel, the Bible's first story of one person harming another.",
+      "yearNote": "The Bible places this soon after the Fall. The dot is spaced for reading. It is not a recorded birthday or year.",
+      "scripture": [
+        "Genesis 4"
+      ],
+      "topics": [
+        "fall",
+        "bible"
+      ],
+      "relatedIds": [
+        "the-fall",
+        "noah"
+      ],
+      "context": [
+        "Cain and Abel both bring offerings. Abel's is accepted. Cain grows angry and kills his brother. It is a short, sad story about jealousy and violence.",
+        "God does not ignore it. The story stays in the Bible so readers remember that harming a person is not a small thing."
+      ]
+    },
+    {
+      "id": "noah",
+      "title": "Noah",
+      "shortTitle": "Noah",
+      "kind": "person",
+      "category": "scripture",
+      "era": "flood",
+      "startYear": -2450,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "Noah trusts God and builds the ark before the Flood.",
+      "yearNote": "This dot sits near the Flood so Noah is easy to find. It is not a recorded birth year.",
+      "scripture": [
+        "Genesis 5-9"
+      ],
+      "topics": [
+        "flood",
+        "bible"
+      ],
+      "relatedIds": [
+        "flood",
+        "fossils-and-the-flood"
+      ],
+      "context": [
+        "The Bible describes Noah in the generations before the Flood. God tells him to build an ark because a flood is coming. His family and the animals go in with him.",
+        "Noah is a person in Scripture. Stories that add extra adventures for him are fiction unless the panel says otherwise."
+      ]
+    },
+    {
+      "id": "flood",
+      "title": "The Flood",
+      "shortTitle": "The Flood",
+      "kind": "event",
+      "category": "scripture",
+      "era": "flood",
+      "startYear": -2348,
+      "dateBasis": "traditional-chronology",
+      "importance": 1,
+      "summary": "God sends a flood. Noah's family and the animals are kept safe in the ark.",
+      "yearNote": "2348 BC is Ussher's date from the Genesis genealogies. The Bible gives the story and the generations, not this BC number.",
+      "scripture": [
+        "Genesis 6-9"
+      ],
+      "topics": [
+        "flood",
+        "bible"
+      ],
+      "keywords": [
+        "ark",
+        "noah",
+        "rainbow"
+      ],
+      "relatedIds": [
+        "noah",
+        "babel",
+        "fossils-and-the-flood",
+        "ice-age"
+      ],
+      "context": [
+        "The Bible says God saw that the earth was full of violence. He told Noah to build an ark. The flood covered the earth. When the waters went down, God set a rainbow as a promise.",
+        "Christians who follow this timeline believe the great civilizations come after the Flood, not before it. Where a textbook date disagrees, the marker is labeled so you can see the difference."
+      ]
+    },
+    {
+      "id": "fossils-and-the-flood",
+      "title": "Fossils and the Flood",
+      "shortTitle": "Fossils",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "flood",
+      "startYear": -2348,
+      "dateBasis": "traditional-chronology",
+      "importance": 3,
+      "summary": "Some Christians think most fossils were buried in Noah's Flood. That link is an idea, not a Bible verse.",
+      "yearNote": "Placed with the Flood because this idea belongs to that story. The Bible does not mention fossils.",
+      "scripture": [
+        "Genesis 6-9"
+      ],
+      "topics": [
+        "flood"
+      ],
+      "keywords": [
+        "dinosaur",
+        "fossils",
+        "rocks"
+      ],
+      "relatedIds": [
+        "flood",
+        "ice-age"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. The Bible tells of the Flood. It never uses the word dinosaur or fossil.",
+        "Some Christians think most fossils, including dinosaurs, were buried during Noah's Flood, and that those animals were made with the rest of creation. Other people explain the rock layers differently. This marker keeps that idea in the open without treating it as proved."
+      ]
+    },
+    {
+      "id": "ice-age",
+      "title": "A post-Flood ice age",
+      "shortTitle": "Ice age",
+      "kind": "period",
+      "category": "interpretation",
+      "era": "flood",
+      "startYear": -2300,
+      "endYear": -1800,
+      "dateBasis": "chronology-alignment",
+      "importance": 3,
+      "summary": "Some Christian scientists place an ice age in the centuries after the Flood.",
+      "yearNote": "The Bible does not describe an ice age. This bar is a proposed timing, drawn shorter than many textbooks.",
+      "topics": [
+        "flood"
+      ],
+      "keywords": [
+        "ice",
+        "mammoth"
+      ],
+      "relatedIds": [
+        "flood",
+        "fossils-and-the-flood"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. After the Flood, some Christian scientists think the earth went through a colder time as oceans and volcanoes settled. They place that ice age in the centuries after Noah, not across millions of years.",
+        "The Bible itself does not describe an ice age. The book linked here is written from that Christian view."
+      ]
+    },
+    {
+      "id": "babel",
+      "title": "The Tower of Babel",
+      "shortTitle": "Babel",
+      "kind": "event",
+      "category": "scripture",
+      "era": "babel",
+      "startYear": -2242,
+      "dateBasis": "traditional-chronology",
+      "importance": 1,
+      "summary": "People build a tower to make a name for themselves. God confuses their language.",
+      "yearNote": "About 2242 BC in Ussher's chronology, near the days of Peleg. The Bible tells the event, not the BC year.",
+      "scripture": [
+        "Genesis 11"
+      ],
+      "topics": [
+        "babel",
+        "bible"
+      ],
+      "keywords": [
+        "language",
+        "tower"
+      ],
+      "relatedIds": [
+        "flood",
+        "table-of-nations",
+        "sumer-ur"
+      ],
+      "context": [
+        "After the Flood, people settle together and start a city and a tower, saying they want to make a name for themselves. God confuses their language so they cannot finish it, and they spread out over the earth.",
+        "Christians read this as the start of many languages and nations. Matching those families to later kingdoms is a further step, marked separately when this map does it."
+      ]
+    },
+    {
+      "id": "table-of-nations",
+      "title": "The Table of Nations",
+      "shortTitle": "The nations",
+      "kind": "event",
+      "category": "scripture",
+      "era": "babel",
+      "startYear": -2200,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "Genesis lists the families that spread out after the Flood.",
+      "yearNote": "The list is Scripture. Pinning each name to a later empire is often an interpretation.",
+      "scripture": [
+        "Genesis 10"
+      ],
+      "topics": [
+        "babel",
+        "bible"
+      ],
+      "relatedIds": [
+        "babel",
+        "sumer-ur",
+        "ancient-egypt"
+      ],
+      "context": [
+        "Genesis 10 names the sons of Noah and the peoples who came from them. It is sometimes called the Table of Nations. The list itself is Scripture.",
+        "Saying that one of those names must be a particular later nation is often a guess. This map does not treat those guesses as fact."
+      ]
+    },
+    {
+      "id": "sumer-ur",
+      "title": "Sumer and Ur",
+      "shortTitle": "Sumer and Ur",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "patriarchs",
+      "startYear": -2200,
+      "endYear": -1900,
+      "dateBasis": "chronology-alignment",
+      "importance": 2,
+      "summary": "Early cities in Mesopotamia, including Ur, the city Abraham's family left.",
+      "yearNote": "The bar starts after Babel on this map. Many textbooks date the first Sumerian cities earlier than this timeline's Flood.",
+      "textbookNote": "Many textbooks date early Sumer long before 2348 BC. On this map the bar starts after the Flood and Babel. That move is an interpretation, not a fact written on a brick.",
+      "scripture": [
+        "Genesis 11:27-32"
+      ],
+      "topics": [
+        "mesopotamia",
+        "patriarchs"
+      ],
+      "keywords": [
+        "abraham",
+        "ur",
+        "mesopotamia",
+        "ziggurat"
+      ],
+      "relatedIds": [
+        "abraham",
+        "hammurabi",
+        "babel"
+      ],
+      "context": [
+        "Sumer was a land of cities, writing, and temples in southern Mesopotamia, in modern Iraq. Ur was one of those cities. The Bible says Abraham's family came from Ur of the Chaldeans.",
+        "Clay tablets, bricks, and ruined cities show that these places were real. How early to date the oldest layers is disputed, especially if the Flood is placed in the 2300s BC. This bar keeps Sumer after Babel and says so."
+      ]
+    },
+    {
+      "id": "pyramids",
+      "title": "The pyramids of Egypt",
+      "shortTitle": "Pyramids",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "egypt",
+      "startYear": -2100,
+      "dateBasis": "chronology-alignment",
+      "importance": 2,
+      "summary": "Egypt's great stone tombs. Textbooks often date them before this map's Flood, so the dot stays after it and explains why.",
+      "yearNote": "Placed after the Flood on purpose. The dot is not a claim that 2100 BC is carved on the stones.",
+      "textbookNote": "Many museums date Khufu's Great Pyramid near 2560 BC, and the Old Kingdom near 2686-2181 BC. Those years fall before this timeline's Flood in 2348 BC. Keeping the pyramids after the Flood is an interpretation, not a settled fact.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "khufu",
+        "giza",
+        "pyramid",
+        "old kingdom"
+      ],
+      "relatedIds": [
+        "ancient-egypt",
+        "middle-kingdom",
+        "joseph"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. Egypt really built huge stone pyramids. The Great Pyramid at Giza is still one of the largest buildings ever made. Workers, ramps, and careful measuring were part of the work, not magic.",
+        "The open question is when. If Noah's Flood is dated to 2348 BC, a pyramid in 2560 BC would be before the Flood. This map does not draw it there. It parks the marker with Abraham's world and tells you the textbook date beside it."
+      ]
+    },
+    {
+      "id": "ancient-egypt",
+      "title": "Ancient Egypt",
+      "shortTitle": "Ancient Egypt",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -2100,
+      "endYear": -1070,
+      "dateBasis": "chronology-alignment",
+      "importance": 2,
+      "summary": "The Nile kingdom of pharaohs, pyramids, and temples, drawn here after the Flood.",
+      "yearNote": "Egypt's history is real. The start of this bar is aligned to the timeline's Flood, not to the earliest textbook date.",
+      "textbookNote": "Textbook timelines often begin Egypt near 3100 BC, before 2348 BC on this map. The bar starts after Babel so children do not see Egypt before the Flood. Treat that start date as an interpretation.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "nile",
+        "pharaoh",
+        "hieroglyphs"
+      ],
+      "relatedIds": [
+        "pyramids",
+        "joseph",
+        "moses",
+        "exodus",
+        "new-kingdom"
+      ],
+      "context": [
+        "Egypt grew along the Nile River. Floods watered the fields. Pharaohs ruled, scribes wrote in hieroglyphs, and builders raised temples and tombs. Neighbors knew Egypt as a rich and powerful kingdom.",
+        "The Bible's story spends a long time here: Abraham visits, Joseph rises to power, and Moses leads Israel out. Those biblical events are marked on their own. This bar is the civilization around them."
+      ]
+    },
+    {
+      "id": "abraham",
+      "title": "Abraham",
+      "shortTitle": "Abraham",
+      "kind": "person",
+      "category": "scripture",
+      "era": "patriarchs",
+      "startYear": -2166,
+      "endYear": -1991,
+      "dateBasis": "traditional-chronology",
+      "importance": 1,
+      "summary": "God calls Abraham to leave his home. The family of Israel begins with him.",
+      "yearNote": "A common conservative chronology puts Abraham's birth near 2166 BC if the Exodus is 1446 BC and the ages in Genesis are read straight through. Ussher dated him later. The Bible gives the ages, not a BC year.",
+      "scripture": [
+        "Genesis 12-25"
+      ],
+      "topics": [
+        "patriarchs",
+        "bible"
+      ],
+      "keywords": [
+        "abram",
+        "covenant",
+        "isaac"
+      ],
+      "relatedIds": [
+        "sumer-ur",
+        "abraham-visits-egypt",
+        "isaac",
+        "jacob"
+      ],
+      "context": [
+        "The Bible says God calls Abram, later named Abraham, to leave his country for a land God will show him. God promises a family, a land, and a blessing for the nations. Abraham believes God, and that trust is famous through the rest of the Bible.",
+        "He travels through Canaan and, for a time, Egypt. His son Isaac and grandson Jacob carry the promise on. The years are a traditional count, labeled so they are not mistaken for a date written in Genesis."
+      ]
+    },
+    {
+      "id": "abraham-visits-egypt",
+      "title": "Abraham visits Egypt",
+      "shortTitle": "Abraham in Egypt",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -2091,
+      "dateBasis": "traditional-chronology",
+      "importance": 3,
+      "summary": "A famine sends Abraham and Sarah into Egypt for a while.",
+      "yearNote": "Placed in Abraham's lifetime on the traditional chronology. Genesis does not name the pharaoh.",
+      "scripture": [
+        "Genesis 12:10-20"
+      ],
+      "topics": [
+        "egypt",
+        "patriarchs",
+        "bible"
+      ],
+      "relatedIds": [
+        "abraham",
+        "ancient-egypt",
+        "joseph"
+      ],
+      "context": [
+        "When famine hits Canaan, Abraham goes down to Egypt. He is afraid and says Sarah is his sister. Pharaoh takes her into his house, then sends them away when he learns the truth.",
+        "The Bible does not name that pharaoh. Any painting that picks one is guessing. The visit itself is Scripture."
+      ]
+    },
+    {
+      "id": "sodom",
+      "title": "Sodom and Gomorrah",
+      "shortTitle": "Sodom",
+      "kind": "event",
+      "category": "scripture",
+      "era": "patriarchs",
+      "startYear": -2060,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "God judges the cities of Sodom and Gomorrah in the days of Abraham.",
+      "yearNote": "During Abraham's life. The Bible does not give a calendar year.",
+      "scripture": [
+        "Genesis 18-19"
+      ],
+      "topics": [
+        "patriarchs",
+        "bible"
+      ],
+      "relatedIds": [
+        "abraham"
+      ],
+      "context": [
+        "The Bible says Sodom and Gomorrah were violent and unjust. Abraham prays for any righteous people there. Angels warn Lot, and the cities are destroyed.",
+        "The story includes serious evil. It is told here because it sits inside Abraham's life, not to dwell on the details. Parents may want to read Genesis 19 with older children."
+      ]
+    },
+    {
+      "id": "isaac",
+      "title": "Isaac",
+      "shortTitle": "Isaac",
+      "kind": "person",
+      "category": "scripture",
+      "era": "patriarchs",
+      "startYear": -2066,
+      "endYear": -1886,
+      "dateBasis": "traditional-chronology",
+      "importance": 3,
+      "summary": "Abraham and Sarah's son, and the father of Jacob and Esau.",
+      "yearNote": "About 2066 BC for his birth if Abraham is 100, on the same traditional count as the 1446 BC Exodus.",
+      "scripture": [
+        "Genesis 21-27"
+      ],
+      "topics": [
+        "patriarchs",
+        "bible"
+      ],
+      "relatedIds": [
+        "abraham",
+        "jacob"
+      ],
+      "context": [
+        "Isaac is the child God promised to Abraham and Sarah in their old age. He lives in Canaan, digs wells, and becomes the father of Jacob and Esau.",
+        "His life is Scripture. The years are the same traditional chronology used for Abraham, not a date stamped in the text."
+      ]
+    },
+    {
+      "id": "jacob",
+      "title": "Jacob",
+      "shortTitle": "Jacob",
+      "kind": "person",
+      "category": "scripture",
+      "era": "patriarchs",
+      "startYear": -2006,
+      "endYear": -1859,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "Abraham's grandson. God gives him the name Israel.",
+      "yearNote": "About 2006 BC if he is 130 when he meets Pharaoh, and that meeting is 1876 BC. Traditional count, not a printed year.",
+      "scripture": [
+        "Genesis 25-35",
+        "Genesis 47"
+      ],
+      "topics": [
+        "patriarchs",
+        "bible"
+      ],
+      "keywords": [
+        "israel",
+        "esau"
+      ],
+      "relatedIds": [
+        "isaac",
+        "joseph",
+        "jacob-enters-egypt"
+      ],
+      "context": [
+        "Jacob tricks his brother and has to leave home. Years later he wrestles with God and is renamed Israel. His twelve sons become the tribes of Israel.",
+        "Late in life a famine drives him to Egypt, where his son Joseph is already a ruler. That move is its own marker."
+      ]
+    },
+    {
+      "id": "job",
+      "title": "Job",
+      "shortTitle": "Job",
+      "kind": "person",
+      "category": "scripture",
+      "era": "patriarchs",
+      "startYear": -2000,
+      "dateBasis": "approximate",
+      "importance": 4,
+      "summary": "A man who suffers and keeps talking with God. The book never dates him.",
+      "yearNote": "Many readers place Job in the age of the patriarchs. That setting is a guess, not a proved date.",
+      "scripture": [
+        "Job 1-2",
+        "Job 38-42"
+      ],
+      "topics": [
+        "patriarchs",
+        "bible"
+      ],
+      "relatedIds": [
+        "abraham"
+      ],
+      "context": [
+        "The book of Job is Scripture. Job loses his wealth, his children, and his health. His friends give long speeches. In the end God speaks, and Job is restored.",
+        "The book does not say when Job lived or name a king. Putting him near Abraham is a common reading, marked here as an uncertain date."
+      ]
+    },
+    {
+      "id": "middle-kingdom",
+      "title": "Egypt's Middle Kingdom",
+      "shortTitle": "Middle Kingdom",
+      "kind": "period",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -2055,
+      "endYear": -1650,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A strong stretch of Egyptian history that overlaps Abraham and Joseph on this chronology.",
+      "yearNote": "About 2055-1650 BC is a common textbook range. Scholars still adjust the edges.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "middle kingdom"
+      ],
+      "relatedIds": [
+        "ancient-egypt",
+        "joseph",
+        "hammurabi"
+      ],
+      "context": [
+        "Historians call this the Middle Kingdom. Egypt was united again, built forts, and traded widely. The dates sit after this timeline's Flood, so they can be drawn where textbooks usually put them.",
+        "On the traditional biblical count, Abraham and Joseph live during these centuries. The Bible does not say 'Middle Kingdom.' Lining the two clocks up is something to notice, not a verse."
+      ]
+    },
+    {
+      "id": "hammurabi",
+      "title": "Hammurabi",
+      "shortTitle": "Hammurabi",
+      "kind": "person",
+      "category": "historical",
+      "era": "patriarchs",
+      "startYear": -1792,
+      "endYear": -1750,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "King of Babylon, famous for a written law code.",
+      "yearNote": "About 1792-1750 BC on a common dating. Other scholars shift him by decades.",
+      "topics": [
+        "mesopotamia"
+      ],
+      "keywords": [
+        "babylon",
+        "laws",
+        "code"
+      ],
+      "relatedIds": [
+        "sumer-ur",
+        "joseph"
+      ],
+      "context": [
+        "Hammurabi ruled Babylon in Mesopotamia. His laws were carved on a stone stele. They show a real king trying to order a kingdom: trade, family, and punishments.",
+        "He lived in the same broad era as the patriarchs on many timelines. The Bible does not mention him. A story that makes him Abraham's neighbor is going past the evidence."
+      ]
+    },
+    {
+      "id": "joseph",
+      "title": "Joseph",
+      "shortTitle": "Joseph",
+      "kind": "person",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1915,
+      "endYear": -1805,
+      "dateBasis": "traditional-chronology",
+      "importance": 1,
+      "summary": "Jacob's son is sold into Egypt, rises to serve Pharaoh, and saves his family from famine.",
+      "yearNote": "About 1915-1805 BC if Joseph is near 39 when Jacob arrives in 1876 BC, and dies at 110. That chain is traditional. The Bible names no pharaoh and prints no BC year.",
+      "scripture": [
+        "Genesis 37-50"
+      ],
+      "topics": [
+        "joseph",
+        "egypt",
+        "bible"
+      ],
+      "keywords": [
+        "coat",
+        "famine",
+        "dreams"
+      ],
+      "relatedIds": [
+        "jacob",
+        "famine-egypt",
+        "jacob-enters-egypt",
+        "joseph-hyksos-link",
+        "ancient-egypt"
+      ],
+      "context": [
+        "Joseph's brothers sell him. In Egypt he is put in prison, then called to explain Pharaoh's dreams. He becomes a high official and stores grain before seven years of famine. When his brothers come for food, he forgives them and brings the whole family to Egypt.",
+        "The story is Scripture. Which dynasty he served is not. Some writers connect him with the Hyksos, who ruled later. On this traditional dating, Joseph is earlier. That argument is its own purple marker."
+      ]
+    },
+    {
+      "id": "famine-egypt",
+      "title": "Famine in Egypt",
+      "shortTitle": "The famine",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1886,
+      "endYear": -1879,
+      "dateBasis": "traditional-chronology",
+      "importance": 3,
+      "summary": "Seven good years, then seven years of famine, just as Joseph said.",
+      "yearNote": "Placed just before Jacob's arrival on the traditional count.",
+      "scripture": [
+        "Genesis 41"
+      ],
+      "topics": [
+        "joseph",
+        "egypt",
+        "bible"
+      ],
+      "relatedIds": [
+        "joseph",
+        "jacob-enters-egypt"
+      ],
+      "context": [
+        "Pharaoh dreams of fat cows and thin cows, and of grain. Joseph says seven plentiful years will be followed by seven years of hunger. Egypt stores food and becomes the place other lands come to buy grain.",
+        "The Bible tells the famine. It does not name the pharaoh or give a modern year."
+      ]
+    },
+    {
+      "id": "jacob-enters-egypt",
+      "title": "Jacob's family enters Egypt",
+      "shortTitle": "Israel enters Egypt",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1876,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "Jacob and his family move to Egypt and settle in Goshen.",
+      "yearNote": "1876 BC counts 430 years back from an Exodus in 1446 BC, using Exodus 12:40. Some readers start those 430 years earlier, with Abraham. The move itself is Scripture.",
+      "scripture": [
+        "Genesis 46-47",
+        "Exodus 12:40-41"
+      ],
+      "topics": [
+        "joseph",
+        "egypt",
+        "bible"
+      ],
+      "relatedIds": [
+        "joseph",
+        "jacob",
+        "israel-in-bondage"
+      ],
+      "context": [
+        "Joseph sends for his father. Jacob, old and cautious, travels to Egypt. Pharaoh lets the family live in Goshen and care for flocks. A small family of about seventy people arrives.",
+        "Centuries later that family has become a large people. The Bible marks both the welcome and, later, the slavery. How to count the years between them is explained on the markers, not hidden."
+      ]
+    },
+    {
+      "id": "hyksos",
+      "title": "The Hyksos",
+      "shortTitle": "Hyksos",
+      "kind": "period",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1650,
+      "endYear": -1550,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Rulers from the Levant who held northern Egypt before the New Kingdom.",
+      "yearNote": "About 1650-1550 BC. The edges are approximate.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "hyksos",
+        "delta"
+      ],
+      "relatedIds": [
+        "joseph-hyksos-link",
+        "new-kingdom",
+        "ancient-egypt"
+      ],
+      "context": [
+        "The Hyksos were rulers from the region of Canaan and Syria who took power in northern Egypt. Egyptians later wrote about them as outsiders. Archaeologists find their capital at Avaris in the Delta.",
+        "They are history. Whether they have anything to do with Joseph is a separate question, and this map does not treat that link as fact."
+      ]
+    },
+    {
+      "id": "joseph-hyksos-link",
+      "title": "Was Joseph a Hyksos ruler?",
+      "shortTitle": "Joseph and the Hyksos?",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "egypt",
+      "startYear": -1650,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A popular guess that Joseph belonged to the Hyksos period. The Bible does not say so.",
+      "yearNote": "Parked on the Hyksos dates because that is the idea being tested, not because it is established.",
+      "scripture": [
+        "Genesis 41"
+      ],
+      "topics": [
+        "joseph",
+        "egypt"
+      ],
+      "relatedIds": [
+        "joseph",
+        "hyksos"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. Some writers notice that the Hyksos were outsiders in Egypt and suggest Joseph's rise fits that period. On the traditional early date, Joseph lived earlier, during the Middle Kingdom, and had died before the Hyksos ruled.",
+        "The Bible never names Joseph's pharaoh. A good history page can show the guess. It should not talk as if the guess were a verse."
+      ]
+    },
+    {
+      "id": "israel-in-bondage",
+      "title": "Israel enslaved in Egypt",
+      "shortTitle": "Slavery in Egypt",
+      "kind": "period",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1700,
+      "endYear": -1446,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "A new king who did not know Joseph forces the Israelites to labor.",
+      "yearNote": "The Bible does not date the start. The bar runs until the traditional Exodus year and is approximate at the beginning.",
+      "scripture": [
+        "Exodus 1"
+      ],
+      "topics": [
+        "moses",
+        "egypt",
+        "bible"
+      ],
+      "relatedIds": [
+        "joseph",
+        "moses",
+        "exodus"
+      ],
+      "context": [
+        "Exodus says a king arose who did not know Joseph. He feared Israel's numbers and set them to hard labor, making bricks and working in the fields. He ordered baby boys thrown into the Nile.",
+        "The slavery is Scripture. Which dynasty began it, and the exact year it started, are not named. The end of the bar is the traditional date of the Exodus, itself labeled as a chronology."
+      ]
+    },
+    {
+      "id": "minoa",
+      "title": "Minoan Crete",
+      "shortTitle": "Minoans",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1900,
+      "endYear": -1450,
+      "dateBasis": "approximate",
+      "importance": 4,
+      "summary": "A sea people on Crete with palaces and vivid art, neighbors of Egypt's world.",
+      "yearNote": "The famous palace age is often placed around 1900-1450 BC. Earlier Cretan history is dated further back by many textbooks.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "crete",
+        "knossos"
+      ],
+      "relatedIds": [
+        "ancient-egypt",
+        "mycenaeans"
+      ],
+      "context": [
+        "On the island of Crete, the Minoans built palaces such as Knossos, painted ships and bulls, and traded across the sea. A huge volcanic eruption at Thera damaged their world. Later, Greek-speaking Mycenaeans became powerful.",
+        "They are not in the Bible. They show what else was alive in the seas near Egypt while Joseph and Moses' story unfolded."
+      ]
+    },
+    {
+      "id": "moses",
+      "title": "Moses",
+      "shortTitle": "Moses",
+      "kind": "person",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1526,
+      "endYear": -1406,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "The Hebrew baby drawn from the Nile who leads Israel out of Egypt.",
+      "yearNote": "About 1526-1406 BC if Moses is 80 at a 1446 BC Exodus and dies at 120. The Bible gives his age, not the BC year, and never names the princess or the pharaoh.",
+      "scripture": [
+        "Exodus 2-14",
+        "Deuteronomy 34"
+      ],
+      "topics": [
+        "moses",
+        "exodus",
+        "egypt",
+        "bible"
+      ],
+      "keywords": [
+        "burning bush",
+        "pharaoh",
+        "nile"
+      ],
+      "relatedIds": [
+        "exodus",
+        "burning-bush",
+        "mount-sinai",
+        "pharaoh-of-the-exodus",
+        "hatshepsut"
+      ],
+      "context": [
+        "A Hebrew mother hides her baby in a basket on the Nile. Pharaoh's daughter finds him and raises him. As a grown man he flees, meets God at a burning bush, and returns to tell Pharaoh to let Israel go. He leads the people to Sinai and dies in sight of the promised land.",
+        "All of that is Scripture. Films and novels sometimes name Hatshepsut as the princess. The Bible does not. That guess stays on the interpretation marker."
+      ]
+    },
+    {
+      "id": "hatshepsut",
+      "title": "Hatshepsut",
+      "shortTitle": "Hatshepsut",
+      "kind": "person",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1479,
+      "endYear": -1458,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A woman who ruled Egypt as pharaoh and sent ships to Punt.",
+      "yearNote": "About 1479-1458 BC for her reign as senior ruler, overlapping Thutmose III.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "pharaoh",
+        "punt"
+      ],
+      "relatedIds": [
+        "thutmose-iii",
+        "pharaoh-of-the-exodus",
+        "moses"
+      ],
+      "context": [
+        "Hatshepsut was a royal woman who took the title of pharaoh. Her temple at Deir el-Bahri still stands. Reliefs show a trading voyage to the land of Punt. She ruled in the early New Kingdom, near the traditional years of Moses' adulthood.",
+        "A few writers guess she was the princess who found the baby Moses. The Bible never names her. That idea is a guess, not a fact, and it is not marked here as Scripture."
+      ]
+    },
+    {
+      "id": "thutmose-iii",
+      "title": "Thutmose III",
+      "shortTitle": "Thutmose III",
+      "kind": "person",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1479,
+      "endYear": -1425,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A warrior pharaoh of the early New Kingdom, sometimes suggested as the pharaoh of the Exodus.",
+      "yearNote": "About 1479-1425 BC, including years when Hatshepsut held power.",
+      "topics": [
+        "egypt"
+      ],
+      "relatedIds": [
+        "hatshepsut",
+        "pharaoh-of-the-exodus",
+        "exodus"
+      ],
+      "context": [
+        "Thutmose III campaigned into Canaan and Syria and left records of his victories. He is one of the best documented pharaohs of the 1400s BC.",
+        "Because those years sit near a 1446 BC Exodus, some Christians suggest he was the pharaoh Moses faced. Others disagree. The suggestion is labeled on the marker 'Which pharaoh?' The man himself is history."
+      ]
+    },
+    {
+      "id": "new-kingdom",
+      "title": "Egypt's New Kingdom",
+      "shortTitle": "New Kingdom",
+      "kind": "period",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1550,
+      "endYear": -1070,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Egypt's empire age: Hatshepsut, Thutmose III, Akhenaten, Tutankhamun, and Ramesses II.",
+      "yearNote": "About 1550-1070 BC, a standard historical range.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "empire",
+        "karnak",
+        "valley of the kings"
+      ],
+      "relatedIds": [
+        "hatshepsut",
+        "akhenaten",
+        "tutankhamun",
+        "ramesses-ii",
+        "exodus"
+      ],
+      "context": [
+        "After the Hyksos were driven out, Egypt's New Kingdom became an empire. Pharaohs were buried in the Valley of the Kings. Temples at Karnak and Luxor grew huge. This is the Egypt of the famous royal names.",
+        "On the traditional biblical date, the Exodus falls early in this period. On the later date, it falls near Ramesses II. Both ideas are marked. The New Kingdom itself is history either way."
+      ]
+    },
+    {
+      "id": "burning-bush",
+      "title": "The burning bush",
+      "shortTitle": "Burning bush",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1446,
+      "dateBasis": "traditional-chronology",
+      "importance": 3,
+      "summary": "God speaks to Moses from a bush that burns and is not consumed.",
+      "yearNote": "Set at the traditional Exodus year. The Bible places it just before Moses returns to Egypt.",
+      "scripture": [
+        "Exodus 3-4"
+      ],
+      "topics": [
+        "moses",
+        "exodus",
+        "bible"
+      ],
+      "relatedIds": [
+        "moses",
+        "exodus"
+      ],
+      "context": [
+        "While Moses is keeping sheep, he sees a bush on fire that does not burn up. God tells him to go to Pharaoh and bring Israel out of Egypt. Moses does not feel ready. God sends him anyway.",
+        "The meeting is Scripture. The year is the traditional chronology used for the Exodus."
+      ]
+    },
+    {
+      "id": "the-plagues",
+      "title": "The ten plagues",
+      "shortTitle": "The plagues",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1446,
+      "dateBasis": "traditional-chronology",
+      "importance": 3,
+      "summary": "God strikes Egypt with plagues until Pharaoh lets Israel go.",
+      "yearNote": "Tied to the traditional Exodus year. The Bible does not number a BC date.",
+      "scripture": [
+        "Exodus 7-12"
+      ],
+      "topics": [
+        "moses",
+        "exodus",
+        "egypt",
+        "bible"
+      ],
+      "keywords": [
+        "passover"
+      ],
+      "relatedIds": [
+        "exodus",
+        "moses",
+        "pharaoh-of-the-exodus"
+      ],
+      "context": [
+        "Moses and Aaron speak to Pharaoh. The Nile turns to blood. Frogs, gnats, flies, sick livestock, boils, hail, locusts, and darkness follow. The last plague is the death of the firstborn. Israelite families mark their doors, and the Passover remembers that night.",
+        "The plagues are Scripture. Naming the pharaoh who refused is not. That question is marked as an interpretation."
+      ]
+    },
+    {
+      "id": "exodus",
+      "title": "The Exodus",
+      "shortTitle": "The Exodus",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1446,
+      "dateBasis": "traditional-chronology",
+      "importance": 1,
+      "summary": "God brings Israel out of slavery in Egypt.",
+      "yearNote": "1446 BC counts 480 years before Solomon's temple, from 1 Kings 6:1. Another proposal, marked in purple near 1250 BC, is not treated as settled either. The Bible does not name the pharaoh.",
+      "scripture": [
+        "Exodus 12-14",
+        "1 Kings 6:1"
+      ],
+      "topics": [
+        "exodus",
+        "moses",
+        "egypt",
+        "bible"
+      ],
+      "keywords": [
+        "passover",
+        "pharaoh"
+      ],
+      "relatedIds": [
+        "the-plagues",
+        "crossing-the-sea",
+        "mount-sinai",
+        "pharaoh-of-the-exodus",
+        "late-date-exodus"
+      ],
+      "context": [
+        "The Bible tells of God bringing Israel out of slavery in Egypt. They leave in haste, remembering the Passover, and Pharaoh changes his mind and chases them.",
+        "The event is Scripture. The year 1446 BC is a traditional count, not a number printed in Exodus. A different scholarly idea puts the leaving nearer 1250 BC, in the days of Ramesses II. This map shows that idea separately and does not pretend either year is beyond debate."
+      ]
+    },
+    {
+      "id": "crossing-the-sea",
+      "title": "Crossing the sea",
+      "shortTitle": "The sea",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1446,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "God opens a way through the sea so Israel can cross, and the chasing army is lost.",
+      "yearNote": "The same night period as the Exodus on the traditional chronology.",
+      "scripture": [
+        "Exodus 14"
+      ],
+      "topics": [
+        "exodus",
+        "moses",
+        "bible"
+      ],
+      "keywords": [
+        "red sea",
+        "yam suph"
+      ],
+      "relatedIds": [
+        "exodus",
+        "moses"
+      ],
+      "context": [
+        "The Bible says Israel is trapped between Pharaoh's chariots and the sea. God drives the sea back with a strong wind. The people cross on dry ground. The water returns on the army.",
+        "English Bibles often call it the Red Sea. The Hebrew words can also be read as 'sea of reeds.' The crossing itself is Scripture. Debates about the exact beach are not given a false precision here."
+      ]
+    },
+    {
+      "id": "mount-sinai",
+      "title": "Mount Sinai and the Ten Commandments",
+      "shortTitle": "Sinai",
+      "kind": "event",
+      "category": "scripture",
+      "era": "egypt",
+      "startYear": -1446,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "At Sinai, God gives Israel the Ten Commandments and the covenant.",
+      "yearNote": "In the year of the traditional Exodus. The Bible's own clock says the third month after leaving Egypt.",
+      "scripture": [
+        "Exodus 19-20"
+      ],
+      "topics": [
+        "exodus",
+        "moses",
+        "bible"
+      ],
+      "keywords": [
+        "ten commandments",
+        "law"
+      ],
+      "relatedIds": [
+        "exodus",
+        "moses",
+        "joshua"
+      ],
+      "context": [
+        "Israel camps at Sinai. The mountain is wrapped in cloud and thunder. God speaks the Ten Commandments: worship God alone, honor parents, and refuse murder, theft, lies, and coveting. The people agree to the covenant.",
+        "The commandments are Scripture. Which modern peak is Sinai is less certain, so this map does not pretend to drop a pin on a satellite photo."
+      ]
+    },
+    {
+      "id": "pharaoh-of-the-exodus",
+      "title": "Who was the pharaoh of the Exodus?",
+      "shortTitle": "Which pharaoh?",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "egypt",
+      "startYear": -1446,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "The Bible never names him. Several pharaohs have been suggested.",
+      "yearNote": "Parked on the traditional Exodus year. A different suggestion sits near Ramesses II.",
+      "scripture": [
+        "Exodus 1",
+        "Exodus 5"
+      ],
+      "topics": [
+        "exodus",
+        "egypt"
+      ],
+      "keywords": [
+        "thutmose",
+        "ramesses",
+        "hatshepsut"
+      ],
+      "relatedIds": [
+        "exodus",
+        "thutmose-iii",
+        "hatshepsut",
+        "late-date-exodus",
+        "ramesses-ii"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. Exodus calls the ruler Pharaoh and never gives his personal name. On the 1446 BC chronology, some writers suggest Thutmose III, and a few suggest a link with Hatshepsut for the princess who found Moses.",
+        "On the later chronology, Ramesses II is the usual candidate. Both suggestions are ideas built from matching clues. Neither name is a Bible verse. The purple marker is here so the guess is not quietly treated as history."
+      ]
+    },
+    {
+      "id": "canaan",
+      "title": "Canaan",
+      "shortTitle": "Canaan",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "israel",
+      "startYear": -1500,
+      "endYear": -1200,
+      "dateBasis": "approximate",
+      "importance": 4,
+      "summary": "The land of cities between Egypt and Mesopotamia, the land promised to Israel.",
+      "scripture": [
+        "Genesis 12:5-7"
+      ],
+      "topics": [
+        "israel",
+        "egypt"
+      ],
+      "relatedIds": [
+        "joshua",
+        "hittites"
+      ],
+      "context": [
+        "Canaan was a patchwork of walled towns between the Mediterranean and the Jordan. Egypt, the Hittites, and local kings all wanted influence there. Letters dug up at Amarna show Canaanite rulers writing to Egypt.",
+        "The Bible calls this the land promised to Abraham's family. The towns and the letters are history. How every battle in Joshua lines up with a ruined wall is often still debated."
+      ]
+    },
+    {
+      "id": "hittites",
+      "title": "The Hittites",
+      "shortTitle": "Hittites",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1600,
+      "endYear": -1200,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A powerful kingdom in Anatolia that fought Egypt and appears in the Bible.",
+      "topics": [
+        "egypt",
+        "israel"
+      ],
+      "keywords": [
+        "hittite",
+        "hattusa"
+      ],
+      "relatedIds": [
+        "ramesses-ii",
+        "joshua",
+        "canaan"
+      ],
+      "context": [
+        "The Hittites ruled from Hattusa in modern Turkey. They wrote treaties, fought Egypt, and for a while controlled parts of Syria. Ramesses II fought them at Kadesh and later made peace.",
+        "The Bible also mentions Hittites living in Canaan. Archaeologists once doubted a great Hittite kingdom existed. The ruins and tablets showed that it did. That is a case of history catching up with a name the Bible already used."
+      ]
+    },
+    {
+      "id": "joshua",
+      "title": "Joshua and Jericho",
+      "shortTitle": "Joshua",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1406,
+      "dateBasis": "traditional-chronology",
+      "importance": 2,
+      "summary": "Joshua leads Israel into Canaan. Jericho's walls fall.",
+      "yearNote": "About 1406 BC, forty years after a 1446 BC Exodus. The battle is Scripture. Fitting every ruin to that year is not settled.",
+      "scripture": [
+        "Joshua 1-6"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "keywords": [
+        "jericho",
+        "promised land"
+      ],
+      "relatedIds": [
+        "moses",
+        "judges",
+        "hittites"
+      ],
+      "context": [
+        "After Moses dies, Joshua leads Israel across the Jordan. At Jericho they march, the trumpets sound, and the wall falls. The book of Joshua tells of a conquest of Canaan.",
+        "Jericho is a real ancient city, and archaeologists have argued for a long time about which fallen walls match the Bible's account. The biblical event is Scripture. A particular layer of bricks is an interpretation until the evidence is clear, so this map does not announce a solved dig."
+      ]
+    },
+    {
+      "id": "akhenaten",
+      "title": "Akhenaten",
+      "shortTitle": "Akhenaten",
+      "kind": "person",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1353,
+      "endYear": -1336,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A pharaoh who tried to worship one sun disk and built a new capital.",
+      "yearNote": "About 1353-1336 BC.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "amarna",
+        "aten"
+      ],
+      "relatedIds": [
+        "tutankhamun",
+        "new-kingdom"
+      ],
+      "context": [
+        "Akhenaten closed many temples and promoted the Aten, the sun disk. He built a new city at Amarna. Art from his reign looks different from older Egyptian art: long faces, family scenes, bright light.",
+        "Some people notice 'one god' and jump to Moses. The Aten was a sun disk in Egyptian religion, not the God of Israel, and on the early Exodus date Akhenaten ruled after Israel had left. The comparison is interesting and not an identification."
+      ]
+    },
+    {
+      "id": "tutankhamun",
+      "title": "Tutankhamun",
+      "shortTitle": "King Tut",
+      "kind": "person",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1332,
+      "endYear": -1323,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A young pharaoh, famous because his tomb survived almost intact.",
+      "yearNote": "About 1332-1323 BC. Howard Carter found the tomb in 1922.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "tut",
+        "carter",
+        "tomb"
+      ],
+      "relatedIds": [
+        "akhenaten",
+        "new-kingdom"
+      ],
+      "context": [
+        "Tutankhamun became pharaoh as a boy and died young. Most royal tombs were robbed. His was found in 1922 with masks, chariots, and furniture still inside. That is why his name is famous, not because he ruled the longest.",
+        "He lived in the century after the traditional date of the Exodus, during the time of the judges on this map. He is not a character in the Bible."
+      ]
+    },
+    {
+      "id": "ramesses-ii",
+      "title": "Ramesses II",
+      "shortTitle": "Ramesses II",
+      "kind": "person",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1279,
+      "endYear": -1213,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A long-reigning pharaoh and builder. Some historians think he was the pharaoh of the Exodus.",
+      "yearNote": "1279-1213 BC is a standard historical date for his reign.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "ramses",
+        "abu simbel"
+      ],
+      "relatedIds": [
+        "late-date-exodus",
+        "merneptah-stele",
+        "pharaoh-of-the-exodus"
+      ],
+      "context": [
+        "Ramesses II ruled for more than sixty years, fought the Hittites, and covered Egypt with statues and temples, including Abu Simbel. He was a real and powerful king. His own inscriptions boast about his victories.",
+        "Many textbooks call him the pharaoh of the Exodus because they date the Exodus in the 1200s BC and because Exodus mentions the city of Rameses. This map's main Exodus marker uses 1446 BC instead. Ramesses stays on the map as history either way. The identification is the purple marker next door."
+      ]
+    },
+    {
+      "id": "late-date-exodus",
+      "title": "A later date for the Exodus",
+      "shortTitle": "Exodus around 1250 BC?",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "egypt",
+      "startYear": -1250,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "Another common idea: Israel left Egypt in the 1200s BC, near Ramesses II.",
+      "yearNote": "A proposal, not the date used for the main Exodus marker.",
+      "scripture": [
+        "Exodus 1:11"
+      ],
+      "topics": [
+        "exodus",
+        "egypt"
+      ],
+      "relatedIds": [
+        "exodus",
+        "ramesses-ii",
+        "pharaoh-of-the-exodus",
+        "merneptah-stele"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. Many historians date the Exodus near 1250 BC. They point to the store city called Rameses in Exodus 1 and to destruction layers in Canaan from that era.",
+        "The other count, from 1 Kings 6:1, gives about 1446 BC. The Bible does not settle the argument by naming a pharaoh. This timeline keeps 1446 on the main marker and puts 1250 here so children can see both ideas without mixing them up."
+      ]
+    },
+    {
+      "id": "merneptah-stele",
+      "title": "The Merneptah Stele",
+      "shortTitle": "Merneptah Stele",
+      "kind": "event",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1208,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "An Egyptian stone that names Israel, the earliest widely accepted mention outside the Bible.",
+      "yearNote": "About 1208 BC, in the reign of Merneptah, son of Ramesses II.",
+      "topics": [
+        "egypt",
+        "israel"
+      ],
+      "keywords": [
+        "israel",
+        "stele"
+      ],
+      "relatedIds": [
+        "ramesses-ii",
+        "judges"
+      ],
+      "context": [
+        "Pharaoh Merneptah set up a victory stone. Among the peoples he claims to have defeated is Israel. It is the oldest mention of Israel that almost all historians accept outside the Bible.",
+        "The stone does not tell the Exodus story. It does show that a people called Israel was in Canaan by about 1208 BC. On the early Exodus date, that fits the time of the judges. It is history sitting beside Scripture."
+      ]
+    },
+    {
+      "id": "nubia",
+      "title": "Nubia and Kush",
+      "shortTitle": "Nubia",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -2000,
+      "endYear": -1000,
+      "dateBasis": "approximate",
+      "importance": 4,
+      "summary": "Kingdoms up the Nile, south of Egypt, rich in gold and often at war or in trade with the pharaohs.",
+      "topics": [
+        "egypt"
+      ],
+      "keywords": [
+        "kush",
+        "nubia"
+      ],
+      "relatedIds": [
+        "ancient-egypt"
+      ],
+      "context": [
+        "South of Egypt, Nubian kingdoms traded gold, ivory, and soldiers with the pharaohs, and sometimes ruled Egypt themselves. Later, the Bible mentions Cush, a name tied to this region.",
+        "They belong on an Egypt map because the Nile world was bigger than the pyramids."
+      ]
+    },
+    {
+      "id": "mycenaeans",
+      "title": "The Mycenaeans",
+      "shortTitle": "Mycenaeans",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "egypt",
+      "startYear": -1600,
+      "endYear": -1100,
+      "dateBasis": "approximate",
+      "importance": 4,
+      "summary": "Early Greek kingdoms of hill forts and gold masks, in the same centuries as the late Bronze Age.",
+      "topics": [
+        "greece"
+      ],
+      "relatedIds": [
+        "troy",
+        "minoa"
+      ],
+      "context": [
+        "On the Greek mainland, Mycenaean kings built thick-walled palaces and were buried with gold. Their world faded around the same centuries when several eastern kingdoms wobbled, near the end of the Bronze Age.",
+        "They are part of the neighborhood of the judges in Israel, not a Bible story. The later Greek tales of Troy grow out of memories from this age."
+      ]
+    },
+    {
+      "id": "troy",
+      "title": "Troy and the Iliad",
+      "shortTitle": "Troy",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "greece-rome",
+      "startYear": -1200,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A real city, and a famous poem. How much of the poem happened is still debated.",
+      "topics": [
+        "greece",
+        "myths"
+      ],
+      "keywords": [
+        "iliad",
+        "homer",
+        "trojan"
+      ],
+      "relatedIds": [
+        "mycenaeans",
+        "greek-myths"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. Archaeologists found a real city at Troy in modern Turkey, rebuilt many times. The Iliad, written down centuries later, tells of a Greek war there over Helen.",
+        "A war at Troy is possible. The gods, the wooden horse, and the speeches are poetry. Rosemary Sutcliff's Black Ships Before Troy retells the poem for children. It is a story, not a history textbook and not Scripture."
+      ]
+    },
+    {
+      "id": "judges",
+      "title": "The judges",
+      "shortTitle": "The judges",
+      "kind": "period",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1375,
+      "endYear": -1050,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "Before the kings, leaders such as Deborah, Gideon, and Samson rise in times of trouble.",
+      "yearNote": "From after Joshua until Saul. The end date is approximate.",
+      "scripture": [
+        "Judges"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "keywords": [
+        "samson",
+        "gideon",
+        "deborah"
+      ],
+      "relatedIds": [
+        "joshua",
+        "ruth",
+        "samuel"
+      ],
+      "context": [
+        "The book of Judges describes a repeated pattern: Israel turns away, a neighboring people oppresses them, they cry out, and God raises a judge to deliver them. Deborah, Gideon, and Samson are three of the famous names.",
+        "The book is Scripture. Its stories include violence. The years are a bracket around the period, not a dated diary."
+      ]
+    },
+    {
+      "id": "ruth",
+      "title": "Ruth",
+      "shortTitle": "Ruth",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1100,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "A woman from Moab who stays loyal to Naomi and joins the family line of David.",
+      "yearNote": "The story is set in the days of the judges. No calendar year is given.",
+      "scripture": [
+        "Ruth"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "judges",
+        "david"
+      ],
+      "context": [
+        "After her husband dies, Ruth leaves Moab and goes with Naomi to Bethlehem. She gleans in the fields of Boaz. Their family becomes the line of King David, and later of Jesus.",
+        "The book is Scripture, and it is a gentle story inside a rougher age. The dot is placed in the judges period without pretending we know the year."
+      ]
+    },
+    {
+      "id": "philistines",
+      "title": "The Philistines",
+      "shortTitle": "Philistines",
+      "kind": "civilization",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1175,
+      "endYear": -700,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "alsoHistorical": true,
+      "summary": "A people on the coastal plain who clash with Israel in the days of Samson, Saul, and David.",
+      "yearNote": "Archaeology and the Bible both know them. The dates of their arrival are still discussed.",
+      "scripture": [
+        "Judges 13-16",
+        "1 Samuel 17"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "keywords": [
+        "goliath",
+        "gath"
+      ],
+      "relatedIds": [
+        "david",
+        "judges",
+        "ruth"
+      ],
+      "context": [
+        "The Philistines lived in cities such as Gaza, Ashkelon, and Gath. The Bible tells of Samson among them, of the capture of the ark, and of David's fight with Goliath. Egyptian texts also know a people of that name.",
+        "They are in Scripture, and they are also a people archaeologists study. The famous fight with Goliath is a Bible story. A modern movie version may add details the text does not."
+      ]
+    },
+    {
+      "id": "samuel",
+      "title": "Samuel",
+      "shortTitle": "Samuel",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1070,
+      "endYear": -1010,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "The last judge, who anoints Saul and then David.",
+      "yearNote": "Approximate years around the start of the kingdom.",
+      "scripture": [
+        "1 Samuel 1-16"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "saul",
+        "david",
+        "judges"
+      ],
+      "context": [
+        "Samuel is promised to God as a child and grows up at the tabernacle. When Israel asks for a king, he warns them, then anoints Saul. Later God sends him to anoint David.",
+        "His story is Scripture. The years are rounded so he sits just before the kings."
+      ]
+    },
+    {
+      "id": "saul",
+      "title": "Saul",
+      "shortTitle": "Saul",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1050,
+      "endYear": -1010,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "Israel's first king. He starts well and finishes in disobedience.",
+      "yearNote": "About 1050-1010 BC. Kingdom dates this early are approximate.",
+      "scripture": [
+        "1 Samuel 9-31"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "samuel",
+        "david"
+      ],
+      "context": [
+        "Saul is tall, victorious, and then jealous of David. He disobeys God's instructions and loses the kingdom. He dies in battle on Mount Gilboa.",
+        "The story is Scripture. The dates are the usual approximate ones for the start of the monarchy."
+      ]
+    },
+    {
+      "id": "david",
+      "title": "David",
+      "shortTitle": "David",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -1010,
+      "endYear": -970,
+      "dateBasis": "approximate",
+      "importance": 1,
+      "summary": "The shepherd who becomes king, writes many psalms, and captures Jerusalem.",
+      "yearNote": "About 1010-970 BC. Firmer than the years before Abraham, and still approximate.",
+      "scripture": [
+        "1 Samuel 16-17",
+        "2 Samuel"
+      ],
+      "topics": [
+        "david",
+        "israel",
+        "bible"
+      ],
+      "keywords": [
+        "goliath",
+        "psalms",
+        "jerusalem"
+      ],
+      "relatedIds": [
+        "saul",
+        "solomon",
+        "first-temple",
+        "ruth"
+      ],
+      "context": [
+        "David is anointed while Saul is still king. He fights Goliath, waits through years of danger, and at last rules from Jerusalem. He wants to build a temple. God says his son will build it. The psalms include many prayers connected with David.",
+        "He is also a man who sins badly, including taking Bathsheba and arranging Uriah's death, and who repents. The Bible tells both the glory and the failure. The dates are the common ones for his reign."
+      ]
+    },
+    {
+      "id": "solomon",
+      "title": "Solomon",
+      "shortTitle": "Solomon",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -970,
+      "endYear": -930,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "David's son, known for wisdom, the temple, and a kingdom that splits after he dies.",
+      "yearNote": "About 970-930 BC.",
+      "scripture": [
+        "1 Kings 3-11"
+      ],
+      "topics": [
+        "david",
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "david",
+        "first-temple",
+        "kingdom-divides"
+      ],
+      "context": [
+        "Solomon asks God for wisdom and becomes famous for it. He builds the temple in Jerusalem and trades widely. The Bible also says many wives turned his heart toward other gods.",
+        "After his death the kingdom divides. His reign is Scripture. The years are the usual ones tied to the temple date."
+      ]
+    },
+    {
+      "id": "first-temple",
+      "title": "Solomon's temple",
+      "shortTitle": "The temple",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -966,
+      "dateBasis": "historical",
+      "importance": 2,
+      "alsoHistorical": true,
+      "summary": "Solomon builds a temple in Jerusalem, the center of Israel's worship.",
+      "yearNote": "Often dated to about 966 BC, Solomon's fourth year. That year is the anchor for the 1446 BC Exodus count.",
+      "scripture": [
+        "1 Kings 6"
+      ],
+      "topics": [
+        "david",
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "solomon",
+        "exodus",
+        "fall-of-jerusalem"
+      ],
+      "context": [
+        "The Bible describes cedar, gold, and careful measurements. The ark of the covenant is brought in, and a cloud fills the house. This is the temple later destroyed by Babylon.",
+        "The building is Scripture. The year about 966 BC is also how many historians date Solomon's fourth year, which is why the early Exodus math starts here and counts back 480 years."
+      ]
+    },
+    {
+      "id": "kingdom-divides",
+      "title": "The kingdom divides",
+      "shortTitle": "The split",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -930,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "After Solomon, Israel splits into a northern kingdom and Judah in the south.",
+      "yearNote": "About 930 BC.",
+      "scripture": [
+        "1 Kings 12"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "solomon",
+        "elijah",
+        "fall-of-samaria"
+      ],
+      "context": [
+        "Rehoboam, Solomon's son, speaks harshly to the people. Ten tribes follow Jeroboam and become the northern kingdom, often called Israel. Judah and Benjamin stay with David's line in Jerusalem.",
+        "From here the Bible tells two kingdoms, two sets of kings, and prophets who speak to both. The split is Scripture."
+      ]
+    },
+    {
+      "id": "elijah",
+      "title": "Elijah",
+      "shortTitle": "Elijah",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -860,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A prophet who confronts King Ahab and the worship of Baal.",
+      "yearNote": "Mid-800s BC, in the reign of Ahab. The year is approximate.",
+      "scripture": [
+        "1 Kings 17-19"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "kingdom-divides"
+      ],
+      "context": [
+        "Elijah tells King Ahab that there will be no rain. On Mount Carmel he challenges the prophets of Baal. Fire falls on Elijah's sacrifice. Later he flees, and God meets him not in the wind but in a low whisper.",
+        "The story is Scripture. The exact year is less certain than 722 or 586."
+      ]
+    },
+    {
+      "id": "assyria",
+      "title": "Assyria",
+      "shortTitle": "Assyria",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "israel",
+      "startYear": -900,
+      "endYear": -612,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "The empire that takes the northern kingdom of Israel and threatens Jerusalem.",
+      "topics": [
+        "israel"
+      ],
+      "keywords": [
+        "nineveh",
+        "sennacherib"
+      ],
+      "relatedIds": [
+        "fall-of-samaria",
+        "sennacherib"
+      ],
+      "context": [
+        "Assyria, based in northern Mesopotamia, built a fierce empire. Its kings left annals, palace reliefs of battles, and libraries of clay tablets. Nineveh was a great capital.",
+        "Assyria is the historical power behind the fall of Samaria and Sennacherib's attack on Judah. Those moments are also in the Bible, and they are marked on their own."
+      ]
+    },
+    {
+      "id": "isaiah",
+      "title": "Isaiah",
+      "shortTitle": "Isaiah",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -740,
+      "endYear": -680,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A prophet in Jerusalem in the days of kings including Hezekiah.",
+      "yearNote": "His ministry is often started around 740 BC. The end is approximate.",
+      "scripture": [
+        "Isaiah 1",
+        "Isaiah 6-7",
+        "Isaiah 36-39"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "hezekiah",
+        "sennacherib"
+      ],
+      "context": [
+        "Isaiah speaks in Jerusalem about justice, trust, and a coming king. He is there when Assyria threatens the city under Hezekiah. Christians also read parts of his book as pointing ahead to Jesus.",
+        "The book is Scripture. Putting every chapter in one decade is more than the text spells out, so the years are a range."
+      ]
+    },
+    {
+      "id": "fall-of-samaria",
+      "title": "The fall of Samaria",
+      "shortTitle": "Samaria falls",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -722,
+      "dateBasis": "historical",
+      "importance": 2,
+      "alsoHistorical": true,
+      "summary": "Assyria captures Samaria and takes the northern kingdom into exile.",
+      "yearNote": "722 BC is the usual date, and it agrees with Assyrian records and 2 Kings.",
+      "scripture": [
+        "2 Kings 17"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "assyria",
+        "hezekiah"
+      ],
+      "context": [
+        "After a long siege, Assyria takes Samaria. Many people of the northern kingdom are carried away. The Bible says this came after generations of refusing the prophets.",
+        "Assyrian records also tell of taking Israel. This is one of the clearest places where Scripture and outside history describe the same event. Both badges belong on it."
+      ]
+    },
+    {
+      "id": "hezekiah",
+      "title": "Hezekiah",
+      "shortTitle": "Hezekiah",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -715,
+      "endYear": -686,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "alsoHistorical": true,
+      "summary": "King of Judah who trusts God when Sennacherib threatens Jerusalem.",
+      "yearNote": "About 715-686 BC. The 701 BC invasion is the firm point.",
+      "scripture": [
+        "2 Kings 18-20",
+        "Isaiah 36-39"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "sennacherib",
+        "isaiah"
+      ],
+      "context": [
+        "Hezekiah cleans out idols and celebrates Passover. When the Assyrian army comes, he spreads the threatening letter before God. The city is not captured.",
+        "His name also appears in Assyrian writing because of that war. The reign's edges are a little fuzzy. The war in 701 BC is not."
+      ]
+    },
+    {
+      "id": "sennacherib",
+      "title": "Sennacherib's invasion",
+      "shortTitle": "Sennacherib",
+      "kind": "event",
+      "category": "historical",
+      "era": "israel",
+      "startYear": -701,
+      "dateBasis": "historical",
+      "importance": 2,
+      "alsoInScripture": true,
+      "summary": "Assyria's king attacks Judah in 701 BC. He boasts. He does not take Jerusalem.",
+      "yearNote": "701 BC is one of the firm shared dates of the Bible and Assyrian records.",
+      "scripture": [
+        "2 Kings 18-19",
+        "Isaiah 36-37"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "keywords": [
+        "assyria",
+        "hezekiah"
+      ],
+      "relatedIds": [
+        "hezekiah",
+        "isaiah",
+        "assyria"
+      ],
+      "context": [
+        "Sennacherib swept through Judah and shut Hezekiah up in Jerusalem. In his own prism he boasts that he trapped Hezekiah 'like a bird in a cage.' He does not claim he captured the city.",
+        "The Bible says the Assyrian army left and that Jerusalem was spared. Two kinds of records, one year. This is history and Scripture together."
+      ]
+    },
+    {
+      "id": "josiah",
+      "title": "Josiah",
+      "shortTitle": "Josiah",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -640,
+      "endYear": -609,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A young king of Judah who rediscovers the Book of the Law and calls the people back.",
+      "yearNote": "640-609 BC.",
+      "scripture": [
+        "2 Kings 22-23"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "jeremiah",
+        "fall-of-jerusalem"
+      ],
+      "context": [
+        "Josiah becomes king as a child. Workers in the temple find the Book of the Law. He tears his clothes, clears out idols, and keeps a great Passover.",
+        "He dies in a battle at Megiddo. His reforms are Scripture, and the dates of his reign are among the clearer ones in Judah's history."
+      ]
+    },
+    {
+      "id": "jeremiah",
+      "title": "Jeremiah",
+      "shortTitle": "Jeremiah",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -627,
+      "endYear": -580,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A prophet who warns Jerusalem before Babylon destroys it, and weeps when it happens.",
+      "yearNote": "Called around 627 BC. He lives through 586 BC.",
+      "scripture": [
+        "Jeremiah 1",
+        "Jeremiah 36-39"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "fall-of-jerusalem",
+        "josiah"
+      ],
+      "context": [
+        "Jeremiah warns that Babylon will take the city if Judah will not turn back. Officials burn his scroll and lower him into a cistern. He stays in the land after the city falls.",
+        "His book is Scripture. It is a hard book, full of grief, and it also holds promises that God is not finished with his people."
+      ]
+    },
+    {
+      "id": "babylon",
+      "title": "Babylon",
+      "shortTitle": "Babylon",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "israel",
+      "startYear": -626,
+      "endYear": -539,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "The empire that takes Jerusalem and the empire where Daniel serves.",
+      "topics": [
+        "israel",
+        "mesopotamia"
+      ],
+      "keywords": [
+        "nebuchadnezzar"
+      ],
+      "relatedIds": [
+        "fall-of-jerusalem",
+        "daniel",
+        "cyrus-decree"
+      ],
+      "context": [
+        "Under Nebuchadnezzar, Babylon became the great power of the Near East. Its walls, gardens, and ziggurat were famous. Clay tablets from the city record rations, stars, and kings.",
+        "Babylon is the historical empire of Judah's exile. The Bible's stories of the exile happen inside it."
+      ]
+    },
+    {
+      "id": "fall-of-jerusalem",
+      "title": "The fall of Jerusalem",
+      "shortTitle": "Exile",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -586,
+      "dateBasis": "historical",
+      "importance": 1,
+      "alsoHistorical": true,
+      "summary": "Babylon burns Solomon's temple and takes many people of Judah into exile.",
+      "yearNote": "586 BC is the date most often given. Some historians say 587 BC.",
+      "scripture": [
+        "2 Kings 25",
+        "Jeremiah 52"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "keywords": [
+        "exile",
+        "nebucadnezzar",
+        "temple"
+      ],
+      "relatedIds": [
+        "jeremiah",
+        "daniel",
+        "babylon",
+        "cyrus-decree"
+      ],
+      "context": [
+        "After a siege, Babylon breaks Jerusalem's walls, burns the temple, and carries people away. The Bible treats this as a disaster and as a consequence of long unfaithfulness.",
+        "Babylonian records and archaeology agree that the city fell in this period. Scripture and history meet here. A one-year debate between 586 and 587 does not change the event."
+      ]
+    },
+    {
+      "id": "daniel",
+      "title": "Daniel",
+      "shortTitle": "Daniel",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -605,
+      "endYear": -530,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "A young exile in Babylon who serves in the court and stays faithful.",
+      "yearNote": "From the deportation around 605 BC into the Persian years. The span is approximate.",
+      "scripture": [
+        "Daniel 1-6"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "fall-of-jerusalem",
+        "babylon",
+        "cyrus-decree"
+      ],
+      "context": [
+        "Daniel is taken to Babylon, trained for the king's service, and refuses to eat the king's rich food as a way of staying distinct. He interprets dreams, faces a lions' den, and lives to see a new empire.",
+        "The court tales are Scripture. Using them as a hidden timetable for modern headlines is a step this map does not take."
+      ]
+    },
+    {
+      "id": "cyrus-decree",
+      "title": "Cyrus lets the exiles go home",
+      "shortTitle": "Cyrus",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -538,
+      "dateBasis": "historical",
+      "importance": 2,
+      "alsoHistorical": true,
+      "summary": "Persia's king allows the Judean exiles to return and rebuild.",
+      "yearNote": "538 BC matches the usual date of Cyrus's decree after he took Babylon.",
+      "scripture": [
+        "Ezra 1",
+        "Isaiah 45"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "fall-of-jerusalem",
+        "second-temple",
+        "daniel"
+      ],
+      "context": [
+        "Cyrus of Persia conquers Babylon and lets displaced peoples return to their temples. Ezra says he frees the Judeans to go back to Jerusalem and rebuild the house of God.",
+        "A clay cylinder from Cyrus talks about restoring temples. It is not a copy of the Bible's decree, but it shows the same kind of policy. The return is Scripture and history."
+      ]
+    },
+    {
+      "id": "esther",
+      "title": "Esther",
+      "shortTitle": "Esther",
+      "kind": "person",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -479,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "A Jewish queen in Persia who risks her life to protect her people.",
+      "yearNote": "If Ahasuerus is Xerxes I, the story sits in the 480s-470s BC. That identification is widely held and still a historical match, not a verse that says 'Xerxes.'",
+      "scripture": [
+        "Esther"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "keywords": [
+        "xerxes",
+        "purim"
+      ],
+      "relatedIds": [
+        "cyrus-decree"
+      ],
+      "context": [
+        "Esther is chosen as queen. A plot threatens the Jewish people in the Persian Empire. She goes to the king uninvited, which could cost her life, and the plot is stopped. The feast of Purim remembers it.",
+        "The book is Scripture. It never uses the word God, and it never gives a BC date. Many historians connect King Ahasuerus with Xerxes."
+      ]
+    },
+    {
+      "id": "second-temple",
+      "title": "The second temple",
+      "shortTitle": "Second temple",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -516,
+      "dateBasis": "historical",
+      "importance": 2,
+      "alsoHistorical": true,
+      "summary": "Returned exiles finish a new temple in Jerusalem.",
+      "yearNote": "516 BC is the usual date for the completion.",
+      "scripture": [
+        "Ezra 3-6"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "cyrus-decree",
+        "ezra-nehemiah"
+      ],
+      "context": [
+        "The first temple was gone. Under Zerubbabel and Jeshua, and with prophets urging them on, the returned people finish a smaller temple. Some older people weep because they remember the first one.",
+        "This second temple, later expanded by Herod, is the temple of Jesus' lifetime. Its completion date is one of the clearer post-exile dates."
+      ]
+    },
+    {
+      "id": "ezra-nehemiah",
+      "title": "Ezra and Nehemiah",
+      "shortTitle": "Nehemiah",
+      "kind": "event",
+      "category": "scripture",
+      "era": "israel",
+      "startYear": -445,
+      "dateBasis": "historical",
+      "importance": 3,
+      "alsoHistorical": true,
+      "summary": "Ezra teaches the law, and Nehemiah rebuilds Jerusalem's walls.",
+      "yearNote": "Nehemiah's mission is often dated to 445 BC, the 20th year of Artaxerxes I. Ezra is often placed in 458 BC.",
+      "scripture": [
+        "Ezra 7",
+        "Nehemiah 1-6"
+      ],
+      "topics": [
+        "israel",
+        "bible"
+      ],
+      "relatedIds": [
+        "second-temple",
+        "esther"
+      ],
+      "context": [
+        "Nehemiah hears that Jerusalem's walls are broken. He asks the Persian king for leave, rides to the city, and organizes families to build. Neighbors mock and threaten. The wall goes up.",
+        "Ezra reads the law aloud and the people weep and then feast. These are Scripture. The Persian dates are why historians can place them on a normal timeline."
+      ]
+    },
+    {
+      "id": "maccabees",
+      "title": "The Maccabean revolt",
+      "shortTitle": "Maccabees",
+      "kind": "event",
+      "category": "historical",
+      "era": "israel",
+      "startYear": -167,
+      "endYear": -160,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Judeans revolt against a Greek king who tried to stop their worship. Hanukkah remembers the temple's cleaning.",
+      "yearNote": "The revolt breaks out in 167 BC.",
+      "topics": [
+        "israel",
+        "greece"
+      ],
+      "keywords": [
+        "hanukkah",
+        "antiochus"
+      ],
+      "relatedIds": [
+        "alexander",
+        "second-temple"
+      ],
+      "context": [
+        "After Alexander, Greek kings ruled the lands around Judea. Antiochus IV tried to force Greek worship and defiled the temple. Judas Maccabeus and his family fought back and rededicated the temple. Jewish people remember that cleansing at Hanukkah.",
+        "These events are history from the years between the Old and New Testaments. The books that tell them are in some Christian Bibles and not in others. This map marks the revolt as history, not as Scripture."
+      ]
+    },
+    {
+      "id": "greek-myths",
+      "title": "Stories the Greeks told",
+      "shortTitle": "Greek myths",
+      "kind": "culture",
+      "category": "interpretation",
+      "era": "greece-rome",
+      "startYear": -500,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "Myths about Zeus and the other gods. They are not history, and they are not the Bible.",
+      "yearNote": "Placed in the classical age, when these stories were common. The stories are older than any one year.",
+      "topics": [
+        "greece",
+        "myths"
+      ],
+      "keywords": [
+        "zeus",
+        "myth",
+        "olympus"
+      ],
+      "relatedIds": [
+        "classical-greece",
+        "troy"
+      ],
+      "context": [
+        "This is an interpretation only in the sense that myths are not a historical report. The Greeks really told these stories. They are not a record of things that happened, and they are not Scripture.",
+        "They help a reader understand what many Greeks believed about the world. D'Aulaires' Book of Greek Myths retells them for children. A few stories include jealousy and revenge. The children's book softens them, and a parent note says so."
+      ]
+    },
+    {
+      "id": "classical-greece",
+      "title": "Classical Greece",
+      "shortTitle": "Classical Greece",
+      "kind": "period",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -510,
+      "endYear": -323,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Athens, Sparta, the Persian Wars, and the philosophers, in the same centuries as the end of the Old Testament story.",
+      "topics": [
+        "greece"
+      ],
+      "keywords": [
+        "athens",
+        "sparta"
+      ],
+      "relatedIds": [
+        "persian-wars",
+        "parthenon",
+        "greek-philosophers",
+        "alexander"
+      ],
+      "context": [
+        "Greek cities experimented with different kinds of rule. Athens is famous for an early democracy, Sparta for its soldiers. They fought Persia, then fought each other. Playwrights, builders, and philosophers worked in the same cities.",
+        "This is the same broad era as the Jewish return from exile and the years after it. The two stories belong on one map so children can see they were neighbors in time."
+      ]
+    },
+    {
+      "id": "persian-wars",
+      "title": "The Persian Wars",
+      "shortTitle": "Persian Wars",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -490,
+      "endYear": -479,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Greek cities turn back invasions from the Persian Empire.",
+      "yearNote": "Marathon in 490 BC. Thermopylae and Salamis in 480. Plataea in 479.",
+      "topics": [
+        "greece"
+      ],
+      "keywords": [
+        "marathon",
+        "thermopylae",
+        "salamis"
+      ],
+      "relatedIds": [
+        "classical-greece",
+        "esther"
+      ],
+      "context": [
+        "Persia, the same empire that let Jewish exiles go home, also tried to conquer the Greek cities. At Marathon, and later at Salamis, the Greeks held them off. The stories of those battles are history, told by Greek writers and backed up by the scale of the wars.",
+        "Esther's story, if it belongs to Xerxes, sits in this same king's reign. The Bible does not mention Marathon. The timeline shows they were the same generation."
+      ]
+    },
+    {
+      "id": "parthenon",
+      "title": "The Parthenon",
+      "shortTitle": "Parthenon",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -447,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Athens builds a great temple to Athena on the Acropolis.",
+      "yearNote": "Work began about 447 BC.",
+      "topics": [
+        "greece"
+      ],
+      "relatedIds": [
+        "classical-greece"
+      ],
+      "context": [
+        "After the Persian Wars, Athens used its wealth to rebuild the Acropolis. The Parthenon was a temple for Athena, covered in sculpture. It is a high point of Greek building.",
+        "It is history and religious architecture, not a church and not a biblical temple. It shows what Greek worship looked like in the century before Alexander."
+      ]
+    },
+    {
+      "id": "greek-philosophers",
+      "title": "Socrates, Plato, and Aristotle",
+      "shortTitle": "Greek thinkers",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -399,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Three philosophers whose questions shaped later learning, including Christian learning.",
+      "yearNote": "Socrates was executed in 399 BC. Plato and Aristotle followed.",
+      "topics": [
+        "greece"
+      ],
+      "keywords": [
+        "socrates",
+        "plato",
+        "aristotle"
+      ],
+      "relatedIds": [
+        "classical-greece",
+        "alexander"
+      ],
+      "context": [
+        "Socrates walked Athens asking hard questions and was sentenced to death. Plato wrote dialogues. Aristotle taught and sorted the world into topics. Alexander the Great was Aristotle's student.",
+        "They are history. Later Christians argued with them and also learned from them. They did not write the Bible."
+      ]
+    },
+    {
+      "id": "alexander",
+      "title": "Alexander the Great",
+      "shortTitle": "Alexander",
+      "kind": "person",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -336,
+      "endYear": -323,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "He conquers Persia, Egypt, and the lands around Judea, and Greek culture spreads.",
+      "yearNote": "Reigned 336-323 BC. He took Egypt and Judah's region in 332 BC.",
+      "topics": [
+        "greece",
+        "israel"
+      ],
+      "relatedIds": [
+        "maccabees",
+        "greek-philosophers",
+        "classical-greece"
+      ],
+      "context": [
+        "Alexander of Macedon defeated the Persian Empire while he was still young. He founded cities, including Alexandria in Egypt, and Greek language spread through the eastern lands.",
+        "Judea passed into that Greek world. That is why, a century and a half later, the Maccabees were fighting Greek rule. Alexander is history, and he is the bridge between the Old Testament world and the Roman one."
+      ]
+    },
+    {
+      "id": "rome-founded",
+      "title": "The founding of Rome",
+      "shortTitle": "Rome's legend",
+      "kind": "event",
+      "category": "interpretation",
+      "era": "greece-rome",
+      "startYear": -753,
+      "dateBasis": "approximate",
+      "importance": 4,
+      "summary": "Romans later said their city began in 753 BC. The date is a legend's date.",
+      "topics": [
+        "rome"
+      ],
+      "keywords": [
+        "romulus"
+      ],
+      "relatedIds": [
+        "roman-republic"
+      ],
+      "context": [
+        "This is an interpretation, not a settled fact. Roman writers told of Romulus and Remus and dated the city to 753 BC. Archaeologists do find early settlements on Rome's hills.",
+        "The story of the twins is legend. A village that became Rome is history. This marker keeps the famous year without calling the legend a report."
+      ]
+    },
+    {
+      "id": "roman-republic",
+      "title": "The Roman Republic",
+      "shortTitle": "Roman Republic",
+      "kind": "period",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -509,
+      "endYear": -27,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Rome is ruled by elected officials and a senate, then torn by civil wars.",
+      "topics": [
+        "rome"
+      ],
+      "relatedIds": [
+        "punic-wars",
+        "julius-caesar",
+        "augustus"
+      ],
+      "context": [
+        "Romans told of driving out their last king around 509 BC and ruling through consuls and a senate. Over centuries the republic conquered Italy, fought Carthage, and took the Greek east.",
+        "By the first century BC, powerful generals were fighting each other. The republic's end arrives with Augustus. The period is history."
+      ]
+    },
+    {
+      "id": "punic-wars",
+      "title": "The Punic Wars",
+      "shortTitle": "Punic Wars",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -264,
+      "endYear": -146,
+      "dateBasis": "historical",
+      "importance": 4,
+      "summary": "Rome and Carthage fight three wars. Rome becomes master of the western Mediterranean.",
+      "topics": [
+        "rome"
+      ],
+      "keywords": [
+        "hannibal",
+        "carthage"
+      ],
+      "relatedIds": [
+        "roman-republic"
+      ],
+      "context": [
+        "Carthage was a rich city in North Africa. Rome fought it three times. Hannibal crossed the Alps with elephants and won battles in Italy, and still Carthage lost in the end.",
+        "These wars are history. They explain how Rome became the power that, later, ruled the land where Jesus was born."
+      ]
+    },
+    {
+      "id": "julius-caesar",
+      "title": "Julius Caesar",
+      "shortTitle": "Julius Caesar",
+      "kind": "person",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -100,
+      "endYear": -44,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A Roman general who took power and was killed in 44 BC.",
+      "yearNote": "Assassinated on the Ides of March, 44 BC.",
+      "topics": [
+        "rome"
+      ],
+      "relatedIds": [
+        "augustus",
+        "roman-republic"
+      ],
+      "context": [
+        "Caesar conquered Gaul, won a civil war, and was made dictator. Senators stabbed him to death in 44 BC because they feared he would be a king.",
+        "He is history. He died a generation before Jesus was born. His adopted heir became Augustus."
+      ]
+    },
+    {
+      "id": "augustus",
+      "title": "Augustus",
+      "shortTitle": "Augustus",
+      "kind": "person",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": -27,
+      "endYear": 14,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The first Roman emperor. Jesus is born during his reign.",
+      "yearNote": "He held power from 27 BC to AD 14.",
+      "topics": [
+        "rome",
+        "jesus"
+      ],
+      "keywords": [
+        "caesar augustus",
+        "census"
+      ],
+      "relatedIds": [
+        "jesus-birth",
+        "julius-caesar"
+      ],
+      "context": [
+        "Augustus ended the civil wars and ruled the Roman world. Roads, taxes, and legions held the peace later called the Pax Romana. Luke's Gospel says a census went out in the days of Caesar Augustus, and that is the setting of Jesus' birth.",
+        "Augustus is history. The birth story is Scripture. They belong side by side."
+      ]
+    },
+    {
+      "id": "jesus-birth",
+      "title": "The birth of Jesus",
+      "shortTitle": "Jesus",
+      "kind": "event",
+      "category": "scripture",
+      "era": "greece-rome",
+      "startYear": -5,
+      "dateBasis": "approximate",
+      "importance": 1,
+      "summary": "Jesus is born in Bethlehem in the days of Herod and Augustus.",
+      "yearNote": "Often dated between 6 and 4 BC, because Herod the Great died in 4 BC. The Bible gives the setting, not a BC number. There is no year zero on this scale.",
+      "scripture": [
+        "Luke 2",
+        "Matthew 1-2"
+      ],
+      "topics": [
+        "jesus",
+        "bible",
+        "rome"
+      ],
+      "keywords": [
+        "bethlehem",
+        "christmas",
+        "herod"
+      ],
+      "relatedIds": [
+        "augustus",
+        "jesus-ministry",
+        "crucifixion"
+      ],
+      "context": [
+        "The Bible says Jesus is born in Bethlehem to Mary, promised as the Messiah, laid in a manger because there was no room. Shepherds come. Matthew tells of wise men and of Herod's fear.",
+        "The event is Scripture. The year is narrowed by history: it has to fall before Herod's death in 4 BC, during Augustus. Christians worship Jesus as God come among us. That faith is more than a date, and the date is still labeled as approximate."
+      ]
+    },
+    {
+      "id": "jesus-ministry",
+      "title": "Jesus' ministry",
+      "shortTitle": "Jesus teaches",
+      "kind": "event",
+      "category": "scripture",
+      "era": "greece-rome",
+      "startYear": 27,
+      "endYear": 30,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "Jesus teaches, heals, and calls disciples around the Sea of Galilee and in Jerusalem.",
+      "yearNote": "The years are approximate. Many place the crucifixion in AD 30 or 33.",
+      "scripture": [
+        "Mark 1",
+        "Luke 4-9",
+        "John 1-12"
+      ],
+      "topics": [
+        "jesus",
+        "bible"
+      ],
+      "relatedIds": [
+        "jesus-birth",
+        "crucifixion",
+        "resurrection"
+      ],
+      "context": [
+        "Jesus announces that God's kingdom has come near. He heals the sick, eats with people others avoid, tells parables, and chooses twelve disciples. Crowds follow. Some leaders are angry.",
+        "The ministry is Scripture. Pinning the first sermon to a single spring is more precise than the Gospels are, so the bar is short and approximate."
+      ]
+    },
+    {
+      "id": "crucifixion",
+      "title": "The crucifixion",
+      "shortTitle": "The cross",
+      "kind": "event",
+      "category": "scripture",
+      "era": "greece-rome",
+      "startYear": 30,
+      "dateBasis": "approximate",
+      "importance": 1,
+      "alsoHistorical": true,
+      "summary": "Jesus is executed on a Roman cross outside Jerusalem.",
+      "yearNote": "AD 30 or 33 are the dates most often discussed. Pontius Pilate's years as governor, AD 26-36, are the historical frame.",
+      "scripture": [
+        "Mark 15",
+        "John 19"
+      ],
+      "topics": [
+        "jesus",
+        "bible",
+        "rome"
+      ],
+      "keywords": [
+        "pilate",
+        "golgotha",
+        "cross"
+      ],
+      "relatedIds": [
+        "resurrection",
+        "jesus-ministry",
+        "jerusalem-70"
+      ],
+      "context": [
+        "The Gospels say Jesus is arrested, tried, and handed to the Roman governor Pontius Pilate. He is crucified between two criminals and buried in a tomb. Christians believe this death is how God deals with sin.",
+        "The crucifixion is Scripture. It is also history: Roman and Jewish writers of the next generations mention Jesus and his execution. They do not describe the resurrection. That is why the cross can carry both badges, and the next marker does not."
+      ]
+    },
+    {
+      "id": "resurrection",
+      "title": "The resurrection",
+      "shortTitle": "Resurrection",
+      "kind": "event",
+      "category": "scripture",
+      "era": "greece-rome",
+      "startYear": 30,
+      "dateBasis": "approximate",
+      "importance": 1,
+      "summary": "The Gospels say Jesus rises from the dead on the third day.",
+      "yearNote": "The same Passover season as the crucifixion. The year is approximate.",
+      "scripture": [
+        "Matthew 28",
+        "Luke 24",
+        "John 20",
+        "1 Corinthians 15"
+      ],
+      "topics": [
+        "jesus",
+        "bible"
+      ],
+      "keywords": [
+        "easter",
+        "empty tomb"
+      ],
+      "relatedIds": [
+        "crucifixion",
+        "pentecost"
+      ],
+      "context": [
+        "The Bible says the tomb was empty and that Jesus met his disciples alive. The church's message starts here. Christians call this the center of their hope.",
+        "Outside writers of the first century mention Jesus' execution. They do not report the resurrection as something they watched. This marker stays Scripture alone, on purpose, so a historical note about the cross is not quietly stretched to cover Easter."
+      ]
+    },
+    {
+      "id": "pentecost",
+      "title": "Pentecost",
+      "shortTitle": "Pentecost",
+      "kind": "event",
+      "category": "scripture",
+      "era": "greece-rome",
+      "startYear": 30,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "The Spirit comes on the disciples, and they begin to tell the news in many languages.",
+      "yearNote": "Fifty days after the resurrection, on the biblical calendar. The AD year follows the crucifixion date.",
+      "scripture": [
+        "Acts 2"
+      ],
+      "topics": [
+        "church",
+        "jesus",
+        "bible"
+      ],
+      "relatedIds": [
+        "resurrection",
+        "paul"
+      ],
+      "context": [
+        "In Jerusalem at the feast of Pentecost, the disciples are filled with the Holy Spirit. They speak so that visitors from many lands understand. Peter preaches, and thousands believe.",
+        "Christians mark this as the birthday of the church's public mission. It is Scripture."
+      ]
+    },
+    {
+      "id": "paul",
+      "title": "Paul",
+      "shortTitle": "Paul",
+      "kind": "person",
+      "category": "scripture",
+      "era": "greece-rome",
+      "startYear": 35,
+      "endYear": 64,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "A persecutor who becomes a missionary and writes many New Testament letters.",
+      "yearNote": "Conversion sometime in the 30s. Death traditionally under Nero in the mid-60s. The edges are approximate.",
+      "scripture": [
+        "Acts 9",
+        "Acts 13-28"
+      ],
+      "topics": [
+        "church",
+        "jesus",
+        "bible",
+        "rome"
+      ],
+      "keywords": [
+        "saul",
+        "epistles"
+      ],
+      "relatedIds": [
+        "pentecost",
+        "jerusalem-70"
+      ],
+      "context": [
+        "Paul, also called Saul, tries to stop the church. On the road to Damascus he meets the risen Jesus and is changed. He travels the Roman world planting churches and writes letters that became much of the New Testament.",
+        "His journeys use Roman roads and Roman cities. He is Scripture, moving through a historical empire. A traditional date for his death is during Nero's reign. The Bible does not narrate that death."
+      ]
+    },
+    {
+      "id": "jerusalem-70",
+      "title": "Jerusalem destroyed in AD 70",
+      "shortTitle": "Jerusalem, AD 70",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": 70,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Roman armies burn the temple. Jewish life and the young church are shaken.",
+      "yearNote": "AD 70. The historian Josephus, who was there, is the main long account.",
+      "scripture": [
+        "Matthew 24"
+      ],
+      "topics": [
+        "rome",
+        "israel",
+        "church"
+      ],
+      "relatedIds": [
+        "crucifixion",
+        "second-temple"
+      ],
+      "context": [
+        "After a Jewish revolt, Rome besieged Jerusalem and destroyed the temple. The historian Josephus described the war. Sacrifices at that temple ended.",
+        "Jesus had warned that the temple would fall. That warning is Scripture, spoken before the event. The destruction itself is recorded as history. This marker wears the historical badge and points you to the Gospel warning beside it."
+      ]
+    },
+    {
+      "id": "nicaea",
+      "title": "The Council of Nicaea",
+      "shortTitle": "Nicaea",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": 325,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Church leaders write a creed about who Jesus is. It is still said in many churches.",
+      "yearNote": "AD 325, called by the emperor Constantine.",
+      "topics": [
+        "church"
+      ],
+      "keywords": [
+        "creed",
+        "constantine",
+        "trinity"
+      ],
+      "relatedIds": [
+        "augustine-hippo"
+      ],
+      "context": [
+        "Christians were arguing about Jesus. Was he truly God, or only a great creature? Bishops met at Nicaea and wrote a statement that Jesus is 'of one being with the Father.' That statement grew into the Nicene Creed.",
+        "The council is church history, not a book of the Bible. Constantine called the meeting. The creed is a Christian summary, not new Scripture."
+      ]
+    },
+    {
+      "id": "augustine-hippo",
+      "title": "Augustine of Hippo",
+      "shortTitle": "Augustine",
+      "kind": "person",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": 354,
+      "endYear": 430,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A North African bishop whose writings shaped Western Christianity.",
+      "topics": [
+        "church"
+      ],
+      "keywords": [
+        "confessions"
+      ],
+      "relatedIds": [
+        "nicaea",
+        "fall-of-rome"
+      ],
+      "context": [
+        "Augustine lived in North Africa, not England. As a young man he wanted fame. He later trusted Jesus and became a bishop. His book Confessions tells that story in his own words.",
+        "He is one of the most important Christian writers after the Bible. He is not a Bible writer. Do not mix him up with Augustine of Canterbury, who came to England later."
+      ]
+    },
+    {
+      "id": "patrick",
+      "title": "Patrick",
+      "shortTitle": "Patrick",
+      "kind": "person",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 432,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "A captive who later returns to Ireland to tell people about Jesus.",
+      "yearNote": "A traditional date for his mission is 432. His own Confession does not give that year.",
+      "topics": [
+        "church"
+      ],
+      "keywords": [
+        "ireland"
+      ],
+      "relatedIds": [
+        "fall-of-rome"
+      ],
+      "context": [
+        "Patrick was taken to Ireland as a captive when he was young. He later went back to speak about Jesus. Our best source is his own short book, the Confession.",
+        "Later stories added legends, including tales that are more fun than reliable. Those extras are not marked as fact. The man and his mission are history."
+      ]
+    },
+    {
+      "id": "fall-of-rome",
+      "title": "The fall of Rome in the West",
+      "shortTitle": "Rome falls",
+      "kind": "event",
+      "category": "historical",
+      "era": "greece-rome",
+      "startYear": 476,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "The last western Roman emperor is removed. The eastern empire continues.",
+      "yearNote": "AD 476 is the traditional date for the end of the western empire.",
+      "topics": [
+        "rome"
+      ],
+      "relatedIds": [
+        "augustine-hippo",
+        "charlemagne"
+      ],
+      "context": [
+        "Rome's power in the west had been weakening for a long time. In 476 a Germanic leader removed the last western emperor. People still lived in the cities. The church kept teaching. The eastern Roman Empire, based in Constantinople, went on for centuries.",
+        "The date is a useful marker, not the day Rome as a city disappeared. It is history."
+      ]
+    },
+    {
+      "id": "augustine-canterbury",
+      "title": "Augustine of Canterbury",
+      "shortTitle": "Augustine in Kent",
+      "kind": "person",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 597,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A missionary sent from Rome who begins a lasting church among the English in Kent.",
+      "yearNote": "He arrives in Kent in 597.",
+      "topics": [
+        "church",
+        "middle-ages"
+      ],
+      "relatedIds": [
+        "patrick",
+        "charlemagne"
+      ],
+      "context": [
+        "This Augustine is not the bishop of Hippo. Pope Gregory sent him to the English. He landed in Kent, and King Ethelbert allowed him to preach. Canterbury became a center of the English church.",
+        "The mission is history. Barbara Willard's novel Augustine Came to Kent tells it for children as a story."
+      ]
+    },
+    {
+      "id": "rise-of-islam",
+      "title": "The rise of Islam",
+      "shortTitle": "Islam begins",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 622,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Muhammad's teaching begins a new religion that spreads across the Middle East and North Africa.",
+      "yearNote": "622 is the year of the Hijra, the journey to Medina. Muslim calendars count from it.",
+      "topics": [
+        "middle-ages"
+      ],
+      "keywords": [
+        "muhammad",
+        "hijra",
+        "islam"
+      ],
+      "relatedIds": [
+        "charlemagne"
+      ],
+      "context": [
+        "In Arabia, Muhammad taught a strict worship of one God and a way of life that became Islam. In 622 he moved from Mecca to Medina. Within a century, Muslim rulers governed lands from Spain to Persia.",
+        "Christians, Jews, and Muslims have lived as neighbors ever since, sometimes in peace and trade, sometimes in war. This marker is history. It is not an attack and not a sermon. It is on the map because the world changed."
+      ]
+    },
+    {
+      "id": "charlemagne",
+      "title": "Charlemagne",
+      "shortTitle": "Charlemagne",
+      "kind": "person",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 768,
+      "endYear": 814,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "King of the Franks, crowned emperor in Rome in the year 800.",
+      "yearNote": "Crowned on Christmas Day, 800.",
+      "topics": [
+        "middle-ages",
+        "church"
+      ],
+      "keywords": [
+        "franks",
+        "emperor"
+      ],
+      "relatedIds": [
+        "fall-of-rome",
+        "vikings"
+      ],
+      "context": [
+        "Charlemagne ruled much of western Europe. On Christmas Day 800 he was crowned emperor in Rome, a new kind of empire centuries after the western Roman one had ended. He wanted schools and careful copies of books, including the Bible.",
+        "He is history, and he is a Christian king of his time, which included wars as well as schools. The novel Son of Charlemagne imagines his court for young readers."
+      ]
+    },
+    {
+      "id": "vikings",
+      "title": "The Vikings",
+      "shortTitle": "Vikings",
+      "kind": "civilization",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 793,
+      "endYear": 1066,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Seafarers from Scandinavia who raided, traded, and settled from Ireland to Russia.",
+      "yearNote": "A raid on Lindisfarne in 793 is a traditional start. 1066 is the Norman conquest of England.",
+      "topics": [
+        "middle-ages"
+      ],
+      "relatedIds": [
+        "alfred",
+        "charlemagne"
+      ],
+      "context": [
+        "Vikings were farmers, traders, and warriors from Norway, Denmark, and Sweden. Their ships reached Iceland, Greenland, and even North America. In Europe they raided monasteries and also settled down and became kings.",
+        "They are history. A time-travel adventure can make them exciting. It is still fiction."
+      ]
+    },
+    {
+      "id": "alfred",
+      "title": "Alfred the Great",
+      "shortTitle": "Alfred",
+      "kind": "person",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 871,
+      "endYear": 899,
+      "dateBasis": "historical",
+      "importance": 4,
+      "summary": "King of Wessex who held off the Vikings and cared about learning.",
+      "topics": [
+        "middle-ages"
+      ],
+      "relatedIds": [
+        "vikings"
+      ],
+      "context": [
+        "Alfred defended the English kingdom of Wessex against Viking armies. He also wanted his people to be able to read, and he sponsored books in English, including Christian teaching.",
+        "He is history. Later praise sometimes turns him into a perfect hero. The real king was capable and still a man of his time."
+      ]
+    },
+    {
+      "id": "crusades",
+      "title": "The Crusades",
+      "shortTitle": "Crusades",
+      "kind": "period",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 1096,
+      "endYear": 1291,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Wars launched by western Christians to control Jerusalem. Brave and terrible things both happened.",
+      "topics": [
+        "middle-ages",
+        "church"
+      ],
+      "keywords": [
+        "jerusalem"
+      ],
+      "relatedIds": [
+        "rise-of-islam",
+        "cathedrals"
+      ],
+      "context": [
+        "Beginning in 1096, western Christian armies marched to take Jerusalem and other lands from Muslim rulers. Some went from faith, some from greed, and many from both. There were massacres as well as moments of courage. Muslim and Christian people suffered.",
+        "The Bible does not command these wars. Historians still argue about them. This marker is history, told plainly, not a purple diamond and not a celebration."
+      ]
+    },
+    {
+      "id": "cathedrals",
+      "title": "The great cathedrals",
+      "shortTitle": "Cathedrals",
+      "kind": "period",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 1100,
+      "endYear": 1400,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "Towns spend generations building enormous churches of stone and glass.",
+      "topics": [
+        "middle-ages",
+        "church"
+      ],
+      "relatedIds": [
+        "castles",
+        "crusades"
+      ],
+      "context": [
+        "Across Europe, communities raised cathedrals that took lifetimes. Masons, carpenters, glass workers, and donors all had a part. The buildings were schools of beauty as well as places of worship.",
+        "David Macaulay's Cathedral shows how one could be built. The age of the cathedrals is history."
+      ]
+    },
+    {
+      "id": "castles",
+      "title": "Stone castles",
+      "shortTitle": "Castles",
+      "kind": "period",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 1050,
+      "endYear": 1450,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "Lords build stone castles to hold land and withstand siege.",
+      "topics": [
+        "middle-ages"
+      ],
+      "relatedIds": [
+        "cathedrals",
+        "crusades"
+      ],
+      "context": [
+        "A stone castle was a weapon and a home: walls, gates, wells, and stores of food. Knights, servants, and sometimes prisoners lived inside the same small world.",
+        "David Macaulay's Castle explains the building. Stories set in castles may be fiction even when the stones were real."
+      ]
+    },
+    {
+      "id": "becket",
+      "title": "Thomas Becket",
+      "shortTitle": "Becket",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 1170,
+      "dateBasis": "historical",
+      "importance": 4,
+      "summary": "The archbishop of Canterbury is killed in his cathedral after a fight with the king.",
+      "yearNote": "29 December 1170.",
+      "topics": [
+        "middle-ages",
+        "church"
+      ],
+      "relatedIds": [
+        "cathedrals"
+      ],
+      "context": [
+        "Thomas Becket was a friend of King Henry II and then, as archbishop, opposed him over the church's rights. Knights killed Becket in Canterbury Cathedral. The king later did public penance.",
+        "The murder is history. The novel If All the Swords in England tells it for older children."
+      ]
+    },
+    {
+      "id": "magna-carta",
+      "title": "Magna Carta",
+      "shortTitle": "Magna Carta",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 1215,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "English barons make King John agree that even the king is under the law.",
+      "yearNote": "1215, at Runnymede.",
+      "topics": [
+        "middle-ages"
+      ],
+      "relatedIds": [
+        "castles"
+      ],
+      "context": [
+        "King John had angered his barons. They forced him to seal Magna Carta. It promised that the king could not simply jail people or take money without lawful process.",
+        "It did not make everyone free. Most people were not included. Later generations built on the idea that law stands above rulers. It is history, and it matters for later ideas of rights."
+      ]
+    },
+    {
+      "id": "black-death",
+      "title": "The Black Death",
+      "shortTitle": "Black Death",
+      "kind": "event",
+      "category": "historical",
+      "era": "middle-ages",
+      "startYear": 1347,
+      "endYear": 1351,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A terrible plague kills a huge part of Europe's people.",
+      "yearNote": "It reaches Europe in 1347 and peaks over the next few years.",
+      "topics": [
+        "middle-ages"
+      ],
+      "keywords": [
+        "plague"
+      ],
+      "relatedIds": [
+        "cathedrals"
+      ],
+      "context": [
+        "A sickness spread along trade routes into Europe. In a few years a huge number of people died. Villages shrank. Workers became scarcer, and the old order of lords and laborers began to shift.",
+        "This is history, and it is heavy. The marker is here so the later world makes sense. Younger children may want a parent nearby for this one. The description stays general on purpose."
+      ]
+    },
+    {
+      "id": "wycliffe",
+      "title": "John Wycliffe",
+      "shortTitle": "Wycliffe",
+      "kind": "person",
+      "category": "historical",
+      "era": "reformation",
+      "startYear": 1380,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "He wants the Bible in English so ordinary people can read it.",
+      "yearNote": "His English Bible project belongs to the 1380s. He dies in 1384.",
+      "topics": [
+        "reformation",
+        "bible",
+        "church"
+      ],
+      "relatedIds": [
+        "gutenberg",
+        "luther",
+        "tyndale"
+      ],
+      "context": [
+        "John Wycliffe, a scholar at Oxford, taught that Scripture should rule the church's life and that people needed it in their own language. Followers copied an English Bible by hand. Printing was not invented yet.",
+        "He is a forerunner of the Reformation, and he is history. The handwritten Bibles were real. Later stories sometimes smooth him into a simple hero."
+      ]
+    },
+    {
+      "id": "gutenberg",
+      "title": "Gutenberg's printed Bible",
+      "shortTitle": "Printing",
+      "kind": "event",
+      "category": "historical",
+      "era": "reformation",
+      "startYear": 1455,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Movable type makes a printed Bible. Books can spread much faster.",
+      "yearNote": "The Gutenberg Bible is finished around 1455.",
+      "topics": [
+        "reformation",
+        "bible"
+      ],
+      "keywords": [
+        "printing",
+        "press"
+      ],
+      "relatedIds": [
+        "wycliffe",
+        "luther",
+        "tyndale"
+      ],
+      "context": [
+        "Johannes Gutenberg used movable metal type to print a Latin Bible. Before that, a book was copied by hand. After that, texts could be produced in far greater numbers.",
+        "Printing did not start the Reformation by itself, but it carried it. The press is history. Louise Vernon's Ink on His Fingers tells a child's-eye story of the shop."
+      ]
+    },
+    {
+      "id": "luther",
+      "title": "Martin Luther",
+      "shortTitle": "Luther",
+      "kind": "person",
+      "category": "historical",
+      "era": "reformation",
+      "startYear": 1483,
+      "endYear": 1546,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "A German monk whose 95 Theses in 1517 help start the Protestant Reformation.",
+      "yearNote": "The 95 Theses are dated 31 October 1517. Luther lives from 1483 to 1546.",
+      "topics": [
+        "reformation",
+        "church",
+        "bible"
+      ],
+      "keywords": [
+        "95 theses",
+        "wittenberg"
+      ],
+      "relatedIds": [
+        "gutenberg",
+        "tyndale",
+        "calvin"
+      ],
+      "context": [
+        "Martin Luther, a monk and professor, protested the sale of indulgences, papers that claimed to ease punishment for sin. In 1517 he posted 95 theses for debate. He taught that forgiveness is God's gift, received by faith, not something a person can buy.",
+        "His ideas split western Christianity and began the Protestant Reformation. He also translated the Bible into German. He is history, not a writer of Scripture. His temper and some of his later words about Jewish people were wrong. A fair biography says so."
+      ]
+    },
+    {
+      "id": "tyndale",
+      "title": "William Tyndale",
+      "shortTitle": "Tyndale",
+      "kind": "person",
+      "category": "historical",
+      "era": "reformation",
+      "startYear": 1494,
+      "endYear": 1536,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "He translates the New Testament into English from Greek and is killed for it.",
+      "yearNote": "His New Testament is printed in 1526. He is executed in 1536.",
+      "topics": [
+        "reformation",
+        "bible"
+      ],
+      "relatedIds": [
+        "luther",
+        "kjv",
+        "wycliffe"
+      ],
+      "context": [
+        "William Tyndale wanted a plowboy to know Scripture as well as a priest. He translated the New Testament from Greek into clear English. Copies were smuggled into England.",
+        "He was arrested and killed in 1536. Much of his wording later flowed into the King James Bible. He is history, and his work is why many English sentences in the Bible sound the way they do."
+      ]
+    },
+    {
+      "id": "calvin",
+      "title": "John Calvin",
+      "shortTitle": "Calvin",
+      "kind": "person",
+      "category": "historical",
+      "era": "reformation",
+      "startYear": 1509,
+      "endYear": 1564,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A French scholar in Geneva who shaped Reformed churches.",
+      "yearNote": "The first edition of his Institutes appears in 1536.",
+      "topics": [
+        "reformation",
+        "church"
+      ],
+      "relatedIds": [
+        "luther"
+      ],
+      "context": [
+        "John Calvin fled France and settled in Geneva. He preached, organized a church, and wrote the Institutes of the Christian Religion. Reformed churches around the world trace ideas to him.",
+        "He is a historical figure of the Reformation, not a writer of Scripture. People still disagree about parts of his teaching. The disagreement does not erase the fact that he lived and wrote."
+      ]
+    },
+    {
+      "id": "columbus",
+      "title": "Columbus reaches the Americas",
+      "shortTitle": "Columbus",
+      "kind": "event",
+      "category": "historical",
+      "era": "exploration",
+      "startYear": 1492,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "Columbus sails from Spain and reaches islands in the Caribbean.",
+      "yearNote": "Landfall in October 1492.",
+      "topics": [
+        "exploration",
+        "america"
+      ],
+      "keywords": [
+        "santa maria",
+        "taino"
+      ],
+      "relatedIds": [
+        "magellan",
+        "jamestown"
+      ],
+      "context": [
+        "Christopher Columbus sailed west from Spain looking for Asia and reached islands in the Caribbean. People already lived there. His voyages began a long meeting of continents that included trade, settlement, and terrible cruelty and disease.",
+        "This is history, and it needs a parent in the conversation. He did not 'discover' an empty world. The books on this marker are for reading beside that truth, not instead of it."
+      ]
+    },
+    {
+      "id": "magellan",
+      "title": "Magellan's voyage",
+      "shortTitle": "Magellan",
+      "kind": "event",
+      "category": "historical",
+      "era": "exploration",
+      "startYear": 1519,
+      "endYear": 1522,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "His ships set out to circle the earth. One ship finishes the trip.",
+      "topics": [
+        "exploration"
+      ],
+      "relatedIds": [
+        "columbus"
+      ],
+      "context": [
+        "Ferdinand Magellan left Spain in 1519 to find a western way around the world. He died in the Philippines. One ship, the Victoria, returned in 1522. The voyage showed, in a practical way, that the oceans connect.",
+        "It is history. The glory in old retellings often skips the hardship and the violence. A good children's account can tell the feat without pretending everyone was a hero."
+      ]
+    },
+    {
+      "id": "kjv",
+      "title": "The King James Bible",
+      "shortTitle": "King James Bible",
+      "kind": "event",
+      "category": "historical",
+      "era": "reformation",
+      "startYear": 1611,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A new English Bible is published and becomes the one most English speakers read for centuries.",
+      "topics": [
+        "reformation",
+        "bible"
+      ],
+      "keywords": [
+        "kjv",
+        "authorized version"
+      ],
+      "relatedIds": [
+        "tyndale"
+      ],
+      "context": [
+        "King James I of England commissioned scholars to make a new English translation. It was published in 1611. For centuries it was the Bible heard in English-speaking churches, and its phrases entered the language.",
+        "It is a translation, not a new revelation. Tyndale's earlier work is inside it. The publishing event is history."
+      ]
+    },
+    {
+      "id": "jamestown",
+      "title": "Jamestown",
+      "shortTitle": "Jamestown",
+      "kind": "event",
+      "category": "historical",
+      "era": "exploration",
+      "startYear": 1607,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "English settlers start Jamestown in Virginia. The first years are desperate.",
+      "topics": [
+        "america",
+        "exploration"
+      ],
+      "relatedIds": [
+        "mayflower",
+        "slavery-in-america"
+      ],
+      "context": [
+        "In 1607 English settlers built Jamestown on the James River. Hunger, disease, and conflict nearly ended it. The Powhatan people already lived in that country.",
+        "In 1619 a ship brought enslaved Africans to the English colony. Jamestown is the start of a permanent English foothold and part of the start of American slavery. Both facts are history."
+      ]
+    },
+    {
+      "id": "mayflower",
+      "title": "The Mayflower",
+      "shortTitle": "Mayflower",
+      "kind": "event",
+      "category": "historical",
+      "era": "exploration",
+      "startYear": 1620,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The Pilgrims settle at Plymouth. The Wampanoag people already live there.",
+      "topics": [
+        "america",
+        "exploration",
+        "church"
+      ],
+      "keywords": [
+        "pilgrims",
+        "plymouth",
+        "squanto"
+      ],
+      "relatedIds": [
+        "jamestown",
+        "slavery-in-america"
+      ],
+      "context": [
+        "The Pilgrims sailed on the Mayflower in 1620. Many wanted a place to worship in their own way. They landed far off course and settled at Plymouth. The Wampanoag people lived in that region. Tisquantum, remembered as Squanto, helped the settlers plant food.",
+        "That help is real, and so is the harder history of disease and loss for Native communities. A Thanksgiving cartoon is not the whole story. The voyage itself is history."
+      ]
+    },
+    {
+      "id": "slavery-in-america",
+      "title": "Slavery in America",
+      "shortTitle": "Slavery",
+      "kind": "period",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1619,
+      "endYear": 1865,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "For more than two centuries, millions of African people are enslaved in the colonies and the United States.",
+      "topics": [
+        "america",
+        "slavery"
+      ],
+      "relatedIds": [
+        "jamestown",
+        "tubman",
+        "douglass",
+        "civil-war"
+      ],
+      "context": [
+        "Beginning in the 1600s, Africans were kidnapped, sold, and forced to work in the Americas. In the British colonies that became the United States, slavery lasted until the Civil War. It was a great evil. Families were torn apart. Law treated people as property.",
+        "Christians disagreed. Some defended slavery. Others, including many Black believers, called it sin and resisted it. The books here tell true stories of people who refused to stay property. Several need a parent nearby because the truth includes violence."
+      ]
+    },
+    {
+      "id": "franklin",
+      "title": "Benjamin Franklin",
+      "shortTitle": "Franklin",
+      "kind": "person",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1706,
+      "endYear": 1790,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A printer, scientist, and founder of the United States.",
+      "topics": [
+        "america"
+      ],
+      "relatedIds": [
+        "american-revolution"
+      ],
+      "context": [
+        "Benjamin Franklin ran a print shop, experimented with electricity, helped write the Declaration and the Constitution, and served as a diplomat in France. He was witty and practical, and he was also a man of his century, including its failures.",
+        "Ben and Me is a funny fiction about him and a mouse. It is a joke, not a biography. His life is history."
+      ]
+    },
+    {
+      "id": "great-awakening",
+      "title": "The Great Awakening",
+      "shortTitle": "Great Awakening",
+      "kind": "event",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1734,
+      "endYear": 1745,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "Preachers such as Whitefield and Edwards draw huge crowds in Britain and the colonies.",
+      "topics": [
+        "america",
+        "church"
+      ],
+      "keywords": [
+        "whitefield",
+        "edwards"
+      ],
+      "relatedIds": [
+        "american-revolution"
+      ],
+      "context": [
+        "In the 1730s and 1740s, preaching by George Whitefield, Jonathan Edwards, and others stirred many people in the American colonies and Britain to a personal faith. Crowds gathered outdoors. Churches split over the new style.",
+        "Historians call the season the Great Awakening. It is church history inside the colonial world, not a new book of the Bible."
+      ]
+    },
+    {
+      "id": "industrial-revolution",
+      "title": "The Industrial Revolution",
+      "shortTitle": "Industry",
+      "kind": "event",
+      "category": "historical",
+      "era": "industry",
+      "startYear": 1760,
+      "dateBasis": "approximate",
+      "importance": 1,
+      "summary": "Machines, factories, and steam begin to remake daily work.",
+      "yearNote": "Often started around 1760 in Britain. It spreads through the next century.",
+      "topics": [
+        "industry"
+      ],
+      "keywords": [
+        "steam",
+        "factory",
+        "watt"
+      ],
+      "relatedIds": [
+        "lowell-mills",
+        "transcontinental-railroad"
+      ],
+      "context": [
+        "In the 1700s, new machines spun thread, pumped mines, and later pulled trains. James Watt's improved steam engine, patented in 1769, was one famous step. Work moved from cottages toward factories. Cities grew. Some people grew rich. Others, including children, worked dangerous hours.",
+        "The change is history, and it is the hinge between the world of sails and the modern one. The dot marks the start. The stories of mills and railroads come into view as you zoom."
+      ]
+    },
+    {
+      "id": "american-revolution",
+      "title": "The American Revolution",
+      "shortTitle": "1776",
+      "kind": "event",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1775,
+      "endYear": 1783,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "The thirteen colonies break from Britain. The Declaration of Independence is 1776.",
+      "topics": [
+        "america"
+      ],
+      "keywords": [
+        "declaration",
+        "washington",
+        "revolution"
+      ],
+      "relatedIds": [
+        "washington",
+        "constitution",
+        "franklin"
+      ],
+      "context": [
+        "Arguments over taxes and self-rule became a war in 1775. On July 4, 1776, the Continental Congress approved the Declaration of Independence. The fighting lasted until 1783. France helped the new states. Britain recognized their independence.",
+        "The Revolution is history. It spoke of liberty and, at the same time, left slavery in place. A fair telling holds both facts. Johnny Tremain is a novel of Boston in those years, not a textbook."
+      ]
+    },
+    {
+      "id": "washington",
+      "title": "George Washington",
+      "shortTitle": "Washington",
+      "kind": "person",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1732,
+      "endYear": 1799,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Commander of the Continental Army and the first president of the United States.",
+      "topics": [
+        "america"
+      ],
+      "relatedIds": [
+        "american-revolution",
+        "constitution"
+      ],
+      "context": [
+        "George Washington led the American army through the Revolution and then served as the first president. He stepped down after two terms, which set a pattern. He was also a Virginia planter who enslaved people.",
+        "Both parts are history. Genevieve Foster's George Washington's World puts his life next to other people alive at the same time, which is the same habit this timeline is built for."
+      ]
+    },
+    {
+      "id": "constitution",
+      "title": "The U.S. Constitution",
+      "shortTitle": "Constitution",
+      "kind": "event",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1787,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A convention in Philadelphia writes the plan of government still used today.",
+      "yearNote": "Drafted in 1787. Ratified in 1788. The Bill of Rights is added in 1791.",
+      "topics": [
+        "america"
+      ],
+      "relatedIds": [
+        "washington",
+        "american-revolution"
+      ],
+      "context": [
+        "After the Revolution, the states' first plan of government was too weak. In 1787 delegates met in Philadelphia and wrote the Constitution: a congress, a president, and courts, with powers divided.",
+        "It did not end slavery, and it counted enslaved people in an unjust fraction for representation. Later amendments changed the document. The convention itself is history."
+      ]
+    },
+    {
+      "id": "bowditch",
+      "title": "Nathaniel Bowditch",
+      "shortTitle": "Bowditch",
+      "kind": "person",
+      "category": "historical",
+      "era": "exploration",
+      "startYear": 1773,
+      "endYear": 1838,
+      "dateBasis": "historical",
+      "importance": 4,
+      "summary": "An American navigator whose book taught sailors how to find their way.",
+      "topics": [
+        "exploration",
+        "america"
+      ],
+      "relatedIds": [
+        "industrial-revolution"
+      ],
+      "context": [
+        "Nathaniel Bowditch taught himself mathematics and corrected the tables sailors used to navigate. His book, the New American Practical Navigator, became a tool on ships for generations.",
+        "Carry On, Mr. Bowditch is a novel based on his life. The man is history. The conversations in the novel are imagined."
+      ]
+    },
+    {
+      "id": "westward",
+      "title": "Westward expansion",
+      "shortTitle": "Westward",
+      "kind": "period",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1803,
+      "endYear": 1890,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "The United States spreads across the continent. Native nations lose homelands.",
+      "topics": [
+        "america"
+      ],
+      "keywords": [
+        "pioneers",
+        "trail"
+      ],
+      "relatedIds": [
+        "civil-war",
+        "transcontinental-railroad"
+      ],
+      "context": [
+        "Purchases, wars, and wagons carried the United States from the Mississippi toward the Pacific. Settlers sought farms. The nations who already lived on those lands lost homes, hunting grounds, and many lives. Treaties were broken.",
+        "Little House on the Prairie is a settler family's story, not the whole story. It is on this marker with a note so the two truths can be held together."
+      ]
+    },
+    {
+      "id": "lowell-mills",
+      "title": "The Lowell mills",
+      "shortTitle": "The mills",
+      "kind": "event",
+      "category": "historical",
+      "era": "industry",
+      "startYear": 1836,
+      "dateBasis": "approximate",
+      "importance": 3,
+      "summary": "Cloth mills in Massachusetts hire girls and young women to tend machines.",
+      "topics": [
+        "industry",
+        "america"
+      ],
+      "relatedIds": [
+        "industrial-revolution"
+      ],
+      "context": [
+        "At Lowell and other mill towns, water-powered looms turned out cloth. Young women came from farms to earn wages. The hours were long, the air was full of cotton dust, and some of the workers later protested.",
+        "The Bobbin Girl tells that world as a story based on a real mill girl. The mills themselves are history."
+      ]
+    },
+    {
+      "id": "lincoln",
+      "title": "Abraham Lincoln",
+      "shortTitle": "Lincoln",
+      "kind": "person",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1809,
+      "endYear": 1865,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "President during the Civil War. He signs the Emancipation Proclamation.",
+      "topics": [
+        "america",
+        "slavery"
+      ],
+      "relatedIds": [
+        "civil-war",
+        "douglass"
+      ],
+      "context": [
+        "Abraham Lincoln led the United States through the Civil War. In 1863 he issued the Emancipation Proclamation, freeing enslaved people in the rebelling states. He was shot in April 1865, days after the main fighting ended.",
+        "He is history. He was not a simple saint, and he was the president under whom legal slavery in the United States was destroyed. Both sentences can be true."
+      ]
+    },
+    {
+      "id": "tubman",
+      "title": "Harriet Tubman",
+      "shortTitle": "Tubman",
+      "kind": "person",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1822,
+      "endYear": 1913,
+      "dateBasis": "approximate",
+      "importance": 2,
+      "summary": "She escapes slavery and leads other people to freedom on the Underground Railroad.",
+      "yearNote": "Her birth year was not recorded exactly. About 1822 is the usual estimate.",
+      "topics": [
+        "america",
+        "slavery"
+      ],
+      "relatedIds": [
+        "slavery-in-america",
+        "civil-war",
+        "douglass"
+      ],
+      "context": [
+        "Harriet Tubman was born enslaved in Maryland. She escaped, then went back again and again to guide family and others toward freedom. During the Civil War she also served as a scout and nurse. Her faith was part of how she understood the work.",
+        "Her life is history. The picture book titled with Moses is poetry about her courage, not a claim that she was the biblical Moses."
+      ]
+    },
+    {
+      "id": "douglass",
+      "title": "Frederick Douglass",
+      "shortTitle": "Douglass",
+      "kind": "person",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1818,
+      "endYear": 1895,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "He escapes slavery and becomes one of its most powerful witnesses and opponents.",
+      "yearNote": "He did not know his exact birth date. He chose February 14, 1818.",
+      "topics": [
+        "america",
+        "slavery"
+      ],
+      "relatedIds": [
+        "slavery-in-america",
+        "lincoln",
+        "civil-war"
+      ],
+      "context": [
+        "Frederick Douglass learned to read while enslaved, escaped to the North, and wrote his own story. He spoke against slavery in America and in Britain. He advised Lincoln and kept arguing for full citizenship after the war.",
+        "His Narrative is his own book. It tells the truth about violence. It is for mature readers, with a parent. The man is history."
+      ]
+    },
+    {
+      "id": "civil-war",
+      "title": "The Civil War",
+      "shortTitle": "Civil War",
+      "kind": "event",
+      "category": "historical",
+      "era": "america",
+      "startYear": 1861,
+      "endYear": 1865,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "The United States fights over the Union and slavery. The 13th Amendment ends legal slavery.",
+      "topics": [
+        "america",
+        "slavery"
+      ],
+      "keywords": [
+        "emancipation",
+        "gettysburg"
+      ],
+      "relatedIds": [
+        "lincoln",
+        "tubman",
+        "douglass",
+        "slavery-in-america"
+      ],
+      "context": [
+        "In 1861 eleven states left the Union after Lincoln's election, mainly to protect slavery. The war that followed killed hundreds of thousands. In 1863 the Emancipation Proclamation declared enslaved people in the rebelling states free. In 1865 the 13th Amendment abolished slavery in the United States.",
+        "The war is history. It is too large and too sad for a cartoon version. The marker is on the spine of the timeline because the country changed there."
+      ]
+    },
+    {
+      "id": "transcontinental-railroad",
+      "title": "The transcontinental railroad",
+      "shortTitle": "The railroad",
+      "kind": "event",
+      "category": "historical",
+      "era": "industry",
+      "startYear": 1869,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The rails from east and west meet in Utah. A trip across the continent shrinks to days.",
+      "yearNote": "The golden spike was driven on May 10, 1869.",
+      "topics": [
+        "industry",
+        "america"
+      ],
+      "relatedIds": [
+        "industrial-revolution",
+        "westward"
+      ],
+      "context": [
+        "Two companies laid track toward each other, one from the east and one from the west. They met at Promontory Summit, Utah, in 1869. A journey that took months by wagon could be done by train in days.",
+        "Chinese and Irish workers, among others, did the dangerous labor. The railroad also sped the loss of Native lands and the bison herds. The engineering feat and the cost are both history."
+      ]
+    },
+    {
+      "id": "wright-brothers",
+      "title": "The Wright brothers",
+      "shortTitle": "First flight",
+      "kind": "event",
+      "category": "historical",
+      "era": "industry",
+      "startYear": 1903,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Orville and Wilbur Wright fly a powered airplane at Kitty Hawk.",
+      "yearNote": "December 17, 1903. The first flight lasted seconds.",
+      "topics": [
+        "industry",
+        "modern"
+      ],
+      "relatedIds": [
+        "industrial-revolution",
+        "moon-landing"
+      ],
+      "context": [
+        "On the dunes at Kitty Hawk, North Carolina, the Wright brothers flew a powered, controlled airplane. The first flight was shorter than the wingspan of a modern jet. It was still the start of aviation.",
+        "The flights are history, measured and photographed. They sit at the edge of the modern world."
+      ]
+    },
+    {
+      "id": "world-war-i",
+      "title": "World War I",
+      "shortTitle": "World War I",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "startYear": 1914,
+      "endYear": 1918,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A war that begins in Europe pulls in nations around the world.",
+      "topics": [
+        "modern"
+      ],
+      "relatedIds": [
+        "world-war-ii"
+      ],
+      "context": [
+        "In 1914 a crisis in the Balkans became a war across Europe and beyond. New weapons made the killing enormous. Empires fell. The peace that followed did not settle the grievances.",
+        "This is history, and it is heavy. The marker is here so the modern world makes sense. Younger children may want a parent to read it with them. There is no battle description on this page."
+      ]
+    },
+    {
+      "id": "world-war-ii",
+      "title": "World War II",
+      "shortTitle": "World War II",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "startYear": 1939,
+      "endYear": 1945,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "A second world war. Nazi Germany murders six million Jews and millions of others.",
+      "topics": [
+        "modern"
+      ],
+      "keywords": [
+        "holocaust",
+        "hitler"
+      ],
+      "relatedIds": [
+        "corrie-ten-boom",
+        "world-war-i"
+      ],
+      "context": [
+        "War began in Europe in 1939 and spread across the world. Nazi Germany, led by Adolf Hitler, murdered six million Jews and millions of other people. That crime is called the Holocaust. Other nations fought the Axis powers until 1945.",
+        "The books on this marker tell stories of courage and rescue. They are serious, and they are not graphic battle scenes. The war itself is history. A parent should walk through it with a child."
+      ]
+    },
+    {
+      "id": "corrie-ten-boom",
+      "title": "Corrie ten Boom",
+      "shortTitle": "Corrie ten Boom",
+      "kind": "person",
+      "category": "historical",
+      "era": "modern",
+      "startYear": 1892,
+      "endYear": 1983,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "She and her family hide Jewish neighbors in the Netherlands and are sent to a camp.",
+      "topics": [
+        "modern",
+        "church"
+      ],
+      "keywords": [
+        "hiding place",
+        "netherlands"
+      ],
+      "relatedIds": [
+        "world-war-ii"
+      ],
+      "context": [
+        "Corrie ten Boom lived in Haarlem, above her father's watch shop. During the German occupation the family built a hiding place for Jewish neighbors. They were caught. Corrie's father and sister died. Corrie survived the Ravensbruck camp.",
+        "She later told the story in The Hiding Place. Her trust in Jesus is the center of her own account. The events of the hiding and the arrest are history. The young reader's edition still needs a parent nearby."
+      ]
+    },
+    {
+      "id": "moon-landing",
+      "title": "The moon landing",
+      "shortTitle": "The moon",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "startYear": 1969,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Apollo 11 lands on the moon. People watch it together.",
+      "yearNote": "July 20, 1969.",
+      "topics": [
+        "modern"
+      ],
+      "keywords": [
+        "apollo",
+        "armstrong"
+      ],
+      "relatedIds": [
+        "wright-brothers",
+        "today"
+      ],
+      "context": [
+        "Apollo 11 carried Neil Armstrong, Buzz Aldrin, and Michael Collins to the moon. Armstrong and Aldrin walked on the surface while Collins orbited. A huge audience on earth watched the grainy pictures.",
+        "It is history, and it is a human achievement. It is not the end of the story this timeline is telling. The biblical hope Christians confess is not a rocket and not a date."
+      ]
+    },
+    {
+      "id": "today",
+      "title": "Today",
+      "shortTitle": "Today",
+      "kind": "event",
+      "category": "today",
+      "era": "modern",
+      "startYear": 2026,
+      "dateBasis": "historical",
+      "importance": 1,
+      "summary": "The year this page was made. You are in the story too.",
+      "yearNote": "2026 is the publication year of this timeline, not a prediction.",
+      "topics": [
+        "modern"
+      ],
+      "relatedIds": [
+        "moon-landing",
+        "resurrection"
+      ],
+      "context": [
+        "This dot is the present. Everything to the left is memory, record, or Scripture. You are standing on the right-hand end, which will keep moving as years are added.",
+        "Christians believe the Bible's story leads to Jesus and that his kingdom is the hope still ahead. That hope is faith. It is not a date this line can pin down, so it is said in words and not drawn as a fake future marker."
+      ]
+    }
+  ]
+}

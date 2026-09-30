@@ -1,0 +1,1794 @@
+{
+  "books": [
+    {
+      "id": "jesus-storybook",
+      "title": "The Jesus Storybook Bible",
+      "author": "Sally Lloyd-Jones",
+      "type": "nonfiction",
+      "ageMin": 4,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "bible",
+        "jesus",
+        "creation"
+      ],
+      "eventIds": [
+        "creation",
+        "the-fall",
+        "flood",
+        "abraham",
+        "joseph",
+        "exodus",
+        "david",
+        "jesus-birth",
+        "crucifixion",
+        "resurrection"
+      ],
+      "primaryEventId": "creation",
+      "blurb": "A read-aloud Bible that keeps pointing every story toward Jesus. Jago's pictures carry the pages."
+    },
+    {
+      "id": "biggest-story",
+      "title": "The Biggest Story Bible Storybook",
+      "author": "Kevin DeYoung",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "bible",
+        "jesus",
+        "creation"
+      ],
+      "eventIds": [
+        "creation",
+        "flood",
+        "abraham",
+        "joseph",
+        "exodus",
+        "david",
+        "fall-of-jerusalem",
+        "jesus-birth",
+        "crucifixion",
+        "resurrection"
+      ],
+      "primaryEventId": "jesus-birth",
+      "blurb": "A full storybook Bible with Don Clark's pictures, written to be read aloud across a year."
+    },
+    {
+      "id": "vos",
+      "title": "The Child's Story Bible",
+      "author": "Catherine F. Vos",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "bible",
+        "jesus"
+      ],
+      "eventIds": [
+        "creation",
+        "flood",
+        "joseph",
+        "exodus",
+        "david",
+        "jesus-birth",
+        "crucifixion",
+        "resurrection"
+      ],
+      "primaryEventId": "exodus",
+      "blurb": "A classic continuous retelling of the Bible, meant for reading aloud over many evenings."
+    },
+    {
+      "id": "action-bible",
+      "title": "The Action Bible",
+      "author": "Doug Mauss, illustrated by Sergio Cariello",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "bible",
+        "jesus"
+      ],
+      "eventIds": [
+        "creation",
+        "exodus",
+        "david",
+        "daniel",
+        "jesus-birth",
+        "crucifixion",
+        "resurrection",
+        "paul"
+      ],
+      "primaryEventId": "david",
+      "blurb": "The Bible told as a graphic novel, with Sergio Cariello's comic art. Good for readers who want pictures and action."
+    },
+    {
+      "id": "noah-pinkney",
+      "title": "Noah's Ark",
+      "author": "Jerry Pinkney",
+      "type": "nonfiction",
+      "ageMin": 4,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "flood",
+        "bible"
+      ],
+      "eventIds": [
+        "flood",
+        "noah"
+      ],
+      "primaryEventId": "flood",
+      "blurb": "A Caldecott Medal picture book that retells the Flood with rich paintings."
+    },
+    {
+      "id": "noah-spier",
+      "title": "Noah's Ark",
+      "author": "Peter Spier",
+      "type": "nonfiction",
+      "ageMin": 4,
+      "ageMax": 8,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "flood",
+        "bible"
+      ],
+      "eventIds": [
+        "flood",
+        "noah"
+      ],
+      "primaryEventId": "noah",
+      "blurb": "A mostly wordless picture book. Children can tell the story themselves from the drawings."
+    },
+    {
+      "id": "true-noah",
+      "title": "The True Story of Noah's Ark",
+      "author": "Tom Dooley",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "flood",
+        "bible"
+      ],
+      "eventIds": [
+        "flood",
+        "noah"
+      ],
+      "primaryEventId": "flood",
+      "blurb": "A picture-book account from a Christian publisher, illustrated by Bill Looney, that treats the ark as real history.",
+      "parentNote": "Written to teach a creationist reading of Genesis. Pair it with the Scripture marker, which is the source."
+    },
+    {
+      "id": "adam-kin",
+      "title": "Adam and His Kin",
+      "author": "Ruth Beechick",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "creation",
+        "flood",
+        "babel",
+        "patriarchs"
+      ],
+      "eventIds": [
+        "creation",
+        "noah",
+        "babel",
+        "abraham"
+      ],
+      "primaryEventId": "creation",
+      "blurb": "A story woven through the long genealogies from Adam toward Abraham.",
+      "parentNote": "The conversations and daily details are imagined. The Bible is the source. Read it as fiction beside Genesis, not instead of it."
+    },
+    {
+      "id": "ice-age-oard",
+      "title": "Life in the Great Ice Age",
+      "author": "Michael J. Oard and Beverly Oard",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "flood"
+      ],
+      "eventIds": [
+        "ice-age",
+        "flood"
+      ],
+      "primaryEventId": "ice-age",
+      "blurb": "A children's picture book about a cold age after the Flood, from a creationist point of view.",
+      "parentNote": "This is the interpretation on the ice-age marker, not a claim the Bible describes an ice age."
+    },
+    {
+      "id": "gilgamesh",
+      "title": "Gilgamesh the Hero",
+      "author": "Geraldine McCaughrean",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "mesopotamia",
+        "myths"
+      ],
+      "eventIds": [
+        "sumer-ur"
+      ],
+      "primaryEventId": "sumer-ur",
+      "blurb": "A children's retelling of the ancient Mesopotamian epic.",
+      "parentNote": "This is a legend from Sumer's world, not Scripture and not a history report."
+    },
+    {
+      "id": "golden-bull",
+      "title": "The Golden Bull",
+      "author": "Marjorie Cowley",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "mesopotamia",
+        "patriarchs"
+      ],
+      "eventIds": [
+        "sumer-ur",
+        "hammurabi",
+        "abraham"
+      ],
+      "primaryEventId": "sumer-ur",
+      "blurb": "Two children in ancient Mesopotamia get caught in a goldsmith's trouble. A story of that world, not a retelling of Abraham."
+    },
+    {
+      "id": "wildsmith-joseph",
+      "title": "Joseph",
+      "author": "Brian Wildsmith",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "joseph",
+        "egypt",
+        "bible"
+      ],
+      "eventIds": [
+        "joseph",
+        "famine-egypt",
+        "jacob-enters-egypt"
+      ],
+      "primaryEventId": "joseph",
+      "blurb": "A picture-book retelling of Joseph's life, from the colorful coat to forgiveness in Egypt."
+    },
+    {
+      "id": "wildsmith-exodus",
+      "title": "Exodus",
+      "author": "Brian Wildsmith",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "exodus",
+        "moses",
+        "bible"
+      ],
+      "eventIds": [
+        "exodus",
+        "moses",
+        "the-plagues",
+        "crossing-the-sea"
+      ],
+      "primaryEventId": "exodus",
+      "blurb": "A picture-book retelling of the leaving of Egypt, with Wildsmith's bright paintings."
+    },
+    {
+      "id": "tirzah",
+      "title": "Tirzah",
+      "author": "Lucille Travis",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "exodus",
+        "moses",
+        "egypt"
+      ],
+      "eventIds": [
+        "exodus",
+        "moses",
+        "israel-in-bondage"
+      ],
+      "primaryEventId": "exodus",
+      "blurb": "A novel about a Hebrew girl living as a slave in Egypt at the time of the Exodus.",
+      "parentNote": "The biblical events are the frame. Tirzah's daily scenes are fiction."
+    },
+    {
+      "id": "golden-goblet",
+      "title": "The Golden Goblet",
+      "author": "Eloise Jarvis McGraw",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 12,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "new-kingdom",
+        "ancient-egypt"
+      ],
+      "primaryEventId": "new-kingdom",
+      "blurb": "Ranofer, a boy in ancient Egypt, wants to be a goldsmith and uncovers a tomb robbery."
+    },
+    {
+      "id": "mara",
+      "title": "Mara, Daughter of the Nile",
+      "author": "Eloise Jarvis McGraw",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "hatshepsut",
+        "thutmose-iii",
+        "ancient-egypt"
+      ],
+      "primaryEventId": "hatshepsut",
+      "blurb": "A servant girl carries secret messages in the court of Hatshepsut.",
+      "parentNote": "Adventure and a mild romance. Best for about age 10 and up. It is a novel, not a source for naming the Exodus pharaoh."
+    },
+    {
+      "id": "pyramid-mac",
+      "title": "Pyramid",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "pyramids",
+        "ancient-egypt"
+      ],
+      "primaryEventId": "pyramids",
+      "blurb": "Careful drawings that show how a pyramid could be planned and built. One of the best children's books on the subject."
+    },
+    {
+      "id": "pharaohs-payne",
+      "title": "The Pharaohs of Ancient Egypt",
+      "author": "Elizabeth Payne",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "ancient-egypt",
+        "new-kingdom",
+        "ramesses-ii",
+        "tutankhamun"
+      ],
+      "primaryEventId": "ancient-egypt",
+      "blurb": "A Landmark history that walks through Egypt's rulers for middle-grade readers.",
+      "parentNote": "Uses ordinary textbook dates. Read it next to the timeline's date notes, especially on the pyramids."
+    },
+    {
+      "id": "mummies-aliki",
+      "title": "Mummies Made in Egypt",
+      "author": "Aliki",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "ancient-egypt",
+        "tutankhamun"
+      ],
+      "primaryEventId": "ancient-egypt",
+      "blurb": "A clear picture book about how and why Egyptians prepared mummies."
+    },
+    {
+      "id": "who-tut",
+      "title": "Who Was King Tut?",
+      "author": "Roberta Edwards",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "tutankhamun",
+        "ancient-egypt"
+      ],
+      "primaryEventId": "tutankhamun",
+      "blurb": "A short biography of the boy pharaoh and of the 1922 discovery of his tomb."
+    },
+    {
+      "id": "seeker",
+      "title": "Seeker of Knowledge",
+      "author": "James Rumford",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "ancient-egypt"
+      ],
+      "primaryEventId": "ancient-egypt",
+      "blurb": "How Jean-Francois Champollion deciphered hieroglyphs in the 1800s, which is how we read Egypt's own writing."
+    },
+    {
+      "id": "mth-mummies",
+      "title": "Mummies in the Morning",
+      "author": "Mary Pope Osborne",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "ancient-egypt",
+        "pyramids",
+        "tutankhamun"
+      ],
+      "primaryEventId": "pyramids",
+      "blurb": "Jack and Annie, in the Magic Tree House, take a fantasy trip to ancient Egypt.",
+      "parentNote": "Time-travel fantasy, not a history book. Pair it with the nonfiction companion if you want the facts."
+    },
+    {
+      "id": "mth-pyramids",
+      "title": "Mummies and Pyramids",
+      "author": "Will Osborne and Mary Pope Osborne",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "pyramids",
+        "ancient-egypt",
+        "tutankhamun"
+      ],
+      "primaryEventId": "pyramids",
+      "blurb": "The nonfiction companion to Mummies in the Morning, with mummies, pyramids, and daily life.",
+      "parentNote": "Uses standard museum dates. Keep the timeline's pyramid note beside it."
+    },
+    {
+      "id": "cat-bubastes",
+      "title": "The Cat of Bubastes",
+      "author": "G. A. Henty",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 15,
+      "levels": [
+        "advanced"
+      ],
+      "topics": [
+        "egypt",
+        "moses"
+      ],
+      "eventIds": [
+        "moses",
+        "exodus",
+        "ancient-egypt"
+      ],
+      "primaryEventId": "moses",
+      "blurb": "A Victorian adventure set in Egypt in the days of Moses, about a sacred cat and an Israelite family.",
+      "parentNote": "Nineteenth-century style, slow for some readers. Henty imagines Egypt in Moses' time. It is not evidence for a date or a pharaoh."
+    },
+    {
+      "id": "casting-gods",
+      "title": "Casting the Gods Adrift",
+      "author": "Geraldine McCaughrean",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 12,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "egypt"
+      ],
+      "eventIds": [
+        "akhenaten",
+        "ancient-egypt"
+      ],
+      "primaryEventId": "akhenaten",
+      "blurb": "A boy in Akhenaten's court watches the pharaoh's strange new worship of the sun disk."
+    },
+    {
+      "id": "hittite",
+      "title": "Hittite Warrior",
+      "author": "Joanne Williamson",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "israel",
+        "egypt"
+      ],
+      "eventIds": [
+        "joshua",
+        "hittites",
+        "canaan"
+      ],
+      "primaryEventId": "joshua",
+      "blurb": "A young Hittite flees a falling kingdom and ends up in Canaan in the days of Joshua.",
+      "parentNote": "Historical fiction. The Hittites and the biblical setting are real. The hero's plot is invented."
+    },
+    {
+      "id": "god-king",
+      "title": "God King: A Story in the Days of King Hezekiah",
+      "author": "Joanne Williamson",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "eventIds": [
+        "hezekiah",
+        "sennacherib",
+        "isaiah"
+      ],
+      "primaryEventId": "hezekiah",
+      "blurb": "A prince of Kush is swept into Judah during the days of Hezekiah and the Assyrian threat.",
+      "parentNote": "A novel. Hezekiah, Isaiah, and the Assyrian invasion are the historical frame."
+    },
+    {
+      "id": "sotw-1",
+      "title": "The Story of the World, Volume 1: Ancient Times",
+      "author": "Susan Wise Bauer",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "egypt",
+        "greece",
+        "rome",
+        "mesopotamia"
+      ],
+      "eventIds": [
+        "sumer-ur",
+        "ancient-egypt",
+        "classical-greece",
+        "alexander",
+        "augustus"
+      ],
+      "primaryEventId": "classical-greece",
+      "blurb": "A wide read-aloud history of the ancient world, from early cities through Rome.",
+      "parentNote": "A survey many families read aloud. It is not the Bible, and it does not follow this timeline's creationist chronology. Keep the Scripture, Historical, and Interpretation badges beside it."
+    },
+    {
+      "id": "sotw-2",
+      "title": "The Story of the World, Volume 2: The Middle Ages",
+      "author": "Susan Wise Bauer",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "charlemagne",
+        "vikings",
+        "crusades",
+        "cathedrals",
+        "black-death"
+      ],
+      "primaryEventId": "charlemagne",
+      "blurb": "The middle-ages volume of Bauer's read-aloud history, from the fall of Rome toward the Renaissance.",
+      "parentNote": "A wide survey, not a church catechism. Read it next to the timeline's badges."
+    },
+    {
+      "id": "sotw-3",
+      "title": "The Story of the World, Volume 3: Early Modern Times",
+      "author": "Susan Wise Bauer",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "reformation",
+        "exploration",
+        "america"
+      ],
+      "eventIds": [
+        "luther",
+        "columbus",
+        "gutenberg",
+        "american-revolution"
+      ],
+      "primaryEventId": "luther",
+      "blurb": "Bauer's survey from the age of printing and exploration through the revolutionary era.",
+      "parentNote": "A wide survey. Use the timeline when you want Scripture and history kept distinct."
+    },
+    {
+      "id": "sotw-4",
+      "title": "The Story of the World, Volume 4: The Modern Age",
+      "author": "Susan Wise Bauer",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "modern",
+        "industry"
+      ],
+      "eventIds": [
+        "industrial-revolution",
+        "world-war-i",
+        "world-war-ii",
+        "moon-landing"
+      ],
+      "primaryEventId": "world-war-ii",
+      "blurb": "The modern volume of the read-aloud history, including the world wars.",
+      "parentNote": "War chapters are serious. Read them with a parent. This is a survey, not a memoir like The Hiding Place."
+    },
+    {
+      "id": "greek-myths-book",
+      "title": "D'Aulaires' Book of Greek Myths",
+      "author": "Ingri d'Aulaire and Edgar Parin d'Aulaire",
+      "type": "fiction",
+      "ageMin": 7,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "greece",
+        "myths"
+      ],
+      "eventIds": [
+        "greek-myths",
+        "classical-greece"
+      ],
+      "primaryEventId": "greek-myths",
+      "blurb": "The standard children's retelling of the Greek myths, with the d'Aulaires' pictures.",
+      "parentNote": "These are myths, not history and not Scripture. A few stories include jealousy, revenge, and gods behaving badly. This retelling is written for children."
+    },
+    {
+      "id": "black-ships",
+      "title": "Black Ships Before Troy",
+      "author": "Rosemary Sutcliff",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "greece",
+        "myths"
+      ],
+      "eventIds": [
+        "troy"
+      ],
+      "primaryEventId": "troy",
+      "blurb": "A strong children's retelling of the Iliad.",
+      "parentNote": "Poetry and legend, not a history book. War and revenge are part of the story."
+    },
+    {
+      "id": "famous-greece",
+      "title": "Famous Men of Greece",
+      "author": "John H. Haaren and A. B. Poland",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "greece"
+      ],
+      "eventIds": [
+        "classical-greece",
+        "alexander",
+        "greek-philosophers"
+      ],
+      "primaryEventId": "classical-greece",
+      "blurb": "Short life stories of Greek figures, written for children in 1904.",
+      "parentNote": "Old-fashioned and clear. It sometimes treats legends as moral tales. Use the timeline badges so myth and history stay distinct."
+    },
+    {
+      "id": "famous-rome",
+      "title": "Famous Men of Rome",
+      "author": "John H. Haaren and A. B. Poland",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "rome"
+      ],
+      "eventIds": [
+        "augustus",
+        "julius-caesar",
+        "roman-republic"
+      ],
+      "primaryEventId": "augustus",
+      "blurb": "Short life stories of Roman figures, a companion to Famous Men of Greece.",
+      "parentNote": "Written in 1904. Early chapters include legends such as Romulus. Later lives are historical."
+    },
+    {
+      "id": "detectives",
+      "title": "Detectives in Togas",
+      "author": "Henry Winterfeld",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "rome"
+      ],
+      "eventIds": [
+        "augustus",
+        "roman-republic"
+      ],
+      "primaryEventId": "augustus",
+      "blurb": "Schoolboys in ancient Rome solve a mystery. A light adventure, not a history lesson."
+    },
+    {
+      "id": "bronze-bow",
+      "title": "The Bronze Bow",
+      "author": "Elizabeth George Speare",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "jesus",
+        "rome"
+      ],
+      "eventIds": [
+        "jesus-ministry",
+        "crucifixion",
+        "resurrection"
+      ],
+      "primaryEventId": "jesus-ministry",
+      "blurb": "A Newbery Medal novel about a Galilean boy who hates Rome and meets Jesus.",
+      "parentNote": "Includes hatred, grief, and violence in an occupied country. One of the best older-child novels set in Jesus' lifetime."
+    },
+    {
+      "id": "eagle",
+      "title": "The Eagle of the Ninth",
+      "author": "Rosemary Sutcliff",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 15,
+      "levels": [
+        "advanced"
+      ],
+      "topics": [
+        "rome"
+      ],
+      "eventIds": [
+        "augustus"
+      ],
+      "primaryEventId": "augustus",
+      "blurb": "A young Roman officer goes north of Hadrian's Wall to recover a lost eagle standard.",
+      "parentNote": "Battles and a hard journey. Best for older readers. The legion is historical. The plot is fiction. Linked here as a Rome novel."
+    },
+    {
+      "id": "augustus-world",
+      "title": "Augustus Caesar's World",
+      "author": "Genevieve Foster",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "rome",
+        "jesus"
+      ],
+      "eventIds": [
+        "augustus",
+        "jesus-birth",
+        "crucifixion"
+      ],
+      "primaryEventId": "augustus",
+      "blurb": "Foster tells Augustus's lifetime by also introducing other people alive then, including in Judea."
+    },
+    {
+      "id": "twice-freed",
+      "title": "Twice Freed",
+      "author": "Patricia St. John",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "church",
+        "rome"
+      ],
+      "eventIds": [
+        "paul"
+      ],
+      "primaryEventId": "paul",
+      "blurb": "A novel about Onesimus, the enslaved man in Paul's letter to Philemon.",
+      "parentNote": "The letter is Scripture. This book imagines the life around it."
+    },
+    {
+      "id": "victory-walls",
+      "title": "Victory on the Walls",
+      "author": "Frieda Clark Hyman",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "israel"
+      ],
+      "eventIds": [
+        "ezra-nehemiah"
+      ],
+      "primaryEventId": "ezra-nehemiah",
+      "blurb": "A story of a boy in Jerusalem while Nehemiah rebuilds the walls.",
+      "parentNote": "Nehemiah is Scripture. The boy's plot is fiction."
+    },
+    {
+      "id": "adam-road",
+      "title": "Adam of the Road",
+      "author": "Elizabeth Janet Gray",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "cathedrals",
+        "castles"
+      ],
+      "primaryEventId": "cathedrals",
+      "blurb": "A Newbery Medal novel about a minstrel's son on the roads of thirteenth-century England."
+    },
+    {
+      "id": "door-wall",
+      "title": "The Door in the Wall",
+      "author": "Marguerite de Angeli",
+      "type": "fiction",
+      "ageMin": 7,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "cathedrals",
+        "castles"
+      ],
+      "primaryEventId": "castles",
+      "blurb": "A Newbery Medal story of a boy in medieval England who loses the use of his legs and finds another kind of strength."
+    },
+    {
+      "id": "castle-mac",
+      "title": "Castle",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "castles"
+      ],
+      "primaryEventId": "castles",
+      "blurb": "How a thirteenth-century castle in Wales could be built, drawn step by step."
+    },
+    {
+      "id": "cathedral-mac",
+      "title": "Cathedral",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "middle-ages",
+        "church"
+      ],
+      "eventIds": [
+        "cathedrals"
+      ],
+      "primaryEventId": "cathedrals",
+      "blurb": "How a Gothic cathedral could be raised over decades, with Macaulay's famous drawings."
+    },
+    {
+      "id": "otto",
+      "title": "Otto of the Silver Hand",
+      "author": "Howard Pyle",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "advanced"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "castles"
+      ],
+      "primaryEventId": "castles",
+      "blurb": "A nineteenth-century story of a gentle boy raised in a monastery and caught in a robber baron's feud.",
+      "parentNote": "Includes a violent injury: a boy's hand is cut off. Better for older children."
+    },
+    {
+      "id": "augustine-kent",
+      "title": "Augustine Came to Kent",
+      "author": "Barbara Willard",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "church",
+        "middle-ages"
+      ],
+      "eventIds": [
+        "augustine-canterbury"
+      ],
+      "primaryEventId": "augustine-canterbury",
+      "blurb": "A novel about the mission to the English in 597. This Augustine is not Augustine of Hippo."
+    },
+    {
+      "id": "son-charlemagne",
+      "title": "Son of Charlemagne",
+      "author": "Barbara Willard",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "charlemagne"
+      ],
+      "primaryEventId": "charlemagne",
+      "blurb": "A novel about Charlemagne's son in the emperor's court."
+    },
+    {
+      "id": "swords",
+      "title": "If All the Swords in England",
+      "author": "Barbara Willard",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "middle-ages",
+        "church"
+      ],
+      "eventIds": [
+        "becket"
+      ],
+      "primaryEventId": "becket",
+      "blurb": "A story of two brothers on opposite sides of the quarrel that ends in Becket's murder.",
+      "parentNote": "The killing in the cathedral is part of the plot. For older children."
+    },
+    {
+      "id": "viking-ships",
+      "title": "Viking Ships at Sunrise",
+      "author": "Mary Pope Osborne",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "middle-ages"
+      ],
+      "eventIds": [
+        "vikings"
+      ],
+      "primaryEventId": "vikings",
+      "blurb": "A Magic Tree House fantasy visit to a monastery in the time of Viking raids.",
+      "parentNote": "Time-travel fiction, not a history of the Vikings."
+    },
+    {
+      "id": "lightning",
+      "title": "When Lightning Struck!: The Story of Martin Luther",
+      "author": "Danika Cooley",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "reformation",
+        "church"
+      ],
+      "eventIds": [
+        "luther"
+      ],
+      "primaryEventId": "luther",
+      "blurb": "A children's biography of Luther from a Christian writer."
+    },
+    {
+      "id": "luther-maier",
+      "title": "Martin Luther: A Man Who Changed the World",
+      "author": "Paul L. Maier",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "reformation"
+      ],
+      "eventIds": [
+        "luther"
+      ],
+      "primaryEventId": "luther",
+      "blurb": "A picture-book biography of Luther for younger listeners."
+    },
+    {
+      "id": "thunderstorm",
+      "title": "Thunderstorm in Church",
+      "author": "Louise A. Vernon",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "reformation"
+      ],
+      "eventIds": [
+        "luther"
+      ],
+      "primaryEventId": "luther",
+      "blurb": "A story told through Luther's son, set in the reformer's busy household.",
+      "parentNote": "Historical fiction. The family details are imagined around a real man."
+    },
+    {
+      "id": "ink-fingers",
+      "title": "Ink on His Fingers",
+      "author": "Louise A. Vernon",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "reformation",
+        "bible"
+      ],
+      "eventIds": [
+        "gutenberg"
+      ],
+      "primaryEventId": "gutenberg",
+      "blurb": "A boy's-eye view of Gutenberg's print shop.",
+      "parentNote": "Fiction set in a real workshop."
+    },
+    {
+      "id": "bible-smuggler",
+      "title": "The Bible Smuggler",
+      "author": "Louise A. Vernon",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "reformation",
+        "bible"
+      ],
+      "eventIds": [
+        "tyndale",
+        "kjv"
+      ],
+      "primaryEventId": "tyndale",
+      "blurb": "A story of William Tyndale's English New Testament being carried into England.",
+      "parentNote": "Fiction built around Tyndale's real work and danger."
+    },
+    {
+      "id": "hawk",
+      "title": "The Hawk That Dare Not Hunt by Day",
+      "author": "Scott O'Dell",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "reformation",
+        "bible"
+      ],
+      "eventIds": [
+        "tyndale"
+      ],
+      "primaryEventId": "tyndale",
+      "blurb": "A novel about a young sailor who helps smuggle Tyndale's Scriptures.",
+      "parentNote": "O'Dell writes for older children. The danger around Tyndale is real. The sailor's plot is fiction."
+    },
+    {
+      "id": "columbus-world",
+      "title": "The World of Columbus and Sons",
+      "author": "Genevieve Foster",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "exploration",
+        "reformation"
+      ],
+      "eventIds": [
+        "columbus",
+        "magellan",
+        "luther"
+      ],
+      "primaryEventId": "columbus",
+      "blurb": "Foster's wide look at the people alive in Columbus's era, not only Columbus."
+    },
+    {
+      "id": "around-world",
+      "title": "Around the World in a Hundred Years",
+      "author": "Jean Fritz",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "exploration"
+      ],
+      "eventIds": [
+        "columbus",
+        "magellan"
+      ],
+      "primaryEventId": "magellan",
+      "blurb": "Short, lively chapters on explorers from Henry the Navigator to Magellan.",
+      "parentNote": "Fritz is honest and sometimes wry about the explorers' mistakes and cruelties. Good to read with a parent."
+    },
+    {
+      "id": "pedro",
+      "title": "Pedro's Journal",
+      "author": "Pam Conrad",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "exploration"
+      ],
+      "eventIds": [
+        "columbus"
+      ],
+      "primaryEventId": "columbus",
+      "blurb": "A short fictional journal of a ship's boy on Columbus's first voyage.",
+      "parentNote": "Fiction. Pair it with a conversation about the people who already lived in the Americas."
+    },
+    {
+      "id": "ship-mac",
+      "title": "Ship",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "exploration"
+      ],
+      "eventIds": [
+        "columbus",
+        "magellan"
+      ],
+      "primaryEventId": "columbus",
+      "blurb": "How an exploration-age ship was built and sailed, shown in Macaulay's drawings."
+    },
+    {
+      "id": "bowditch-book",
+      "title": "Carry On, Mr. Bowditch",
+      "author": "Jean Lee Latham",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "exploration",
+        "america"
+      ],
+      "eventIds": [
+        "bowditch"
+      ],
+      "primaryEventId": "bowditch",
+      "blurb": "A Newbery Medal novel based on the real navigator Nathaniel Bowditch.",
+      "parentNote": "The life is real. The scenes are written as a novel."
+    },
+    {
+      "id": "colonial",
+      "title": "If You Lived in Colonial Times",
+      "author": "Ann McGovern",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "mayflower",
+        "jamestown"
+      ],
+      "primaryEventId": "mayflower",
+      "blurb": "A question-and-answer picture book about daily life in colonial New England."
+    },
+    {
+      "id": "squanto",
+      "title": "Squanto, Friend of the Pilgrims",
+      "author": "Clyde Robert Bulla",
+      "type": "nonfiction",
+      "ageMin": 7,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "mayflower"
+      ],
+      "primaryEventId": "mayflower",
+      "blurb": "An easy biography of Tisquantum and his help to the Plymouth settlers.",
+      "parentNote": "Written in 1954. It honors Squanto's help. Read it with the harder history that his people suffered greatly from disease and settlement."
+    },
+    {
+      "id": "sarah-noble",
+      "title": "The Courage of Sarah Noble",
+      "author": "Alice Dalgliesh",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud",
+        "early-reader"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "mayflower"
+      ],
+      "primaryEventId": "mayflower",
+      "blurb": "A short novel based on a real girl who went with her father into the Connecticut woods in 1707.",
+      "parentNote": "Linked with the colonial shelf. Some language about Native people reflects the 1950s, when it was written."
+    },
+    {
+      "id": "sign-beaver",
+      "title": "The Sign of the Beaver",
+      "author": "Elizabeth George Speare",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "westward"
+      ],
+      "primaryEventId": "westward",
+      "blurb": "A colonial boy left alone in the Maine woods learns from a Penobscot boy.",
+      "parentNote": "Written in 1983. Some wording for Native people reflects that time. Worth reading with a parent. Placed on the westward shelf as a story of settlement."
+    },
+    {
+      "id": "ben-me",
+      "title": "Ben and Me",
+      "author": "Robert Lawson",
+      "type": "fiction",
+      "ageMin": 7,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "franklin"
+      ],
+      "primaryEventId": "franklin",
+      "blurb": "A humorous novel in which a mouse claims to have given Benjamin Franklin his best ideas.",
+      "parentNote": "A joke, not a biography."
+    },
+    {
+      "id": "johnny",
+      "title": "Johnny Tremain",
+      "author": "Esther Forbes",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 14,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "american-revolution"
+      ],
+      "primaryEventId": "american-revolution",
+      "blurb": "A Newbery Medal novel about a silversmith's apprentice in Boston at the start of the Revolution.",
+      "parentNote": "Includes war and a bad burn from hot metal. A classic for about age 10 and up."
+    },
+    {
+      "id": "washington-world",
+      "title": "George Washington's World",
+      "author": "Genevieve Foster",
+      "type": "nonfiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "washington",
+        "american-revolution",
+        "constitution"
+      ],
+      "primaryEventId": "washington",
+      "blurb": "Washington's lifetime told alongside other people then alive, in Foster's signature style."
+    },
+    {
+      "id": "freedom-box",
+      "title": "Henry's Freedom Box",
+      "author": "Ellen Levine",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "slavery",
+        "america"
+      ],
+      "eventIds": [
+        "slavery-in-america",
+        "tubman"
+      ],
+      "primaryEventId": "slavery-in-america",
+      "blurb": "A picture book of Henry Brown, who mailed himself to freedom. Illustrated by Kadir Nelson.",
+      "parentNote": "A true story. The danger is clear and not graphic. Good to read with a younger child and talk about."
+    },
+    {
+      "id": "tubman-book",
+      "title": "Moses: When Harriet Tubman Led Her People to Freedom",
+      "author": "Carole Boston Weatherford",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 10,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "slavery",
+        "america"
+      ],
+      "eventIds": [
+        "tubman",
+        "slavery-in-america"
+      ],
+      "primaryEventId": "tubman",
+      "blurb": "A poetic picture book of Tubman's escape and rescue work, illustrated by Kadir Nelson. The title uses Moses as a picture of her courage.",
+      "parentNote": "It is about Harriet Tubman, not the biblical Moses. Faith is part of the telling."
+    },
+    {
+      "id": "freedom-train",
+      "title": "Freedom Train: The Story of Harriet Tubman",
+      "author": "Dorothy Sterling",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "slavery",
+        "america"
+      ],
+      "eventIds": [
+        "tubman",
+        "civil-war",
+        "slavery-in-america"
+      ],
+      "primaryEventId": "tubman",
+      "blurb": "A middle-grade biography of Tubman, including her work in the Civil War."
+    },
+    {
+      "id": "douglass-book",
+      "title": "Narrative of the Life of Frederick Douglass, an American Slave",
+      "author": "Frederick Douglass",
+      "type": "nonfiction",
+      "ageMin": 12,
+      "ageMax": 16,
+      "levels": [
+        "advanced"
+      ],
+      "topics": [
+        "slavery",
+        "america"
+      ],
+      "eventIds": [
+        "douglass",
+        "slavery-in-america",
+        "civil-war"
+      ],
+      "primaryEventId": "douglass",
+      "blurb": "Douglass's own 1845 account of slavery and escape.",
+      "parentNote": "He truthfully describes violence and the evil of slavery. Best for mature readers, with a parent nearby."
+    },
+    {
+      "id": "little-house",
+      "title": "Little House on the Prairie",
+      "author": "Laura Ingalls Wilder",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "america"
+      ],
+      "eventIds": [
+        "westward"
+      ],
+      "primaryEventId": "westward",
+      "blurb": "A novel based on the author's childhood in a settler family.",
+      "parentNote": "Told from a settler family's point of view. Some passages reflect unfair attitudes of the 1800s toward Native Americans. Read those pages with a parent."
+    },
+    {
+      "id": "bobbin",
+      "title": "The Bobbin Girl",
+      "author": "Emily Arnold McCully",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud"
+      ],
+      "topics": [
+        "industry",
+        "america"
+      ],
+      "eventIds": [
+        "lowell-mills",
+        "industrial-revolution"
+      ],
+      "primaryEventId": "lowell-mills",
+      "blurb": "A picture book based on a real mill girl in Lowell who joins a protest.",
+      "parentNote": "The hours and the protest are historically grounded. The girl's scenes are a story."
+    },
+    {
+      "id": "mill-mac",
+      "title": "Mill",
+      "author": "David Macaulay",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 14,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "industry"
+      ],
+      "eventIds": [
+        "lowell-mills",
+        "industrial-revolution"
+      ],
+      "primaryEventId": "industrial-revolution",
+      "blurb": "How New England mills were planned and built, in Macaulay's illustrated style."
+    },
+    {
+      "id": "ten-mile",
+      "title": "Ten Mile Day and the Building of the Transcontinental Railroad",
+      "author": "Mary Ann Fraser",
+      "type": "nonfiction",
+      "ageMin": 7,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "industry",
+        "america"
+      ],
+      "eventIds": [
+        "transcontinental-railroad"
+      ],
+      "primaryEventId": "transcontinental-railroad",
+      "blurb": "The day crews laid ten miles of track, and how the railroad was raced to completion."
+    },
+    {
+      "id": "railroad-race",
+      "title": "The Great Railroad Race",
+      "author": "Kristiana Gregory",
+      "type": "fiction",
+      "ageMin": 9,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "industry",
+        "america"
+      ],
+      "eventIds": [
+        "transcontinental-railroad"
+      ],
+      "primaryEventId": "transcontinental-railroad",
+      "blurb": "A Dear America diary of a girl in Utah while the transcontinental railroad is being built.",
+      "parentNote": "Fiction in diary form. The railroad setting is historical."
+    },
+    {
+      "id": "number-stars",
+      "title": "Number the Stars",
+      "author": "Lois Lowry",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "eventIds": [
+        "world-war-ii"
+      ],
+      "primaryEventId": "world-war-ii",
+      "blurb": "A Newbery Medal novel about a Danish girl who helps her Jewish friend hide from the Nazis.",
+      "parentNote": "Set in occupied Denmark. Tension and danger, without graphic violence. Often read around ages 8-12 with a parent nearby."
+    },
+    {
+      "id": "snow-treasure",
+      "title": "Snow Treasure",
+      "author": "Marie McSwigan",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "eventIds": [
+        "world-war-ii"
+      ],
+      "primaryEventId": "world-war-ii",
+      "blurb": "A novel about Norwegian children smuggling gold past Nazi soldiers on their sleds.",
+      "parentNote": "Inspired by a wartime story from Norway. Treat the plot as fiction."
+    },
+    {
+      "id": "twenty-ten",
+      "title": "Twenty and Ten",
+      "author": "Claire Huchet Bishop",
+      "type": "fiction",
+      "ageMin": 7,
+      "ageMax": 11,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "topics": [
+        "modern"
+      ],
+      "eventIds": [
+        "world-war-ii"
+      ],
+      "primaryEventId": "world-war-ii",
+      "blurb": "French schoolchildren hide ten Jewish children from Nazi soldiers. A short, tense, hopeful book."
+    },
+    {
+      "id": "hiding-place",
+      "title": "The Hiding Place (Young Reader's Edition)",
+      "author": "Corrie ten Boom with Elizabeth and John Sherrill",
+      "type": "nonfiction",
+      "ageMin": 10,
+      "ageMax": 15,
+      "levels": [
+        "independent"
+      ],
+      "topics": [
+        "modern",
+        "church"
+      ],
+      "eventIds": [
+        "corrie-ten-boom",
+        "world-war-ii"
+      ],
+      "primaryEventId": "corrie-ten-boom",
+      "blurb": "Corrie ten Boom's account of hiding Jewish neighbors and of the camp that followed, in the edition shortened for younger readers.",
+      "parentNote": "The young reader's edition softens some details. It still describes arrest, camp life, and death. Read it with a parent."
+    }
+  ]
+}
