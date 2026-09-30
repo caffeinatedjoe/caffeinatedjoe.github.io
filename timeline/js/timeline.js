@@ -131,10 +131,15 @@ function formatYear(year) {
 }
 
 function formatWhen(event) {
-  if (event.yearLabel) return event.yearLabel;
+  const label = event.year || event.yearLabel;
+  if (label) return label;
   if (event.eraOnly) return "Books for this period";
   if (event.category === "scripture") return "No calendar year in the Bible";
   return "No calendar year assigned";
+}
+
+function chapterId(event) {
+  return event.eraId || event.era;
 }
 
 function indexChapters(list) {
@@ -185,7 +190,7 @@ function indexPositions() {
   positionOf = new Map();
   for (const chapter of chapters) {
     const mates = events
-      .filter((event) => event.era === chapter.id)
+      .filter((event) => chapterId(event) === chapter.id)
       .sort((a, b) => a.sortKey - b.sortKey || a.title.localeCompare(b.title));
     const count = mates.length;
     mates.forEach((event, index) => {
@@ -209,7 +214,8 @@ function fitChapter(id) {
 
 function isRibbon(event) {
   return (
-    event.endYear != null &&
+    Number.isInteger(event.startYear) &&
+    Number.isInteger(event.endYear) &&
     event.endYear !== event.startYear &&
     (event.kind === "civilization" || event.kind === "period" || event.kind === "culture")
   );
@@ -255,7 +261,8 @@ function bookMatches(book) {
   if (filters.type && book.type !== filters.type) return false;
   if (filters.topic && !book.topics.includes(filters.topic)) return false;
   if (filters.era) {
-    const hit = book.era === filters.era || book.eventIds.some((id) => eventsById.get(id)?.era === filters.era);
+    const bookEra = book.eraId || book.era;
+    const hit = bookEra === filters.era || book.eventIds.some((id) => chapterId(eventsById.get(id) || {}) === filters.era);
     if (!hit) return false;
   }
   return true;
@@ -277,7 +284,7 @@ function readingPath() {
   for (const book of books) {
     if (book.previewOnly) continue;
     if (!bookMatches(book)) continue;
-    const id = book.primaryEventId || `era:${book.era || "other"}`;
+    const id = book.primaryEventId || `era:${book.eraId || book.era || "other"}`;
     if (!groups.has(id)) groups.set(id, []);
     groups.get(id).push(book);
   }
