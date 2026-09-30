@@ -1058,6 +1058,25 @@
       "source": "https://www.worldhistory.org/article/2303/battle-of-waterloo/"
     },
     {
+      "id": "mo-edison",
+      "title": "Thomas Edison",
+      "kind": "person",
+      "category": "historical",
+      "era": "industry",
+      "eraId": "modern",
+      "sortKey": 345,
+      "startYear": 1847,
+      "endYear": 1931,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Edison works from train boy and telegraph operator to the inventions still in use.",
+      "context": [
+        "The biography SCM uses follows his life, not one invention. The years are his lifetime."
+      ],
+      "year": "1847–1931",
+      "yearNote": "Life span as given on SCM's bookfinder for Perry's biography. Not a Scripture date."
+    },
+    {
       "id": "us-slavery-abolition",
       "title": "Slavery and abolition",
       "kind": "event",
@@ -1240,6 +1259,25 @@
       "kidNote": "Parent guidance."
     },
     {
+      "id": "mo-berlin-wall",
+      "title": "The Berlin Wall",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 385,
+      "startYear": 1961,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "A wall divides Berlin and traps families on the eastern side.",
+      "context": [
+        "This is history, not Scripture. The novel A Night Divided is fiction about a family caught by the wall."
+      ],
+      "year": "night of 12–13 August 1961",
+      "yearNote": "Britannica: the barrier was first erected on the night of August 12–13, 1961, after a decree passed on August 12.",
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
+    },
+    {
       "id": "mo-apollo",
       "title": "Apollo 11",
       "kind": "event",
@@ -1257,6 +1295,25 @@
       ],
       "year": "1969",
       "yearNote": "Moon landing."
+    },
+    {
+      "id": "mo-sudan-civil-war",
+      "title": "The Sudanese civil war",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 395,
+      "startYear": 1983,
+      "endYear": 2005,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "A long civil war drives children from their homes. Some later walk back toward water and school.",
+      "context": [
+        "History. The children's novel is not a textbook, and it is not a read-aloud for the younger kids."
+      ],
+      "year": "1983–2005",
+      "yearNote": "Span given in Common Sense Media's parents' guide for A Long Walk to Water. The novel is fact blended with fiction inside that war."
     },
     {
       "id": "mo-church",
