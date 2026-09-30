@@ -142,7 +142,23 @@ else {
   if (qin.year !== "221 BCE") fail("Qin year must stay the display text 221 BCE");
 }
 
-if (events.length !== 75) fail(`expected 75 events, found ${events.length}`);
+const wallFalls = events.find((event) => event.id === "mo-berlin-wall-falls");
+if (!wallFalls) fail("missing mo-berlin-wall-falls");
+else {
+  if (wallFalls.category !== "historical") fail("Fall of the Berlin Wall must be historical");
+  if (wallFalls.startYear !== 1989) fail("Fall of the Berlin Wall startYear must stay 1989");
+  if (wallFalls.year !== "9 November 1989") fail("Fall of the Berlin Wall year must stay 9 November 1989");
+  if (wallFalls.id === berlin.id) fail("the 1989 fall must stay a separate event from the 1961 wall");
+}
+
+const han = events.find((event) => event.id === "cn-han-dynasty");
+if (!han) fail("missing cn-han-dynasty");
+else {
+  if (han.startYear !== -206 || han.endYear !== 220) fail("Han years must stay -206 to 220");
+  if (han.year !== "206 BCE–220 CE") fail("Han year must stay 206 BCE–220 CE");
+}
+
+if (events.length !== 81) fail(`expected 81 events, found ${events.length}`);
 
 for (const event of events) {
   for (const related of event.relatedIds || []) {
@@ -173,7 +189,10 @@ for (const book of books) {
   }
 }
 
-if (books.length !== 64) fail(`expected 64 books, found ${books.length}`);
+if (books.length !== 66) fail(`expected 66 books, found ${books.length}`);
+
+const nightCopies = books.filter((book) => book.title === "A Night Divided");
+if (nightCopies.length !== 1) fail("A Night Divided must stay the one copy already shipping");
 
 const castleCopies = books.filter((book) => book.title === "A Castle with Many Rooms");
 if (castleCopies.length !== 1) fail("A Castle with Many Rooms must stay the one copy already shipping");

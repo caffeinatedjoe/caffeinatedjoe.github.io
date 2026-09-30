@@ -1484,6 +1484,53 @@
       "topics": [
         "modern"
       ]
+    },
+    {
+      "id": "maples-in-the-mist",
+      "title": "Maples in the Mist: Children's Poems from the Tang Dynasty",
+      "author": "Minfong Ho",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "ages": "6–9",
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "mode": "read-aloud",
+      "eraId": "medieval",
+      "eventIds": [
+        "cn-tang-dynasty"
+      ],
+      "primaryEventId": "cn-tang-dynasty",
+      "blurb": "Short Tang dynasty poems in English and Chinese, with Chinese-style watercolor pictures—poems children once learned while learning to read.",
+      "source": "https://www.kirkusreviews.com/book-reviews/minfong-ho/maples-in-the-mist/",
+      "topics": [
+        "middle-ages"
+      ]
+    },
+    {
+      "id": "find-tom-ming-dynasty",
+      "title": "Find Tom in Time: Ming Dynasty China",
+      "author": "Fatti Burke",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 7,
+      "ages": "5–7",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "medieval",
+      "eventIds": [
+        "cn-ming-dynasty"
+      ],
+      "primaryEventId": "cn-ming-dynasty",
+      "blurb": "British Museum search-and-find picture tour of Ming China: find Tom and his cat while spotting emperors, crafts, and festival scenes.",
+      "source": "https://nosycrow.com/product/british-museum-find-tom-in-time-ming-dynasty-china/",
+      "topics": [
+        "middle-ages"
+      ]
     }
   ]
 }

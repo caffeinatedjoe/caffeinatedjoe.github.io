@@ -1,0 +1,230 @@
+{
+  "schema": "coffey-timeline-remap/1",
+  "chunk": "world-arcs-pass-2",
+  "note": "China dynasty gaps (Han, Song, Ming, Qing) between existing Qin/Tang/1911/1949; Meiji Japan 1868; Cold War end hinge (Berlin Wall falls 1989—do not duplicate mo-berlin-wall 1961). Books only where a page opened this pass gave age and a clean-enough read. Attached Maples in the Mist to existing cn-tang-dynasty. No clean living book cleared for 1911 or 1949.",
+  "source": "Britannica event pages for years (curl); Kirkus and Nosy Crow / British Museum for books",
+  "events": [
+    {
+      "id": "cn-han-dynasty",
+      "title": "Han dynasty in China",
+      "kind": "period",
+      "category": "historical",
+      "era": "china",
+      "eraId": "rome-early-church",
+      "sortKey": 159,
+      "startYear": -206,
+      "endYear": 220,
+      "dateBasis": "historical",
+      "year": "206 BCE–220 CE",
+      "yearNote": "Britannica Han dynasty: the second great imperial dynasty of China (206 BCE–220 CE), after the Zhou dynasty; so thoroughly did the Han establish what was thereafter considered Chinese culture that ‘Han’ became the Chinese word denoting someone who is ethnically Chinese.",
+      "importance": 2,
+      "summary": "The Han dynasty rules China for centuries and shapes much of what later ages call Chinese culture.",
+      "context": [
+        "Follows Qin unification on the short China arc.",
+        "History stop, not a devotion book."
+      ],
+      "source": "https://www.britannica.com/topic/Han-dynasty"
+    },
+    {
+      "id": "cn-song-dynasty",
+      "title": "Song dynasty in China",
+      "kind": "period",
+      "category": "historical",
+      "era": "china",
+      "eraId": "medieval",
+      "sortKey": 235,
+      "startYear": 960,
+      "endYear": 1279,
+      "dateBasis": "historical",
+      "year": "960–1279",
+      "yearNote": "Britannica Song dynasty: (960–1279), Chinese dynasty that ruled during one of its most brilliant cultural epochs; commonly divided into Bei (Northern) and Nan (Southern) Song; after 1127 the dynasty ruled only in South China.",
+      "importance": 3,
+      "summary": "The Song dynasty rules China in a long stretch known for culture, learning, and trade, later only in the south.",
+      "context": [
+        "Slots after Tang on the China arc; Mongol rule follows at the end of Song."
+      ],
+      "source": "https://www.britannica.com/topic/Song-dynasty"
+    },
+    {
+      "id": "cn-ming-dynasty",
+      "title": "Ming dynasty in China",
+      "kind": "period",
+      "category": "historical",
+      "era": "china",
+      "eraId": "medieval",
+      "sortKey": 248,
+      "startYear": 1368,
+      "endYear": 1644,
+      "dateBasis": "historical",
+      "year": "1368–1644",
+      "yearNote": "Britannica Ming dynasty: Chinese dynasty that lasted from 1368 to 1644 and provided an interval of native Chinese rule between eras of Mongol and Manchu dominance; China exerted immense cultural and political influence on East Asia.",
+      "importance": 3,
+      "summary": "Native Chinese rule returns under the Ming after Mongol rule. Cities, crafts, and sea voyages mark the age.",
+      "context": [
+        "Re-opened Britannica this pass; Ming was verified last pass and held for the event cap.",
+        "Follows the Mongol Empire node chronologically at the dynasty’s start."
+      ],
+      "source": "https://www.britannica.com/topic/Ming-dynasty-Chinese-history"
+    },
+    {
+      "id": "cn-qing-dynasty",
+      "title": "Qing dynasty in China",
+      "kind": "period",
+      "category": "historical",
+      "era": "china",
+      "eraId": "early-modern",
+      "sortKey": 315,
+      "startYear": 1644,
+      "endYear": 1912,
+      "dateBasis": "historical",
+      "year": "1644–1911/12",
+      "yearNote": "Britannica Qing dynasty: the last of the imperial dynasties of China, spanning the years 1644 to 1911/12. Under the Qing the territory of the empire and its population grew significantly.",
+      "importance": 2,
+      "summary": "The Qing are China’s last imperial dynasty. Their rule ends when the 1911 revolution creates a republic.",
+      "context": [
+        "Leads into the existing Chinese Revolution of 1911 node.",
+        "Manchu dynasty; keep the kid summary plain."
+      ],
+      "source": "https://www.britannica.com/topic/Qing-dynasty"
+    },
+    {
+      "id": "jp-meiji-restoration",
+      "title": "Meiji Restoration",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 354,
+      "startYear": 1868,
+      "dateBasis": "historical",
+      "year": "1868",
+      "yearNote": "Britannica Meiji Restoration: the political revolution in 1868 that brought about the final demise of the Tokugawa shogunate; the overthrow itself consisted of a coup d’état in Kyōto on January 3, 1868. Transformed Japan from an isolated feudal society into a modern industrialized state.",
+      "importance": 2,
+      "summary": "Japan’s old shogun government is overthrown. The emperor’s new Meiji government begins to remake Japan into a modern state.",
+      "context": [
+        "Regime change and rapid reform. Keep the kid summary short.",
+        "Not a church-history node."
+      ],
+      "source": "https://www.britannica.com/event/Meiji-Restoration"
+    },
+    {
+      "id": "mo-berlin-wall-falls",
+      "title": "Fall of the Berlin Wall",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 398,
+      "startYear": 1989,
+      "dateBasis": "historical",
+      "year": "9 November 1989",
+      "yearNote": "Britannica Berlin Wall: the border between East and West Germany was opened on November 9, 1989, following anti-government protests in East Germany; on November 9 the East German government opened the wall. Barrier period given as 1961 to 1989. (Do not confuse with mo-berlin-wall, the 1961 building of the wall.)",
+      "importance": 2,
+      "summary": "East Germany opens the Berlin Wall. Families cross. The Cold War’s hard European border begins to crack.",
+      "context": [
+        "End hinge beside the existing 1961 wall node mo-berlin-wall.",
+        "A Night Divided already ships for the wall’s building; do not re-add it here."
+      ],
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
+    }
+  ],
+  "books": [
+    {
+      "id": "maples-in-the-mist",
+      "title": "Maples in the Mist: Children's Poems from the Tang Dynasty",
+      "author": "Minfong Ho",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 9,
+      "levels": [
+        "read-aloud",
+        "independent"
+      ],
+      "eventIds": [
+        "cn-tang-dynasty"
+      ],
+      "primaryEventId": "cn-tang-dynasty",
+      "blurb": "Short Tang dynasty poems in English and Chinese, with Chinese-style watercolor pictures—poems children once learned while learning to read.",
+      "source": "https://www.kirkusreviews.com/book-reviews/minfong-ho/maples-in-the-mist/"
+    },
+    {
+      "id": "find-tom-ming-dynasty",
+      "title": "Find Tom in Time: Ming Dynasty China",
+      "author": "Fatti Burke",
+      "type": "nonfiction",
+      "ageMin": 5,
+      "ageMax": 7,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "cn-ming-dynasty"
+      ],
+      "primaryEventId": "cn-ming-dynasty",
+      "blurb": "British Museum search-and-find picture tour of Ming China: find Tom and his cat while spotting emperors, crafts, and festival scenes.",
+      "source": "https://nosycrow.com/product/british-museum-find-tom-in-time-ming-dynasty-china/"
+    }
+  ],
+  "leftOff": [
+    {
+      "title": "Living book for Chinese Revolution of 1911 (cn-1911-revolution)",
+      "author": "",
+      "why": "No family-clean juvenile title with a parents’ or publisher age page opened this pass. Mao-era propaganda picture books and class-struggle readers are not suitable for this house."
+    },
+    {
+      "title": "Living book for People’s Republic of China 1949 (cn-prc-1949)",
+      "author": "",
+      "why": "Same gap: overview textbooks and CCP-era children’s propaganda opened in search were not clean living books with verified ages for a Christian home. Omitted rather than invent."
+    },
+    {
+      "title": "The Meiji Restoration and the Rise of Modern Japan",
+      "author": "Monique Avakian",
+      "why": "Kirkus nonfiction 12+: covers Perry, rebellion, then overseas imperialism and minimal WWII. Oldest independent reader here is 13; imperialism/WWII stretch and age band keep it off the default path."
+    },
+    {
+      "title": "Commodore Perry in the Land of the Shogun",
+      "author": "Rhoda Blumberg",
+      "why": "CSM age 10+: brief sailors’ sexual interest ashore; ritual suicide; swordplay. Pre-Meiji (1853–54) and not clean enough for this house."
+    },
+    {
+      "title": "Heart of a Samurai",
+      "author": "Margi Preus",
+      "why": "CSM age 10+: brutal whaling, drunken sailors threatening fishermen, ethnic slurs. Set 1841, before Meiji; left off."
+    },
+    {
+      "title": "Brush of the Gods",
+      "author": "Lenore Look",
+      "why": "Penguin ages 4–8 verified (Tang painter Wu Daozi). Passed over Maples in the Mist as the cleaner Tang attach; Buddhist temple-art imagery (flying Buddhas) makes Maples the safer default for this house."
+    },
+    {
+      "title": "The Magic Pillow",
+      "author": "Demi",
+      "why": "Kirkus picture book 7–9; Tang-dynasty folktale. Fine tone, but Maples already covers Tang with a clearer dynasty-poetry link; not doubled."
+    },
+    {
+      "title": "Flight for Freedom",
+      "author": "Kristen Fulton",
+      "why": "Kirkus picture book 5–8; true 1979 hot-air-balloon escape from East Germany. Clean-ish, but it is not the 1989 fall hinge; A Night Divided already covers the wall node. Not forced onto mo-berlin-wall-falls."
+    },
+    {
+      "title": "The Wall: Growing Up Behind the Iron Curtain",
+      "author": "Peter Sís",
+      "why": "CSM age 8+: Czechoslovakia Cold War memoir; riot, plane hijacking, imprisonment, death. Heavy for default; not specifically the Berlin Wall fall of 9 November 1989. Left off rather than stretch."
+    },
+    {
+      "title": "Foundations of Chinese Civilization (Understanding China through Comics)",
+      "author": "Jing Liu",
+      "why": "Covers into the Han, but the volume frames from the Yellow Emperor at 2697 BCE—deep-time prehistory this house does not want as doctrine. Omitted."
+    },
+    {
+      "title": "Han / Song living books beyond dynasty cards",
+      "author": "",
+      "why": "No separate Han or Song title cleared this pass with both a clean parents’/publisher age page and household content rules (Emperor’s Painting Capstone page 404’d; 99 Questions About the Song Dynasty not opened to a stable age/source page)."
+    },
+    {
+      "title": "Cold War start as its own node",
+      "author": "",
+      "why": "Britannica Cold War Quick Facts Date 1947–1991, but the article also says the rivalry solidified by 1947–48—not a single hinge day. Per brief, preferred end hinge used instead (fall of the Berlin Wall)."
+    }
+  ]
+}

@@ -633,6 +633,27 @@
       "source": "https://www.britannica.com/topic/Qin-dynasty"
     },
     {
+      "id": "cn-han-dynasty",
+      "title": "Han dynasty in China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "rome-early-church",
+      "sortKey": 159,
+      "startYear": -206,
+      "endYear": 220,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The Han dynasty rules China for centuries and shapes much of what later ages call Chinese culture.",
+      "context": [
+        "Follows Qin unification on the short China arc.",
+        "History stop, not a devotion book."
+      ],
+      "year": "206 BCE–220 CE",
+      "yearNote": "Britannica Han dynasty: the second great imperial dynasty of China (206 BCE–220 CE), after the Zhou dynasty; so thoroughly did the Han establish what was thereafter considered Chinese culture that ‘Han’ became the Chinese word denoting someone who is ethnically Chinese.",
+      "source": "https://www.britannica.com/topic/Han-dynasty"
+    },
+    {
       "id": "gr-myths",
       "title": "Greek myths",
       "kind": "event",
@@ -840,6 +861,26 @@
       "source": "https://www.britannica.com/biography/Charlemagne"
     },
     {
+      "id": "cn-song-dynasty",
+      "title": "Song dynasty in China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "medieval",
+      "sortKey": 235,
+      "startYear": 960,
+      "endYear": 1279,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "The Song dynasty rules China in a long stretch known for culture, learning, and trade, later only in the south.",
+      "context": [
+        "Slots after Tang on the China arc; Mongol rule follows at the end of Song."
+      ],
+      "year": "960–1279",
+      "yearNote": "Britannica Song dynasty: (960–1279), Chinese dynasty that ruled during one of its most brilliant cultural epochs; commonly divided into Bei (Northern) and Nan (Southern) Song; after 1127 the dynasty ruled only in South China.",
+      "source": "https://www.britannica.com/topic/Song-dynasty"
+    },
+    {
       "id": "ma-norman-conquest",
       "title": "Norman Conquest",
       "kind": "event",
@@ -918,6 +959,27 @@
       "year": "1347–1351",
       "yearNote": "Britannica Black Death: pandemic that ravaged Europe between 1347 and 1351; Quick Facts date 1347–1351.",
       "source": "https://www.britannica.com/event/Black-Death"
+    },
+    {
+      "id": "cn-ming-dynasty",
+      "title": "Ming dynasty in China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "medieval",
+      "sortKey": 248,
+      "startYear": 1368,
+      "endYear": 1644,
+      "dateBasis": "historical",
+      "importance": 3,
+      "summary": "Native Chinese rule returns under the Ming after Mongol rule. Cities, crafts, and sea voyages mark the age.",
+      "context": [
+        "Re-opened Britannica this pass; Ming was verified last pass and held for the event cap.",
+        "Follows the Mongol Empire node chronologically at the dynasty’s start."
+      ],
+      "year": "1368–1644",
+      "yearNote": "Britannica Ming dynasty: Chinese dynasty that lasted from 1368 to 1644 and provided an interval of native Chinese rule between eras of Mongol and Manchu dominance; China exerted immense cultural and political influence on East Asia.",
+      "source": "https://www.britannica.com/topic/Ming-dynasty-Chinese-history"
     },
     {
       "id": "ma-wycliffe",
@@ -1087,6 +1149,27 @@
       ],
       "year": "1620",
       "yearNote": "Mayflower colony, from the Landing of the Pilgrims recommendations. Not a day-by-day trivia list."
+    },
+    {
+      "id": "cn-qing-dynasty",
+      "title": "Qing dynasty in China",
+      "kind": "event",
+      "category": "historical",
+      "era": "china",
+      "eraId": "early-modern",
+      "sortKey": 315,
+      "startYear": 1644,
+      "endYear": 1912,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "The Qing are China’s last imperial dynasty. Their rule ends when the 1911 revolution creates a republic.",
+      "context": [
+        "Leads into the existing Chinese Revolution of 1911 node.",
+        "Manchu dynasty; keep the kid summary plain."
+      ],
+      "year": "1644–1911/12",
+      "yearNote": "Britannica Qing dynasty: the last of the imperial dynasties of China, spanning the years 1644 to 1911/12. Under the Qing the territory of the empire and its population grew significantly.",
+      "source": "https://www.britannica.com/topic/Qing-dynasty"
     },
     {
       "id": "em-science",
@@ -1331,6 +1414,26 @@
       "endYear": 1865,
       "yearNote": "The war that ended slavery and preserved the Union.",
       "kidNote": "No gore. Say that many died and families were divided."
+    },
+    {
+      "id": "jp-meiji-restoration",
+      "title": "Meiji Restoration",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 354,
+      "startYear": 1868,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "Japan’s old shogun government is overthrown. The emperor’s new Meiji government begins to remake Japan into a modern state.",
+      "context": [
+        "Regime change and rapid reform. Keep the kid summary short.",
+        "Not a church-history node."
+      ],
+      "year": "1868",
+      "yearNote": "Britannica Meiji Restoration: the political revolution in 1868 that brought about the final demise of the Tokugawa shogunate; the overthrow itself consisted of a coup d’état in Kyōto on January 3, 1868. Transformed Japan from an isolated feudal society into a modern industrialized state.",
+      "source": "https://www.britannica.com/event/Meiji-Restoration"
     },
     {
       "id": "cn-1911-revolution",
@@ -1668,6 +1771,26 @@
       ],
       "year": "1983–2005",
       "yearNote": "Span given in Common Sense Media's parents' guide for A Long Walk to Water. The novel is fact blended with fiction inside that war."
+    },
+    {
+      "id": "mo-berlin-wall-falls",
+      "title": "Fall of the Berlin Wall",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "eraId": "modern",
+      "sortKey": 398,
+      "startYear": 1989,
+      "dateBasis": "historical",
+      "importance": 2,
+      "summary": "East Germany opens the Berlin Wall. Families cross. The Cold War’s hard European border begins to crack.",
+      "context": [
+        "End hinge beside the existing 1961 wall node mo-berlin-wall.",
+        "A Night Divided already ships for the wall’s building; do not re-add it here."
+      ],
+      "year": "9 November 1989",
+      "yearNote": "Britannica Berlin Wall: the border between East and West Germany was opened on November 9, 1989, following anti-government protests in East Germany; on November 9 the East German government opened the wall. Barrier period given as 1961 to 1989. (Do not confuse with mo-berlin-wall, the 1961 building of the wall.)",
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
     },
     {
       "id": "mo-church",
