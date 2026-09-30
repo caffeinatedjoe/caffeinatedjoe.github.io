@@ -53,7 +53,7 @@ Each event:
 
 Interpretation markers must say, in the summary or context, that the claim is not settled fact. The validator checks for that.
 
-The remapped seed is `chunks/remap-branch-fields.json`, plus `chunks/modern-scm-pass-1.json` and `chunks/world-arcs-pass-1.json` (75 events, 64 books). `data/events.json` and `data/books.json` are what the page loads.
+The remapped seed is `chunks/remap-branch-fields.json`, plus `chunks/modern-scm-pass-1.json`, `chunks/world-arcs-pass-1.json`, and `chunks/world-arcs-pass-2.json` (81 events, 66 books). `data/events.json` and `data/books.json` are what the page loads.
 
 - Scripture markers have `startYear: null`, `dateBasis: null`, and `year: null`. The Bible's story is not given a BC number, and the page does not draw a date chip.
 - Khufu and the Great Pyramid are **historical**. `year` is `early 25th century BCE`, `dateBasis` is `approximate`, and `startYear` is `null`.
