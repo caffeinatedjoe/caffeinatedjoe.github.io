@@ -245,6 +245,7 @@ function filtersActive() {
 
 function bookMatches(book) {
   const filters = state.filters;
+  if (book.previewOnly && !state.parentOn) return false;
   if (!state.parentOn) return true;
   if (filters.age !== "") {
     const age = Number(filters.age);
@@ -274,6 +275,7 @@ function compareBooks(a, b) {
 function readingPath() {
   const groups = new Map();
   for (const book of books) {
+    if (book.previewOnly) continue;
     if (!bookMatches(book)) continue;
     const id = book.primaryEventId || `era:${book.era || "other"}`;
     if (!groups.has(id)) groups.set(id, []);
@@ -729,6 +731,7 @@ function bookCard(book) {
   for (const level of book.levels) {
     badges.append(el("span", { class: "badge basis", text: LEVEL_LABEL[level] || level }));
   }
+  if (book.previewOnly) badges.append(el("span", { class: "badge basis", text: "Preview only" }));
   card.append(
     badges,
     el("h3", { text: book.title }),

@@ -132,6 +132,12 @@ for (const title of lambertTitles) {
   if (!bookTitles.has(title)) fail(`missing Lambert title: ${title}`);
 }
 
+for (const title of ["Hittite Warrior", "The Days of Elijah", "Kids at Work"]) {
+  const book = books.find((item) => item.title === title);
+  if (!book) fail(`missing preview book ${title}`);
+  else if (!book.previewOnly || !book.parentNote) fail(`${title} must be previewOnly with a parentNote`);
+}
+
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

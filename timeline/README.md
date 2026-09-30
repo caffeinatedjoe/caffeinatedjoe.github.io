@@ -59,6 +59,7 @@ The remapped seed is `chunks/remap-branch-fields.json` (54 events, 49 books). `d
 - Interpretation markers also keep `startYear` null. They must say they are not settled fact. The page does not pick an Exodus pharaoh or an Exodus year.
 - Do not add Gilgamesh the Hero; Mara, Daughter of the Nile; Story of the World volumes 1–4; Mummies in the Morning; Mummies and Pyramids; Viking Ships at Sunrise; Mummies Made in Egypt; or The Bobbin Girl.
 - Keep these Lambert titles distinct: *America: Our Stories, Volume 1*; *Our Neighbors: Their Stories, Volume 1*; *America: Our Stories, Volume 2*; *Our Neighbors: Our Stories, Volume 2*.
+- *Hittite Warrior*, *The Days of Elijah*, and *Kids at Work* are `previewOnly`. They need a `parentNote`. They stay off the reading path and off marker book lists until a parent opens Parent tools.
 
 Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or curse-heavy books.
 
@@ -88,7 +89,8 @@ Do not teach evolution as the origin of the world. Do not add vulgar, sexual, or
 | `eventIds` | Every marker where the book should appear. |
 | `primaryEventId` | Must be one of `eventIds`. The reading path lists each book once, under this event, in timeline order. |
 | `topics` | Parent topic filter. Reuse the topics already in the file when you can. |
-| `parentNote` | Omit the field if you have nothing to flag. |
+| `parentNote` | Omit the field if you have nothing to flag. Required when `previewOnly` is true. |
+| `previewOnly` | If true, the book is hidden until Parent tools are on. |
 
 Only add books that really exist, with the real author. A title you are unsure of does not go in.
 

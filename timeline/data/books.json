@@ -764,7 +764,8 @@
       ],
       "primaryEventId": "israel-judges",
       "blurb": "Preview. Dark pagan setting.",
-      "parentNote": "Preview with a parent before you assign this. Preview. Dark pagan setting."
+      "parentNote": "Preview with a parent before you assign this. Preview. Dark pagan setting.",
+      "previewOnly": true
     },
     {
       "id": "the-days-of-elijah",
@@ -785,7 +786,8 @@
       ],
       "primaryEventId": "israel-divided-kingdom",
       "blurb": "Some violence.",
-      "parentNote": "Preview with a parent before you assign this. Some violence."
+      "parentNote": "Preview with a parent before you assign this. Some violence.",
+      "previewOnly": true
     },
     {
       "id": "a-more-perfect-union",
@@ -1006,7 +1008,8 @@
       ],
       "primaryEventId": "industry-child-labor",
       "blurb": "Preview the photos.",
-      "parentNote": "Preview with a parent before you assign this. Preview the photos."
+      "parentNote": "Preview with a parent before you assign this. Preview the photos.",
+      "previewOnly": true
     },
     {
       "id": "coolies",
