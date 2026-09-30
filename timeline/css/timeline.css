@@ -26,13 +26,15 @@ html, body {
   margin: 0;
   height: 100%;
   height: 100dvh;
+  max-width: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  overscroll-behavior: none;
+  touch-action: manipulation;
   color: var(--ink);
   background:
     radial-gradient(1200px 400px at 10% -10%, rgba(232, 197, 106, 0.35), transparent 50%),
@@ -311,6 +313,7 @@ button { cursor: pointer; }
     #f7f1e6;
   box-shadow: inset 0 0 0 1px rgba(138, 90, 18, 0.16), var(--shadow);
   touch-action: none;
+  overscroll-behavior: none;
   cursor: grab;
   outline: none;
 }
@@ -843,31 +846,131 @@ button { cursor: pointer; }
 }
 
 @media (max-width: 800px) {
+  .site-header {
+    gap: 0.4rem 0.6rem;
+    padding: 0.45rem 0.7rem 0.5rem;
+  }
+  .brand { min-width: 0; gap: 0.45rem; }
+  .brand-mark { width: 1.85rem; height: 1.85rem; font-size: 1rem; }
+  .brand h1 { font-size: 1.15rem; }
+  .brand p { display: none; }
   .header-actions, .search { width: 100%; }
-  .search input { width: 100%; min-height: 2.75rem; }
-  .header-button { min-height: 2.75rem; }
+  .header-actions { gap: 0.4rem; }
+  .search input { width: 100%; min-height: 2.75rem; font-size: 1rem; }
+  .search-results { max-height: min(16rem, 42dvh); }
+  .header-button { flex: 1; min-height: 2.75rem; font-size: 1rem; }
 
   .parent-bar {
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: stretch;
+    gap: 0.55rem;
+    max-height: min(46dvh, 24rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  .parent-bar label {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 0.95rem;
   }
   .parent-bar input,
   .parent-bar select,
   .parent-bar .path-button,
   .parent-bar .text-button {
-    width: 100%;
+    width: auto;
+    flex: 1 1 auto;
+    max-width: 100%;
+    min-width: 0;
     min-height: 2.75rem;
     font-size: 1rem;
   }
+  .parent-bar .path-button,
+  .parent-bar .text-button {
+    width: 100%;
+    flex: 0 0 auto;
+  }
 
-  .era-chip { min-height: 2.75rem; }
+  body:has(#parent-bar:not([hidden])) .banner { display: none; }
+
+  .era-bar {
+    max-width: 100%;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .era-chip {
+    min-height: 2.75rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .scale-note {
+    font-size: 0.78rem;
+    margin-inline: 0.7rem;
+  }
+
+  .stage { padding-inline: 0.4rem; }
+
+  .banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .banner-actions { flex-direction: column; }
+  .banner-actions button,
+  .banner .text-button {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  .minimap { height: 2.75rem; }
+
+  .zoom-controls { gap: 0.4rem; }
+  .zoom-controls button {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.25rem;
+  }
+  .zoom-controls button:last-child {
+    min-width: 2.75rem;
+    padding: 0 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .legend {
+    max-width: calc(100% - 9.5rem);
+    font-size: 0.72rem;
+  }
 
   .panel {
     top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: auto;
-    max-height: min(78dvh, calc(100dvh - var(--chrome-top, 8.5rem) - 0.25rem));
+    max-height: 72dvh;
     width: 100%;
+    z-index: 48;
     border-radius: 18px 18px 0 0;
+    box-shadow: 0 -16px 40px rgba(28, 20, 8, 0.22);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .panel::before {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 0.28rem;
+    margin: 0.55rem auto 0;
+    border-radius: 999px;
+    background: rgba(28, 36, 48, 0.28);
+    flex: 0 0 auto;
   }
   .panel-head {
     position: sticky;
@@ -875,10 +978,25 @@ button { cursor: pointer; }
     z-index: 1;
     background: var(--panel);
   }
+  .panel-body {
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .panel h2 { font-size: 1.45rem; }
   .icon-button { width: 2.75rem; height: 2.75rem; }
+  .panel .text-button,
+  .panel .path-button,
+  .related button {
+    min-height: 2.75rem;
+    padding: 0.45rem 0.85rem;
+  }
+  .panel .path-button { width: 100%; }
 
-  .legend { max-width: calc(100% - 8.5rem); }
-  .brand p { display: none; }
+  .modal {
+    max-height: min(85dvh, 100%);
+    width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

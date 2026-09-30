@@ -1067,7 +1067,14 @@ function setupPointer() {
   };
   viewport.addEventListener("pointerup", end);
   viewport.addEventListener("pointercancel", end);
+  window.addEventListener("pointerup", end);
+  window.addEventListener("pointercancel", end);
   viewport.addEventListener("pointerleave", hideTip);
+  viewport.addEventListener("touchmove", (event) => {
+    if (drag) event.preventDefault();
+  }, { passive: false });
+  document.addEventListener("gesturestart", (event) => event.preventDefault(), { passive: false });
+  document.addEventListener("gesturechange", (event) => event.preventDefault(), { passive: false });
 
   viewport.addEventListener("wheel", (event) => {
     event.preventDefault();
