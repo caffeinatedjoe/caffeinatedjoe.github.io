@@ -1,0 +1,208 @@
+{
+  "schema": "coffey-timeline-remap/1",
+  "chunk": "modern-scm-pass-1",
+  "note": "From SCM A Pageant of History: Modern Times. Only titles checked this pass. High-school list left off. The Singing Tree and Roll of Thunder left off.",
+  "source": "https://simplycharlottemason.com/store/a-pageant-of-history-modern-times/",
+  "events": [
+    {
+      "id": "mo-edison",
+      "title": "Thomas Edison",
+      "kind": "person",
+      "category": "historical",
+      "era": "industry",
+      "sortKey": 345,
+      "startYear": 1847,
+      "endYear": 1931,
+      "dateBasis": "historical",
+      "year": "1847–1931",
+      "yearNote": "Life span as given on SCM's bookfinder for Perry's biography. Not a Scripture date.",
+      "importance": 2,
+      "summary": "Edison works from train boy and telegraph operator to the inventions still in use.",
+      "context": [
+        "The biography SCM uses follows his life, not one invention. The years are his lifetime."
+      ]
+    },
+    {
+      "id": "mo-berlin-wall",
+      "title": "The Berlin Wall",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "sortKey": 385,
+      "startYear": 1961,
+      "dateBasis": "historical",
+      "year": "night of 12–13 August 1961",
+      "yearNote": "Britannica: the barrier was first erected on the night of August 12–13, 1961, after a decree passed on August 12.",
+      "importance": 2,
+      "summary": "A wall divides Berlin and traps families on the eastern side.",
+      "context": [
+        "This is history, not Scripture. The novel A Night Divided is fiction about a family caught by the wall."
+      ],
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
+    },
+    {
+      "id": "mo-sudan-civil-war",
+      "title": "The Sudanese civil war",
+      "kind": "event",
+      "category": "historical",
+      "era": "modern",
+      "sortKey": 395,
+      "startYear": 1983,
+      "endYear": 2005,
+      "dateBasis": "historical",
+      "year": "1983–2005",
+      "yearNote": "Span given in Common Sense Media's parents' guide for A Long Walk to Water. The novel is fact blended with fiction inside that war.",
+      "importance": 3,
+      "summary": "A long civil war drives children from their homes. Some later walk back toward water and school.",
+      "context": [
+        "History. The children's novel is not a textbook, and it is not a read-aloud for the younger kids."
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": "story-of-thomas-a-edison",
+      "title": "The Story of Thomas A. Edison",
+      "author": "Frances M. Perry",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-edison"
+      ],
+      "primaryEventId": "mo-edison",
+      "blurb": "Short living biography SCM uses for grades 1–4, from his childhood through the inventions.",
+      "source": "https://simplycharlottemason.com/blog/two-new-history-books/"
+    },
+    {
+      "id": "only-a-dog",
+      "title": "Only a Dog: A Story of the Great War",
+      "author": "Bertha Whitridge Smith",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-ww1"
+      ],
+      "primaryEventId": "mo-ww1",
+      "blurb": "A 1917 retelling of a true WWI story, told from an Irish terrier's point of view.",
+      "parentNote": "The dog is shot and later dies beside his soldier. SCM compares the sadness to Jack in the Little House books, not to Where the Red Fern Grows. Trenches and hand-to-hand fighting are in the story, from the dog's view.",
+      "source": "https://simplycharlottemason.com/store/only-a-dog-a-story-of-the-great-war/"
+    },
+    {
+      "id": "unbreakable-code",
+      "title": "The Unbreakable Code",
+      "author": "Sara Hoagland Hunter",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-ww2"
+      ],
+      "primaryEventId": "mo-ww2",
+      "blurb": "Picture book. A Navajo grandfather tells his grandson about serving as a code talker.",
+      "parentNote": "Not for the littlest as a cozy picture book. A parent note from Keenly Kept flags a creek described as blood, fallen soldiers, and one mention of torture. The grandfather also says the worst pictures should stay behind him.",
+      "source": "https://www.publishersweekly.com/9780873586382"
+    },
+    {
+      "id": "abby-takes-a-stand",
+      "title": "Abby Takes a Stand",
+      "author": "Patricia C. McKissack",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-civil-rights"
+      ],
+      "primaryEventId": "mo-civil-rights",
+      "blurb": "A ten-year-old in 1960 Nashville sees lunch-counter segregation and helps with the sit-ins.",
+      "parentNote": "Short chapters. Arrests and the dangerous side of the protests are in the story. Not a graphic blow-by-blow. Publishers Weekly put it at ages 8-up.",
+      "source": "https://www.publishersweekly.com/9780670060115"
+    },
+    {
+      "id": "a-night-divided",
+      "title": "A Night Divided",
+      "author": "Jennifer A. Nielsen",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "eventIds": [
+        "mo-berlin-wall"
+      ],
+      "primaryEventId": "mo-berlin-wall",
+      "blurb": "A girl and her brother dig under the Berlin Wall to reach the rest of their family.",
+      "parentNote": "Not a family read-aloud. Common Sense Media: no sexual content and no profanity, but people are shot, including a wound described at the gut, and one woman is said to have jumped to her death. Independent, about 11–13.",
+      "source": "https://www.commonsensemedia.org/book-reviews/a-night-divided"
+    },
+    {
+      "id": "long-walk-to-water",
+      "title": "A Long Walk to Water",
+      "author": "Linda Sue Park",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "previewOnly": true,
+      "eventIds": [
+        "mo-sudan-civil-war"
+      ],
+      "primaryEventId": "mo-sudan-civil-war",
+      "blurb": "Based on Salva Dut. Two stories, a boy walking out of the Sudanese war and a girl walking for water years later.",
+      "parentNote": "Preview. Not a read-aloud. Common Sense Media, age 11+: no profanity and no sexual content, but a lot of violence. A boy is killed by a lion, an uncle is shot, refugees are forced into the water and many die, including one killed by a crocodile.",
+      "source": "https://www.commonsensemedia.org/book-reviews/a-long-walk-to-water"
+    },
+    {
+      "id": "resolve-davis",
+      "title": "Resolve: The Church That Endures Onward",
+      "author": "Luke H. Davis",
+      "type": "nonfiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "previewOnly": true,
+      "eventIds": [
+        "mo-church"
+      ],
+      "primaryEventId": "mo-church",
+      "blurb": "SCM's middle-school church-history book for modern times, from Christian Focus.",
+      "parentNote": "Preview before anyone reads it aloud. I did not find a content-warning page. Reviews treat it as dramatized church history for younger readers, not as a line-by-line language check.",
+      "source": "https://simplycharlottemason.com/store/a-pageant-of-history-modern-times/"
+    }
+  ],
+  "leftOff": [
+    {
+      "title": "The Singing Tree",
+      "author": "Kate Seredy",
+      "why": "Borderline. The Good and the Beautiful notes one use of jackass and the word gypsies. Squeaky Clean Reviews found no profanity. Not a default until someone previews that line. Cleaner WWI read-aloud: Only a Dog."
+    },
+    {
+      "title": "Roll of Thunder, Hear My Cry",
+      "author": "Mildred D. Taylor",
+      "why": "SCM assigns it to grades 5–8. Left off the family list. Not a mixed-age read-aloud. Abby Takes a Stand is the cleaner civil-rights story for this house."
+    },
+    {
+      "title": "High school list on the same SCM page",
+      "why": "Left off. Oldest independent reader here is 13. Animal Farm stays off the first spine. Fire Road, I Am Malala, Up From Slavery, and the McCullough titles were not cleared this pass."
+    }
+  ]
+}

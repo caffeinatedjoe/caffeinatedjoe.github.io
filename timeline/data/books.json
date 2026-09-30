@@ -1114,6 +1114,176 @@
       "topics": [
         "modern"
       ]
+    },
+    {
+      "id": "story-of-thomas-a-edison",
+      "title": "The Story of Thomas A. Edison",
+      "author": "Frances M. Perry",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 13,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-edison"
+      ],
+      "primaryEventId": "mo-edison",
+      "blurb": "Short living biography SCM uses for grades 1–4, from his childhood through the inventions.",
+      "source": "https://simplycharlottemason.com/blog/two-new-history-books/",
+      "eraId": "modern",
+      "topics": [
+        "industry"
+      ],
+      "mode": "read-aloud",
+      "ages": "6–13"
+    },
+    {
+      "id": "only-a-dog",
+      "title": "Only a Dog: A Story of the Great War",
+      "author": "Bertha Whitridge Smith",
+      "type": "nonfiction",
+      "ageMin": 6,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-ww1"
+      ],
+      "primaryEventId": "mo-ww1",
+      "blurb": "A 1917 retelling of a true WWI story, told from an Irish terrier's point of view.",
+      "parentNote": "The dog is shot and later dies beside his soldier. SCM compares the sadness to Jack in the Little House books, not to Where the Red Fern Grows. Trenches and hand-to-hand fighting are in the story, from the dog's view.",
+      "source": "https://simplycharlottemason.com/store/only-a-dog-a-story-of-the-great-war/",
+      "eraId": "modern",
+      "topics": [
+        "modern"
+      ],
+      "mode": "read-aloud",
+      "ages": "6–12"
+    },
+    {
+      "id": "unbreakable-code",
+      "title": "The Unbreakable Code",
+      "author": "Sara Hoagland Hunter",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-ww2"
+      ],
+      "primaryEventId": "mo-ww2",
+      "blurb": "Picture book. A Navajo grandfather tells his grandson about serving as a code talker.",
+      "parentNote": "Not for the littlest as a cozy picture book. A parent note from Keenly Kept flags a creek described as blood, fallen soldiers, and one mention of torture. The grandfather also says the worst pictures should stay behind him.",
+      "source": "https://www.publishersweekly.com/9780873586382",
+      "eraId": "modern",
+      "topics": [
+        "modern"
+      ],
+      "mode": "read-aloud",
+      "ages": "8–12"
+    },
+    {
+      "id": "abby-takes-a-stand",
+      "title": "Abby Takes a Stand",
+      "author": "Patricia C. McKissack",
+      "type": "fiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "eventIds": [
+        "mo-civil-rights"
+      ],
+      "primaryEventId": "mo-civil-rights",
+      "blurb": "A ten-year-old in 1960 Nashville sees lunch-counter segregation and helps with the sit-ins.",
+      "parentNote": "Short chapters. Arrests and the dangerous side of the protests are in the story. Not a graphic blow-by-blow. Publishers Weekly put it at ages 8-up.",
+      "source": "https://www.publishersweekly.com/9780670060115",
+      "eraId": "modern",
+      "topics": [
+        "america"
+      ],
+      "mode": "independent",
+      "ages": "8–12"
+    },
+    {
+      "id": "a-night-divided",
+      "title": "A Night Divided",
+      "author": "Jennifer A. Nielsen",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "eventIds": [
+        "mo-berlin-wall"
+      ],
+      "primaryEventId": "mo-berlin-wall",
+      "blurb": "A girl and her brother dig under the Berlin Wall to reach the rest of their family.",
+      "parentNote": "Not a family read-aloud. Common Sense Media: no sexual content and no profanity, but people are shot, including a wound described at the gut, and one woman is said to have jumped to her death. Independent, about 11–13.",
+      "source": "https://www.commonsensemedia.org/book-reviews/a-night-divided",
+      "eraId": "modern",
+      "topics": [
+        "modern"
+      ],
+      "mode": "independent",
+      "ages": "11–13"
+    },
+    {
+      "id": "long-walk-to-water",
+      "title": "A Long Walk to Water",
+      "author": "Linda Sue Park",
+      "type": "fiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "previewOnly": true,
+      "eventIds": [
+        "mo-sudan-civil-war"
+      ],
+      "primaryEventId": "mo-sudan-civil-war",
+      "blurb": "Based on Salva Dut. Two stories, a boy walking out of the Sudanese war and a girl walking for water years later.",
+      "parentNote": "Preview. Not a read-aloud. Common Sense Media, age 11+: no profanity and no sexual content, but a lot of violence. A boy is killed by a lion, an uncle is shot, refugees are forced into the water and many die, including one killed by a crocodile.",
+      "source": "https://www.commonsensemedia.org/book-reviews/a-long-walk-to-water",
+      "eraId": "modern",
+      "topics": [
+        "modern"
+      ],
+      "mode": "independent",
+      "ages": "11–13"
+    },
+    {
+      "id": "resolve-davis",
+      "title": "Resolve: The Church That Endures Onward",
+      "author": "Luke H. Davis",
+      "type": "nonfiction",
+      "ageMin": 11,
+      "ageMax": 13,
+      "levels": [
+        "independent"
+      ],
+      "previewOnly": true,
+      "eventIds": [
+        "mo-church"
+      ],
+      "primaryEventId": "mo-church",
+      "blurb": "SCM's middle-school church-history book for modern times, from Christian Focus.",
+      "parentNote": "Preview before anyone reads it aloud. I did not find a content-warning page. Reviews treat it as dramatized church history for younger readers, not as a line-by-line language check.",
+      "source": "https://simplycharlottemason.com/store/a-pageant-of-history-modern-times/",
+      "eraId": "modern",
+      "topics": [
+        "modern"
+      ],
+      "mode": "independent",
+      "ages": "11–13"
     }
   ]
 }

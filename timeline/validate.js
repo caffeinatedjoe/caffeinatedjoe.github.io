@@ -124,7 +124,17 @@ else {
   }
 }
 
-if (events.length !== 54) fail(`expected 54 events, found ${events.length}`);
+const berlin = events.find((event) => event.id === "mo-berlin-wall");
+if (!berlin) fail("missing mo-berlin-wall");
+else {
+  if (berlin.category !== "historical") fail("Berlin Wall must be historical");
+  if (berlin.startYear !== 1961) fail("Berlin Wall startYear must stay 1961");
+  if (berlin.year !== "night of 12–13 August 1961") {
+    fail("Berlin Wall year must stay the chunk display text");
+  }
+}
+
+if (events.length !== 57) fail(`expected 57 events, found ${events.length}`);
 
 for (const event of events) {
   for (const related of event.relatedIds || []) {
@@ -155,13 +165,13 @@ for (const book of books) {
   }
 }
 
-if (books.length !== 49) fail(`expected 49 books, found ${books.length}`);
+if (books.length !== 56) fail(`expected 56 books, found ${books.length}`);
 
 for (const title of lambertTitles) {
   if (!bookTitles.has(title)) fail(`missing Lambert title: ${title}`);
 }
 
-for (const title of ["Hittite Warrior", "The Days of Elijah", "Kids at Work"]) {
+for (const title of ["Hittite Warrior", "The Days of Elijah", "Kids at Work", "A Long Walk to Water", "Resolve: The Church That Endures Onward"]) {
   const book = books.find((item) => item.title === title);
   if (!book) fail(`missing preview book ${title}`);
   else if (!book.previewOnly || !book.parentNote) fail(`${title} must be previewOnly with a parentNote`);
