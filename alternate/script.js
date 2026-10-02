@@ -1169,10 +1169,18 @@ function buildBook(book, index) {
   detail.className = "detail";
   detail.id = "detail-" + index;
   detail.hidden = true;
-  detail.setAttribute("role", "region");
+  detail.setAttribute("role", "dialog");
+  detail.setAttribute("aria-modal", "true");
   detail.setAttribute("aria-label", name);
   detail.style.setProperty("--swatch", swatchFor(name));
   detail.style.setProperty("--spine", spineFor(name, book.kind));
+
+  var close = document.createElement("button");
+  close.type = "button";
+  close.className = "detail-close";
+  close.setAttribute("data-close-detail", "");
+  close.setAttribute("aria-label", "Put the book back");
+  close.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.2 4.2l7.6 7.6M11.8 4.2l-7.6 7.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
 
   var jacket = document.createElement("div");
   jacket.className = "jacket";
@@ -1247,8 +1255,14 @@ function buildBook(book, index) {
   copy.appendChild(author);
   copy.appendChild(facts);
   copy.appendChild(readsWrap);
-  detail.appendChild(jacket);
-  detail.appendChild(copy);
+  var scroll = document.createElement("div");
+  scroll.className = "detail-scroll";
+  scroll.appendChild(jacket);
+  scroll.appendChild(copy);
+  detail.appendChild(close);
+  detail.appendChild(scroll);
+  detail.setAttribute("aria-labelledby", "detail-title-" + index);
+  title.id = "detail-title-" + index;
 
   pull.appendChild(hit);
   pull.appendChild(detail);
@@ -1276,6 +1290,8 @@ function renderBooks(root, books) {
   var open = null;
   var flight = null;
   var pullGen = 0;
+  var dismissLock = false;
+  var dismissTimer = 0;
   var scrim = document.getElementById("scrim");
   var layer = document.getElementById("pull-layer");
 
@@ -1378,6 +1394,7 @@ function renderBooks(root, books) {
       settleDetail(book);
       if (layer) layer.hidden = true;
       hideScrim();
+      document.body.classList.remove("is-detail-open");
       if (open === book) open = null;
     }
 
@@ -1417,6 +1434,10 @@ function renderBooks(root, books) {
     detail.hidden = false;
     detail.classList.add("is-open");
     book.classList.add("is-away");
+    var closeBtn = detail.querySelector(".detail-close");
+    if (closeBtn && typeof closeBtn.focus === "function") {
+      closeBtn.focus({ preventScroll: true });
+    }
     var to = src ? elementPose(shown) : null;
     if (!src || !from || !to) {
       if (shown) shown.classList.remove("is-flying");
@@ -1431,7 +1452,7 @@ function renderBooks(root, books) {
   }
 
   function openBook(book) {
-    if (open) closeBook(true);
+    if (open || dismissLock) return;
     pullGen += 1;
     var gen = pullGen;
     var hit = book.querySelector(".book-hit");
@@ -1439,11 +1460,41 @@ function renderBooks(root, books) {
     if (hit) hit.setAttribute("aria-expanded", "true");
     var bay = book.closest(".bay");
     if (bay) bay.classList.add("has-pulled");
+    document.body.classList.add("is-detail-open");
+    if (layer) layer.hidden = false;
     showScrim(gen);
     open = book;
     whenCoverReady(book, function (src) {
       presentBook(book, gen, src);
     });
+  }
+
+  function isCloseControl(target) {
+    return !!(target && target.closest && target.closest("[data-close-detail]"));
+  }
+
+  function isInsideOpenDetail(target) {
+    return !!(open && open._detail && target && open._detail.contains(target) && !isCloseControl(target));
+  }
+
+  function armDismiss() {
+    dismissLock = true;
+    window.clearTimeout(dismissTimer);
+    dismissTimer = window.setTimeout(function () {
+      dismissLock = false;
+    }, 500);
+  }
+
+  function dismissOpen(event) {
+    if (!open) return false;
+    if (isInsideOpenDetail(event.target)) return false;
+    if (event.cancelable) event.preventDefault();
+    event.stopPropagation();
+    if (!dismissLock) {
+      armDismiss();
+      closeBook(false);
+    }
+    return true;
   }
 
   shelves.forEach(function (shelf, shelfIndex) {
@@ -1513,18 +1564,37 @@ function renderBooks(root, books) {
     else loadCard(card);
   });
 
+  document.addEventListener("pointerdown", function (event) {
+    if (!open || isInsideOpenDetail(event.target)) return;
+    if (event.cancelable) event.preventDefault();
+    event.stopPropagation();
+  }, { capture: true, passive: false });
+
+  document.addEventListener("pointerup", function (event) {
+    if (!open) return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    dismissOpen(event);
+  }, true);
+
   document.addEventListener("click", function (event) {
-    var hit = event.target.closest && event.target.closest(".book-hit");
-    if (hit && root.contains(hit)) {
-      var book = hit.closest(".book");
-      if (!book) return;
-      if (book === open) closeBook(false);
-      else openBook(book);
+    if (dismissLock) {
+      dismissLock = false;
+      window.clearTimeout(dismissTimer);
+      if (event.cancelable) event.preventDefault();
+      event.stopPropagation();
       return;
     }
-    if (open && open._detail && open._detail.contains(event.target)) return;
-    if (open) closeBook(false);
-  });
+    if (open) {
+      dismissOpen(event);
+      return;
+    }
+    var hit = event.target.closest && event.target.closest(".book-hit");
+    if (!hit || !root.contains(hit)) return;
+    var book = hit.closest(".book");
+    if (!book) return;
+    event.preventDefault();
+    openBook(book);
+  }, true);
 
   document.addEventListener("keydown", function (event) {
     if (event.key !== "Escape" || !open) return;
