@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0c0b09">
+    <meta name="description" content="Books Joe Coffey has read.">
+    <title>Books I’ve read · Joe Coffey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://openlibrary.org">
+    <link rel="preconnect" href="https://covers.openlibrary.org">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,460&family=Outfit:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500&display=swap">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="mast">
+        <h1 class="kicker">Books I’ve read</h1>
+      </header>
+      <main>
+        <p id="status" class="status" role="status"></p>
+        <noscript><p class="status">The list needs JavaScript to load.</p></noscript>
+        <div id="grid" class="grid" hidden></div>
+      </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
