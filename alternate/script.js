@@ -5,8 +5,25 @@ var SHEET_URL = "https://docs.google.com/spreadsheets/d/1hNxU4YCmZZ5uRfq8_eHUwLs
 var SWATCHES = ["#2a2420", "#243028", "#2c2430", "#1e2a30", "#302418", "#242830", "#2a221c", "#1c2824"];
 
 // Sheet title|author keys that should show a different jacket than the literal filename.
+// Entries after the Bible are one-off sheet typos (and "work week" vs Workweek).
 var COVER_ALIASES = {
-  "bible|various": "Holy Bible (ESV) -- Various.jpg"
+  "bible|various": "Holy Bible (ESV) -- Various.jpg",
+  "adapt|tim hartford": "Adapt -- Tim Harford.jpg",
+  "age of opportunity|paul trip": "Age of Opportunity -- Paul Tripp.jpg",
+  "bossypants|tiny fey": "Bossypants -- Tina Fey.jpg",
+  "expeditionary foce breakaway|craig alanson": "Expeditionary Force Breakaway -- Craig Alanson.jpg",
+  "miss peregrine's home for peculiar children|ranson riggs": "Miss Peregrine's Home for Peculiar Children -- Ransom Riggs.jpg",
+  "outlive|peter atia": "Outlive -- Peter Attia.jpg",
+  "pride and predujice|jane austen": "Pride and Prejudice -- Jane Austen.jpg",
+  "red team blues|cory doctoroy": "Red Team Blues -- Cory Doctorow.jpg",
+  "rhythms of war|brandon sanderson": "Rhythm of War -- Brandon Sanderson.jpg",
+  "salt|mark kulansky": "Salt -- Mark Kurlansky.jpg",
+  "the 4-hour work week|tim ferriss": "The 4-Hour Workweek -- Tim Ferriss.jpg",
+  "the data detective|tim hartford": "The Data Detective -- Tim Harford.jpg",
+  "the frugal wizard's handbook for surviving medival england|brandon sanderson": "The Frugal Wizard's Handbook for Surviving Medieval England -- Brandon Sanderson.jpg",
+  "the great gasby|f. scott fitzgerald": "The Great Gatsby -- F. Scott Fitzgerald.jpg",
+  "the one|john mars": "The One -- John Marrs.jpg",
+  "this is how you lose the time war|armal el-mohtar": "This is How You Lose The Time War -- Amal El-Mohtar.jpg"
 };
 
 var DISPLAY_TITLES = {
@@ -508,7 +525,10 @@ var COVER_FILES = [
   "iWoz -- Steve Wozniak.jpg"
 ];
 
-var coverByKey = null;
+// Jacket filenames keep at most this many characters of the title.
+var TITLE_LIMIT = 70;
+
+var coverLookup = null;
 
 function field(row, name) {
   if (!row || typeof row !== "object") return "";
@@ -621,6 +641,8 @@ function normalizeKey(value) {
   return String(value || "")
     .replace(/[\u2018\u2019]/g, "'")
     .replace(/:/g, " ")
+    .replace(/\?/g, "")
+    .replace(/(\d+)\s+1\/2\b/g, "$1.5")
     .trim()
     .replace(/\s+/g, " ")
     .toLowerCase();
@@ -634,24 +656,75 @@ function displayTitleFor(title, author) {
   return DISPLAY_TITLES[bookKey(title, author)] || title;
 }
 
+// Primary author, then co-author spellings jackets actually use:
+// "First Last, Coauthor", "First Last and Other Last", "Chip and Joanna Gaines".
+function authorKeysForLookup(author) {
+  var trimmed = String(author || "").trim().replace(/\s+/g, " ");
+  var keys = [];
+  function add(value) {
+    var key = normalizeKey(value);
+    if (!key || keys.indexOf(key) !== -1) return;
+    keys.push(key);
+  }
+  add(normalizeAuthor(trimmed));
+  var comma = trimmed.indexOf(",");
+  if (comma > 0 && /\s/.test(trimmed.slice(0, comma))) add(trimmed.slice(0, comma));
+  var andParts = trimmed.split(/\s+and\s+/i);
+  if (andParts.length === 2) {
+    var left = andParts[0].trim();
+    var right = andParts[1].trim();
+    var leftWords = left.split(/\s+/);
+    var rightWords = right.split(/\s+/);
+    if (leftWords.length >= 2) add(left);
+    if (leftWords.length === 1 && rightWords.length >= 2) {
+      add(leftWords[0] + " " + rightWords[rightWords.length - 1]);
+    }
+  }
+  return keys;
+}
+
 function coverIndex() {
-  if (coverByKey) return coverByKey;
-  coverByKey = new Map();
+  if (coverLookup) return coverLookup;
+  var byKey = new Map();
+  var byAuthor = new Map();
   COVER_FILES.forEach(function (filename) {
     if (IGNORED_COVERS[filename]) return;
     var base = filename.replace(/\.jpe?g$/i, "");
     var sep = base.lastIndexOf(" -- ");
     if (sep <= 0) return;
-    var key = normalizeKey(base.slice(0, sep)) + "|" + normalizeKey(base.slice(sep + 4));
-    if (!coverByKey.has(key)) coverByKey.set(key, filename);
+    var titleKey = normalizeKey(base.slice(0, sep));
+    var authorKey = normalizeKey(base.slice(sep + 4));
+    var key = titleKey + "|" + authorKey;
+    if (!byKey.has(key)) byKey.set(key, filename);
+    if (!byAuthor.has(authorKey)) byAuthor.set(authorKey, []);
+    byAuthor.get(authorKey).push({ titleKey: titleKey, filename: filename });
   });
-  return coverByKey;
+  coverLookup = { byKey: byKey, byAuthor: byAuthor };
+  return coverLookup;
 }
 
 function coverFilenameFor(title, author) {
-  var key = bookKey(title, author);
-  if (Object.prototype.hasOwnProperty.call(COVER_ALIASES, key)) return COVER_ALIASES[key];
-  return coverIndex().get(key) || null;
+  var titleKey = normalizeKey(title);
+  var authors = authorKeysForLookup(author);
+  var aliasKey = titleKey + "|" + (authors[0] || "");
+  if (Object.prototype.hasOwnProperty.call(COVER_ALIASES, aliasKey)) return COVER_ALIASES[aliasKey];
+  var index = coverIndex();
+  var i;
+  for (i = 0; i < authors.length; i++) {
+    var exact = index.byKey.get(titleKey + "|" + authors[i]);
+    if (exact) return exact;
+  }
+  // Filenames slice the title at TITLE_LIMIT, then drop a trailing space.
+  var cut = titleKey.slice(0, TITLE_LIMIT).replace(/\s+$/g, "");
+  if (cut && cut !== titleKey && cut.length >= TITLE_LIMIT - 1) {
+    for (i = 0; i < authors.length; i++) {
+      var list = index.byAuthor.get(authors[i]) || [];
+      for (var j = 0; j < list.length; j++) {
+        if (list[j].titleKey === cut) return list[j].filename;
+      }
+    }
+  }
+  return null;
 }
 
 function coverUrl(filename) {
