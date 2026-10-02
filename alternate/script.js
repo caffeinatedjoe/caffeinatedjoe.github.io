@@ -989,6 +989,124 @@ function spineFor(title, kind) {
   return palette[tilt.hash % palette.length];
 }
 
+var PULL_MS = 860;
+var PULL_EASE = "linear";
+
+function prefersReducedMotion() {
+  return typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function shelfCoverPose(book) {
+  var frame = book.querySelector(".cover-frame");
+  if (!frame) return null;
+  var rect = frame.getBoundingClientRect();
+  if (rect.width < 1 || rect.height < 1) return null;
+  return {
+    left: rect.left,
+    top: rect.top,
+    width: rect.width,
+    height: rect.height,
+    lean: "0deg",
+    yaw: "0deg"
+  };
+}
+
+function jacketSize(naturalWidth, naturalHeight) {
+  var width = naturalWidth;
+  var height = naturalHeight;
+  if (!(width > 1) || !(height > 1)) return null;
+  var viewportW = window.innerWidth || 360;
+  var viewportH = window.innerHeight || 640;
+  var wide = viewportW >= 720;
+  var cardInner = Math.max(140, Math.min(wide ? 736 : 352, viewportW - 28) - (wide ? 48 : 36));
+  var maxW = Math.min(wide ? 300 : 240, viewportW * (wide ? 0.34 : 0.68), wide ? 300 : cardInner);
+  var maxH = Math.min(wide ? viewportH * 0.68 : viewportH * 0.42, wide ? 540 : 420);
+  var ratio = width / height;
+  var boxW = maxW;
+  var boxH = boxW / ratio;
+  if (boxH > maxH) {
+    boxH = maxH;
+    boxW = boxH * ratio;
+  }
+  return {
+    width: Math.max(1, Math.round(boxW)),
+    height: Math.max(1, Math.round(boxH))
+  };
+}
+
+function elementPose(el) {
+  if (!el) return null;
+  var rect = el.getBoundingClientRect();
+  if (rect.width < 1 || rect.height < 1) return null;
+  return {
+    left: rect.left,
+    top: rect.top,
+    width: rect.width,
+    height: rect.height,
+    lean: "0deg",
+    yaw: "0deg"
+  };
+}
+
+function poseTransform(pose) {
+  return "perspective(720px) rotateY(" + pose.yaw + ") rotate(" + pose.lean + ")";
+}
+
+function applyPose(el, pose) {
+  el.style.left = pose.left + "px";
+  el.style.top = pose.top + "px";
+  el.style.width = Math.max(1, pose.width) + "px";
+  el.style.height = Math.max(1, pose.height) + "px";
+  el.style.transform = poseTransform(pose);
+}
+
+// The shelf face crops the jacket. The flyer keeps object-fit: cover while its
+// box animates from that crop to the jacket's natural aspect, so the full
+// cover is revealed by the time it lands.
+function flyCover(src, from, to, done) {
+  if (!src || !from || !to || prefersReducedMotion() || typeof Element.prototype.animate !== "function") {
+    if (done) done();
+    return null;
+  }
+  var flyer = document.createElement("img");
+  flyer.className = "cover-flyer";
+  flyer.alt = "";
+  flyer.src = src;
+  applyPose(flyer, from);
+  document.body.appendChild(flyer);
+  function mix(a, b, t) { return a + (b - a) * t; }
+  function frame(t, travel, liftPx) {
+    return {
+      offset: t,
+      left: mix(from.left, to.left, travel) + "px",
+      top: Math.max(8, mix(from.top, to.top, travel) - liftPx) + "px",
+      width: Math.max(1, mix(from.width, to.width, travel)) + "px",
+      height: Math.max(1, mix(from.height, to.height, travel)) + "px",
+      transform: poseTransform(travel < 0.2 ? from : to),
+      boxShadow: travel < 0.5
+        ? "0 12px 18px rgba(0, 0, 0, 0.34)"
+        : "0 26px 40px rgba(0, 0, 0, 0.46)",
+      borderRadius: travel > 0.65 ? "3px 8px 8px 3px" : "2px"
+    };
+  }
+  var lift = Math.min(28, Math.abs(to.top - from.top) * 0.1 + 12);
+  var anim = flyer.animate([
+    frame(0, 0, 0),
+    frame(0.18, 0.12, lift * 0.35),
+    frame(0.42, 0.46, lift),
+    frame(0.7, 0.78, lift * 0.45),
+    frame(1, 1, 0)
+  ], { duration: PULL_MS, easing: PULL_EASE, fill: "both" });
+  var handle = { flyer: flyer, anim: anim, cancelled: false };
+  anim.onfinish = function () {
+    if (handle.cancelled) return;
+    flyer.remove();
+    if (done) done();
+  };
+  return handle;
+}
+
 function buildBook(book, index) {
   var card = document.createElement("article");
   card.className = "book";
@@ -1053,6 +1171,27 @@ function buildBook(book, index) {
   detail.hidden = true;
   detail.setAttribute("role", "region");
   detail.setAttribute("aria-label", name);
+  detail.style.setProperty("--swatch", swatchFor(name));
+  detail.style.setProperty("--spine", spineFor(name, book.kind));
+
+  var jacket = document.createElement("div");
+  jacket.className = "jacket";
+  var jacketImg = document.createElement("img");
+  jacketImg.className = "jacket-img";
+  jacketImg.alt = "";
+  jacketImg.hidden = true;
+  var jacketPlate = document.createElement("div");
+  jacketPlate.className = "jacket-plate";
+  jacketPlate.setAttribute("aria-hidden", "true");
+  var jacketLetter = document.createElement("span");
+  jacketLetter.className = "mono";
+  jacketLetter.textContent = monogram(name);
+  jacketPlate.appendChild(jacketLetter);
+  jacket.appendChild(jacketImg);
+  jacket.appendChild(jacketPlate);
+
+  var copy = document.createElement("div");
+  copy.className = "detail-copy";
 
   var title = document.createElement("h3");
   title.className = "detail-title";
@@ -1104,43 +1243,19 @@ function buildBook(book, index) {
     readsWrap.appendChild(list);
   }
 
-  detail.appendChild(title);
-  detail.appendChild(author);
-  detail.appendChild(facts);
-  detail.appendChild(readsWrap);
+  copy.appendChild(title);
+  copy.appendChild(author);
+  copy.appendChild(facts);
+  copy.appendChild(readsWrap);
+  detail.appendChild(jacket);
+  detail.appendChild(copy);
 
   pull.appendChild(hit);
   pull.appendChild(detail);
   card.appendChild(pull);
+  card._pull = pull;
+  card._detail = detail;
   return card;
-}
-
-function placeDetail(book) {
-  var detail = book.querySelector(".detail");
-  if (!detail) return;
-  detail.classList.remove("above");
-  var width = Math.min(300, window.innerWidth - 20);
-  detail.style.width = width + "px";
-  var bookRect = book.getBoundingClientRect();
-  var ideal = bookRect.left + (bookRect.width / 2) - (width / 2);
-  var left = Math.max(10, Math.min(ideal, window.innerWidth - width - 10));
-  detail.style.left = (left - bookRect.left) + "px";
-  var height = detail.offsetHeight;
-  var spaceBelow = window.innerHeight - bookRect.bottom;
-  var spaceAbove = bookRect.top;
-  if (spaceBelow < height + 16 && spaceAbove > spaceBelow) detail.classList.add("above");
-}
-
-function revealDetail(book) {
-  var detail = book.querySelector(".detail");
-  if (!detail) return;
-  var rect = detail.getBoundingClientRect();
-  var margin = 12;
-  if (rect.bottom > window.innerHeight - margin) {
-    window.scrollBy(0, rect.bottom - window.innerHeight + margin);
-  } else if (rect.top < margin) {
-    window.scrollBy(0, rect.top - margin);
-  }
 }
 
 function renderBooks(root, books) {
@@ -1159,35 +1274,176 @@ function renderBooks(root, books) {
   var enterIndex = 0;
   var bookIndex = 0;
   var open = null;
+  var flight = null;
+  var pullGen = 0;
   var scrim = document.getElementById("scrim");
+  var layer = document.getElementById("pull-layer");
 
-  function closeBook() {
+  function clearFlight() {
+    if (!flight) return null;
+    var rect = flight.flyer.getBoundingClientRect();
+    flight.cancelled = true;
+    if (flight.anim) flight.anim.cancel();
+    flight.flyer.remove();
+    flight = null;
+    return {
+      left: rect.left,
+      top: rect.top,
+      width: rect.width,
+      height: rect.height,
+      lean: "0deg",
+      yaw: "0deg"
+    };
+  }
+
+  function settleDetail(book) {
+    var detail = book._detail;
+    if (!detail) return;
+    detail.classList.remove("is-open");
+    detail.hidden = true;
+    var img = detail.querySelector(".jacket-img");
+    var plate = detail.querySelector(".jacket-plate");
+    if (img) img.classList.remove("is-flying");
+    if (plate) plate.classList.remove("is-flying");
+    if (book._pull && detail.parentNode !== book._pull) book._pull.appendChild(detail);
+  }
+
+  function showScrim(gen) {
+    if (!scrim) return;
+    scrim.hidden = false;
+    scrim.classList.remove("is-shown");
+    requestAnimationFrame(function () {
+      if (gen === pullGen && scrim) scrim.classList.add("is-shown");
+    });
+  }
+
+  function hideScrim() {
+    if (!scrim) return;
+    scrim.classList.remove("is-shown");
+    scrim.hidden = true;
+  }
+
+  function whenCoverReady(book, cb) {
+    loadCard(book);
+    var img = book.querySelector(".cover");
+    if (!img) {
+      cb("");
+      return;
+    }
+    if (img.complete) {
+      cb(img.naturalWidth > 1 ? (img.getAttribute("src") || "") : "");
+      return;
+    }
+    var done = function () {
+      img.removeEventListener("load", done);
+      img.removeEventListener("error", done);
+      cb(img.naturalWidth > 1 ? (img.getAttribute("src") || "") : "");
+    };
+    img.addEventListener("load", done);
+    img.addEventListener("error", done);
+  }
+
+  function shownJacket(detail, src) {
+    var img = detail.querySelector(".jacket-img");
+    var plate = detail.querySelector(".jacket-plate");
+    if (src && img) {
+      if (img.getAttribute("src") !== src) img.src = src;
+      img.hidden = false;
+      if (plate) plate.hidden = true;
+      return img;
+    }
+    if (img) img.hidden = true;
+    if (plate) plate.hidden = false;
+    return plate;
+  }
+
+  function closeBook(immediate) {
     if (!open) return;
-    var detail = open.querySelector(".detail");
-    var hit = open.querySelector(".book-hit");
-    open.classList.remove("is-pulled");
-    if (hit) hit.setAttribute("aria-expanded", "false");
-    if (detail) detail.hidden = true;
-    var bay = open.closest(".bay");
-    if (bay) bay.classList.remove("has-pulled");
-    open = null;
-    if (scrim) scrim.hidden = true;
+    var book = open;
+    var detail = book._detail;
+    var hit = book.querySelector(".book-hit");
+    var bay = book.closest(".bay");
+    pullGen += 1;
+    var fromFlight = clearFlight();
+    var stageOpen = !!(detail && detail.classList.contains("is-open") && !detail.hidden);
+    var img = detail ? detail.querySelector(".jacket-img") : null;
+    var plate = detail ? detail.querySelector(".jacket-plate") : null;
+    var src = img && !img.hidden ? (img.getAttribute("src") || "") : "";
+    var shown = src ? img : plate;
+
+    function finish() {
+      book.classList.remove("is-pulled", "is-away");
+      if (hit) hit.setAttribute("aria-expanded", "false");
+      if (bay) bay.classList.remove("has-pulled");
+      settleDetail(book);
+      if (layer) layer.hidden = true;
+      hideScrim();
+      if (open === book) open = null;
+    }
+
+    var from = fromFlight || (stageOpen ? elementPose(shown) : null);
+    var to = shelfCoverPose(book);
+    if (!immediate && stageOpen && src && from && to) {
+      if (shown) shown.classList.add("is-flying");
+      if (scrim) scrim.classList.remove("is-shown");
+      flight = flyCover(src, from, to, function () {
+        flight = null;
+        finish();
+      });
+      if (flight) return;
+    }
+    finish();
+  }
+
+  function presentBook(book, gen, src) {
+    if (gen !== pullGen || open !== book) return;
+    var detail = book._detail;
+    if (!detail || !layer) return;
+    var shown = shownJacket(detail, src);
+    var from = shelfCoverPose(book);
+    if (src && shown) {
+      var shelfImg = book.querySelector(".cover");
+      var sized = shelfImg ? jacketSize(shelfImg.naturalWidth, shelfImg.naturalHeight) : null;
+      if (sized) {
+        shown.style.width = sized.width + "px";
+        shown.style.height = sized.height + "px";
+        shown.style.maxWidth = "none";
+        shown.style.maxHeight = "none";
+      }
+    }
+    if (shown) shown.classList.add("is-flying");
+    layer.hidden = false;
+    layer.appendChild(detail);
+    detail.hidden = false;
+    detail.classList.add("is-open");
+    book.classList.add("is-away");
+    var to = src ? elementPose(shown) : null;
+    if (!src || !from || !to) {
+      if (shown) shown.classList.remove("is-flying");
+      return;
+    }
+    flight = flyCover(src, from, to, function () {
+      flight = null;
+      if (gen !== pullGen) return;
+      if (shown) shown.classList.remove("is-flying");
+    });
+    if (!flight && shown) shown.classList.remove("is-flying");
   }
 
   function openBook(book) {
-    if (open) closeBook();
-    var detail = book.querySelector(".detail");
+    if (open) closeBook(true);
+    pullGen += 1;
+    var gen = pullGen;
     var hit = book.querySelector(".book-hit");
-    if (detail) detail.hidden = false;
     book.classList.add("is-pulled");
     if (hit) hit.setAttribute("aria-expanded", "true");
     var bay = book.closest(".bay");
     if (bay) bay.classList.add("has-pulled");
-    if (scrim) scrim.hidden = false;
+    showScrim(gen);
     open = book;
-    loadCard(book);
-    placeDetail(book);
-    revealDetail(book);
+    whenCoverReady(book, function (src) {
+      presentBook(book, gen, src);
+    });
   }
 
   shelves.forEach(function (shelf, shelfIndex) {
@@ -1262,23 +1518,33 @@ function renderBooks(root, books) {
     if (hit && root.contains(hit)) {
       var book = hit.closest(".book");
       if (!book) return;
-      if (book === open) closeBook();
+      if (book === open) closeBook(false);
       else openBook(book);
       return;
     }
-    if (open && open.contains(event.target)) return;
-    if (open) closeBook();
+    if (open && open._detail && open._detail.contains(event.target)) return;
+    if (open) closeBook(false);
   });
 
   document.addEventListener("keydown", function (event) {
     if (event.key !== "Escape" || !open) return;
     var hit = open.querySelector(".book-hit");
-    closeBook();
+    closeBook(false);
     if (hit) hit.focus();
   });
 
   window.addEventListener("resize", function () {
-    if (open) placeDetail(open);
+    if (!open || !open._detail) return;
+    clearFlight();
+    var img = open._detail.querySelector(".jacket-img");
+    if (!img || img.hidden || img.naturalWidth <= 1) return;
+    var sized = jacketSize(img.naturalWidth, img.naturalHeight);
+    if (!sized) return;
+    img.style.width = sized.width + "px";
+    img.style.height = sized.height + "px";
+    img.style.maxWidth = "none";
+    img.style.maxHeight = "none";
+    img.classList.remove("is-flying");
   });
 }
 
