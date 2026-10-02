@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#090807">
-    <meta name="description" content="Books Joe Coffey has read, shelved by year.">
+    <meta name="theme-color" content="#0b0908">
+    <meta name="description" content="Joe Coffey’s personal reading list, shelved by year.">
     <title>Books I’ve read · Joe Coffey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,15 @@
   </head>
   <body>
     <div class="page">
-      <header class="appbar">
-        <div class="appbar-row">
-          <div class="appbar-copy">
+      <header class="mast">
+        <div class="mast-row">
+          <div class="mast-copy">
             <p class="eyebrow">Joe Coffey</p>
             <h1 class="kicker">Books I’ve read</h1>
           </div>
           <p id="count" class="count" hidden></p>
         </div>
+        <p class="preamble">This is my personal reading list, kept up to date as I finish each book. Pull one off the shelf to see when I read it.</p>
       </header>
       <main>
         <p id="status" class="status" role="status">Loading…</p>
@@ -28,6 +29,7 @@
         <div id="shelves" class="shelves" hidden></div>
       </main>
     </div>
+    <button type="button" id="scrim" class="scrim" hidden aria-label="Put the book back"></button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
     <script src="script.js"></script>
   </body>
