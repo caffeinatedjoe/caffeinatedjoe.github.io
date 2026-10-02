@@ -578,11 +578,13 @@ function booksFromRows(rows) {
     var title = field(row, "title").trim();
     if (!title) return;
     var author = field(row, "author").trim();
+    var dateRead = field(row, "date read").trim();
     books.push({
       title: title,
       displayTitle: displayTitleFor(title, author),
       author: author,
-      readAt: parseReadDate(field(row, "date read")),
+      dateRead: dateRead,
+      readAt: parseReadDate(dateRead),
       order: index
     });
   });
@@ -771,6 +773,67 @@ function mountCover(frame, filename) {
   image.src = coverUrl(filename);
 }
 
+var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function readLabel(raw) {
+  if (parseReadDate(raw) == null) return "";
+  var value = String(raw || "").trim();
+  var match = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
+  if (match) {
+    var month = Number(match[1]);
+    var day = Number(match[2]);
+    if (month >= 1 && month <= 12 && day >= 1 && day <= 31) return MONTHS[month - 1] + " " + day;
+    return "";
+  }
+  match = value.match(/^(\d{1,2})\/(\d{4})$/);
+  if (match) {
+    var onlyMonth = Number(match[1]);
+    if (onlyMonth >= 1 && onlyMonth <= 12) return MONTHS[onlyMonth - 1];
+  }
+  return "";
+}
+
+function bookCountLabel(count) {
+  return count === 1 ? "1 book" : count + " books";
+}
+
+function groupShelves(books) {
+  var shelves = [];
+  var undated = [];
+  var seenYear = false;
+  (books || []).forEach(function (book) {
+    var year = book.readAt == null ? null : new Date(book.readAt).getUTCFullYear();
+    if (year == null) {
+      if (!seenYear) {
+        var lead = shelves[shelves.length - 1];
+        if (!lead || lead.year != null) shelves.push({ key: "undated", year: null, books: [book] });
+        else lead.books.push(book);
+      } else {
+        undated.push(book);
+      }
+      return;
+    }
+    seenYear = true;
+    var last = shelves[shelves.length - 1];
+    if (!last || last.year !== year) shelves.push({ key: String(year), year: year, books: [book] });
+    else last.books.push(book);
+  });
+  if (undated.length) shelves.push({ key: "undated", year: null, books: undated });
+  return shelves;
+}
+
+function shelfHeading(shelf, index, shelfCount) {
+  if (shelf.year != null) return String(shelf.year);
+  if (index === 0 && shelfCount > 1) return "";
+  return "Undated";
+}
+
+function syncBarOffset() {
+  var bar = document.querySelector(".appbar");
+  if (!bar || !document.documentElement) return;
+  document.documentElement.style.setProperty("--bar-offset", bar.getBoundingClientRect().height + "px");
+}
+
 function buildCard(book) {
   var card = document.createElement("article");
   card.className = "card";
@@ -785,13 +848,21 @@ function buildCard(book) {
   placeholder.className = "placeholder";
   placeholder.setAttribute("aria-hidden", "true");
   var letter = document.createElement("span");
+  letter.className = "mono";
   letter.textContent = monogram(book.displayTitle || book.title);
   placeholder.appendChild(letter);
   frame.appendChild(placeholder);
 
   var meta = document.createElement("div");
   meta.className = "meta";
-  var title = document.createElement("h2");
+  var when = readLabel(book.dateRead);
+  if (when) {
+    var read = document.createElement("p");
+    read.className = "read-on";
+    read.textContent = when;
+    meta.appendChild(read);
+  }
+  var title = document.createElement("h3");
   title.className = "title";
   title.textContent = book.displayTitle || book.title;
   var author = document.createElement("p");
@@ -805,7 +876,7 @@ function buildCard(book) {
   return card;
 }
 
-function renderBooks(grid, books) {
+function renderBooks(root, books) {
   function loadCard(card) {
     var frame = card.querySelector(".cover-frame");
     if (!frame || frame.querySelector(".cover")) return;
@@ -813,6 +884,60 @@ function renderBooks(grid, books) {
     if (!filename) return;
     mountCover(frame, filename);
   }
+
+  var shelves = groupShelves(books);
+  var seenIds = {};
+  var fragment = document.createDocumentFragment();
+  var cards = [];
+  var enterIndex = 0;
+
+  shelves.forEach(function (shelf, shelfIndex) {
+    var section = document.createElement("section");
+    section.className = "shelf";
+    var label = shelfHeading(shelf, shelfIndex, shelves.length);
+
+    if (label) {
+      var base = "shelf-" + (shelf.year == null ? "undated" : shelf.year);
+      if (seenIds[base]) {
+        seenIds[base] += 1;
+        base += "-" + seenIds[base];
+      } else {
+        seenIds[base] = 1;
+      }
+      var head = document.createElement("div");
+      head.className = "year-head";
+      var heading = document.createElement("h2");
+      heading.className = "year-label";
+      heading.id = base;
+      heading.textContent = label;
+      var count = document.createElement("p");
+      count.className = "year-count";
+      count.textContent = bookCountLabel(shelf.books.length);
+      head.appendChild(heading);
+      head.appendChild(count);
+      section.appendChild(head);
+      section.setAttribute("aria-labelledby", base);
+    } else {
+      section.setAttribute("aria-label", "Books without a recorded date");
+    }
+
+    var grid = document.createElement("div");
+    grid.className = "grid";
+    shelf.books.forEach(function (book) {
+      var card = buildCard(book);
+      if (enterIndex < 10) {
+        card.classList.add("enter");
+        card.style.setProperty("--in-delay", (enterIndex * 42) + "ms");
+        enterIndex += 1;
+      }
+      cards.push(card);
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    fragment.appendChild(section);
+  });
+
+  root.appendChild(fragment);
 
   var observer = typeof IntersectionObserver === "function"
     ? new IntersectionObserver(function (entries) {
@@ -824,12 +949,7 @@ function renderBooks(grid, books) {
     }, { rootMargin: "480px 0px", threshold: 0.01 })
     : null;
 
-  var fragment = document.createDocumentFragment();
-  books.forEach(function (book) {
-    fragment.appendChild(buildCard(book));
-  });
-  grid.appendChild(fragment);
-  grid.querySelectorAll(".card").forEach(function (card) {
+  cards.forEach(function (card) {
     if (observer) observer.observe(card);
     else loadCard(card);
   });
@@ -837,8 +957,15 @@ function renderBooks(grid, books) {
 
 function boot() {
   var status = document.getElementById("status");
-  var grid = document.getElementById("grid");
-  if (!status || !grid) return;
+  var shelves = document.getElementById("shelves");
+  var count = document.getElementById("count");
+  if (!status || !shelves) return;
+
+  syncBarOffset();
+  window.addEventListener("resize", syncBarOffset);
+  if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === "function") {
+    document.fonts.ready.then(syncBarOffset);
+  }
 
   if (typeof Papa === "undefined") {
     status.textContent = "The list couldn’t be loaded.";
@@ -857,8 +984,13 @@ function boot() {
         return;
       }
       status.hidden = true;
-      grid.hidden = false;
-      renderBooks(grid, books);
+      shelves.hidden = false;
+      if (count) {
+        count.hidden = false;
+        count.textContent = bookCountLabel(books.length);
+      }
+      renderBooks(shelves, books);
+      syncBarOffset();
     },
     error: function () {
       status.textContent = "The list couldn’t be loaded.";
@@ -881,6 +1013,10 @@ if (typeof module !== "undefined" && module.exports) {
     normalizeAuthor: normalizeAuthor,
     displayTitleFor: displayTitleFor,
     coverFilenameFor: coverFilenameFor,
-    coverUrl: coverUrl
+    coverUrl: coverUrl,
+    readLabel: readLabel,
+    groupShelves: groupShelves,
+    shelfHeading: shelfHeading,
+    bookCountLabel: bookCountLabel
   };
 }
