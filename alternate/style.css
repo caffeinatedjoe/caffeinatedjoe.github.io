@@ -5,8 +5,8 @@
   --muted: #c9bfb2;
   --gold: #e4c48a;
   --pad: 0.85rem;
-  --book-w: 36px;
-  --book-h: 56px;
+  --book-w: 41.4px;
+  --book-h: 64.4px;
   --lip: 9px;
   --air: 8px;
   --sit: 4px;
@@ -188,9 +188,10 @@ body {
 
 .books {
   display: grid;
-  grid-template-columns: repeat(auto-fill, var(--book-w));
+  grid-template-columns: repeat(auto-fit, minmax(var(--book-w), 1fr));
   grid-auto-rows: var(--row-h);
-  justify-content: start;
+  justify-content: stretch;
+  justify-items: center;
   align-items: end;
   column-gap: var(--gap);
   background-color: #7a4e30;
@@ -225,10 +226,11 @@ body {
   height: var(--book-h);
   margin-bottom: calc(var(--lip) - var(--sit));
   -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.35s ease;
 }
 
 .book.enter {
-  animation: shelf-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: shelf-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
   animation-delay: var(--in-delay, 0ms);
 }
 
@@ -284,7 +286,7 @@ body {
   inset: 0;
   transform: rotateY(calc(var(--yaw) * -1)) rotateZ(var(--lean));
   transform-origin: 50% 100%;
-  transition: transform 0.46s cubic-bezier(0.2, 0.85, 0.2, 1);
+  transition: transform 0.46s cubic-bezier(0.2, 0.85, 0.2, 1), opacity 0.24s ease;
 }
 
 .spine {
@@ -422,7 +424,6 @@ body {
     0 18px 36px rgba(0, 0, 0, 0.55),
     inset 0 1px 0 rgba(255, 236, 210, 0.16),
     inset 7px 0 0 var(--spine, #5a3c2c);
-  animation: card-in 0.4s cubic-bezier(0.2, 0.85, 0.2, 1);
 }
 
 .detail[hidden] {
@@ -432,6 +433,60 @@ body {
 .detail.above {
   top: auto;
   bottom: calc(100% + 12px);
+}
+
+.jacket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.jacket-img,
+.jacket-plate {
+  border-radius: 3px 8px 8px 3px;
+  background: #16120f;
+  box-shadow:
+    0 16px 28px rgba(0, 0, 0, 0.42),
+    0 2px 0 rgba(255, 236, 210, 0.12);
+}
+
+.jacket-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.jacket-img[hidden],
+.jacket-plate[hidden] {
+  display: none !important;
+}
+
+.jacket-img.is-flying,
+.jacket-plate.is-flying {
+  visibility: hidden;
+}
+
+.jacket-plate {
+  display: flex;
+  align-items: flex-end;
+  width: min(11.5rem, 58vw);
+  aspect-ratio: 2 / 3;
+  padding: 0.55rem;
+  background:
+    linear-gradient(165deg, rgba(255, 244, 220, 0.12), transparent 46%),
+    var(--swatch, #2a221c);
+}
+
+.jacket-plate .mono {
+  font-family: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
+  font-style: italic;
+  font-weight: 460;
+  font-size: 3.4rem;
+  line-height: 0.8;
+  color: #f7efe2;
 }
 
 .detail-title {
@@ -539,10 +594,71 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background: rgba(6, 4, 3, 0.58);
+  background: rgba(6, 4, 3, 0.62);
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.scrim.is-shown {
+  opacity: 1;
+}
+
+.pull-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:
+    calc(0.75rem + env(safe-area-inset-top, 0px))
+    calc(0.75rem + env(safe-area-inset-right, 0px))
+    calc(0.75rem + env(safe-area-inset-bottom, 0px))
+    calc(0.75rem + env(safe-area-inset-left, 0px));
+  pointer-events: none;
+}
+
+.pull-layer[hidden] {
+  display: none !important;
+}
+
+.detail.is-open {
+  position: relative;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+  width: min(22rem, 100%);
+  max-height: 100%;
+  margin: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  pointer-events: auto;
+  animation: stage-in 0.72s ease;
+}
+
+.detail.is-open .detail-copy {
+  min-width: 0;
+  animation: copy-in 0.5s cubic-bezier(0.22, 0.7, 0.24, 1) 0.18s both;
+}
+
+.cover-flyer {
+  position: fixed;
+  z-index: 80;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  transform-origin: center bottom;
+  background: #16120f;
+  border-radius: 2px;
 }
 
 .scrim[hidden] {
@@ -558,6 +674,10 @@ body {
   opacity: 0.42;
 }
 
+.bay.has-pulled .book.enter:not(.is-pulled) {
+  animation: none;
+}
+
 .book.is-pulled {
   z-index: 5;
 }
@@ -566,8 +686,10 @@ body {
   opacity: 0;
 }
 
-.book.is-pulled .pull {
-  transform: translateY(-10px);
+.book.is-pulled.is-away .volume,
+.book.is-pulled.is-away:hover .volume,
+.book.is-pulled.is-away:focus-within .volume {
+  visibility: hidden;
 }
 
 .sr-only {
@@ -599,17 +721,11 @@ body {
   }
 }
 
-.book.is-pulled .volume,
-.book.is-pulled:hover .volume,
-.book.is-pulled:focus-within .volume {
-  transform: rotateY(-5deg) rotateZ(0deg) scale(2.2);
-}
-
 @media (min-width: 720px) {
   :root {
     --pad: 1.5rem;
-    --book-w: 44px;
-    --book-h: 68px;
+    --book-w: 50.6px;
+    --book-h: 78.2px;
     --gap: 4px;
     --air: 10px;
   }
@@ -617,13 +733,29 @@ body {
   .year-label {
     font-size: 1.45rem;
   }
+
+  .detail.is-open {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    width: min(46rem, 100%);
+    padding: 1rem 1.15rem 1.05rem 1.15rem;
+  }
+
+  .detail.is-open .jacket {
+    flex: none;
+  }
+
+  .detail.is-open .detail-copy {
+    flex: 1;
+  }
 }
 
 @media (min-width: 1100px) {
   :root {
     --pad: 2rem;
-    --book-w: 50px;
-    --book-h: 76px;
+    --book-w: 57.5px;
+    --book-h: 87.4px;
     --lip: 10px;
     --gap: 5px;
   }
@@ -639,10 +771,20 @@ body {
   }
 }
 
-@keyframes card-in {
+@keyframes stage-in {
   from {
     opacity: 0;
-    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
 
   to {
@@ -657,19 +799,15 @@ body {
   .volume,
   .cover,
   .detail,
+  .scrim,
   .book::after {
     transition: none;
     animation: none;
   }
 
-  .book.is-pulled .pull {
-    transform: none;
-  }
-
-  .book.is-pulled .volume,
-  .book.is-pulled:hover .volume,
-  .book.is-pulled:focus-within .volume {
-    transform: rotateY(-5deg) rotateZ(0deg) scale(1.45);
+  .detail.is-open,
+  .detail.is-open .detail-copy {
+    animation: none;
   }
 }
 
@@ -677,7 +815,9 @@ body {
   .year-plate,
   .case,
   .cover-frame,
-  .detail {
+  .detail,
+  .jacket-img,
+  .jacket-plate {
     border: 1px solid CanvasText;
   }
 }
