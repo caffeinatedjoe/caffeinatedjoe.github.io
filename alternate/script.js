@@ -1324,12 +1324,15 @@ function boot() {
   function coverSrc(book) {
     var img = book.querySelector(".cover");
     if (!img) return "";
-    var src = img.getAttribute("src") || img.getAttribute("data-src") || "";
-    if (src && !img.getAttribute("src")) {
+    var full = img.getAttribute("data-full") || img.getAttribute("data-src") || img.getAttribute("src") || "";
+    var thumb = img.getAttribute("data-src") || "";
+    var frame = img.closest(".cover-frame");
+    var sprite = frame && frame.classList.contains("has-shelf");
+    if (!sprite && thumb && !img.getAttribute("src")) {
       img.setAttribute("fetchpriority", "high");
-      img.src = src;
+      img.src = thumb;
     }
-    return src;
+    return full;
   }
 
   function shownJacket(detail, src) {
