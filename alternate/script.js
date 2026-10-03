@@ -475,14 +475,29 @@ function armFinder(root, cards, hooks) {
     book.style.opacity = String(rect.opacity);
   }
 
+  // Read once per gesture. innerHeight inside the book loop flushes
+  // layout after every hide, and that stall skips the ease on a phone.
+  var viewW = 390;
+  var viewH = 800;
+  function readView() {
+    viewW = window.innerWidth || viewW;
+    viewH = window.innerHeight || viewH;
+  }
+
+  function inView(rect) {
+    var pad = 64;
+    var right = rect.right == null ? rect.left + rect.width : rect.right;
+    var bottom = rect.bottom == null ? rect.top + rect.height : rect.bottom;
+    return bottom >= -pad && rect.top <= viewH + pad &&
+      right >= -pad && rect.left <= viewW + pad;
+  }
+
   function leaveDy(rect) {
-    var viewH = window.innerHeight || 800;
     if (rect.bottom < 0 || rect.top > viewH) return -Math.min(160, rect.height + 48);
     return -rect.top - rect.height - 24;
   }
 
   function enterDy(rect) {
-    var viewH = window.innerHeight || 800;
     if (rect.bottom < 0 || rect.top > viewH) return -Math.min(160, rect.height + 48);
     return -rect.top - rect.height - 24;
   }
@@ -534,6 +549,7 @@ function armFinder(root, cards, hooks) {
 
     if (hooks.dismissUnmatched) hooks.dismissUnmatched(query);
 
+    readView();
     var first = new Map();
     var bayFirst = new Map();
     for (i = 0; i < cards.length; i++) {
@@ -557,12 +573,14 @@ function armFinder(root, cards, hooks) {
       bay.style.transform = "";
     });
 
+    var onPhone = phoneMedia.matches;
     for (i = 0; i < cards.length; i++) {
       var book = cards[i];
       var hit = bookHit(book, query);
       if (hit) showBook(book);
-      else if (!reduced && first.has(book)) lift(book, first.get(book));
-      else hideBook(book);
+      else if (!reduced && first.has(book) && (!onPhone || inView(first.get(book)))) {
+        lift(book, first.get(book));
+      } else hideBook(book);
     }
     syncBays(query);
 
@@ -642,6 +660,7 @@ function armFinder(root, cards, hooks) {
         opacityFrom = 0;
       }
       if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5 && opacityFrom === 1) continue;
+      if (onPhone && !(seen && inView(seen)) && !inView(dest)) continue;
       pending += 1;
       playShift(moving, dx, dy, 0, 0, opacityFrom, 1, gen, finished);
     }
@@ -930,6 +949,7 @@ function armFinder(root, cards, hooks) {
   }
 
   function glideBooks(shots, gen) {
+    readView();
     var pending = 0;
     var settled = false;
     function finished() {
@@ -946,6 +966,7 @@ function armFinder(root, cards, hooks) {
       var dx = was.left - now.left;
       var dy = was.top - now.top;
       if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
+      if (phoneMedia.matches && !inView(was) && !inView(now)) return;
       pending += 1;
       playShift(book, dx, dy, 0, 0, was.opacity < 0.99 ? was.opacity : 1, 1, gen, finished);
     });
@@ -1001,6 +1022,7 @@ function armFinder(root, cards, hooks) {
   }
 
   function shiftCases(origin) {
+    readView();
     var i, shelfCase, plate, home, dx, dy;
     if (!origin) return;
     for (i = 0; i < bays.length; i++) {
@@ -1008,13 +1030,13 @@ function armFinder(root, cards, hooks) {
       shelfCase = bays[i].querySelector(".case");
       if (plate) {
         home = plate.getBoundingClientRect();
-        if (home.height > 1) {
+        if (home.height > 1 && (!phoneMedia.matches || inView(home))) {
           dx = dampShift(origin.left - home.left);
           dy = dampShift(origin.top - home.top);
           slideElm(plate, dx, dy, 0, 1);
         }
       }
-      if (i === 0 || !shelfCase) continue;
+      if (i === 0 || !shelfCase || phoneMedia.matches) continue;
       home = shelfCase.getBoundingClientRect();
       if (home.height < 1) continue;
       dx = dampShift(origin.left - home.left);
@@ -1027,6 +1049,7 @@ function armFinder(root, cards, hooks) {
   // on transform only; the wood underneath fades.
   function setSearchMode(opening) {
     if (!shelfHost) return;
+    readView();
     var page = pageEl();
     if (opening && hooks.closeDetail) hooks.closeDetail();
     if (opening === root.classList.contains("is-merged")) {
@@ -1075,6 +1098,7 @@ function armFinder(root, cards, hooks) {
       }
       var dest = mergedCase ? mergedCase.getBoundingClientRect() : null;
       for (i = 0; i < caseShots.length; i++) {
+        if (phoneMedia.matches && !inView(caseShots[i].rect)) continue;
         pinTravel(
           caseShots[i].el,
           caseShots[i].rect,
@@ -1083,6 +1107,7 @@ function armFinder(root, cards, hooks) {
         );
       }
       for (i = 0; i < plateShots.length; i++) {
+        if (phoneMedia.matches && !inView(plateShots[i].rect)) continue;
         pinTravel(
           plateShots[i].el,
           plateShots[i].rect,
@@ -1109,7 +1134,9 @@ function armFinder(root, cards, hooks) {
       if (mast && phoneMedia.matches) fadeChromeIn(mast);
     }
     syncBays(foldTitle(input.value));
-    if (opening) glideBooks(shots, gen);
+    // A phone cannot ease hundreds of covers at once, so only the visible
+    // books travel. Offscreen ones change shelves without their own animation.
+    if (opening || phoneMedia.matches) glideBooks(shots, gen);
     else glideLoose(shots, gen, destNow);
   }
 
