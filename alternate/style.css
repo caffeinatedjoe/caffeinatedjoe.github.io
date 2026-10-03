@@ -224,11 +224,11 @@ body {
   height: var(--book-h);
   margin-bottom: calc(var(--lip) - var(--sit));
   -webkit-tap-highlight-color: transparent;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.175s ease-out;
 }
 
 .book.enter {
-  animation: shelf-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation: shelf-in 0.35s ease-in-out backwards;
   animation-delay: var(--in-delay, 0ms);
 }
 
@@ -242,14 +242,14 @@ body {
   height: 8px;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), transparent 72%);
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.175s ease-in-out;
 }
 
 .pull {
   position: relative;
   height: 100%;
   perspective: 680px;
-  transition: transform 0.46s cubic-bezier(0.2, 0.85, 0.2, 1);
+  transition: transform 0.23s ease-in-out;
   transform-origin: center bottom;
 }
 
@@ -284,7 +284,7 @@ body {
   inset: 0;
   transform: rotateY(calc(var(--yaw) * -1)) rotateZ(var(--lean));
   transform-origin: 50% 100%;
-  transition: transform 0.46s cubic-bezier(0.2, 0.85, 0.2, 1), opacity 0.24s ease;
+  transition: transform 0.23s ease-in-out, opacity 0.12s ease-in-out;
 }
 
 .spine {
@@ -329,6 +329,27 @@ body {
   overflow: hidden;
   border-radius: 0 2px 2px 0;
   background: #16120f;
+}
+
+/* The first screen is one picture, so those covers arrive together. */
+.cover-frame.has-shelf {
+  --cols: 10;
+  --rows: 6;
+}
+
+.cover-frame.has-shelf::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background-image: url("covers/shelf-top.jpg");
+  background-repeat: no-repeat;
+  background-size: calc(var(--cols) * 100%) calc(var(--rows) * 100%);
+  background-position:
+    calc(var(--col) * 100% / (var(--cols) - 1))
+    calc(var(--row) * 100% / (var(--rows) - 1));
+  pointer-events: none;
+}
   box-shadow:
     inset 0 1px 0 rgba(255, 244, 220, 0.2),
     0 8px 12px rgba(0, 0, 0, 0.28);
@@ -356,8 +377,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.28s ease;
+  opacity: 1;
+}
+
+.cover:not([src]) {
+  visibility: hidden;
 }
 
 .cover-frame.has-cover .cover {
@@ -596,7 +620,7 @@ body {
   appearance: none;
   -webkit-appearance: none;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  will-change: opacity;
 }
 
 .scrim.is-shown {
@@ -639,7 +663,10 @@ body {
   margin: 0;
   overflow: hidden;
   pointer-events: auto;
-  animation: stage-in 0.72s ease;
+}
+
+.detail.is-open.is-closing {
+  pointer-events: none;
 }
 
 .detail-scroll {
@@ -700,9 +727,8 @@ body.is-detail-open .book {
   pointer-events: none;
 }
 
-.detail.is-open .detail-copy {
+.detail-copy {
   min-width: 0;
-  animation: copy-in 0.5s cubic-bezier(0.22, 0.7, 0.24, 1) 0.18s both;
 }
 
 .cover-flyer {
@@ -726,7 +752,7 @@ body.is-detail-open .book {
   z-index: 41;
 }
 
-.bay.has-pulled .book:not(.is-pulled) {
+.bay.is-dim .book:not(.is-pulled) {
   opacity: 0.42;
 }
 
@@ -784,8 +810,8 @@ body.is-detail-open .book {
 @media (min-width: 720px) {
   :root {
     --pad: 1.5rem;
-    --book-w: 50.6px;
-    --book-h: 78.2px;
+    --book-w: 60.7px;
+    --book-h: 93.8px;
     --gap: 4px;
     --air: 10px;
   }
@@ -817,8 +843,8 @@ body.is-detail-open .book {
 @media (min-width: 1100px) {
   :root {
     --pad: 2rem;
-    --book-w: 57.5px;
-    --book-h: 87.4px;
+    --book-w: 69px;
+    --book-h: 104.9px;
     --lip: 10px;
     --gap: 5px;
   }
@@ -831,28 +857,6 @@ body.is-detail-open .book {
 
   to {
     opacity: 1;
-  }
-}
-
-@keyframes stage-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes copy-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -870,7 +874,7 @@ body.is-detail-open .book {
   }
 
   .detail.is-open,
-  .detail.is-open .detail-copy,
+  .detail.is-open.is-closing,
   .detail-close:active {
     animation: none;
     transform: none;
