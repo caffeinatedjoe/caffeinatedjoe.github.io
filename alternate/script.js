@@ -378,9 +378,11 @@ function foldTitle(value) {
   return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
 }
 
-function titleHit(book, query) {
+function bookHit(book, query) {
   if (!query) return true;
-  return foldTitle(book.getAttribute("data-title")).indexOf(query) !== -1;
+  var title = foldTitle(book.getAttribute("data-title"));
+  var author = foldTitle(book.getAttribute("data-author"));
+  return title.indexOf(query) !== -1 || author.indexOf(query) !== -1;
 }
 
 function armFinder(root, cards, hooks) {
@@ -523,6 +525,7 @@ function armFinder(root, cards, hooks) {
   }
 
   function applyFilter(raw) {
+    settleChrome();
     var query = foldTitle(raw);
     var gen = ++filterGen;
     var reduced = prefersReducedMotion() || typeof Element.prototype.animate !== "function";
@@ -554,7 +557,7 @@ function armFinder(root, cards, hooks) {
 
     for (i = 0; i < cards.length; i++) {
       var book = cards[i];
-      var hit = titleHit(book, query);
+      var hit = bookHit(book, query);
       if (hit) showBook(book);
       else if (!reduced && first.has(book)) lift(book, first.get(book));
       else hideBook(book);
@@ -644,24 +647,176 @@ function armFinder(root, cards, hooks) {
     if (pending === 0) root.classList.remove("is-settling");
   }
 
+  var phoneMedia = window.matchMedia("(max-width: 719px)");
+  var chromeAnims = [];
+  var CHROME_MS = 320;
+
+  function pageEl() {
+    return finder.closest(".page");
+  }
+
+  function chromeEls() {
+    var list = [];
+    var mast = document.querySelector(".mast");
+    var plates = document.querySelectorAll(".year-plate");
+    var i;
+    if (mast) list.push(mast);
+    for (i = 0; i < plates.length; i++) list.push(plates[i]);
+    return list;
+  }
+
+  function cancelChromeAnims() {
+    var i;
+    for (i = 0; i < chromeAnims.length; i++) {
+      chromeAnims[i].onfinish = null;
+      chromeAnims[i].cancel();
+    }
+    chromeAnims = [];
+  }
+
+  function releasePin(el) {
+    el.style.position = "";
+    el.style.left = "";
+    el.style.top = "";
+    el.style.width = "";
+    el.style.height = "";
+    el.style.margin = "";
+    el.style.zIndex = "";
+    el.style.pointerEvents = "";
+    el.style.opacity = "";
+    if (el._pinMark && el._pinMark.parentNode) {
+      el._pinMark.parentNode.insertBefore(el, el._pinMark);
+      el._pinMark.remove();
+    }
+    el._pinMark = null;
+  }
+
+  function settleChrome() {
+    cancelChromeAnims();
+    root.style.transform = "";
+    var els = chromeEls();
+    var i;
+    for (i = 0; i < els.length; i++) releasePin(els[i]);
+  }
+
+  function pinFade(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.width < 1 || rect.height < 1) return;
+    if (!el._pinMark) {
+      var mark = document.createComment("");
+      if (el.parentNode) el.parentNode.insertBefore(mark, el);
+      el._pinMark = mark;
+    }
+    document.body.appendChild(el);
+    el.style.position = "fixed";
+    el.style.left = rect.left.toFixed(2) + "px";
+    el.style.top = rect.top.toFixed(2) + "px";
+    el.style.width = rect.width.toFixed(2) + "px";
+    el.style.height = rect.height.toFixed(2) + "px";
+    el.style.margin = "0";
+    el.style.zIndex = "4";
+    el.style.pointerEvents = "none";
+    if (prefersReducedMotion() || typeof el.animate !== "function") {
+      releasePin(el);
+      return;
+    }
+    var anim = el.animate(
+      [{ opacity: 1 }, { opacity: 0 }],
+      { duration: CHROME_MS, easing: "ease-out", fill: "both" }
+    );
+    chromeAnims.push(anim);
+    anim.onfinish = function () {
+      if (chromeAnims.indexOf(anim) === -1) return;
+      anim.cancel();
+      releasePin(el);
+    };
+  }
+
+  function fadeChromeIn(el) {
+    if (prefersReducedMotion() || typeof el.animate !== "function") return;
+    var anim = el.animate(
+      [{ opacity: 0 }, { opacity: 1 }],
+      { duration: CHROME_MS, easing: "ease-out", fill: "both" }
+    );
+    chromeAnims.push(anim);
+    anim.onfinish = function () {
+      if (chromeAnims.indexOf(anim) === -1) return;
+      anim.cancel();
+      el.style.opacity = "";
+    };
+  }
+
+  function glideShelf(beforeTop) {
+    var afterTop = root.getBoundingClientRect().top;
+    var dy = beforeTop - afterTop;
+    root.style.transform = "";
+    if (prefersReducedMotion() || Math.abs(dy) < 1 || typeof root.animate !== "function") return;
+    var anim = root.animate(
+      [
+        { transform: "translateY(" + dy.toFixed(2) + "px)" },
+        { transform: "translateY(0px)" }
+      ],
+      { duration: CHROME_MS, easing: "ease-out", fill: "both" }
+    );
+    chromeAnims.push(anim);
+    anim.onfinish = function () {
+      if (chromeAnims.indexOf(anim) === -1) return;
+      anim.cancel();
+      root.style.transform = "";
+    };
+  }
+
+  // On a phone, opening search lifts the shelf under the field and fades the
+  // header and year lines. The lift is a transform so it stays off layout.
+  function syncFinding() {
+    var page = pageEl();
+    if (!page) return;
+    var want = !input.hidden && phoneMedia.matches;
+    var has = page.classList.contains("is-finding");
+    if (want === has) return;
+    settleChrome();
+    var beforeTop = root.getBoundingClientRect().top;
+    var els = chromeEls();
+    var i;
+    if (want) {
+      for (i = 0; i < els.length; i++) {
+        pinFade(els[i]);
+        els[i].setAttribute("aria-hidden", "true");
+      }
+      page.classList.add("is-finding");
+    } else {
+      page.classList.remove("is-finding");
+      for (i = 0; i < els.length; i++) {
+        els[i].removeAttribute("aria-hidden");
+        fadeChromeIn(els[i]);
+      }
+    }
+    glideShelf(beforeTop);
+  }
+
   function openField() {
     input.hidden = false;
     finder.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
+    syncFinding();
     input.focus();
   }
 
   function closeField() {
+    if (document.activeElement === input) input.blur();
     input.hidden = true;
     finder.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    syncFinding();
   }
 
   toggle.addEventListener("click", function () {
     if (input.hidden) openField();
-    else if (!foldTitle(input.value)) closeField();
-    else input.focus();
+    else closeField();
   });
+
+  if (phoneMedia.addEventListener) phoneMedia.addEventListener("change", syncFinding);
+  else if (phoneMedia.addListener) phoneMedia.addListener(syncFinding);
 
   input.addEventListener("input", function () {
     applyFilter(input.value);
@@ -1050,7 +1205,7 @@ function boot() {
 
   armFinder(root, cards, {
     dismissUnmatched: function (query) {
-      if (open && query && !titleHit(open, query)) closeBook(true);
+      if (open && query && !bookHit(open, query)) closeBook(true);
     },
     detailOpen: function () {
       return !!open;
