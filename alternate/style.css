@@ -115,6 +115,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.02em;
+  transform-origin: right center;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -156,7 +157,8 @@ body {
     clip: rect(0 0 0 0);
   }
 
-  .page.is-finding .bay:first-child {
+  .page.is-finding .bay:first-child,
+  .page.is-finding .shelves.is-merged .bay:first-child {
     margin-top: 0;
   }
 }
@@ -244,6 +246,37 @@ body {
 .shelves.is-filtering .books {
   grid-template-columns: repeat(auto-fill, var(--book-w));
   justify-content: start;
+}
+
+.shelves.is-merged .year-plate {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  clip: rect(0 0 0 0);
+}
+
+.shelves.is-merged .bay:not(:first-child) {
+  display: none;
+}
+
+.shelves.is-merged .bay:first-child {
+  position: relative;
+  margin-top: 0.35rem;
+}
+
+.shelves.is-merged .book {
+  z-index: 3;
+}
+
+@media (min-width: 720px) {
+  .page:has(.shelves.is-merged) .mast {
+    position: relative;
+    z-index: 4;
+  }
 }
 
 .shelves.is-settling .book,

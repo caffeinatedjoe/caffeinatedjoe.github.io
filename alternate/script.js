@@ -1,7 +1,7 @@
 "use strict";
 
 // The shelf is already in the page. This file opens and closes a book,
-// and filters that shelf by title.
+// and filters that shelf by title or author.
 var PULL_MS = 430;
 var PULL_EASE = "ease-in-out";
 
@@ -439,6 +439,7 @@ function armFinder(root, cards, hooks) {
     book.style.transform = "";
     book.style.opacity = "";
     book.classList.remove("is-lifted");
+    book._glide = false;
   }
 
   function hideBook(book) {
@@ -545,6 +546,7 @@ function armFinder(root, cards, hooks) {
       if (!bays[i].classList.contains("is-empty")) bayFirst.set(bays[i], visualOf(bays[i]));
     }
 
+    releaseGlide();
     first.forEach(function (_, book) { cancelShift(book); });
     bayFirst.forEach(function (_, bay) { cancelShift(bay); });
     first.forEach(function (_, book) {
@@ -649,7 +651,8 @@ function armFinder(root, cards, hooks) {
 
   var phoneMedia = window.matchMedia("(max-width: 719px)");
   var chromeAnims = [];
-  var CHROME_MS = 320;
+  var pinned = [];
+  var slidEls = [];
 
   function pageEl() {
     return finder.closest(".page");
@@ -674,7 +677,17 @@ function armFinder(root, cards, hooks) {
     chromeAnims = [];
   }
 
+  function rememberPin(el) {
+    if (pinned.indexOf(el) === -1) pinned.push(el);
+  }
+
+  function forgetPin(el) {
+    var at = pinned.indexOf(el);
+    if (at !== -1) pinned.splice(at, 1);
+  }
+
   function releasePin(el) {
+    if (!el) return;
     el.style.position = "";
     el.style.left = "";
     el.style.top = "";
@@ -684,24 +697,38 @@ function armFinder(root, cards, hooks) {
     el.style.zIndex = "";
     el.style.pointerEvents = "";
     el.style.opacity = "";
+    el.style.transform = "";
     if (el._pinMark && el._pinMark.parentNode) {
       el._pinMark.parentNode.insertBefore(el, el._pinMark);
       el._pinMark.remove();
     }
     el._pinMark = null;
+    forgetPin(el);
+  }
+
+  function clearSlides() {
+    var i;
+    for (i = 0; i < slidEls.length; i++) {
+      slidEls[i].style.transform = "";
+      slidEls[i].style.opacity = "";
+    }
+    slidEls = [];
   }
 
   function settleChrome() {
     cancelChromeAnims();
+    clearSlides();
     root.style.transform = "";
-    var els = chromeEls();
+    var els = pinned.slice();
     var i;
     for (i = 0; i < els.length; i++) releasePin(els[i]);
+    els = chromeEls();
+    for (i = 0; i < els.length; i++) {
+      if (els[i]._pinMark) releasePin(els[i]);
+    }
   }
 
-  function pinFade(el) {
-    var rect = el.getBoundingClientRect();
-    if (rect.width < 1 || rect.height < 1) return;
+  function holdPin(el, box, zIndex) {
     if (!el._pinMark) {
       var mark = document.createComment("");
       if (el.parentNode) el.parentNode.insertBefore(mark, el);
@@ -709,20 +736,26 @@ function armFinder(root, cards, hooks) {
     }
     document.body.appendChild(el);
     el.style.position = "fixed";
-    el.style.left = rect.left.toFixed(2) + "px";
-    el.style.top = rect.top.toFixed(2) + "px";
-    el.style.width = rect.width.toFixed(2) + "px";
-    el.style.height = rect.height.toFixed(2) + "px";
+    el.style.left = box.left.toFixed(2) + "px";
+    el.style.top = box.top.toFixed(2) + "px";
+    el.style.width = box.width.toFixed(2) + "px";
+    el.style.height = box.height.toFixed(2) + "px";
     el.style.margin = "0";
-    el.style.zIndex = "4";
+    el.style.zIndex = String(zIndex || 1);
     el.style.pointerEvents = "none";
-    if (prefersReducedMotion() || typeof el.animate !== "function") {
-      releasePin(el);
-      return;
-    }
+    el.style.transform = "translate3d(0px, 0px, 0px)";
+    rememberPin(el);
+  }
+
+  function pinFade(el, rect, zIndex) {
+    var box = rect || el.getBoundingClientRect();
+    if (box.width < 1 || box.height < 1) return;
+    if (prefersReducedMotion() || typeof el.animate !== "function") return;
+    holdPin(el, box, zIndex || 4);
+    el.style.opacity = "1";
     var anim = el.animate(
       [{ opacity: 1 }, { opacity: 0 }],
-      { duration: CHROME_MS, easing: "ease-out", fill: "both" }
+      { duration: PULL_MS, easing: PULL_EASE, fill: "both" }
     );
     chromeAnims.push(anim);
     anim.onfinish = function () {
@@ -732,11 +765,64 @@ function armFinder(root, cards, hooks) {
     };
   }
 
+  function dampShift(delta) {
+    var cap = 280;
+    if (delta > cap) return cap;
+    if (delta < -cap) return -cap;
+    return delta;
+  }
+
+  // Old shelves are pinned, then they drift toward the single shelf and fade.
+  // Travel is capped so a far year eases instead of streaking across the page.
+  function pinTravel(el, rect, dx, dy) {
+    if (!rect || rect.width < 1 || rect.height < 1) return;
+    if (prefersReducedMotion() || typeof el.animate !== "function") return;
+    holdPin(el, rect, 2);
+    el.style.opacity = "1";
+    var anim = el.animate(
+      [
+        { opacity: 1, transform: "translate3d(0px, 0px, 0px)" },
+        { opacity: 0, transform: shiftOf(dx, dy) }
+      ],
+      { duration: PULL_MS, easing: PULL_EASE, fill: "both" }
+    );
+    chromeAnims.push(anim);
+    anim.onfinish = function () {
+      if (chromeAnims.indexOf(anim) === -1) return;
+      anim.cancel();
+      releasePin(el);
+    };
+  }
+
+  function slideElm(el, fromX, fromY, fromOpacity, toOpacity) {
+    if (!el) return;
+    if (prefersReducedMotion() || typeof el.animate !== "function") return;
+    if (Math.abs(fromX) < 0.5 && Math.abs(fromY) < 0.5 && fromOpacity === toOpacity) return;
+    if (slidEls.indexOf(el) === -1) slidEls.push(el);
+    el.style.transform = shiftOf(fromX, fromY);
+    el.style.opacity = String(fromOpacity);
+    var anim = el.animate(
+      [
+        { transform: shiftOf(fromX, fromY), opacity: fromOpacity },
+        { transform: "translate3d(0px, 0px, 0px)", opacity: toOpacity }
+      ],
+      { duration: PULL_MS, easing: PULL_EASE, fill: "both" }
+    );
+    chromeAnims.push(anim);
+    anim.onfinish = function () {
+      if (chromeAnims.indexOf(anim) === -1) return;
+      anim.cancel();
+      el.style.transform = "";
+      el.style.opacity = "";
+    };
+  }
+
   function fadeChromeIn(el) {
     if (prefersReducedMotion() || typeof el.animate !== "function") return;
+    el.style.opacity = "0";
     var anim = el.animate(
       [{ opacity: 0 }, { opacity: 1 }],
-      { duration: CHROME_MS, easing: "ease-out", fill: "both" }
+      { duration: PULL_MS, easing: PULL_EASE, fill: "both" }
     );
     chromeAnims.push(anim);
     anim.onfinish = function () {
@@ -746,77 +832,338 @@ function armFinder(root, cards, hooks) {
     };
   }
 
-  function glideShelf(beforeTop) {
-    var afterTop = root.getBoundingClientRect().top;
-    var dy = beforeTop - afterTop;
-    root.style.transform = "";
-    if (prefersReducedMotion() || Math.abs(dy) < 1 || typeof root.animate !== "function") return;
-    var anim = root.animate(
+  var fieldAnim = null;
+  var shelfHost = bays[0] ? bays[0].querySelector(".books") : null;
+
+  function playField(opening) {
+    var fromOpacity = opening ? 0 : 1;
+    var fromTransform = opening ? "translateX(0.75rem) scale(0.9)" : "none";
+    if (fieldAnim) {
+      var opacityNow = parseFloat(window.getComputedStyle(input).opacity);
+      if (opacityNow >= 0) fromOpacity = opacityNow;
+      var transformNow = window.getComputedStyle(input).transform;
+      if (transformNow && transformNow !== "none") fromTransform = transformNow;
+      fieldAnim.onfinish = null;
+      fieldAnim.cancel();
+      fieldAnim = null;
+    }
+    var reduced = prefersReducedMotion() || typeof input.animate !== "function";
+    if (reduced) {
+      input.hidden = !opening;
+      input.style.opacity = "";
+      input.style.transform = "";
+      return;
+    }
+    var toOpacity = opening ? 1 : 0;
+    var toTransform = opening ? "none" : "translateX(0.75rem) scale(0.9)";
+    input.style.opacity = String(fromOpacity);
+    input.style.transform = fromTransform;
+    if (opening) input.hidden = false;
+    var anim = input.animate(
       [
-        { transform: "translateY(" + dy.toFixed(2) + "px)" },
-        { transform: "translateY(0px)" }
+        { opacity: fromOpacity, transform: fromTransform },
+        { opacity: toOpacity, transform: toTransform }
       ],
-      { duration: CHROME_MS, easing: "ease-out", fill: "both" }
+      { duration: PULL_MS, easing: PULL_EASE, fill: "both" }
     );
-    chromeAnims.push(anim);
+    fieldAnim = anim;
     anim.onfinish = function () {
-      if (chromeAnims.indexOf(anim) === -1) return;
+      if (fieldAnim !== anim) return;
+      fieldAnim = null;
       anim.cancel();
-      root.style.transform = "";
+      input.style.opacity = "";
+      input.style.transform = "";
+      if (!opening) input.hidden = true;
     };
   }
 
-  // On a phone, opening search lifts the shelf under the field and fades the
-  // header and year lines. The lift is a transform so it stays off layout.
-  function syncFinding() {
+  function ensureHome(book) {
+    if (book._homeMark && book._homeMark.parentNode) return;
+    if ((!book.parentNode || book.parentNode === document.body) && book._mark && book._mark.parentNode) {
+      book._homeMark = book._mark;
+      book._mark = null;
+      return;
+    }
+    if (!book.parentNode || book.parentNode === document.body) return;
+    var mark = document.createComment("");
+    book.parentNode.insertBefore(mark, book);
+    book._homeMark = mark;
+  }
+
+  function sendHome(book) {
+    if (book.classList.contains("is-lifted")) {
+      clearLift(book);
+      if (book._mark && book._mark.parentNode) book._mark.remove();
+      book._mark = null;
+    }
+    var home = book._homeMark;
+    if (home && home.parentNode) {
+      home.parentNode.insertBefore(book, home);
+      home.remove();
+    }
+    book._homeMark = null;
+  }
+
+  function snapshotShown() {
+    var shots = new Map();
+    var i;
+    for (i = 0; i < cards.length; i++) {
+      if (!shown(cards[i])) continue;
+      shots.set(cards[i], visualOf(cards[i]));
+    }
+    return shots;
+  }
+
+  function clearBookMotion() {
+    var i;
+    for (i = 0; i < cards.length; i++) {
+      cancelShift(cards[i]);
+      if (!cards[i].classList.contains("is-lifted")) {
+        cards[i].style.transform = "";
+        cards[i].style.opacity = "";
+      }
+    }
+    for (i = 0; i < bays.length; i++) {
+      cancelShift(bays[i]);
+      bays[i].style.transform = "";
+    }
+  }
+
+  function glideBooks(shots, gen) {
+    var pending = 0;
+    var settled = false;
+    function finished() {
+      pending -= 1;
+      if (pending > 0 || settled || gen !== filterGen) return;
+      settled = true;
+      root.classList.remove("is-settling");
+    }
+    root.classList.add("is-settling");
+    var reduced = prefersReducedMotion() || typeof Element.prototype.animate !== "function";
+    shots.forEach(function (was, book) {
+      if (!shown(book) || reduced) return;
+      var now = book.getBoundingClientRect();
+      var dx = was.left - now.left;
+      var dy = was.top - now.top;
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
+      pending += 1;
+      playShift(book, dx, dy, 0, 0, was.opacity < 0.99 ? was.opacity : 1, 1, gen, finished);
+    });
+    if (pending === 0) root.classList.remove("is-settling");
+  }
+
+  function releaseGlide() {
+    var i, book;
+    for (i = 0; i < cards.length; i++) {
+      book = cards[i];
+      if (!book._glide) continue;
+      cancelShift(book);
+      restore(book);
+      clearLift(book);
+    }
+  }
+
+  // Books leave the shelf for the trip so a fading case does not fade them too.
+  function glideLoose(shots, gen, preset) {
+    var pending = 0;
+    var settled = false;
+    function finished() {
+      pending -= 1;
+      if (pending > 0 || settled || gen !== filterGen) return;
+      settled = true;
+      root.classList.remove("is-settling");
+    }
+    root.classList.add("is-settling");
+    var reduced = prefersReducedMotion() || typeof Element.prototype.animate !== "function";
+    shots.forEach(function (was, book) {
+      if (!shown(book) || reduced) return;
+      var now = preset && preset.get(book) ? preset.get(book) : book.getBoundingClientRect();
+      var dx = was.left - now.left;
+      var dy = was.top - now.top;
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
+      lift(book, {
+        left: now.left,
+        top: now.top,
+        opacity: was.opacity < 0.99 ? was.opacity : 1
+      });
+      book.style.zIndex = "3";
+      book._glide = true;
+      pending += 1;
+      playShift(book, dx, dy, 0, 0, was.opacity < 0.99 ? was.opacity : 1, 1, gen, function () {
+        if (book._glide && gen === filterGen) {
+          restore(book);
+          clearLift(book);
+        }
+        finished();
+      });
+    });
+    if (pending === 0) root.classList.remove("is-settling");
+  }
+
+  function shiftCases(origin) {
+    var i, shelfCase, plate, home, dx, dy;
+    if (!origin) return;
+    for (i = 0; i < bays.length; i++) {
+      plate = bays[i].querySelector(".year-plate");
+      shelfCase = bays[i].querySelector(".case");
+      if (plate) {
+        home = plate.getBoundingClientRect();
+        if (home.height > 1) {
+          dx = dampShift(origin.left - home.left);
+          dy = dampShift(origin.top - home.top);
+          slideElm(plate, dx, dy, 0, 1);
+        }
+      }
+      if (i === 0 || !shelfCase) continue;
+      home = shelfCase.getBoundingClientRect();
+      if (home.height < 1) continue;
+      dx = dampShift(origin.left - home.left);
+      dy = dampShift(origin.top - home.top);
+      slideElm(shelfCase, dx, dy, 0, 1);
+    }
+  }
+
+  // Search is one shelf. Books slide between the year shelves and that shelf
+  // on transform only; the wood underneath fades.
+  function setSearchMode(opening) {
+    if (!shelfHost) return;
     var page = pageEl();
-    if (!page) return;
-    var want = !input.hidden && phoneMedia.matches;
+    if (opening && hooks.closeDetail) hooks.closeDetail();
+    if (opening === root.classList.contains("is-merged")) {
+      syncPhoneChrome();
+      return;
+    }
+    var shots = snapshotShown();
+    clearBookMotion();
+    releaseGlide();
+    settleChrome();
+    filterGen += 1;
+    var gen = filterGen;
+    var i;
+    var plates = document.querySelectorAll(".year-plate");
+    var mast = document.querySelector(".mast");
+    var mergedCase = bays[0].querySelector(".case");
+    var destNow = new Map();
+    root.classList.add("is-settling");
+    if (opening) {
+      var caseShots = [];
+      var plateShots = [];
+      var shelfCase, box, plateBox;
+      for (i = 1; i < bays.length; i++) {
+        shelfCase = bays[i].querySelector(".case");
+        if (!shelfCase) continue;
+        box = shelfCase.getBoundingClientRect();
+        if (box.height > 1) caseShots.push({ el: shelfCase, rect: box });
+      }
+      for (i = 0; i < plates.length; i++) {
+        plateBox = plates[i].getBoundingClientRect();
+        if (plateBox.height > 1) plateShots.push({ el: plates[i], rect: plateBox });
+        plates[i].setAttribute("aria-hidden", "true");
+      }
+      for (i = 0; i < cards.length; i++) {
+        ensureHome(cards[i]);
+        if (cards[i].parentNode !== shelfHost) shelfHost.appendChild(cards[i]);
+        if (cards[i].classList.contains("is-lifted")) clearLift(cards[i]);
+      }
+      root.classList.add("is-merged");
+      if (page && phoneMedia.matches) {
+        if (mast) {
+          pinFade(mast, mast.getBoundingClientRect(), 4);
+          mast.setAttribute("aria-hidden", "true");
+        }
+        page.classList.add("is-finding");
+      }
+      var dest = mergedCase ? mergedCase.getBoundingClientRect() : null;
+      for (i = 0; i < caseShots.length; i++) {
+        pinTravel(
+          caseShots[i].el,
+          caseShots[i].rect,
+          dest ? dampShift(dest.left - caseShots[i].rect.left) : 0,
+          dest ? dampShift(dest.top - caseShots[i].rect.top) : 0
+        );
+      }
+      for (i = 0; i < plateShots.length; i++) {
+        pinTravel(
+          plateShots[i].el,
+          plateShots[i].rect,
+          dest ? dampShift(dest.left - plateShots[i].rect.left) : 0,
+          dest ? dampShift(dest.top - plateShots[i].rect.top) : 0
+        );
+      }
+    } else {
+      var origin = mergedCase ? mergedCase.getBoundingClientRect() : null;
+      if (!foldTitle(input.value)) {
+        for (i = 0; i < cards.length; i++) {
+          if (!shown(cards[i])) showBook(cards[i]);
+        }
+      }
+      for (i = 0; i < cards.length; i++) sendHome(cards[i]);
+      root.classList.remove("is-merged");
+      if (page) page.classList.remove("is-finding");
+      if (mast) mast.removeAttribute("aria-hidden");
+      for (i = 0; i < plates.length; i++) plates[i].removeAttribute("aria-hidden");
+      shots.forEach(function (_, book) {
+        if (shown(book)) destNow.set(book, book.getBoundingClientRect());
+      });
+      shiftCases(origin);
+      if (mast && phoneMedia.matches) fadeChromeIn(mast);
+    }
+    syncBays(foldTitle(input.value));
+    if (opening) glideBooks(shots, gen);
+    else glideLoose(shots, gen, destNow);
+  }
+
+  function syncPhoneChrome() {
+    var page = pageEl();
+    if (!page || !root.classList.contains("is-merged")) return;
+    var want = finder.classList.contains("is-open") && phoneMedia.matches;
     var has = page.classList.contains("is-finding");
     if (want === has) return;
+    var shots = snapshotShown();
+    clearBookMotion();
+    releaseGlide();
     settleChrome();
-    var beforeTop = root.getBoundingClientRect().top;
-    var els = chromeEls();
-    var i;
+    filterGen += 1;
+    var mast = document.querySelector(".mast");
     if (want) {
-      for (i = 0; i < els.length; i++) {
-        pinFade(els[i]);
-        els[i].setAttribute("aria-hidden", "true");
+      if (mast) {
+        pinFade(mast, mast.getBoundingClientRect(), 4);
+        mast.setAttribute("aria-hidden", "true");
       }
       page.classList.add("is-finding");
     } else {
       page.classList.remove("is-finding");
-      for (i = 0; i < els.length; i++) {
-        els[i].removeAttribute("aria-hidden");
-        fadeChromeIn(els[i]);
+      if (mast) {
+        mast.removeAttribute("aria-hidden");
+        fadeChromeIn(mast);
       }
     }
-    glideShelf(beforeTop);
+    glideBooks(shots, filterGen);
   }
 
   function openField() {
-    input.hidden = false;
     finder.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
-    syncFinding();
-    input.focus();
+    playField(true);
+    setSearchMode(true);
+    if (typeof input.focus === "function") input.focus({ preventScroll: true });
   }
 
   function closeField() {
     if (document.activeElement === input) input.blur();
-    input.hidden = true;
     finder.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-    syncFinding();
+    playField(false);
+    setSearchMode(false);
   }
 
   toggle.addEventListener("click", function () {
-    if (input.hidden) openField();
-    else closeField();
+    if (finder.classList.contains("is-open")) closeField();
+    else openField();
   });
 
-  if (phoneMedia.addEventListener) phoneMedia.addEventListener("change", syncFinding);
-  else if (phoneMedia.addListener) phoneMedia.addListener(syncFinding);
+  if (phoneMedia.addEventListener) phoneMedia.addEventListener("change", syncPhoneChrome);
+  else if (phoneMedia.addListener) phoneMedia.addListener(syncPhoneChrome);
 
   input.addEventListener("input", function () {
     applyFilter(input.value);
@@ -827,7 +1174,6 @@ function armFinder(root, cards, hooks) {
     if (hooks.detailOpen && hooks.detailOpen()) return;
     event.stopPropagation();
     input.value = "";
-    applyFilter("");
     closeField();
     toggle.focus();
   });
@@ -1209,6 +1555,9 @@ function boot() {
     },
     detailOpen: function () {
       return !!open;
+    },
+    closeDetail: function () {
+      closeBook(true);
     }
   });
 }
