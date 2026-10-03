@@ -1,6 +1,7 @@
 "use strict";
 
-// The shelf is already in the page. This file only opens and closes a book.
+// The shelf is already in the page. This file opens and closes a book,
+// and filters that shelf by title.
 var PULL_MS = 430;
 var PULL_EASE = "ease-in-out";
 
@@ -373,6 +374,310 @@ function armLaterCovers(root) {
   sprite.src = "covers/shelf-top.jpg";
 }
 
+function foldTitle(value) {
+  return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function titleHit(book, query) {
+  if (!query) return true;
+  return foldTitle(book.getAttribute("data-title")).indexOf(query) !== -1;
+}
+
+function armFinder(root, cards, hooks) {
+  var finder = document.getElementById("finder");
+  var input = document.getElementById("finder-input");
+  var empty = document.getElementById("finder-empty");
+  var toggle = finder ? finder.querySelector(".finder-toggle") : null;
+  if (!finder || !input || !toggle || !root) return;
+
+  var filterGen = 0;
+  var bays = root.querySelectorAll(".bay");
+
+  function cancelShift(el) {
+    if (!el || !el._filterAnim) return;
+    el._filterAnim.onfinish = null;
+    el._filterAnim.cancel();
+    el._filterAnim = null;
+  }
+
+  function shown(book) {
+    return !book.hidden && !book.classList.contains("is-out");
+  }
+
+  function visualOf(el) {
+    var rect = el.getBoundingClientRect();
+    var opacity = parseFloat(window.getComputedStyle(el).opacity);
+    if (!(opacity >= 0)) opacity = 1;
+    return {
+      left: rect.left,
+      top: rect.top,
+      width: rect.width,
+      height: rect.height,
+      bottom: rect.bottom,
+      opacity: opacity
+    };
+  }
+
+  function restore(book) {
+    var mark = book._mark;
+    if (mark && mark.parentNode) {
+      mark.parentNode.insertBefore(book, mark);
+      mark.remove();
+    }
+    book._mark = null;
+    book.classList.remove("is-lifted");
+  }
+
+  function clearLift(book) {
+    book.style.position = "";
+    book.style.left = "";
+    book.style.top = "";
+    book.style.margin = "";
+    book.style.zIndex = "";
+    book.style.transform = "";
+    book.style.opacity = "";
+    book.classList.remove("is-lifted");
+  }
+
+  function hideBook(book) {
+    if (book.classList.contains("is-lifted")) restore(book);
+    clearLift(book);
+    book.classList.add("is-out");
+    book.setAttribute("hidden", "");
+  }
+
+  function showBook(book) {
+    if (book.classList.contains("is-lifted")) restore(book);
+    clearLift(book);
+    book.classList.remove("is-out");
+    book.removeAttribute("hidden");
+  }
+
+  function lift(book, rect) {
+    if (!book._mark || !book._mark.parentNode) {
+      var mark = document.createComment("");
+      if (book.parentNode) book.parentNode.insertBefore(mark, book);
+      book._mark = mark;
+    }
+    if (book.parentNode !== document.body) document.body.appendChild(book);
+    book.classList.add("is-lifted");
+    book.classList.remove("is-out");
+    book.removeAttribute("hidden");
+    book.style.position = "fixed";
+    book.style.left = rect.left.toFixed(2) + "px";
+    book.style.top = rect.top.toFixed(2) + "px";
+    book.style.margin = "0";
+    book.style.zIndex = "30";
+    book.style.transform = "none";
+    book.style.opacity = String(rect.opacity);
+  }
+
+  function leaveDy(rect) {
+    var viewH = window.innerHeight || 800;
+    if (rect.bottom < 0 || rect.top > viewH) return -Math.min(160, rect.height + 48);
+    return -rect.top - rect.height - 24;
+  }
+
+  function enterDy(rect) {
+    var viewH = window.innerHeight || 800;
+    if (rect.bottom < 0 || rect.top > viewH) return -Math.min(160, rect.height + 48);
+    return -rect.top - rect.height - 24;
+  }
+
+  function shiftOf(x, y) {
+    return "translate3d(" + x.toFixed(2) + "px, " + y.toFixed(2) + "px, 0)";
+  }
+
+  // from -> to on transform only. Fill is cancelled so a finished effect
+  // cannot pin the next measurement, same as the detail card.
+  function playShift(el, fromX, fromY, toX, toY, opacityFrom, opacityTo, gen, done) {
+    var start = { transform: shiftOf(fromX, fromY) };
+    var end = { transform: shiftOf(toX, toY) };
+    if (opacityFrom !== opacityTo) {
+      start.opacity = opacityFrom;
+      end.opacity = opacityTo;
+    }
+    el.style.transform = start.transform;
+    if (opacityFrom !== opacityTo) el.style.opacity = String(opacityFrom);
+    var anim = el.animate([start, end], { duration: PULL_MS, easing: PULL_EASE, fill: "both" });
+    el._filterAnim = anim;
+    anim.onfinish = function () {
+      if (el._filterAnim !== anim || gen !== filterGen) return;
+      el._filterAnim = null;
+      anim.cancel();
+      el.style.transform = "";
+      if (opacityFrom !== opacityTo) el.style.opacity = "";
+      if (done) done();
+    };
+  }
+
+  function syncBays(query) {
+    var i, bay, left;
+    for (i = 0; i < bays.length; i++) {
+      bay = bays[i];
+      left = bay.querySelector(".book:not([hidden])");
+      bay.classList.toggle("is-empty", !left);
+    }
+    root.classList.toggle("is-filtering", !!query);
+    if (empty) empty.hidden = !query || !!root.querySelector(".bay:not(.is-empty)");
+  }
+
+  function applyFilter(raw) {
+    var query = foldTitle(raw);
+    var gen = ++filterGen;
+    var reduced = prefersReducedMotion() || typeof Element.prototype.animate !== "function";
+    var i;
+
+    if (hooks.dismissUnmatched) hooks.dismissUnmatched(query);
+
+    var first = new Map();
+    var bayFirst = new Map();
+    for (i = 0; i < cards.length; i++) {
+      if (!shown(cards[i])) continue;
+      var shot = visualOf(cards[i]);
+      shot.lifted = cards[i].classList.contains("is-lifted");
+      first.set(cards[i], shot);
+    }
+    for (i = 0; i < bays.length; i++) {
+      if (!bays[i].classList.contains("is-empty")) bayFirst.set(bays[i], visualOf(bays[i]));
+    }
+
+    first.forEach(function (_, book) { cancelShift(book); });
+    bayFirst.forEach(function (_, bay) { cancelShift(bay); });
+    first.forEach(function (_, book) {
+      book.style.transform = "";
+      book.style.opacity = "";
+    });
+    bayFirst.forEach(function (_, bay) {
+      bay.style.transform = "";
+    });
+
+    for (i = 0; i < cards.length; i++) {
+      var book = cards[i];
+      var hit = titleHit(book, query);
+      if (hit) showBook(book);
+      else if (!reduced && first.has(book)) lift(book, first.get(book));
+      else hideBook(book);
+    }
+    syncBays(query);
+
+    if (reduced) {
+      root.classList.remove("is-settling");
+      return;
+    }
+
+    var bayNow = new Map();
+    var bookNow = new Map();
+    var bayShift = new Map();
+    for (i = 0; i < bays.length; i++) {
+      if (!bays[i].classList.contains("is-empty")) bayNow.set(bays[i], bays[i].getBoundingClientRect());
+    }
+    for (i = 0; i < cards.length; i++) {
+      if (!cards[i].classList.contains("is-lifted") && shown(cards[i])) {
+        bookNow.set(cards[i], cards[i].getBoundingClientRect());
+      }
+    }
+
+    bayFirst.forEach(function (was, bay) {
+      var now = bayNow.get(bay);
+      if (!now) return;
+      var dx = was.left - now.left;
+      var dy = was.top - now.top;
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
+      bayShift.set(bay, { dx: dx, dy: dy });
+    });
+
+    var pending = 0;
+    var settled = false;
+    function finished() {
+      pending -= 1;
+      if (pending > 0 || settled || gen !== filterGen) return;
+      settled = true;
+      root.classList.remove("is-settling");
+    }
+
+    root.classList.add("is-settling");
+
+    bayShift.forEach(function (shift, bay) {
+      pending += 1;
+      playShift(bay, shift.dx, shift.dy, 0, 0, 1, 1, gen, finished);
+    });
+
+    for (i = 0; i < cards.length; i++) {
+      var moving = cards[i];
+      if (moving.classList.contains("is-lifted")) {
+        var from = first.get(moving);
+        if (!from) continue;
+        pending += 1;
+        playShift(moving, 0, 0, 0, leaveDy(from), from.opacity, 0, gen, (function (book) {
+          return function () {
+            if (gen !== filterGen) return;
+            hideBook(book);
+            finished();
+          };
+        })(moving));
+        continue;
+      }
+      if (!shown(moving)) continue;
+      var dest = bookNow.get(moving);
+      if (!dest) continue;
+      var bay = moving.closest(".bay");
+      var shift = bay && bayShift.get(bay) ? bayShift.get(bay) : { dx: 0, dy: 0 };
+      var seen = first.get(moving);
+      var dx;
+      var dy;
+      var opacityFrom = 1;
+      if (seen) {
+        dx = seen.left - dest.left - shift.dx;
+        dy = seen.top - dest.top - shift.dy;
+        if (seen.lifted && seen.opacity < 0.99) opacityFrom = seen.opacity;
+      } else {
+        dx = -shift.dx;
+        dy = enterDy(dest) - shift.dy;
+        opacityFrom = 0;
+      }
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5 && opacityFrom === 1) continue;
+      pending += 1;
+      playShift(moving, dx, dy, 0, 0, opacityFrom, 1, gen, finished);
+    }
+
+    if (pending === 0) root.classList.remove("is-settling");
+  }
+
+  function openField() {
+    input.hidden = false;
+    finder.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    input.focus();
+  }
+
+  function closeField() {
+    input.hidden = true;
+    finder.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", function () {
+    if (input.hidden) openField();
+    else if (!foldTitle(input.value)) closeField();
+    else input.focus();
+  });
+
+  input.addEventListener("input", function () {
+    applyFilter(input.value);
+  });
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    if (hooks.detailOpen && hooks.detailOpen()) return;
+    event.stopPropagation();
+    input.value = "";
+    applyFilter("");
+    closeField();
+    toggle.focus();
+  });
+}
+
 function boot() {
   var root = document.getElementById("shelves");
   var scrim = document.getElementById("scrim");
@@ -741,6 +1046,15 @@ function boot() {
     img.style.maxHeight = "none";
     img.classList.remove("is-flying");
     clearMotion(open._detail);
+  });
+
+  armFinder(root, cards, {
+    dismissUnmatched: function (query) {
+      if (open && query && !titleHit(open, query)) closeBook(true);
+    },
+    detailOpen: function () {
+      return !!open;
+    }
   });
 }
 

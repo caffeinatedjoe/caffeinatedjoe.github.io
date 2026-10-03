@@ -51,6 +51,7 @@ body {
 }
 
 .page {
+  position: relative;
   width: min(1180px, 100%);
   margin-inline: auto;
   padding:
@@ -58,6 +59,84 @@ body {
     calc(var(--pad) + env(safe-area-inset-right, 0px))
     calc(2.6rem + env(safe-area-inset-bottom, 0px))
     calc(var(--pad) + env(safe-area-inset-left, 0px));
+}
+
+.finder {
+  position: absolute;
+  z-index: 5;
+  top: calc(1.15rem + env(safe-area-inset-top, 0px));
+  right: calc(var(--pad) + env(safe-area-inset-right, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+.finder-toggle,
+.finder-input {
+  height: 2.75rem;
+  margin: 0;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.finder-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  padding: 0;
+  flex: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.finder-toggle svg {
+  display: block;
+}
+
+.finder-toggle:hover {
+  background: var(--sand);
+}
+
+.finder-toggle:focus-visible,
+.finder-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-color: transparent;
+}
+
+.finder-input {
+  width: min(18rem, calc(100vw - 7.25rem));
+  padding: 0 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.finder-input::placeholder {
+  color: var(--meta);
+  font-weight: 400;
+}
+
+.finder-input[hidden] {
+  display: none !important;
+}
+
+.finder-empty {
+  margin: 0.2rem 0 0;
+  color: #3d362f;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.finder-empty[hidden] {
+  display: none !important;
 }
 
 .mast {
@@ -70,6 +149,7 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1.25rem;
+  padding-right: 3.5rem;
 }
 
 .eyebrow {
@@ -133,6 +213,32 @@ body {
 
 .bay:first-child {
   margin-top: 0.35rem;
+}
+
+.bay.is-empty {
+  display: none;
+}
+
+.shelves.is-filtering .books {
+  grid-template-columns: repeat(auto-fill, var(--book-w));
+  justify-content: start;
+}
+
+.shelves.is-settling .book,
+.shelves.is-settling .bay {
+  transition: none;
+}
+
+.book.is-out {
+  display: none;
+}
+
+.book.is-lifted {
+  position: fixed;
+  z-index: 30;
+  margin: 0;
+  pointer-events: none;
+  transition: none;
 }
 
 .year-plate {
@@ -845,6 +951,12 @@ body.is-detail-open .book {
 
   .detail.is-open .detail-copy {
     flex: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .mast-row {
+    padding-right: 0;
   }
 }
 
