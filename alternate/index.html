@@ -2,6 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+/* A reload otherwise restores the last scroll offset, so the header is already gone. */
+(function () {
+  try { history.scrollRestoration = "manual"; } catch (err) {}
+  function pinTop() {
+    if (location.hash) return;
+    window.scrollTo(0, 0);
+  }
+  pinTop();
+  window.addEventListener("pageshow", pinTop);
+})();
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f3eee6">
 <meta name="description" content="Joe Coffey’s personal reading list, shelved by year.">
