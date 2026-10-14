@@ -1531,6 +1531,103 @@
       "topics": [
         "middle-ages"
       ]
+    },
+    {
+      "id": "c-is-for-charlemagne",
+      "title": "C is for Charlemagne",
+      "author": "History Unboxed",
+      "type": "nonfiction",
+      "ageMin": 8,
+      "ageMax": 12,
+      "ages": "8–12",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "medieval",
+      "eventIds": [
+        "ma-charlemagne"
+      ],
+      "primaryEventId": "ma-charlemagne",
+      "blurb": "Alphabet tour of Charlemagne—schools, crown, and court—with kid text and deeper adult notes, gentle enough for a first Middle Ages stop.",
+      "source": "https://historyunboxed.com/product/c-is-for-charlemagne-paperback/",
+      "topics": [
+        "middle-ages"
+      ]
+    },
+    {
+      "id": "son-of-charlemagne",
+      "title": "Son of Charlemagne",
+      "author": "Barbara Willard",
+      "type": "fiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "ages": "10–13",
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "mode": "independent",
+      "eraId": "medieval",
+      "eventIds": [
+        "ma-charlemagne"
+      ],
+      "primaryEventId": "ma-charlemagne",
+      "blurb": "Young Carl rides to Rome with King Charles and watches his father crowned emperor—learning, family hard choices, and a vision for a united Christian West.",
+      "source": "https://www.bethlehembooks.com/products/son-of-charlemagne",
+      "topics": [
+        "middle-ages"
+      ]
+    },
+    {
+      "id": "the-magna-charta-daugherty",
+      "title": "The Magna Charta",
+      "author": "James Daugherty",
+      "type": "nonfiction",
+      "ageMin": 10,
+      "ageMax": 13,
+      "ages": "10–13",
+      "levels": [
+        "independent",
+        "read-aloud"
+      ],
+      "mode": "independent",
+      "eraId": "medieval",
+      "eventIds": [
+        "ma-magna-carta"
+      ],
+      "primaryEventId": "ma-magna-carta",
+      "blurb": "Barons force King John to seal the Great Charter—a lively freedom story SCM and Beautiful Feet use in Middle Ages history.",
+      "parentNote": "Cathy Duffy: stop around page 130 before the 1950s UN / modern-charters ending, or read those chapters with parent commentary. Used in SCM Pageant of History Middle Ages grades 5–8.",
+      "source": "https://simplycharlottemason.com/store/the-magna-charta/",
+      "topics": [
+        "middle-ages"
+      ]
+    },
+    {
+      "id": "casey-over-there",
+      "title": "Casey Over There",
+      "author": "Staton Rabin",
+      "type": "fiction",
+      "ageMin": 6,
+      "ageMax": 8,
+      "ages": "6–8",
+      "levels": [
+        "read-aloud"
+      ],
+      "mode": "read-aloud",
+      "eraId": "modern",
+      "eventIds": [
+        "mo-ww1-us-entry",
+        "mo-ww1"
+      ],
+      "primaryEventId": "mo-ww1-us-entry",
+      "blurb": "Brooklyn boy Aubrey waits for his brother Casey, who is fighting in France, and even writes Uncle Sam—a gentle home-front door into America’s Great War.",
+      "parentNote": "Publishers Weekly ages 4–8; Plumfield Moms notes no on-page blood or soldier deaths, but war pictures and a scare when mother fears a telegram. Read-aloud for the 6 and 8; not a cozy bedtime default for the youngest.",
+      "source": "https://www.publishersweekly.com/9780152531867",
+      "topics": [
+        "modern"
+      ]
     }
   ]
 }
